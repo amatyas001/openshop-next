@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Heading } from '@chakra-ui/core';
 
 export default function Home() {
   return (
@@ -7,7 +8,9 @@ export default function Home() {
         <title>OpenShop</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <h1>OpenShop</h1>
+      <Heading as='h1' size='2x1' data-cy='heading'>
+        Home
+      </Heading>
     </>
   );
 }

@@ -1,13 +1,16 @@
 import Head from 'next/head';
+import { Heading } from '@chakra-ui/core';
 
 export default function Items() {
   return (
     <>
       <Head>
-        <title>OpenShop - Items</title>
+        <title>OpenShop - Browse</title>
         <meta name='description' content='OpenShop public items' />
       </Head>
-      <h1>OpenShop - Items</h1>
+      <Heading as='h1' size='2x1'>
+        Browse
+      </Heading>
     </>
   );
 }
