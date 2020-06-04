@@ -7,15 +7,24 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
-    "deploy": "npm run build && npm run export"
+    "deploy": "npm run build && npm run export",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "apollo-server-lambda": "^2.14.1",
+    "emotion-theming": "^10.0.27",
     "graphql": "^15.0.0",
     "netlify-lambda": "^1.6.3",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "swr": "^0.2.2"
+    "swr": "^0.2.2",
+    "unsplash-js": "^6.0.0"
+  },
+  "devDependencies": {
+    "cypress": "^4.7.0"
   }
 }
