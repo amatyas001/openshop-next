@@ -1,8 +1,15 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 60vw;
-  min-height: 100vh;
-  font-size: 1.2rem;
+@font-face {
+  font-family: 'Khand';
+  src: url('/fonts/Khand-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Regular.ttf');
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  margin: 0;
 }
