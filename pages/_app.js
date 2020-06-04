@@ -1,4 +1,21 @@
 import '../styles/global.css';
-import App from 'next/app';
+import { Navbar } from '../components';
 
-export default App;
+export default function MyApp({ Component, pageProps }) {
+  const navigation = [
+    {
+      text: 'home',
+      path: '/',
+    },
+    {
+      text: 'items',
+      path: '/items',
+    },
+  ];
+  return (
+    <div className='container'>
+      <Navbar links={navigation} />
+      <Component {...pageProps} />
+    </div>
+  );
+}
