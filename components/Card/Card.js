@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import { Box, Flex, Image, Text, Spinner } from '@chakra-ui/core';
 import { Button, Rating } from '../../components';
-import { FaStar } from 'react-icons/fa';
 
-export const Card = ({ item }) => {
+export const Card = ({ item, controls = true }) => {
   const [loading, setLoading] = React.useState(true);
   return (
     <Box
@@ -21,7 +20,7 @@ export const Card = ({ item }) => {
         objectFit='contain'
         rounded='md'
         onLoad={() => setLoading(false)}
-        src={`images/products/${item.img}`}
+        src={`/images/products/${item.img}`}
       />
       <Text
         textAlign='center'
@@ -38,9 +37,11 @@ export const Card = ({ item }) => {
           <Rating fontSize='1.4rem' ratings={item.starrating} />
         </Box>
       </Flex>
-      <Link href={`browse/${item.id}`}>
-        <Button width='100%'>view</Button>
-      </Link>
+      {controls && (
+        <Link href={`items/${item.id}`}>
+          <Button width='100%'>view</Button>
+        </Link>
+      )}
     </Box>
   );
 };
