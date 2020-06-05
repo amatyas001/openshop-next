@@ -1,47 +1,51 @@
 import '../styles/global.css';
 import customTheme from '../styles/theme';
-import { ThemeProvider, Flex, Image, Text, SimpleGrid } from '@chakra-ui/core';
+import { ThemeProvider, Flex, Image } from '@chakra-ui/core';
 import { Navbar } from '../components';
 
-export default function MyApp({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   const navigation = [
     {
       text: 'home',
       path: '/',
     },
     {
-      text: 'blog',
-      path: '/blog',
+      text: 'featured',
+      path: '/featured',
     },
     {
       text: 'browse',
       path: '/browse',
     },
     {
-      text: 'contact',
-      path: '/contact',
-    },
-    {
       text: 'support',
       path: '/support',
     },
   ];
+
   return (
     <ThemeProvider theme={customTheme}>
-      <Flex align='center' alignItems='start' flexDirection='column' mx='15%'>
+      <Flex
+        align='center'
+        alignItems='start'
+        flexDirection='column'
+        justifyContent='center'
+        py='3%'
+        px='10%'
+        bg='white'
+      >
         <Image
           width='100%'
-          height='370px'
-          objectFit='cover'
-          src='images/main_header.jpg'
-          alt='Shop front door with "open" sign by Mike Petrucci from Unsplah.com'
+          height='25vh'
+          objectFit='contain'
+          src='images/group1.jpg'
+          alt='Group of clipart people'
         />
-        <SimpleGrid columns={2} spacing={3} width='100%'>
-          <Navbar links={navigation} />
-          {/*<UserNav />*/}
-        </SimpleGrid>
+        <Navbar links={navigation} />
         <Component {...pageProps} />
       </Flex>
     </ThemeProvider>
   );
-}
+};
+
+export default App;
