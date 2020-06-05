@@ -1,8 +1,9 @@
 import { Link, Button as ChakraButton } from '@chakra-ui/core';
 
-export const Button = (props) => {
+export const Button = React.forwardRef((props, ref) => {
   return (
     <ChakraButton
+      ref={ref}
       {...props}
       as={Link}
       height='50px'
@@ -28,4 +29,4 @@ export const Button = (props) => {
       {props.children}
     </ChakraButton>
   );
-};
+});

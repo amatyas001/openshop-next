@@ -8,6 +8,8 @@
     "build": "next build",
     "export": "next export",
     "deploy": "npm run build && npm run export",
+    "start:lambda": "netlify-lambda serve libs/lambda",
+    "build:lambda": "netlify-lambda build libs/lambda",
     "cypress:open": "cypress open"
   },
   "dependencies": {
@@ -16,6 +18,7 @@
     "@emotion/styled": "^10.0.27",
     "axios": "^0.19.2",
     "emotion-theming": "^10.0.27",
+    "netlify-lambda": "^1.6.3",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",

@@ -1,26 +1,19 @@
 import Head from 'next/head';
-import { Heading, Flex, Divider, Skeleton } from '@chakra-ui/core';
+import { Heading, Flex, Divider, Box } from '@chakra-ui/core';
 import { Card } from '../../components';
 import useRequest from '../../libs/useRequest';
 
 export async function getStaticProps() {
-  const res = await fetch(
-    'https://openshop.netlify.app/.netlify/functions/storedata'
-  );
-  const items = await res.json();
+  const items = await import('../../public/storedata.json');
 
   return {
     props: {
-      items,
+      items: items.items,
     },
   };
 }
 
 export default function Items({ items }) {
-  const { data } = useRequest({
-    url: '/api/storedata',
-  });
-
   return (
     <>
       <Head>
@@ -37,11 +30,11 @@ export default function Items({ items }) {
         justifyContent='space-around'
       >
         {items.map((item) => (
-          <>
+          <Box key={item.name}>
             <Divider orientation='vertical' />
             <Card item={item} />
             <Divider orientation='vertical' />
-          </>
+          </Box>
         ))}
       </Flex>
     </>
