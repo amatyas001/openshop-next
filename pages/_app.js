@@ -15,7 +15,7 @@ const App = ({ Component, pageProps }) => {
     },
     {
       text: 'browse',
-      path: '/browse',
+      path: '/items',
     },
     {
       text: 'support',
@@ -38,7 +38,7 @@ const App = ({ Component, pageProps }) => {
           width='100%'
           height='25vh'
           objectFit='contain'
-          src='images/group1.jpg'
+          src='/images/group1.jpg'
           alt='Group of clipart people'
         />
         <Navbar links={navigation} />
