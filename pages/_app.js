@@ -1,7 +1,7 @@
 import '../styles/global.css';
 import customTheme from '../styles/theme';
 import { ThemeProvider, Flex, Image } from '@chakra-ui/core';
-import { Navbar } from '../components';
+import { Navbar, Footer } from '../components';
 
 const App = ({ Component, pageProps }) => {
   const navigation = [
@@ -16,10 +16,6 @@ const App = ({ Component, pageProps }) => {
     {
       text: 'browse',
       path: '/items',
-    },
-    {
-      text: 'support',
-      path: '/support',
     },
   ];
 
@@ -44,6 +40,7 @@ const App = ({ Component, pageProps }) => {
         <Navbar links={navigation} />
         <Component {...pageProps} />
       </Flex>
+      <Footer />
     </ThemeProvider>
   );
 };

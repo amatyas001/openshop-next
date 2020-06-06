@@ -28,12 +28,12 @@ export async function getStaticProps() {
 }
 
 export default function Items({ items }) {
+  const [showItems, setShowItems] = React.useState([]);
   const [filters, setFilters] = React.useState(false);
   const [name, setName] = React.useState('');
   const [price, setPrice] = React.useState(200);
   const [color, setColor] = React.useState('All');
   const [colorValues, setColorValues] = React.useState([]);
-  const [rating, setRating] = React.useState(0);
 
   React.useEffect(() => {
     {
@@ -51,6 +51,19 @@ export default function Items({ items }) {
       );
     }
   }, []);
+
+  React.useEffect(() => {
+    setShowItems(
+      items.filter((item) => {
+        const itemcolor = color !== 'All' ? item.color === color : true;
+        return (
+          itemcolor &&
+          item.price <= price &&
+          item.name.toLowerCase().includes(name)
+        );
+      })
+    );
+  }, [name, price, color]);
 
   return (
     <>
@@ -154,7 +167,6 @@ export default function Items({ items }) {
               setName('');
               setPrice(200);
               setColor('All');
-              setRating(0);
             }}
             mx='auto'
             fontSize='1.3rem'
@@ -182,23 +194,19 @@ export default function Items({ items }) {
         alignItems='center'
         justifyContent='space-around'
       >
-        {items
-          .filter((item) => {
-            const itemcolor = color !== 'All' ? item.color === color : true;
-            return (
-              itemcolor &&
-              item.price <= price &&
-              item.starrating >= rating &&
-              item.name.toLowerCase().includes(name)
-            );
-          })
-          .map((item) => (
+        {showItems.length ? (
+          showItems.map((item) => (
             <Box key={item.name}>
               <Divider orientation='vertical' />
               <Card item={item} />
               <Divider orientation='vertical' />
             </Box>
-          ))}
+          ))
+        ) : (
+          <Heading mx='auto' my='3rem'>
+            no results found
+          </Heading>
+        )}
       </Flex>
     </>
   );
