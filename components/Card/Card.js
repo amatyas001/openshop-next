@@ -38,7 +38,7 @@ export const Card = ({ item, controls = true }) => {
         </Box>
       </Flex>
       {controls && (
-        <Link href={`items/${item.id}`}>
+        <Link href={`/items/[id]`} as={`/items/${item.id}`}>
           <Button width='100%'>view</Button>
         </Link>
       )}
