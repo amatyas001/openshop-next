@@ -108,7 +108,7 @@ export default function Items({ items }) {
         borderBottom='1px'
         d={filters ? 'block' : 'none'}
       >
-        <Heading as='label' for='name' fontSize='1.3rem'>
+        <Heading as='label' htmlFor='name' fontSize='1.3rem'>
           Name
         </Heading>
         <Input
@@ -123,7 +123,7 @@ export default function Items({ items }) {
         <Flex flexDirection='column'>
           <Heading
             as={'label'}
-            for='price'
+            htmlFor='price'
             fontSize='1.3rem'
             mt='-10px'
             mb='-30px'
@@ -147,7 +147,7 @@ export default function Items({ items }) {
               {price} $
             </Text>
           </Slider>
-          <Heading as='label' for='color' fontSize='1.3rem'>
+          <Heading as='label' htmlFor='color' fontSize='1.3rem'>
             Color
           </Heading>
           <Select

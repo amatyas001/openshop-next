@@ -1,6 +1,5 @@
 import {
   Flex,
-  SimpleGrid,
   Box,
   Heading,
   Text,
@@ -106,7 +105,7 @@ export const Footer = () => {
         </Text>
         <Text m='auto' color='gray.200'>
           <strong>
-            <em>React / Next / Node / Git / Netlify </em>
+            <em>React / Redux / Next / Git / Netlify </em>
           </strong>
         </Text>
       </Flex>

@@ -8,14 +8,16 @@
     "build": "next build",
     "export": "next export",
     "deploy": "npm run build && npm run export",
-    "start:lambda": "netlify-lambda serve libs/lambda",
-    "build:lambda": "netlify-lambda build libs/lambda",
+    "start:lambda": "netlify-lambda serve lambda",
+    "build:lambda": "netlify-lambda build lambda",
     "cypress:open": "cypress open"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@stripe/react-stripe-js": "^1.1.2",
+    "@stripe/stripe-js": "^1.7.0",
     "axios": "^0.19.2",
     "emotion-theming": "^10.0.27",
     "netlify-lambda": "^1.6.3",
@@ -23,7 +25,11 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-icons": "^3.10.0",
-    "swr": "^0.2.2"
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
+    "uuid": "^8.1.0"
   },
   "devDependencies": {
     "cypress": "^4.7.0"

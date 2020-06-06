@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Heading, Flex, Text, Divider, SimpleGrid, Box } from '@chakra-ui/core';
 import { Card, Button } from '../../components';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart, removeFromCart } from '../../redux/actions';
 import { MdInvertColors } from 'react-icons/md';
 import { FaFemale, FaMale } from 'react-icons/fa';
 
@@ -19,11 +21,19 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       item: items.items.filter((item) => item.id === params.id)[0],
+      initialReduxState: {
+        cart: [],
+      },
     },
   };
 }
 
 export default function Item({ item }) {
+  const cart = useSelector((store) => store.cart);
+  const dispatch = useDispatch();
+
+  console.log(cart.filter((c) => c.id === item.id));
+
   return (
     <>
       <Head>
@@ -44,11 +54,23 @@ export default function Item({ item }) {
         <SimpleGrid columns={{ sm: 1, lg: 2 }} spacing='2vw' key={item.name}>
           <Box>
             <Card item={item} controls={false} />
-            <Link href={`purchase/${item.id}`}>
-              <Button width='100%' mt='-150px'>
+            {cart.filter((c) => c.id === item.id).length ? (
+              <Button
+                width='100%'
+                mt='-150px'
+                onClick={() => dispatch(removeFromCart(item))}
+              >
+                remove from cart
+              </Button>
+            ) : (
+              <Button
+                width='100%'
+                mt='-150px'
+                onClick={() => dispatch(addToCart(item))}
+              >
                 add to cart
               </Button>
-            </Link>
+            )}
           </Box>
           <Box my='auto' p='1rem'>
             <Heading>{item.name}</Heading>
