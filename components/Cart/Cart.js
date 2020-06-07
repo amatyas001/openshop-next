@@ -7,9 +7,10 @@ import {
   Heading,
   Collapse,
   Box,
+  Image,
   SimpleGrid,
 } from '@chakra-ui/core';
-import { FaTrashAlt, FaInfo } from 'react-icons/fa';
+import { FaTrashAlt, FaInfo, FaStripe } from 'react-icons/fa';
 import { Button } from '../index';
 
 export const Cart = (props) => {
@@ -27,7 +28,7 @@ export const Cart = (props) => {
       width={{ sm: '90%', md: '70%', lg: '60%', xl: '50%' }}
       {...props}
     >
-      {state.cart && state.cart.length > 0 && (
+      {state.cart && state.cart.length > 0 ? (
         <>
           <Button
             onClick={() => setShow(!show)}
@@ -35,24 +36,27 @@ export const Cart = (props) => {
             color={show ? 'gray.100' : 'black'}
           >
             <Heading as='span' fontSize='1.7rem'>
-              checkout&nbsp;
-              <Text fontSize='1.9rem' color='red.400' d='inline'>
-                {state.cart.length}
-              </Text>
-              &nbsp;item
+              {show ? 'hide' : 'show'}&nbsp;cart
             </Heading>
           </Button>
           <Collapse mt={4} isOpen={show} borderBottom='1px' mb='10px' px='3%'>
             {state.cart.map((item) => (
-              <Flex my='3%' fontSize='1.2rem' key={item.id}>
-                <Text as='span'>
-                  <strong>{item.name}</strong>
-                  &nbsp;-&nbsp;{item.price}&nbsp;$
+              <Flex my='3%' fontSize='1.2rem' key={item.id} alignItems='center'>
+                <Image
+                  src={`/images/products/${item.img}`}
+                  size='60px'
+                  objectFit='contain'
+                />
+                <Text as='span' ml='10px'>
+                  <strong>{item.name}</strong> - <em>{item.color}</em>
+                </Text>
+                <Text as='span' ml='auto'>
+                  {item.price}&nbsp;$
                 </Text>
                 <Link href={`/items/[id]`} as={`/items/${item.id}`}>
                   <Text
                     as={FaInfo}
-                    ml='auto'
+                    ml='20px'
                     color='blue.400'
                     cursor='pointer'
                   />
@@ -66,21 +70,56 @@ export const Cart = (props) => {
                 />
               </Flex>
             ))}
-            <Box borderTop='1px'>
-              <Text textAlign='center'>
-                TOTAL PRICE OF {state.cart.length} ITEM(S)
+            <Box>
+              <Text
+                textAlign='right'
+                pr='10px'
+                bg='gray.800'
+                color='gray.100'
+                py='5px'
+                lineHeight='1.4rem'
+              >
+                TOTAL PRICE OF{' '}
+                <Text
+                  fontWeight='bold'
+                  color='white'
+                  mx='3px'
+                  d='inline'
+                  fontSize='1.4rem'
+                >
+                  {state.cart.length}
+                </Text>{' '}
+                ITEM(s)
               </Text>
-              <SimpleGrid columns='2' py='10px'>
-                <Button width='100%' bg='gray.200'>
+              <Flex width='100%' alignItems='center' pb='7px' mt='-8px'>
+                <Button width='30%' bg='purple.800' color='gray.200'>
                   buy items
                 </Button>
-                <Heading my='auto' ml='auto'>
+                <Box mx='auto' d='flex' alignItems='center'>
+                  <Text fontSize='0.9rem' mb='' d='inline'>
+                    SECURE TRANSACTION BY
+                  </Text>
+                  <Text
+                    d='inline'
+                    ml='5px'
+                    as={FaStripe}
+                    color='purple.400'
+                    fontSize='3.5rem'
+                  />
+                </Box>
+                <Heading my='auto' ml='20px'>
                   {state.amount}&nbsp;$
                 </Heading>
-              </SimpleGrid>
+              </Flex>
             </Box>
           </Collapse>
         </>
+      ) : (
+        <Button>
+          <Heading as='span' fontSize='1.7rem'>
+            no items in cart
+          </Heading>
+        </Button>
       )}
     </Flex>
   );

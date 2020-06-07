@@ -99,12 +99,10 @@ export default function ({ items }) {
         as='form'
         name='filters'
         columns='1'
-        width={{ sm: '90%', lg: '70%', xl: '50%' }}
+        width={{ sm: '90%', md: '70%', lg: '60%', xl: '50%' }}
         mt='20px'
         mx='auto'
-        px='5%'
         pt='20px'
-        borderTop='1px'
         borderBottom='1px'
         d={filters ? 'block' : 'none'}
       >
@@ -169,6 +167,7 @@ export default function ({ items }) {
               setColor('All');
             }}
             mx='auto'
+            my='10px'
             fontSize='1.3rem'
             bg='white'
             border='0'
