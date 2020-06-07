@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Heading, SimpleGrid, Image, Text, Flex } from '@chakra-ui/core';
+import { Heading, SimpleGrid, Text, Flex } from '@chakra-ui/core';
 import {
   FaParachuteBox,
   FaHeartbeat,
@@ -9,7 +9,7 @@ import {
   FaSmileBeam,
 } from 'react-icons/fa';
 
-export default function Home() {
+export default function () {
   return (
     <>
       <Head>

@@ -28,11 +28,9 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function Item({ item }) {
+export default function ({ item }) {
   const cart = useSelector((store) => store.cart);
   const dispatch = useDispatch();
-
-  console.log(cart.filter((c) => c.id === item.id));
 
   return (
     <>

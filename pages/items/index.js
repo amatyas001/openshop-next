@@ -27,7 +27,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Items({ items }) {
+export default function ({ items }) {
   const [showItems, setShowItems] = React.useState([]);
   const [filters, setFilters] = React.useState(false);
   const [name, setName] = React.useState('');

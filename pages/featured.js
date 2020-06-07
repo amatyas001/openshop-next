@@ -14,7 +14,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Items({ items }) {
+export default function ({ items }) {
   return (
     <>
       <Head>

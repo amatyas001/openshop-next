@@ -16,8 +16,8 @@ export const Button = React.forwardRef((props, ref) => {
       rounded='2px'
       fontSize='1.1rem'
       fontWeight='semibold'
-      bg='none'
-      color='gray.800'
+      bg={props.bg ? props.bg : 'none'}
+      color={props.color ? props.color : 'gray.800'}
       _hover={{ bg: 'gray.800', color: 'gray.100' }}
       _active={{
         bg: 'gray.600',
