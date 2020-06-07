@@ -12,9 +12,9 @@ export function reducer(state, action) {
     case GET_AMOUNT:
       return {
         ...state,
-        amount: state.cart
-          .reduce((a, c) => (a += parseFloat(c.price)), 0)
-          .toFixed(2),
+        amount:
+          state.cart &&
+          state.cart.reduce((a, c) => (a += parseFloat(c.price)), 0).toFixed(2),
       };
     case ADD_TO_CART:
       return { ...state, cart: [...state.cart, action.payload] };
