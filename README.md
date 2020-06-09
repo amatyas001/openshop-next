@@ -1,30 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sample JAM-Stack e-commerce website
 
-## Getting Started
+Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/77e3442d-d9b6-4734-a493-3326fedf27be/deploy-status)](https://app.netlify.com/sites/openshop/deploys)
 
-First, run the development server:
+> Created by Mátyás Angyal [amatyas001@gmail.com](mailto://amatyas001@gmail.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Tech-Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- React
+- Next
+- Redux
+- Redux-Thunk
+- Redux Persist
+- Chakra UI
+- Stripe
+- Netlify Functions
+- CI/CD by Netlify
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Testing
 
-## Learn More
+The website is fully functional, though the content loaded from a static file which can be easily switched to a database query.
+Payment processing is realtime Stripe-flow. Testing instructions given on the checkout page.
 
-To learn more about Next.js, take a look at the following resources:
+**IMPORTANT:** - Do not use any real credit card details because it will be charged, instead follow the instructions given!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Any questions or issues can be placed under [Issues](https://github.com/amatyas001/openshop-next/issues) or contact me on [amatyas001@gmail.com](mailto://amatyas001@gmail.com)!
