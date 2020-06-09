@@ -4,6 +4,7 @@ export const Button = React.forwardRef((props, ref) => {
   return (
     <ChakraButton
       ref={ref}
+      href={props.href}
       {...props}
       as={Link}
       height='50px'
@@ -23,6 +24,11 @@ export const Button = React.forwardRef((props, ref) => {
         bg: 'gray.600',
         color: 'gray.100',
         transform: 'scale(0.98)',
+      }}
+      _disabled={{
+        bg: 'gray.400',
+        color: 'gray.900',
+        cursor: 'disabled',
       }}
       data-cy='navlink'
     >

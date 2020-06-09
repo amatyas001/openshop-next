@@ -3,6 +3,7 @@ import {
   Box,
   Heading,
   Text,
+  Link,
   List,
   ListItem,
   ListIcon,
@@ -32,19 +33,19 @@ export const Footer = () => {
           <List spacing={3}>
             <ListItem>
               <ListIcon color='gray.500' />
-              Terms of Service
+              <Link color='purple.200'>Terms of Service</Link>
             </ListItem>
             <ListItem>
               <ListIcon color='gray.500' />
-              Privacy Policy
+              <Link color='purple.200'>Privacy Policy</Link>
             </ListItem>
             <ListItem>
               <ListIcon color='gray.500' />
-              Sitemap
+              <Link color='purple.200'>Sitemap</Link>
             </ListItem>
             <ListItem>
               <ListIcon color='gray.500' />
-              Helpdesk
+              <Link color='purple.200'>Helpdesk</Link>
             </ListItem>
           </List>
         </Box>
@@ -56,19 +57,19 @@ export const Footer = () => {
           <List spacing={3}>
             <ListItem>
               <ListIcon color='gray.500' />
-              Facebook
+              <Link color='purple.200'>Facebook</Link>
             </ListItem>
             <ListItem>
               <ListIcon color='gray.500' />
-              Twitter
+              <Link color='purple.200'>Twitter</Link>
             </ListItem>
             <ListItem>
               <ListIcon color='gray.500' />
-              Pinterest
+              <Link color='purple.200'>Pinterest</Link>
             </ListItem>
             <ListItem>
               <ListIcon color='gray.500' />
-              Youtube
+              <Link color='purple.200'>Youtube</Link>
             </ListItem>
           </List>
         </Box>
@@ -80,19 +81,19 @@ export const Footer = () => {
           <List spacing={3}>
             <ListItem>
               <ListIcon color='gray.500' />
-              24/7 Service
+              <Link color='purple.200'>24/7 Service</Link>
             </ListItem>
             <ListItem>
               <ListIcon color='gray.500' />
-              About the company
+              <Link color='purple.200'>About the company</Link>
             </ListItem>
             <ListItem>
               <ListIcon color='gray.500' />
-              Contact us
+              <Link color='purple.200'>Contact us</Link>
             </ListItem>
             <ListItem>
               <ListIcon color='gray.500' />
-              Report an issue
+              <Link color='purple.200'>Report an issue</Link>
             </ListItem>
           </List>
         </Box>
