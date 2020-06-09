@@ -1,7 +1,13 @@
+import { v1 as uuidv1 } from 'uuid';
 import Router, { useRouter } from 'next/router';
 import { useStripe } from '@stripe/react-stripe-js';
 import { useSelector, useDispatch } from 'react-redux';
-import { paymentReset, checkoutFinished } from '../../redux/actions';
+import {
+  paymentReset,
+  checkoutFinished,
+  paymentToken,
+  clearCart,
+} from '../../redux/actions';
 import { Flex, Text, Heading, Spinner } from '@chakra-ui/core';
 import { StripeForm, StripeConfirm, Button } from '../index';
 
@@ -14,15 +20,13 @@ export const CheckoutDetails = () => {
 
   React.useEffect(() => {
     Router.prefetch('/');
-  });
+  }, []);
 
   React.useEffect(() => {
     if (payment) {
       if (!payment.status) router.replace('/');
+      dispatch(paymentToken(uuidv1()));
       switch (payment.status) {
-        case 'loading':
-          setContent(<Spinner size='150px' my='50px' />);
-          break;
         case 'success':
           dispatch(checkoutFinished());
           setContent(
@@ -41,12 +45,18 @@ export const CheckoutDetails = () => {
             </>
           );
           break;
-        case 'cancelled':
+        case 'canceled':
+          dispatch(clearCart());
           dispatch(checkoutFinished());
           setContent(
             <>
               <Heading>Payment Cancelled</Heading>
-              <Text fontSize='1.5rem'>ID: {payment.intent}</Text>
+              <Text fontSize='1.5rem'>
+                Successfuly cancelled intent:{' '}
+                <Text as='span' fontWeight='bold' color='purple.800'>
+                  {payment.intent.id}
+                </Text>
+              </Text>
             </>
           );
           break;
@@ -85,10 +95,12 @@ export const CheckoutDetails = () => {
       width={{ sm: '100%', md: '80%', lg: '60%', xl: '50%' }}
       mx='auto'
     >
-      {payment.status !== 'success' && payment.status !== 'error' ? (
+      {payment.status !== 'success' &&
+      payment.status !== 'error' &&
+      payment.status !== 'canceled' ? (
         <>
-          <StripeForm d={payment.status === 'loading' ? 'none' : 'block'} />
-          {payment.status === 'confirm' && <StripeConfirm />}
+          <StripeForm />
+          <StripeConfirm />
         </>
       ) : (
         content || <Spinner size='150px' size='150px' my='50px' />

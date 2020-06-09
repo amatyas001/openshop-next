@@ -6,6 +6,7 @@ import {
   CHECKOUT_PROGRESS,
   PAYMENT_PROGRESS,
   PAYMENT_RESET,
+  PAYMENT_TOKEN,
 } from './actions';
 
 export function reducer(state, action) {
@@ -36,6 +37,10 @@ export function reducer(state, action) {
       return {
         ...state,
         payment: action.payload,
+        checkout:
+          action.payload.status === true
+            ? { status: 'review' }
+            : state.checkout,
       };
     }
     case PAYMENT_RESET: {
@@ -43,6 +48,13 @@ export function reducer(state, action) {
         ...state,
         checkout: { status: 'review' },
         payment: { status: 'reset' },
+      };
+    }
+    case PAYMENT_TOKEN: {
+      if (state.payment.token) return { ...state };
+      return {
+        ...state,
+        payment: { ...state.payment, token: action.payload },
       };
     }
     default:

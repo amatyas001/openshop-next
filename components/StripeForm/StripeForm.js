@@ -2,12 +2,11 @@ import { intentCart, checkoutReview } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Flex, Text, Link, Heading, Box, Spinner } from '@chakra-ui/core';
 import { Button, Field } from '../index';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { CardElement, useStripe } from '@stripe/react-stripe-js';
 import { FaStripe } from 'react-icons/fa';
 
 export const StripeForm = () => {
   const stripe = useStripe();
-  const elements = useElements();
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
 
@@ -33,10 +32,9 @@ export const StripeForm = () => {
     return card && isValid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     if (!cardComplete) return;
-    const card = elements.getElement(CardElement);
-    dispatch(intentCart(card, details, state.cart));
+    dispatch(intentCart(details, state.cart, state.payment.token));
   };
 
   return (

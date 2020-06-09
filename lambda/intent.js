@@ -15,49 +15,86 @@ exports.handler = async (event, context) => {
 
   const data = JSON.parse(event.body);
 
-  if (!data.items) {
+  if (data.cancel) {
+    try {
+      const intent = await stripe.paymentIntents.cancel(data.cancel, {
+        cancellation_reason: 'requested_by_customer',
+      });
+
+      if (intent.error)
+        return {
+          statusCode: 400,
+          headers,
+          body: JSON.stringify({
+            status: intent.error.message,
+          }),
+        };
+
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+          id: intent.id,
+        }),
+      };
+    } catch (err) {
+      console.log(err);
+
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({
+          status: err,
+        }),
+      };
+    }
+  } else if (!data.items || !data.token) {
     return {
       statusCode: 400,
       headers,
       body: JSON.stringify({
-        status: 'List of items to purchase is missing.',
+        status: { message: 'Missing parameters!' },
       }),
     };
-  }
+  } else {
+    try {
+      const store = await axios.get(
+        'https://openshop.netlify.app/storedata.json'
+        //'http://localhost:3000/storedata.json'
+      );
+      const amount = data.items.reduce((a, c) => {
+        const purchased = store.data.items.find((item) => item.id === c.id);
+        return a + purchased.price * 100;
+      }, 0);
+      const intent = await stripe.paymentIntents.create(
+        {
+          currency: 'usd',
+          amount: amount,
+          description: 'Order from store',
+        },
+        {
+          idempotencyKey: data.token,
+        }
+      );
 
-  try {
-    const store = await axios.get(
-      'https://openshop.netlify.app/storedata.json'
-      //'http://localhost:3000/storedata.json'
-    );
-    const amount = data.items.reduce((a, c) => {
-      const purchased = store.data.items.find((item) => item.id === c.id);
-      return a + purchased.price * 100;
-    }, 0);
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+          id: intent.id,
+          secret: intent.client_secret,
+        }),
+      };
+    } catch (err) {
+      console.log(err);
 
-    const intent = await stripe.paymentIntents.create({
-      currency: 'usd',
-      amount: amount,
-      description: 'Order from store',
-    });
-
-    return {
-      statusCode: 200,
-      headers,
-      body: JSON.stringify({
-        id: intent.id,
-        secret: intent.client_secret,
-      }),
-    };
-  } catch (err) {
-    console.log(err);
-
-    return {
-      statusCode: 400,
-      headers,
-      body: JSON.stringify({
-        status: err,
-      }),
-    };
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({
+          status: err,
+        }),
+      };
+    }
   }
 };

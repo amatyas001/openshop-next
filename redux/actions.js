@@ -5,6 +5,7 @@ export const GET_AMOUNT = 'GET_AMOUNT';
 export const CHECKOUT_PROGRESS = 'CHECKOUT_PROGRESS';
 export const PAYMENT_PROGRESS = 'PAYMENT_PROGRESS';
 export const PAYMENT_RESET = 'PAYMENT_RESET';
+export const PAYMENT_TOKEN = 'PAYMENT_TOKEN';
 
 /**
  *  CART ACTIONS
@@ -66,22 +67,21 @@ export function paymentActive() {
   };
 }
 
-export function paymentStart() {
+export function paymentToken(token) {
   return {
-    type: PAYMENT_PROGRESS,
-    payload: { status: 'loading' },
+    type: PAYMENT_TOKEN,
+    payload: token,
   };
 }
 
 /**
  *  PAYMENT FLOW
  */
-export function paymentConfirm(card, details, intent) {
+export function paymentConfirm(details, intent) {
   return {
     type: PAYMENT_PROGRESS,
     payload: {
       status: 'confirm',
-      card,
       details,
       intent,
     },
@@ -121,28 +121,31 @@ export function paymentReset() {
   };
 }
 
-export function cancelPayment(id) {
+export function cancelPayment(cancel) {
   return async (dispatch) => {
     try {
-      dispatch(paymentStart());
-      const { loadStripe } = await import('@stripe/stripe-js');
-      const stripe = await loadStripe(
-        process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY
+      const axios = await import('axios');
+      const intent = await axios.post(
+        process.env.NODE_ENV === 'production'
+          ? 'https://openshop.netlify.app/.netlify/functions/intent'
+          : 'http://localhost:9000/.netlify/functions/intent',
+        {
+          cancel,
+        },
+        {
+          headers: { 'Content-Type': 'application/json' },
+        }
       );
-      stripe.paymentIntents.cancel(id, (err, intent) => {
-        if (err) dispatch(paymentError(e.message));
-        else dispatch(paymentCanceled(intent.id));
-      });
+      dispatch(paymentCanceled(intent.data));
     } catch (e) {
       dispatch(paymentError(e.message));
     }
   };
 }
 
-export function intentCart(card, details, items) {
+export function intentCart(details, items, token) {
   return async (dispatch) => {
     try {
-      dispatch(paymentStart());
       const axios = await import('axios');
       const intent = await axios.post(
         process.env.NODE_ENV === 'production'
@@ -150,12 +153,13 @@ export function intentCart(card, details, items) {
           : 'http://localhost:9000/.netlify/functions/intent',
         {
           items,
+          token,
         },
         {
           headers: { 'Content-Type': 'application/json' },
         }
       );
-      dispatch(paymentConfirm(card, details, intent.data));
+      dispatch(paymentConfirm(details, intent.data));
     } catch (e) {
       dispatch(paymentError(e.message));
     }

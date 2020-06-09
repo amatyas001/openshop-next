@@ -8,7 +8,7 @@ import { Button } from '../index';
 
 export const CartItems = () => {
   const router = useRouter();
-  const state = useSelector((state) => state);
+  const { cart, amount } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -23,12 +23,12 @@ export const CartItems = () => {
 
   React.useEffect(() => {
     dispatch(getAmount());
-  }, [state.cart]);
+  }, [cart]);
 
   return (
     <>
-      {state.cart &&
-        state.cart.map((item) => (
+      {cart &&
+        cart.map((item) => (
           <Flex my='3%' fontSize='1.2rem' key={item.id} alignItems='center'>
             <Image
               src={`/images/products/${item.img}`}
@@ -79,7 +79,7 @@ export const CartItems = () => {
             d='inline'
             fontSize='1.4rem'
           >
-            {state.cart && state.cart.length}
+            {cart && cart.length}
           </Text>{' '}
           ITEM(s)
         </Text>
@@ -115,7 +115,7 @@ export const CartItems = () => {
             />
           </Box>
           <Heading my='auto' ml='20px'>
-            {state.cart && state.amount}&nbsp;$
+            {cart && amount}&nbsp;$
           </Heading>
         </Flex>
       </Box>
