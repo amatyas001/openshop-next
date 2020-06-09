@@ -8,7 +8,7 @@
     "build": "next build",
     "export": "next export",
     "deploy": "npm run build && npm run export",
-    "start:lambda": "netlify-lambda serve lambda",
+    "start:lambda": "dotenv -e .env.local netlify-lambda serve lambda",
     "build:lambda": "netlify-lambda build lambda",
     "cypress:open": "cypress open"
   },
@@ -29,9 +29,11 @@
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
+    "stripe": "^8.60.0",
     "uuid": "^8.1.0"
   },
   "devDependencies": {
-    "cypress": "^4.7.0"
+    "cypress": "^4.7.0",
+    "dotenv-cli": "^3.1.0"
   }
 }

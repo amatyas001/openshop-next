@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import { Heading, Flex, Text, Divider, SimpleGrid, Box } from '@chakra-ui/core';
 import { Card, Button } from '../../components';
 import { useSelector, useDispatch } from 'react-redux';

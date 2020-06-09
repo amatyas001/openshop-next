@@ -13,6 +13,7 @@
 /out/
 
 # production
+/lambda-build
 /build
 
 # misc

@@ -13,3 +13,15 @@ body {
   padding: 0;
   margin: 0;
 }
+
+/* STRIPE FORMS */
+.StripeElement--webkit-autofill {
+  background: transparent !important;
+}
+
+.StripeElement {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  padding: 11px 15px 11px 0;
+}

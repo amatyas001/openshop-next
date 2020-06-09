@@ -4,7 +4,7 @@ import { ThemeProvider, Flex, Image, Skeleton } from '@chakra-ui/core';
 import { Provider } from 'react-redux';
 import { useStore } from '../redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
-import { Navbar, Footer, Cart } from '../components';
+import { Navbar, Footer, Cart, ScrollTop } from '../components';
 
 export default function ({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);
@@ -45,10 +45,11 @@ export default function ({ Component, pageProps }) {
               alt='Group of clipart people'
             />
             <Navbar links={navigation} />
-            <Cart mx='auto' mt='10px' />
+            <Cart mx='auto' />
             <Component {...pageProps} />
           </Flex>
           <Footer />
+          <ScrollTop />
         </ThemeProvider>
       </PersistGate>
     </Provider>
