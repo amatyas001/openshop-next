@@ -146,7 +146,7 @@ export function intentCart(card, details, items) {
       const axios = await import('axios');
       const intent = await axios.post(
         process.env.NODE_ENV === 'production'
-          ? 'https://openshop.netlify.com/.netlify/functions/intent'
+          ? 'https://openshop.netlify.app/.netlify/functions/intent'
           : 'http://localhost:9000/.netlify/functions/intent',
         {
           items,
