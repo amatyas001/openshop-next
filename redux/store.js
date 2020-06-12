@@ -1,3 +1,4 @@
+import registerStore from 'cypress-redux/registerStore';
 import { useMemo } from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
@@ -34,3 +35,5 @@ export function useStore(initialState) {
   const store = useMemo(() => initializeStore(initialState), [initialState]);
   return store;
 }
+
+registerStore(initializeStore());

@@ -1,3 +1,4 @@
+export const SCROLL = 'SCROLL';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const CLEAR_CART = 'CLEAR_CART';
@@ -6,6 +7,17 @@ export const CHECKOUT_PROGRESS = 'CHECKOUT_PROGRESS';
 export const PAYMENT_PROGRESS = 'PAYMENT_PROGRESS';
 export const PAYMENT_RESET = 'PAYMENT_RESET';
 export const PAYMENT_TOKEN = 'PAYMENT_TOKEN';
+
+/**
+ * GENERAL
+ */
+
+export function scroll(scroll = false) {
+  return {
+    type: SCROLL,
+    payload: scroll,
+  };
+}
 
 /**
  *  CART ACTIONS
@@ -60,13 +72,9 @@ export function checkoutFinished() {
   };
 }
 
-export function paymentActive() {
-  return {
-    type: PAYMENT_PROGRESS,
-    payload: { status: true },
-  };
-}
-
+/**
+ *  PAYMENT FLOW
+ */
 export function paymentToken(token) {
   return {
     type: PAYMENT_TOKEN,
@@ -74,9 +82,13 @@ export function paymentToken(token) {
   };
 }
 
-/**
- *  PAYMENT FLOW
- */
+export function paymentActive() {
+  return {
+    type: PAYMENT_PROGRESS,
+    payload: { status: true },
+  };
+}
+
 export function paymentConfirm(details, intent) {
   return {
     type: PAYMENT_PROGRESS,
@@ -125,6 +137,7 @@ export function cancelPayment(cancel) {
   return async (dispatch) => {
     try {
       const axios = await import('axios');
+      /* istanbul ignore next */
       const intent = await axios.post(
         process.env.NODE_ENV === 'production'
           ? 'https://openshop.netlify.app/.netlify/functions/intent'
@@ -147,6 +160,7 @@ export function intentCart(details, items, token) {
   return async (dispatch) => {
     try {
       const axios = await import('axios');
+      /* istanbul ignore next */
       const intent = await axios.post(
         process.env.NODE_ENV === 'production'
           ? 'https://openshop.netlify.app/.netlify/functions/intent'

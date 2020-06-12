@@ -9,7 +9,9 @@ import {
   clearCart,
 } from '../actions';
 
-describe('Actions: cart', () => {
+// Cart processing
+describe('Cart actions', () => {
+  // Current cart value
   describe('getAmount', () => {
     const expected = {
       type: GET_AMOUNT,
@@ -24,6 +26,7 @@ describe('Actions: cart', () => {
     });
   });
 
+  // Add item to cart
   describe('addToCart', () => {
     it('should create proper action without payload', () => {
       const expected = {
@@ -43,6 +46,7 @@ describe('Actions: cart', () => {
     });
   });
 
+  // Remove item from cart
   describe('removeFromCart', () => {
     it('should create proper action without payload', () => {
       const expected = {
@@ -62,6 +66,7 @@ describe('Actions: cart', () => {
     });
   });
 
+  // Delete all items from cart
   describe('clearCart', () => {
     const expected = {
       type: CLEAR_CART,

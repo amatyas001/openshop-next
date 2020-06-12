@@ -1,3 +1,6 @@
 {
-  "baseUrl": "http://localhost:3000"
+  "baseUrl": "http://localhost:3000",
+  "integrationFolder": "./",
+  "testFiles": "**/*.spec.js",
+  "fixturesFolder": "./__mocks__"
 }

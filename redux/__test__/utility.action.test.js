@@ -1,6 +1,7 @@
 import { SCROLL, scroll } from '../actions';
 
-describe('Actions: scroll', () => {
+// DOM scroll position for ScrollToTop
+describe('scroll action', () => {
   it('should create proper action without payload', () => {
     const expected = {
       type: SCROLL,
