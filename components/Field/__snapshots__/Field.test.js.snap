@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field should render without props 1`] = `
+<fieldset
+  className="css-9x3bhi"
+>
+  <div
+    className="css-70qvj9"
+  >
+    <label
+      className="css-1gjn3mk"
+    />
+  </div>
+  <input
+    className="css-cth1sm"
+  />
+</fieldset>
+`;
