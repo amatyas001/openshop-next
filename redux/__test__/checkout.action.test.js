@@ -86,7 +86,7 @@ describe('Payment processing actions', () => {
     });
 
     // Get user confirmation
-    describe('confirm', () => {
+    describe('Confirm', () => {
       it('should create proper action without payload', () => {
         const expected = {
           type: PAYMENT_PROGRESS,
@@ -107,7 +107,7 @@ describe('Payment processing actions', () => {
     });
 
     // User confirmed, payment done
-    describe('success', () => {
+    describe('Success', () => {
       it('should create proper action without payload', () => {
         const expected = {
           type: PAYMENT_PROGRESS,
@@ -127,7 +127,7 @@ describe('Payment processing actions', () => {
     });
 
     // User declined, payment intent deleted
-    describe('canceled', () => {
+    describe('Canceled', () => {
       it('should create proper action without payload', () => {
         const expected = {
           type: PAYMENT_PROGRESS,
@@ -147,7 +147,7 @@ describe('Payment processing actions', () => {
     });
 
     // Error occured, message shown
-    describe('error', () => {
+    describe('Error', () => {
       it('should create proper action without payload', () => {
         const expected = {
           type: PAYMENT_PROGRESS,
@@ -167,7 +167,7 @@ describe('Payment processing actions', () => {
     });
 
     // Get-set user idempotency-key
-    describe('token', () => {
+    describe('Token', () => {
       it('should create proper action without payload', () => {
         const expected = {
           type: PAYMENT_TOKEN,
@@ -187,7 +187,7 @@ describe('Payment processing actions', () => {
     });
 
     // Reset payment process on failure
-    describe('reset', () => {
+    describe('Reset', () => {
       it('should create proper action without payload', () => {
         const expected = {
           type: PAYMENT_RESET,
