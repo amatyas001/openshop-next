@@ -16,7 +16,19 @@ Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/77e3442d-d9b6-4
 - Netlify Functions
 - CI/CD by Netlify
 
-## Testing
+## Test Suite
+
+### Unit - Integration
+
+- Jest
+- React Test Renderer
+- React Testing Library
+
+### End-To-End
+
+- Cypress
+
+## Functionality
 
 The website is fully functional, though the content loaded from a static file which can be easily switched to a database query.
 Payment processing is realtime Stripe-flow. Testing instructions given on the checkout page.
