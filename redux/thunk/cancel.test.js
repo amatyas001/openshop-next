@@ -1,7 +1,7 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import axios from 'axios';
-import { cancelPayment, paymentCanceled, paymentError } from '../actions';
+import { paymentCancel, paymentCancelled, paymentError } from '../actions';
 
 jest.mock('axios');
 
@@ -22,8 +22,8 @@ describe('cancelPayment', () => {
     axios.post.mockImplementationOnce(() => {
       return Promise.resolve({ data: payload });
     });
-    return store.dispatch(cancelPayment(payload)).then(() => {
-      expect(store.getActions()).toEqual([paymentCanceled(payload)]);
+    return store.dispatch(paymentCancel(payload)).then(() => {
+      expect(store.getActions()).toEqual([paymentCancelled(payload)]);
       expect(axios.post).toHaveBeenCalledTimes(1);
       expect(axios.post).toHaveBeenCalledWith(
         'http://localhost:9000/.netlify/functions/intent',
@@ -38,8 +38,8 @@ describe('cancelPayment', () => {
     axios.post.mockImplementationOnce(() => {
       return Promise.reject(new Error(error));
     });
-    return store.dispatch(cancelPayment(payload)).then(() => {
-      expect(store.getActions()).toEqual([paymentError(error)]);
+    return store.dispatch(paymentCancel(payload)).then(() => {
+      expect(store.getActions()).toEqual([paymentError(Error(error))]);
       expect(axios.post).toHaveBeenCalledTimes(1);
       expect(axios.post).toHaveBeenCalledWith(
         'http://localhost:9000/.netlify/functions/intent',

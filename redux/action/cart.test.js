@@ -1,20 +1,14 @@
-import {
-  GET_AMOUNT,
-  ADD_TO_CART,
-  REMOVE_FROM_CART,
-  CLEAR_CART,
-  getAmount,
-  addToCart,
-  removeFromCart,
-  clearCart,
-} from '../actions';
+import { MANAGE_CART, getAmount, addToCart, removeFromCart } from '../actions';
 
 // Cart processing
 describe('Cart actions', () => {
   // Current cart value
-  describe('getAmount', () => {
+  describe('Amount', () => {
     const expected = {
-      type: GET_AMOUNT,
+      type: MANAGE_CART,
+      cart: {
+        status: 'amount',
+      },
     };
     it('should create proper action without payload', () => {
       expect(getAmount()).toEqual(expected);
@@ -27,11 +21,14 @@ describe('Cart actions', () => {
   });
 
   // Add item to cart
-  describe('addToCart', () => {
-    it('should create proper action without payload', () => {
+  describe('Add', () => {
+    it('should creat proper action without payload', () => {
       const expected = {
-        type: ADD_TO_CART,
-        payload: undefined,
+        type: MANAGE_CART,
+        cart: {
+          status: 'add',
+          item: undefined,
+        },
       };
       expect(addToCart()).toEqual(expected);
     });
@@ -39,19 +36,25 @@ describe('Cart actions', () => {
     it('should create proper action with payload', () => {
       const payload = 'item';
       const expected = {
-        type: ADD_TO_CART,
-        payload,
+        type: MANAGE_CART,
+        cart: {
+          status: 'add',
+          item: payload,
+        },
       };
       expect(addToCart(payload)).toEqual(expected);
     });
   });
 
   // Remove item from cart
-  describe('removeFromCart', () => {
+  describe('Remove', () => {
     it('should create proper action without payload', () => {
       const expected = {
-        type: REMOVE_FROM_CART,
-        payload: undefined,
+        type: MANAGE_CART,
+        cart: {
+          status: 'remove',
+          item: undefined,
+        },
       };
       expect(removeFromCart()).toEqual(expected);
     });
@@ -59,25 +62,13 @@ describe('Cart actions', () => {
     it('should create proper action with payload', () => {
       const payload = 'item';
       const expected = {
-        type: REMOVE_FROM_CART,
-        payload: payload,
+        type: MANAGE_CART,
+        cart: {
+          status: 'remove',
+          item: payload,
+        },
       };
       expect(removeFromCart(payload)).toEqual(expected);
-    });
-  });
-
-  // Delete all items from cart
-  describe('clearCart', () => {
-    const expected = {
-      type: CLEAR_CART,
-    };
-    it('should create proper action without payload', () => {
-      expect(clearCart()).toEqual(expected);
-    });
-
-    it('should create proper action with payload', () => {
-      const payload = 'someFancyPayload';
-      expect(clearCart(payload)).toEqual(expected);
     });
   });
 });

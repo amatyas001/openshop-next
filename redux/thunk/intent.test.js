@@ -1,7 +1,7 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import axios from 'axios';
-import { intentCart, paymentConfirm, paymentError } from '../actions';
+import { paymentIntent, paymentConfirm, paymentError } from '../actions';
 
 jest.mock('axios');
 
@@ -30,7 +30,7 @@ describe('cancelPayment', () => {
     axios.post.mockImplementationOnce(() => {
       return Promise.resolve({ data: response });
     });
-    return store.dispatch(intentCart(details, items, token)).then(() => {
+    return store.dispatch(paymentIntent(details, items, token)).then(() => {
       expect(store.getActions()).toEqual([paymentConfirm(details, response)]);
       expect(axios.post).toHaveBeenCalledTimes(1);
       expect(axios.post).toHaveBeenCalledWith(
@@ -46,8 +46,8 @@ describe('cancelPayment', () => {
     axios.post.mockImplementationOnce(() => {
       return Promise.reject(new Error(error));
     });
-    return store.dispatch(intentCart(details, items, token)).then(() => {
-      expect(store.getActions()).toEqual([paymentError(error)]);
+    return store.dispatch(paymentIntent(details, items, token)).then(() => {
+      expect(store.getActions()).toEqual([paymentError(Error(error))]);
       expect(axios.post).toHaveBeenCalledTimes(1);
       expect(axios.post).toHaveBeenCalledWith(
         'http://localhost:9000/.netlify/functions/intent',
