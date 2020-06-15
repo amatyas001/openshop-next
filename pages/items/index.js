@@ -1,18 +1,18 @@
 import Head from 'next/head';
 import {
-  Heading,
-  Button,
-  Flex,
-  Divider,
   Box,
+  Button,
+  Collapse,
+  Divider,
+  Flex,
+  Heading,
   Input,
-  Text,
+  Select,
   Slider,
-  SliderTrack,
   SliderFilledTrack,
   SliderThumb,
-  SimpleGrid,
-  Select,
+  SliderTrack,
+  Text,
 } from '@chakra-ui/core';
 import { Card } from '../../components';
 import { FaSearch, FaRev } from 'react-icons/fa';
@@ -28,19 +28,20 @@ export async function getStaticProps() {
 }
 
 export default function ({ items }) {
-  const [showItems, setShowItems] = React.useState([]);
-  const [filters, setFilters] = React.useState(false);
+  const [showItems, setShowItems] = React.useState(items);
+  const [showFilters, setShowFilters] = React.useState(false);
   const [name, setName] = React.useState('');
   const [price, setPrice] = React.useState(200);
   const [color, setColor] = React.useState('All');
-  const [colorValues, setColorValues] = React.useState([]);
+  const [colors, setColors] = React.useState([]);
 
+  // get available colors
   React.useEffect(() => {
     {
       const colors = [];
       colors.push('All');
       items.forEach((item) => colors.push(item.color));
-      setColorValues(
+      setColors(
         [...new Set(colors)].map((c) => {
           return (
             <option key={c} value={c}>
@@ -52,6 +53,7 @@ export default function ({ items }) {
     }
   }, []);
 
+  // filter logic
   React.useEffect(() => {
     setShowItems(
       items.filter((item) => {
@@ -74,64 +76,70 @@ export default function ({ items }) {
       <Heading as='h1' size='2x1' d='none'>
         Browse
       </Heading>
+
+      {/* filter button */}
       <Button
+        onClick={() => setShowFilters(!showFilters)}
         name='togglefilters'
-        onClick={() => setFilters(!filters)}
+        width={{ sm: '100%', md: '80%', lg: '70%', xl: '60%' }}
         mx='auto'
+        mt='25px'
         fontSize='1.3rem'
-        bg='white'
-        border='0'
-        _active={{
-          border: 0,
-        }}
-        _focus={{
-          border: 0,
-        }}
+        bg='purple.800'
+        color='gray.100'
+        border='1px'
+        borderColor='purple.400'
+        borderRadius='0'
         _hover={{
+          bg: 'purple.400',
+          color: 'gray.100',
           cursor: 'pointer',
           textDecoration: 'underline',
         }}
       >
         <Text as={FaSearch} mr='5px' fontSize='1rem'></Text>
-        {filters ? 'hide filters' : 'show filters'}
+        {showFilters ? 'hide filters' : 'show filters'}
       </Button>
-      <SimpleGrid
-        as='form'
-        name='filters'
-        columns='1'
-        width={{ sm: '90%', md: '70%', lg: '60%', xl: '50%' }}
-        mt='20px'
-        mx='auto'
-        pt='20px'
-        borderBottom='1px'
-        d={filters ? 'block' : 'none'}
-      >
-        <Heading as='label' htmlFor='name' fontSize='1.3rem'>
-          Name
-        </Heading>
-        <Input
-          name='name'
-          placeholder='Filter by name...'
-          width='95%'
-          size='md'
-          mb='30px'
-          value={name}
-          onChange={(e) => setName(e.target.value.toLowerCase())}
-        />
-        <Flex flexDirection='column'>
-          <Heading
-            as={'label'}
-            htmlFor='price'
-            fontSize='1.3rem'
-            mt='-10px'
-            mb='-30px'
-          >
+
+      {/* filter box */}
+      <Collapse isOpen={showFilters}>
+        <Flex
+          as='form'
+          name='filters'
+          flexDirection='column'
+          width={{ sm: '90%', md: '70%', lg: '60%', xl: '50%' }}
+          mx='auto'
+          px='5%'
+          py='15px'
+          border='1px'
+          borderColor='purple.400'
+          bg='purple.100'
+        >
+          {/* name filter */}
+          <Heading as='label' htmlFor='name' fontSize='1.3rem'>
+            Name
+          </Heading>
+          <Input
+            name='name'
+            placeholder='Filter by name...'
+            width='94%'
+            size='md'
+            mb='20px'
+            px='3%'
+            value={name}
+            onChange={(e) => setName(e.target.value.toLowerCase())}
+          />
+
+          {/* price filter */}
+          <Heading as='label' htmlFor='price' fontSize='1.3rem'>
             Price
           </Heading>
           <Slider
             name='price'
-            ml='60px'
-            width='91%'
+            d='inline-block'
+            ml='11%'
+            mt='-30px'
+            width='89%'
             value={price}
             min={1}
             max={200}
@@ -145,6 +153,8 @@ export default function ({ items }) {
               {price} $
             </Text>
           </Slider>
+
+          {/* color filter */}
           <Heading as='label' htmlFor='color' fontSize='1.3rem'>
             Color
           </Heading>
@@ -157,8 +167,10 @@ export default function ({ items }) {
               setColor(e.target.value);
             }}
           >
-            {colorValues}
+            {colors}
           </Select>
+
+          {/* reset button */}
           <Button
             name='reset'
             onClick={() => {
@@ -166,18 +178,18 @@ export default function ({ items }) {
               setPrice(200);
               setColor('All');
             }}
+            width='100%'
+            mt='10px'
             mx='auto'
-            my='10px'
             fontSize='1.3rem'
-            bg='white'
-            border='0'
-            _active={{
-              border: 0,
-            }}
-            _focus={{
-              border: 0,
-            }}
+            bg='purple.800'
+            color='gray.100'
+            border='1px'
+            borderColor='purple.400'
+            borderRadius='0'
             _hover={{
+              bg: 'purple.400',
+              color: 'gray.100',
               cursor: 'pointer',
               textDecoration: 'underline',
             }}
@@ -186,9 +198,12 @@ export default function ({ items }) {
             reset
           </Button>
         </Flex>
-      </SimpleGrid>
+      </Collapse>
+
+      {/* items grid */}
       <Flex
-        width='100%'
+        width='94%'
+        px='3%'
         flexWrap='wrap'
         alignItems='center'
         justifyContent='space-around'

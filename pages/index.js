@@ -1,91 +1,70 @@
 import Head from 'next/head';
-import { Heading, SimpleGrid, Text, Flex } from '@chakra-ui/core';
-import {
-  FaParachuteBox,
-  FaHeartbeat,
-  FaUserShield,
-  FaHandHoldingUsd,
-  FaShoppingCart,
-  FaSmileBeam,
-} from 'react-icons/fa';
+import dynamic from 'next/dynamic';
+import { PseudoBox, Heading, Image, Spinner } from '@chakra-ui/core';
+
+const Carousel = dynamic(() => import('@brainhubeu/react-carousel'));
 
 export default function () {
+  const [loading, setLoading] = React.useState(true);
+  const items = [
+    '/images/site/landscape-people-1.webp',
+    '/images/site/landscape-things-1.webp',
+    '/images/site/landscape-girl-5.webp',
+    '/images/site/landscape-shoes-1.webp',
+    '/images/site/landscape-girl-1.webp',
+  ];
   return (
     <>
       <Head>
-        <title>OpenShop</title>
+        <title>OpenShop - Home</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Heading as='h1' size='2x1' data-cy='heading' d='none'>
-        Home
-      </Heading>
-      <Heading as='h2' fontSize='5vw' mx='auto'>
-        WE ARE OPENSHOP
-      </Heading>
-      <Flex
-        width='100%'
-        height='15vh'
-        alignItems='center'
-        justifyContent='space-around'
-        fontSize='10vw'
+      {loading && (
+        <Spinner size='150px' mx='auto' my={{ sm: '150px', lg: '300px' }} />
+      )}
+      <React.Suspense
+        fallback={
+          <Spinner size='150px' mx='auto' my={{ sm: '150px', lg: '300px' }} />
+        }
       >
-        <Text as={FaShoppingCart}></Text>
-        &nbsp;
-        <Heading fontSize='10vw'>+</Heading>
-        &nbsp;
-        <Text as={FaHeartbeat} color='red.400'></Text>
-        &nbsp;
-        <Heading fontSize='10vw'>=</Heading>
-        &nbsp;
-        <Text as={FaSmileBeam}></Text>
-      </Flex>
-      <Heading as='h2' fontSize='5vw' mx='auto'>
-        ONLINE SHOPPING MADE WITH LOVE
-      </Heading>
-      <SimpleGrid columns='3' spacing='2vw' width='80vw' mx='auto'>
-        <Flex
-          alignItems='center'
-          flexDirection='column'
-          width='20vw'
-          py='15px'
-          px='25px'
+        <Carousel autoPlay={5000} animationSpeed={1000} infinite>
+          {items.map((item) => (
+            <PseudoBox
+              key={item}
+              display={loading ? 'none' : 'block'}
+              as={Image}
+              opacity='0.6'
+              width='100%'
+              height={{ sm: '450px', lg: '750px' }}
+              src={item}
+              alt='Random unsplash image'
+              objectFit='cover'
+              objectPosition='top center'
+              onLoad={() => setLoading(false)}
+              data-cy='header-img'
+            />
+          ))}
+        </Carousel>
+      </React.Suspense>
+      {!loading && (
+        <Heading
+          animation='text-flicker-in-glow 4s linear both'
+          position='absolute'
+          as='strong'
+          fontSize='8vw'
+          color='gray.800'
+          left='50%'
+          top={{ sm: '20%', lg: '50%' }}
+          mr='-50%'
+          px='30px'
+          transform={{
+            sm: 'translate(-50%, -20%)',
+            lg: 'translate(-50%, -50%)',
+          }}
         >
-          <Text as={FaHandHoldingUsd} fontSize='7vw'></Text>
-          <Text fontSize='2vh' textAlign='center'>
-            Satisfaction
-            <br />
-            <strong>30 DAYS ONLINE RETURNS</strong>
-          </Text>
-        </Flex>
-        <Flex
-          alignItems='center'
-          flexDirection='column'
-          width='20vw'
-          py='15px'
-          px='25px'
-        >
-          <Text as={FaUserShield} fontSize='7vw'></Text>
-          <Text fontSize='2vh' textAlign='center'>
-            Online Safety
-            <br />
-            <strong>A-CLASS PAYMENT SECURITY</strong>
-          </Text>
-        </Flex>
-        <Flex
-          alignItems='center'
-          flexDirection='column'
-          width='20vw'
-          py='15px'
-          px='25px'
-        >
-          <Text as={FaParachuteBox} fontSize='7vw'></Text>
-          <Text fontSize='2vh' textAlign='center'>
-            Lightning Fast
-            <br />
-            <strong>DELIVERY IN 3 WORKDAYS</strong>
-          </Text>
-        </Flex>
-      </SimpleGrid>
+          WE ARE OPENSHOP
+        </Heading>
+      )}
     </>
   );
 }

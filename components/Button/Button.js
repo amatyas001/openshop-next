@@ -1,38 +1,72 @@
-import { Link, Button as ChakraButton } from '@chakra-ui/core';
+import { PseudoBox } from '@chakra-ui/core';
 
 export const Button = React.forwardRef((props, ref) => {
   return (
-    <ChakraButton
+    <PseudoBox
+      as={props.as || 'button'}
       ref={ref}
-      href={props.href}
+      href={props.href || null}
+      height={props.height || '50px'}
+      px={props.px || '15px'}
+      fontSize={props.fotSize || '1.5rem'}
+      fontWeight={props.fontWeight || 'semibold'}
+      fontFamily={props.fontFamily || 'Khand, sans-serif'}
+      lineHeight={props.lineHeight || '50px'}
+      textAlign={props.textAlign || 'center'}
+      textDecoration={props.textDecoration || 'none'}
+      backgroundColor={props.backgroundColor || 'purple.800'}
+      color={props.color || 'gray.100'}
+      border={props.border || '1px'}
+      borderColor={props.borderColor || 'purple.400'}
+      cursor={props.cursor || 'pointer'}
+      onClick={props.onClick || null}
+      onKeyDown={(e) =>
+        e.key === ' ' || e.key === 'Enter' || e.key === 'Spacebar'
+          ? props.onClick || null
+          : null
+      }
+      _focus={
+        props._focus || {
+          outline: 0,
+          color: 'purple.600',
+        }
+      }
+      _selected={
+        props._selected || {
+          outline: 0,
+          color: 'purple.600',
+        }
+      }
+      _hover={
+        props._hover || {
+          bg: 'purple.400',
+          color: 'gray.100',
+          borderColor: 'purple.800',
+          border: '1px',
+          textDecoration: 'underline',
+        }
+      }
+      _active={
+        props._active || {
+          bg: 'gray.600',
+          color: 'gray.100',
+          transform: 'scale(0.98)',
+        }
+      }
+      _disabled={
+        props._disabled || {
+          bg: 'gray.400',
+          color: 'gray.900',
+          cursor: 'not-allowed',
+          textDecoration: 'none',
+        }
+      }
+      transition={props.transition || 'all 300ms cubic-bezier(.08,.52,.52,1)'}
+      tabIndex={props.tabIndex || 0}
+      data-cy='button'
       {...props}
-      as={Link}
-      height='50px'
-      lineHeight='2.5'
-      borderColor='pink.400'
-      borderTop='1px'
-      borderBottom='1px'
-      transition='all 0.2s cubic-bezier(.08,.52,.52,1)'
-      px='15px'
-      rounded='2px'
-      fontSize='1.1rem'
-      fontWeight='semibold'
-      bg={props.bg ? props.bg : 'none'}
-      color={props.color ? props.color : 'gray.800'}
-      _hover={{ bg: 'gray.800', color: 'gray.100' }}
-      _active={{
-        bg: 'gray.600',
-        color: 'gray.100',
-        transform: 'scale(0.98)',
-      }}
-      _disabled={{
-        bg: 'gray.400',
-        color: 'gray.900',
-        cursor: 'disabled',
-      }}
-      data-cy='navlink'
     >
       {props.children}
-    </ChakraButton>
+    </PseudoBox>
   );
 });

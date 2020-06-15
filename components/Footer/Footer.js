@@ -7,54 +7,50 @@ import {
   List,
   ListItem,
   ListIcon,
+  SimpleGrid,
 } from '@chakra-ui/core';
 import { FaHandsHelping, FaAt, FaShoppingBag } from 'react-icons/fa';
 
-export const Footer = () => {
+export const Footer = (props) => {
   return (
     <>
-      <Flex
+      <SimpleGrid
         minHeight='200px'
-        borderTop='1px'
         borderBottom='1px'
         bordercolor='gray.100'
         color='gray.200'
-        bg='black'
+        bg='purple.800'
         py='2rem'
-        px='5rem'
-        justifyContent='space-around'
-        flexWrap='wrap'
+        px={{ sm: '2%' }}
+        columns='3'
+        {...props}
       >
-        <Box minWidth='200px'>
+        <Flex mx='auto' flexDirection='column'>
           <Heading fontSize='1.5rem'>
-            <Text as={FaHandsHelping} mb='-5px' mr='5px' />
+            <Box as={FaHandsHelping} mb='-5px' mr='5px' />
             support
           </Heading>
           <List spacing={3}>
             <ListItem>
-              <ListIcon color='gray.500' />
               <Link color='purple.200'>Terms of Service</Link>
             </ListItem>
             <ListItem>
-              <ListIcon color='gray.500' />
               <Link color='purple.200'>Privacy Policy</Link>
             </ListItem>
             <ListItem>
-              <ListIcon color='gray.500' />
               <Link color='purple.200'>Sitemap</Link>
             </ListItem>
             <ListItem>
-              <ListIcon color='gray.500' />
               <Link color='purple.200'>Helpdesk</Link>
             </ListItem>
           </List>
-        </Box>
-        <Box minWidth='200px'>
+        </Flex>
+        <Flex mx='auto' flexDirection='column'>
           <Heading fontSize='1.5rem'>
-            <Text as={FaAt} mb='-5px' mr='5px' />
+            <Box as={FaAt} mb='-2px' mr='5px' />
             social
           </Heading>
-          <List spacing={3}>
+          <List spacing={3} textAlign='left'>
             <ListItem>
               <ListIcon color='gray.500' />
               <Link color='purple.200'>Facebook</Link>
@@ -72,10 +68,10 @@ export const Footer = () => {
               <Link color='purple.200'>Youtube</Link>
             </ListItem>
           </List>
-        </Box>
-        <Box minWidth='200px'>
+        </Flex>
+        <Flex mx='auto' flexDirection='column'>
           <Heading fontSize='1.5rem'>
-            <Text as={FaShoppingBag} mb='-5px' mr='5px' />
+            <Box as={FaShoppingBag} mb='-5px' mr='5px' />
             openshop
           </Heading>
           <List spacing={3}>
@@ -96,9 +92,9 @@ export const Footer = () => {
               <Link color='purple.200'>Report an issue</Link>
             </ListItem>
           </List>
-        </Box>
-      </Flex>
-      <Flex bg='black' height='70px'>
+        </Flex>
+      </SimpleGrid>
+      <Flex bg='purple.900' height='70px' flexWrap='wrap'>
         <Text d='block' m='auto' color='gray.200'>
           This is a sample webiste made by <strong>Mátyás Angyal</strong>
           {' - '}

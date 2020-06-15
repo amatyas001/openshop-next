@@ -7,7 +7,7 @@ import { reducer } from './reducer';
 
 const persisted = persistReducer(
   {
-    key: 'cart',
+    key: 'openshop',
     storage,
   },
   reducer
@@ -19,14 +19,20 @@ function initStore(reducers, initialState) {
 
 export const initializeStore = (preloadedState) => {
   let store;
+
+  // client side
   if (typeof window !== 'undefined') {
     store = initStore(persisted, {
       ...preloadedState,
     });
     store.__PERSISTOR = persistStore(store);
-  } else {
+  }
+
+  // server side
+  else {
     store = initStore(reducer, preloadedState);
   }
+
   return store;
 };
 
