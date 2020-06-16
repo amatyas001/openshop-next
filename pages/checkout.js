@@ -17,14 +17,18 @@ import {
 const stripe = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 export default function Checkout() {
-  const { payment } = useSelector((state) => state);
+  const { payment, cart } = useSelector((state) => state);
   const router = useRouter();
   const [content, setContent] = React.useState();
   const [head, setHead] = React.useState();
 
   React.useEffect(() => {
     router.prefetch('/');
-    if (payment && !payment.token) router.replace('/');
+    if (
+      (payment && payment.status !== 'success' && !payment.token) ||
+      (cart && !cart.length)
+    )
+      router.replace('/');
   }, [payment]);
 
   React.useEffect(() => {

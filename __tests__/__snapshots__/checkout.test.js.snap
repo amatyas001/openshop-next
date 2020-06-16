@@ -381,7 +381,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
         className="css-dvxksz"
       >
         <button
-          className="css-mwmva0"
+          className="css-46aqdj"
           data-cy="button"
           href="#0"
           onClick={[Function]}
@@ -391,7 +391,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
           CANCEL ORDER
         </button>
         <button
-          className="css-1pgrm5m"
+          className="css-187kagv"
           data-cy="button"
           href="#0"
           onClick={[Function]}
@@ -813,7 +813,7 @@ exports[`Checkout page when there is payment token should render confirm compone
         className="css-dvxksz"
       >
         <button
-          className="css-mwmva0"
+          className="css-46aqdj"
           data-cy="button"
           href="#0"
           onClick={[Function]}
@@ -823,7 +823,7 @@ exports[`Checkout page when there is payment token should render confirm compone
           CANCEL ORDER
         </button>
         <button
-          className="css-1pgrm5m"
+          className="css-187kagv"
           data-cy="button"
           href="#0"
           onClick={[Function]}
@@ -1232,7 +1232,7 @@ exports[`Checkout page when there is payment token should render error component
         className="css-dvxksz"
       >
         <button
-          className="css-mwmva0"
+          className="css-46aqdj"
           data-cy="button"
           href="#0"
           onClick={[Function]}
@@ -1242,7 +1242,7 @@ exports[`Checkout page when there is payment token should render error component
           CANCEL ORDER
         </button>
         <button
-          className="css-1pgrm5m"
+          className="css-187kagv"
           data-cy="button"
           href="#0"
           onClick={[Function]}
@@ -1669,7 +1669,7 @@ exports[`Checkout page when there is payment token should render form component 
         className="css-dvxksz"
       >
         <button
-          className="css-mwmva0"
+          className="css-46aqdj"
           data-cy="button"
           href="#0"
           onClick={[Function]}
@@ -1679,7 +1679,7 @@ exports[`Checkout page when there is payment token should render form component 
           CANCEL ORDER
         </button>
         <button
-          className="css-1pgrm5m"
+          className="css-187kagv"
           data-cy="button"
           href="#0"
           onClick={[Function]}
@@ -2076,7 +2076,7 @@ exports[`Checkout page when there is payment token should render review componen
         className="css-dvxksz"
       >
         <button
-          className="css-mwmva0"
+          className="css-46aqdj"
           data-cy="button"
           href="#0"
           onClick={[Function]}
@@ -2086,7 +2086,7 @@ exports[`Checkout page when there is payment token should render review componen
           CANCEL ORDER
         </button>
         <button
-          className="css-1pgrm5m"
+          className="css-187kagv"
           data-cy="button"
           href="#0"
           onClick={[Function]}
@@ -2620,7 +2620,7 @@ exports[`Checkout page when there is payment token should render success compone
         className="css-dvxksz"
       >
         <button
-          className="css-mwmva0"
+          className="css-46aqdj"
           data-cy="button"
           href="#0"
           onClick={[Function]}
@@ -2630,7 +2630,7 @@ exports[`Checkout page when there is payment token should render success compone
           CANCEL ORDER
         </button>
         <button
-          className="css-1pgrm5m"
+          className="css-187kagv"
           data-cy="button"
           href="#0"
           onClick={[Function]}

@@ -76,6 +76,7 @@ describe('Payment actions', () => {
         payment: {
           status: 'success',
           intent: undefined,
+	  token: false
         },
         cart: [],
       };
@@ -86,7 +87,7 @@ describe('Payment actions', () => {
       const payload = 'payload';
       const expected = {
         type: PAYMENT_PROGRESS,
-        payment: { status: 'success', intent: payload },
+        payment: { status: 'success', intent: payload, token: false },
         cart: [],
       };
       expect(paymentSuccess(payload)).toEqual(expected);

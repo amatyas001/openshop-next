@@ -81,7 +81,7 @@ export const PaymentConfirm = (props) => {
       <SimpleGrid columns='2' spacing='15px'>
         {/* cancel */}
         <Button
-          width='40%'
+          width='100%'
           bg='red.500'
           color='gray.100'
           onClick={() => {
@@ -93,7 +93,7 @@ export const PaymentConfirm = (props) => {
 
         {/* confirm */}
         <Button
-          width='40%'
+          width='100%'
           bg='purple.800'
           color='gray.100'
           onClick={handleConfirm}

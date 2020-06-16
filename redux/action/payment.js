@@ -32,6 +32,7 @@ export function paymentSuccess(intent) {
     type: PAYMENT_PROGRESS,
     payment: {
       status: 'success',
+      token: false,
       intent,
     },
     cart: [],
