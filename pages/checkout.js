@@ -27,7 +27,7 @@ export default function Checkout() {
 
   React.useEffect(() => {
     router.prefetch('/');
-    if (!cart.length) router.replace('/');
+    if (cart && !cart.length) router.replace('/');
     if (payment) {
       dispatch(paymentToken(uuidv1()));
       switch (payment.status) {
