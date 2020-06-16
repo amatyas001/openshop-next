@@ -10,6 +10,7 @@ import { Button } from '../index';
 export const CartItem = ({ item }) => {
   const dispatch = useDispatch();
   const router = useRouter();
+
   return (
     <Flex
       role='listitem'

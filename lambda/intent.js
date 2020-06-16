@@ -59,8 +59,8 @@ exports.handler = async (event, context) => {
   } else {
     try {
       const store = await axios.get(
-        'https://openshop.netlify.app/storedata.json'
-        //'http://localhost:3000/storedata.json'
+        //'https://openshop.netlify.app/storedata.json'
+        'http://localhost:3000/storedata.json'
       );
       const amount = data.items.reduce((a, c) => {
         const purchased = store.data.items.find((item) => item.id === c.id);

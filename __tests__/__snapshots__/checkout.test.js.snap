@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkout page when there are items in cart should render cancelled component in Elements 1`] = `
+exports[`Checkout page when there is payment token should render cancelled component in Elements 1`] = `
 <div
   className="css-icejhg"
 >
@@ -71,6 +71,336 @@ exports[`Checkout page when there are items in cart should render cancelled comp
       >
         Finished
       </p>
+    </div>
+    <form
+      aria-hidden={true}
+      className="css-19gz5f9"
+    >
+      <fieldset
+        className="css-94sf3x"
+      >
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="name"
+          >
+            name
+          </label>
+          <input
+            autoComplete="name"
+            className="css-cth1sm"
+            id="name"
+            onChange={[Function]}
+            placeholder="Jane Doe"
+            required={true}
+            type="text"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="address"
+          >
+            address
+          </label>
+          <input
+            autoComplete="address"
+            className="css-cth1sm"
+            id="address"
+            onChange={[Function]}
+            placeholder="J191 S. Illinois Street, Everett, MA 02149"
+            required={true}
+            type="text"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="email"
+          >
+            email
+          </label>
+          <input
+            autoComplete="email"
+            className="css-cth1sm"
+            id="email"
+            onChange={[Function]}
+            placeholder="janedoe@gmail.com"
+            required={true}
+            type="email"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="phone"
+          >
+            phone
+          </label>
+          <input
+            autoComplete="tel"
+            className="css-cth1sm"
+            id="phone"
+            onChange={[Function]}
+            placeholder="(941) 555-0123"
+            required={true}
+            type="tel"
+            value=""
+          />
+        </fieldset>
+        <div
+          className="css-70qvj9"
+        >
+          <label
+            className="css-1gjn3mk"
+            htmlFor="StripeElement"
+          >
+            card
+          </label>
+          <p
+            className="css-1i3anel"
+          >
+            Use any date and CVC with 
+            <strong>
+              4242 4242 4242 4242
+            </strong>
+             
+            number for testing
+          </p>
+          <p
+            className="css-cz9gy2"
+          />
+        </div>
+        CardElement
+      </fieldset>
+      <p
+        className="css-1ebbm78"
+      >
+        By proceeding you accept the
+         
+        <a
+          className="css-1c5zfe9"
+        >
+          Terms of Service
+        </a>
+         
+        of the company.
+      </p>
+      <div
+        className="css-11s8c9r"
+      >
+        <button
+          className="css-1h13z07"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          BACK TO REVIEW
+        </button>
+        <button
+          className="css-187kagv"
+          data-cy="button"
+          disabled={true}
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="submit"
+        >
+          FILL THE FORM
+        </button>
+      </div>
+    </form>
+    <div
+      aria-hidden={true}
+      className="css-14djarr"
+    >
+      <h2
+        className="css-84al3w"
+      >
+        hey 
+        name
+        !
+      </h2>
+      <p
+        className="css-1358t0d"
+      >
+        Please review your payment details:
+      </p>
+      <div
+        className="css-13cm5uv"
+      >
+        <div
+          className="css-d34wob"
+        >
+          <p
+            className="css-18poma1"
+          >
+            INTENT ID
+          </p>
+          <p
+            className="css-1n4bukm"
+          >
+            id
+          </p>
+          <p
+            className="css-18poma1"
+          >
+            EMAIL
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+          <p
+            className="css-18poma1"
+          >
+            PHONE
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+          <p
+            className="css-18poma1"
+          >
+            ADDRESS
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+        </div>
+        <section
+          id="cart-holder"
+          role="list"
+        >
+          <article
+            className="css-74stbp"
+            role="listitem"
+          >
+            <img
+              alt="name"
+              className="css-1wz2hfr"
+            />
+            <strong
+              className="css-17uar4q"
+            >
+              name
+               - 
+              color
+            </strong>
+            <strong
+              className="css-1nnp1eg"
+            >
+              price
+               $
+            </strong>
+            <svg
+              aria-label="Item info"
+              className="css-fwtiw2"
+              data-cy="button"
+              fill="currentColor"
+              height="1em"
+              href="#0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              tabIndex={0}
+              viewBox="0 0 192 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
+              />
+            </svg>
+            <svg
+              aria-label="Delete item"
+              className="css-12o82jn"
+              data-cy="button"
+              fill="currentColor"
+              height="1em"
+              href="#0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              tabIndex={0}
+              viewBox="0 0 448 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+              />
+            </svg>
+          </article>
+          <footer>
+            <h3
+              className="css-ohvq3n"
+              id="total-summary"
+            >
+              TOTAL PRICE
+            </h3>
+            <strong
+              aria-describedby="total-summary"
+              className="css-lk14dv"
+              id="total-price"
+            >
+               $
+            </strong>
+          </footer>
+        </section>
+      </div>
+      <div
+        className="css-dvxksz"
+      >
+        <button
+          className="css-mwmva0"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          CANCEL ORDER
+        </button>
+        <button
+          className="css-1pgrm5m"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          CONFIRM ORDER
+        </button>
+      </div>
     </div>
     <div
       className="css-1mi3tt8"
@@ -96,7 +426,7 @@ exports[`Checkout page when there are items in cart should render cancelled comp
 </div>
 `;
 
-exports[`Checkout page when there are items in cart should render confirm component in Elements 1`] = `
+exports[`Checkout page when there is payment token should render confirm component in Elements 1`] = `
 <div
   className="css-icejhg"
 >
@@ -174,7 +504,161 @@ exports[`Checkout page when there are items in cart should render confirm compon
         Finished
       </p>
     </div>
+    <form
+      aria-hidden={true}
+      className="css-19gz5f9"
+    >
+      <fieldset
+        className="css-94sf3x"
+      >
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="name"
+          >
+            name
+          </label>
+          <input
+            autoComplete="name"
+            className="css-cth1sm"
+            id="name"
+            onChange={[Function]}
+            placeholder="Jane Doe"
+            required={true}
+            type="text"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="address"
+          >
+            address
+          </label>
+          <input
+            autoComplete="address"
+            className="css-cth1sm"
+            id="address"
+            onChange={[Function]}
+            placeholder="J191 S. Illinois Street, Everett, MA 02149"
+            required={true}
+            type="text"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="email"
+          >
+            email
+          </label>
+          <input
+            autoComplete="email"
+            className="css-cth1sm"
+            id="email"
+            onChange={[Function]}
+            placeholder="janedoe@gmail.com"
+            required={true}
+            type="email"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="phone"
+          >
+            phone
+          </label>
+          <input
+            autoComplete="tel"
+            className="css-cth1sm"
+            id="phone"
+            onChange={[Function]}
+            placeholder="(941) 555-0123"
+            required={true}
+            type="tel"
+            value=""
+          />
+        </fieldset>
+        <div
+          className="css-70qvj9"
+        >
+          <label
+            className="css-1gjn3mk"
+            htmlFor="StripeElement"
+          >
+            card
+          </label>
+          <p
+            className="css-1i3anel"
+          >
+            Use any date and CVC with 
+            <strong>
+              4242 4242 4242 4242
+            </strong>
+             
+            number for testing
+          </p>
+          <p
+            className="css-cz9gy2"
+          />
+        </div>
+        CardElement
+      </fieldset>
+      <p
+        className="css-1ebbm78"
+      >
+        By proceeding you accept the
+         
+        <a
+          className="css-1c5zfe9"
+        >
+          Terms of Service
+        </a>
+         
+        of the company.
+      </p>
+      <div
+        className="css-11s8c9r"
+      >
+        <button
+          className="css-1h13z07"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          BACK TO REVIEW
+        </button>
+        <button
+          className="css-187kagv"
+          data-cy="button"
+          disabled={true}
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="submit"
+        >
+          FILL THE FORM
+        </button>
+      </div>
+    </form>
     <div
+      aria-hidden={false}
       className="css-1mi3tt8"
     >
       <h2
@@ -261,7 +745,7 @@ exports[`Checkout page when there are items in cart should render confirm compon
               data-cy="button"
               fill="currentColor"
               height="1em"
-              href={null}
+              href="#0"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -287,7 +771,7 @@ exports[`Checkout page when there are items in cart should render confirm compon
               data-cy="button"
               fill="currentColor"
               height="1em"
-              href={null}
+              href="#0"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -331,7 +815,7 @@ exports[`Checkout page when there are items in cart should render confirm compon
         <button
           className="css-mwmva0"
           data-cy="button"
-          href={null}
+          href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex={0}
@@ -341,7 +825,7 @@ exports[`Checkout page when there are items in cart should render confirm compon
         <button
           className="css-1pgrm5m"
           data-cy="button"
-          href={null}
+          href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex={0}
@@ -350,11 +834,12 @@ exports[`Checkout page when there are items in cart should render confirm compon
         </button>
       </div>
     </div>
+    
   </Elements>
 </div>
 `;
 
-exports[`Checkout page when there are items in cart should render error component in Elements 1`] = `
+exports[`Checkout page when there is payment token should render error component in Elements 1`] = `
 <div
   className="css-icejhg"
 >
@@ -438,6 +923,336 @@ exports[`Checkout page when there are items in cart should render error componen
         Finished
       </p>
     </div>
+    <form
+      aria-hidden={true}
+      className="css-19gz5f9"
+    >
+      <fieldset
+        className="css-94sf3x"
+      >
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="name"
+          >
+            name
+          </label>
+          <input
+            autoComplete="name"
+            className="css-cth1sm"
+            id="name"
+            onChange={[Function]}
+            placeholder="Jane Doe"
+            required={true}
+            type="text"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="address"
+          >
+            address
+          </label>
+          <input
+            autoComplete="address"
+            className="css-cth1sm"
+            id="address"
+            onChange={[Function]}
+            placeholder="J191 S. Illinois Street, Everett, MA 02149"
+            required={true}
+            type="text"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="email"
+          >
+            email
+          </label>
+          <input
+            autoComplete="email"
+            className="css-cth1sm"
+            id="email"
+            onChange={[Function]}
+            placeholder="janedoe@gmail.com"
+            required={true}
+            type="email"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="phone"
+          >
+            phone
+          </label>
+          <input
+            autoComplete="tel"
+            className="css-cth1sm"
+            id="phone"
+            onChange={[Function]}
+            placeholder="(941) 555-0123"
+            required={true}
+            type="tel"
+            value=""
+          />
+        </fieldset>
+        <div
+          className="css-70qvj9"
+        >
+          <label
+            className="css-1gjn3mk"
+            htmlFor="StripeElement"
+          >
+            card
+          </label>
+          <p
+            className="css-1i3anel"
+          >
+            Use any date and CVC with 
+            <strong>
+              4242 4242 4242 4242
+            </strong>
+             
+            number for testing
+          </p>
+          <p
+            className="css-cz9gy2"
+          />
+        </div>
+        CardElement
+      </fieldset>
+      <p
+        className="css-1ebbm78"
+      >
+        By proceeding you accept the
+         
+        <a
+          className="css-1c5zfe9"
+        >
+          Terms of Service
+        </a>
+         
+        of the company.
+      </p>
+      <div
+        className="css-11s8c9r"
+      >
+        <button
+          className="css-1h13z07"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          BACK TO REVIEW
+        </button>
+        <button
+          className="css-187kagv"
+          data-cy="button"
+          disabled={true}
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="submit"
+        >
+          FILL THE FORM
+        </button>
+      </div>
+    </form>
+    <div
+      aria-hidden={true}
+      className="css-14djarr"
+    >
+      <h2
+        className="css-84al3w"
+      >
+        hey 
+        name
+        !
+      </h2>
+      <p
+        className="css-1358t0d"
+      >
+        Please review your payment details:
+      </p>
+      <div
+        className="css-13cm5uv"
+      >
+        <div
+          className="css-d34wob"
+        >
+          <p
+            className="css-18poma1"
+          >
+            INTENT ID
+          </p>
+          <p
+            className="css-1n4bukm"
+          >
+            id
+          </p>
+          <p
+            className="css-18poma1"
+          >
+            EMAIL
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+          <p
+            className="css-18poma1"
+          >
+            PHONE
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+          <p
+            className="css-18poma1"
+          >
+            ADDRESS
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+        </div>
+        <section
+          id="cart-holder"
+          role="list"
+        >
+          <article
+            className="css-74stbp"
+            role="listitem"
+          >
+            <img
+              alt="name"
+              className="css-1wz2hfr"
+            />
+            <strong
+              className="css-17uar4q"
+            >
+              name
+               - 
+              color
+            </strong>
+            <strong
+              className="css-1nnp1eg"
+            >
+              price
+               $
+            </strong>
+            <svg
+              aria-label="Item info"
+              className="css-fwtiw2"
+              data-cy="button"
+              fill="currentColor"
+              height="1em"
+              href="#0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              tabIndex={0}
+              viewBox="0 0 192 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
+              />
+            </svg>
+            <svg
+              aria-label="Delete item"
+              className="css-12o82jn"
+              data-cy="button"
+              fill="currentColor"
+              height="1em"
+              href="#0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              tabIndex={0}
+              viewBox="0 0 448 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+              />
+            </svg>
+          </article>
+          <footer>
+            <h3
+              className="css-ohvq3n"
+              id="total-summary"
+            >
+              TOTAL PRICE
+            </h3>
+            <strong
+              aria-describedby="total-summary"
+              className="css-lk14dv"
+              id="total-price"
+            >
+               $
+            </strong>
+          </footer>
+        </section>
+      </div>
+      <div
+        className="css-dvxksz"
+      >
+        <button
+          className="css-mwmva0"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          CANCEL ORDER
+        </button>
+        <button
+          className="css-1pgrm5m"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          CONFIRM ORDER
+        </button>
+      </div>
+    </div>
     <div
       className="css-1mi3tt8"
     >
@@ -455,7 +1270,7 @@ exports[`Checkout page when there are items in cart should render error componen
       <button
         className="css-187kagv"
         data-cy="button"
-        href={null}
+        href="#0"
         onClick={[Function]}
         onKeyDown={[Function]}
         tabIndex={0}
@@ -467,7 +1282,7 @@ exports[`Checkout page when there are items in cart should render error componen
 </div>
 `;
 
-exports[`Checkout page when there are items in cart should render form component in Elements 1`] = `
+exports[`Checkout page when there is payment token should render form component in Elements 1`] = `
 <div
   className="css-icejhg"
 >
@@ -546,6 +1361,7 @@ exports[`Checkout page when there are items in cart should render form component
       </p>
     </div>
     <form
+      aria-hidden={false}
       className="css-dvxtzn"
     >
       <fieldset
@@ -675,10 +1491,11 @@ exports[`Checkout page when there are items in cart should render form component
         <button
           className="css-1h13z07"
           data-cy="button"
-          href={null}
+          href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex={0}
+          type="button"
         >
           BACK TO REVIEW
         </button>
@@ -686,20 +1503,199 @@ exports[`Checkout page when there are items in cart should render form component
           className="css-187kagv"
           data-cy="button"
           disabled={true}
-          href={null}
+          href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex={0}
+          type="submit"
         >
           FILL THE FORM
         </button>
       </div>
     </form>
+    <div
+      aria-hidden={true}
+      className="css-14djarr"
+    >
+      <h2
+        className="css-84al3w"
+      >
+        hey 
+        name
+        !
+      </h2>
+      <p
+        className="css-1358t0d"
+      >
+        Please review your payment details:
+      </p>
+      <div
+        className="css-13cm5uv"
+      >
+        <div
+          className="css-d34wob"
+        >
+          <p
+            className="css-18poma1"
+          >
+            INTENT ID
+          </p>
+          <p
+            className="css-1n4bukm"
+          >
+            id
+          </p>
+          <p
+            className="css-18poma1"
+          >
+            EMAIL
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+          <p
+            className="css-18poma1"
+          >
+            PHONE
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+          <p
+            className="css-18poma1"
+          >
+            ADDRESS
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+        </div>
+        <section
+          id="cart-holder"
+          role="list"
+        >
+          <article
+            className="css-74stbp"
+            role="listitem"
+          >
+            <img
+              alt="name"
+              className="css-1wz2hfr"
+            />
+            <strong
+              className="css-17uar4q"
+            >
+              name
+               - 
+              color
+            </strong>
+            <strong
+              className="css-1nnp1eg"
+            >
+              price
+               $
+            </strong>
+            <svg
+              aria-label="Item info"
+              className="css-fwtiw2"
+              data-cy="button"
+              fill="currentColor"
+              height="1em"
+              href="#0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              tabIndex={0}
+              viewBox="0 0 192 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
+              />
+            </svg>
+            <svg
+              aria-label="Delete item"
+              className="css-12o82jn"
+              data-cy="button"
+              fill="currentColor"
+              height="1em"
+              href="#0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              tabIndex={0}
+              viewBox="0 0 448 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+              />
+            </svg>
+          </article>
+          <footer>
+            <h3
+              className="css-ohvq3n"
+              id="total-summary"
+            >
+              TOTAL PRICE
+            </h3>
+            <strong
+              aria-describedby="total-summary"
+              className="css-lk14dv"
+              id="total-price"
+            >
+               $
+            </strong>
+          </footer>
+        </section>
+      </div>
+      <div
+        className="css-dvxksz"
+      >
+        <button
+          className="css-mwmva0"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          CANCEL ORDER
+        </button>
+        <button
+          className="css-1pgrm5m"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          CONFIRM ORDER
+        </button>
+      </div>
+    </div>
+    
   </Elements>
 </div>
 `;
 
-exports[`Checkout page when there are items in cart should render review component in Elements 1`] = `
+exports[`Checkout page when there is payment token should render review component in Elements 1`] = `
 <div
   className="css-icejhg"
 >
@@ -771,6 +1767,336 @@ exports[`Checkout page when there are items in cart should render review compone
         Finished
       </p>
     </div>
+    <form
+      aria-hidden={true}
+      className="css-19gz5f9"
+    >
+      <fieldset
+        className="css-94sf3x"
+      >
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="name"
+          >
+            name
+          </label>
+          <input
+            autoComplete="name"
+            className="css-cth1sm"
+            id="name"
+            onChange={[Function]}
+            placeholder="Jane Doe"
+            required={true}
+            type="text"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="address"
+          >
+            address
+          </label>
+          <input
+            autoComplete="address"
+            className="css-cth1sm"
+            id="address"
+            onChange={[Function]}
+            placeholder="J191 S. Illinois Street, Everett, MA 02149"
+            required={true}
+            type="text"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="email"
+          >
+            email
+          </label>
+          <input
+            autoComplete="email"
+            className="css-cth1sm"
+            id="email"
+            onChange={[Function]}
+            placeholder="janedoe@gmail.com"
+            required={true}
+            type="email"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="phone"
+          >
+            phone
+          </label>
+          <input
+            autoComplete="tel"
+            className="css-cth1sm"
+            id="phone"
+            onChange={[Function]}
+            placeholder="(941) 555-0123"
+            required={true}
+            type="tel"
+            value=""
+          />
+        </fieldset>
+        <div
+          className="css-70qvj9"
+        >
+          <label
+            className="css-1gjn3mk"
+            htmlFor="StripeElement"
+          >
+            card
+          </label>
+          <p
+            className="css-1i3anel"
+          >
+            Use any date and CVC with 
+            <strong>
+              4242 4242 4242 4242
+            </strong>
+             
+            number for testing
+          </p>
+          <p
+            className="css-cz9gy2"
+          />
+        </div>
+        CardElement
+      </fieldset>
+      <p
+        className="css-1ebbm78"
+      >
+        By proceeding you accept the
+         
+        <a
+          className="css-1c5zfe9"
+        >
+          Terms of Service
+        </a>
+         
+        of the company.
+      </p>
+      <div
+        className="css-11s8c9r"
+      >
+        <button
+          className="css-1h13z07"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          BACK TO REVIEW
+        </button>
+        <button
+          className="css-187kagv"
+          data-cy="button"
+          disabled={true}
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="submit"
+        >
+          FILL THE FORM
+        </button>
+      </div>
+    </form>
+    <div
+      aria-hidden={true}
+      className="css-14djarr"
+    >
+      <h2
+        className="css-84al3w"
+      >
+        hey 
+        name
+        !
+      </h2>
+      <p
+        className="css-1358t0d"
+      >
+        Please review your payment details:
+      </p>
+      <div
+        className="css-13cm5uv"
+      >
+        <div
+          className="css-d34wob"
+        >
+          <p
+            className="css-18poma1"
+          >
+            INTENT ID
+          </p>
+          <p
+            className="css-1n4bukm"
+          >
+            id
+          </p>
+          <p
+            className="css-18poma1"
+          >
+            EMAIL
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+          <p
+            className="css-18poma1"
+          >
+            PHONE
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+          <p
+            className="css-18poma1"
+          >
+            ADDRESS
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+        </div>
+        <section
+          id="cart-holder"
+          role="list"
+        >
+          <article
+            className="css-74stbp"
+            role="listitem"
+          >
+            <img
+              alt="name"
+              className="css-1wz2hfr"
+            />
+            <strong
+              className="css-17uar4q"
+            >
+              name
+               - 
+              color
+            </strong>
+            <strong
+              className="css-1nnp1eg"
+            >
+              price
+               $
+            </strong>
+            <svg
+              aria-label="Item info"
+              className="css-fwtiw2"
+              data-cy="button"
+              fill="currentColor"
+              height="1em"
+              href="#0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              tabIndex={0}
+              viewBox="0 0 192 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
+              />
+            </svg>
+            <svg
+              aria-label="Delete item"
+              className="css-12o82jn"
+              data-cy="button"
+              fill="currentColor"
+              height="1em"
+              href="#0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              tabIndex={0}
+              viewBox="0 0 448 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+              />
+            </svg>
+          </article>
+          <footer>
+            <h3
+              className="css-ohvq3n"
+              id="total-summary"
+            >
+              TOTAL PRICE
+            </h3>
+            <strong
+              aria-describedby="total-summary"
+              className="css-lk14dv"
+              id="total-price"
+            >
+               $
+            </strong>
+          </footer>
+        </section>
+      </div>
+      <div
+        className="css-dvxksz"
+      >
+        <button
+          className="css-mwmva0"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          CANCEL ORDER
+        </button>
+        <button
+          className="css-1pgrm5m"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          CONFIRM ORDER
+        </button>
+      </div>
+    </div>
     <div
       className="css-dvxtzn"
     >
@@ -808,7 +2134,7 @@ exports[`Checkout page when there are items in cart should render review compone
               data-cy="button"
               fill="currentColor"
               height="1em"
-              href={null}
+              href="#0"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -834,7 +2160,7 @@ exports[`Checkout page when there are items in cart should render review compone
               data-cy="button"
               fill="currentColor"
               height="1em"
-              href={null}
+              href="#0"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -878,7 +2204,7 @@ exports[`Checkout page when there are items in cart should render review compone
         <button
           className="css-1h13z07"
           data-cy="button"
-          href={null}
+          href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex={0}
@@ -888,7 +2214,7 @@ exports[`Checkout page when there are items in cart should render review compone
         <button
           className="css-187kagv"
           data-cy="button"
-          href={null}
+          href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex={0}
@@ -901,7 +2227,7 @@ exports[`Checkout page when there are items in cart should render review compone
 </div>
 `;
 
-exports[`Checkout page when there are items in cart should render success component in Elements 1`] = `
+exports[`Checkout page when there is payment token should render success component in Elements 1`] = `
 <div
   className="css-icejhg"
 >
@@ -984,6 +2310,336 @@ exports[`Checkout page when there are items in cart should render success compon
       >
         Finished
       </p>
+    </div>
+    <form
+      aria-hidden={true}
+      className="css-19gz5f9"
+    >
+      <fieldset
+        className="css-94sf3x"
+      >
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="name"
+          >
+            name
+          </label>
+          <input
+            autoComplete="name"
+            className="css-cth1sm"
+            id="name"
+            onChange={[Function]}
+            placeholder="Jane Doe"
+            required={true}
+            type="text"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="address"
+          >
+            address
+          </label>
+          <input
+            autoComplete="address"
+            className="css-cth1sm"
+            id="address"
+            onChange={[Function]}
+            placeholder="J191 S. Illinois Street, Everett, MA 02149"
+            required={true}
+            type="text"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="email"
+          >
+            email
+          </label>
+          <input
+            autoComplete="email"
+            className="css-cth1sm"
+            id="email"
+            onChange={[Function]}
+            placeholder="janedoe@gmail.com"
+            required={true}
+            type="email"
+            value=""
+          />
+        </fieldset>
+        <fieldset
+          className="css-9x3bhi"
+        >
+          <label
+            className="css-1xnp38i"
+            htmlFor="phone"
+          >
+            phone
+          </label>
+          <input
+            autoComplete="tel"
+            className="css-cth1sm"
+            id="phone"
+            onChange={[Function]}
+            placeholder="(941) 555-0123"
+            required={true}
+            type="tel"
+            value=""
+          />
+        </fieldset>
+        <div
+          className="css-70qvj9"
+        >
+          <label
+            className="css-1gjn3mk"
+            htmlFor="StripeElement"
+          >
+            card
+          </label>
+          <p
+            className="css-1i3anel"
+          >
+            Use any date and CVC with 
+            <strong>
+              4242 4242 4242 4242
+            </strong>
+             
+            number for testing
+          </p>
+          <p
+            className="css-cz9gy2"
+          />
+        </div>
+        CardElement
+      </fieldset>
+      <p
+        className="css-1ebbm78"
+      >
+        By proceeding you accept the
+         
+        <a
+          className="css-1c5zfe9"
+        >
+          Terms of Service
+        </a>
+         
+        of the company.
+      </p>
+      <div
+        className="css-11s8c9r"
+      >
+        <button
+          className="css-1h13z07"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          BACK TO REVIEW
+        </button>
+        <button
+          className="css-187kagv"
+          data-cy="button"
+          disabled={true}
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="submit"
+        >
+          FILL THE FORM
+        </button>
+      </div>
+    </form>
+    <div
+      aria-hidden={true}
+      className="css-14djarr"
+    >
+      <h2
+        className="css-84al3w"
+      >
+        hey 
+        name
+        !
+      </h2>
+      <p
+        className="css-1358t0d"
+      >
+        Please review your payment details:
+      </p>
+      <div
+        className="css-13cm5uv"
+      >
+        <div
+          className="css-d34wob"
+        >
+          <p
+            className="css-18poma1"
+          >
+            INTENT ID
+          </p>
+          <p
+            className="css-1n4bukm"
+          >
+            id
+          </p>
+          <p
+            className="css-18poma1"
+          >
+            EMAIL
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+          <p
+            className="css-18poma1"
+          >
+            PHONE
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+          <p
+            className="css-18poma1"
+          >
+            ADDRESS
+          </p>
+          <p
+            className="css-1n4bukm"
+          />
+        </div>
+        <section
+          id="cart-holder"
+          role="list"
+        >
+          <article
+            className="css-74stbp"
+            role="listitem"
+          >
+            <img
+              alt="name"
+              className="css-1wz2hfr"
+            />
+            <strong
+              className="css-17uar4q"
+            >
+              name
+               - 
+              color
+            </strong>
+            <strong
+              className="css-1nnp1eg"
+            >
+              price
+               $
+            </strong>
+            <svg
+              aria-label="Item info"
+              className="css-fwtiw2"
+              data-cy="button"
+              fill="currentColor"
+              height="1em"
+              href="#0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              tabIndex={0}
+              viewBox="0 0 192 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
+              />
+            </svg>
+            <svg
+              aria-label="Delete item"
+              className="css-12o82jn"
+              data-cy="button"
+              fill="currentColor"
+              height="1em"
+              href="#0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              tabIndex={0}
+              viewBox="0 0 448 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+              />
+            </svg>
+          </article>
+          <footer>
+            <h3
+              className="css-ohvq3n"
+              id="total-summary"
+            >
+              TOTAL PRICE
+            </h3>
+            <strong
+              aria-describedby="total-summary"
+              className="css-lk14dv"
+              id="total-price"
+            >
+               $
+            </strong>
+          </footer>
+        </section>
+      </div>
+      <div
+        className="css-dvxksz"
+      >
+        <button
+          className="css-mwmva0"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          CANCEL ORDER
+        </button>
+        <button
+          className="css-1pgrm5m"
+          data-cy="button"
+          href="#0"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          CONFIRM ORDER
+        </button>
+      </div>
     </div>
     <div
       className="css-1mi3tt8"

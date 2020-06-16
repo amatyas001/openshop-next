@@ -1,11 +1,9 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { v1 as uuidv1 } from 'uuid';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { Box } from '@chakra-ui/core';
-import { useSelector, useDispatch } from 'react-redux';
-import { paymentToken } from '../redux/actions';
+import { useSelector } from 'react-redux';
 import {
   PaymentProgress,
   PaymentReview,
@@ -19,31 +17,30 @@ import {
 const stripe = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 export default function Checkout() {
-  const { payment, cart } = useSelector((state) => state);
+  const { payment } = useSelector((state) => state);
   const router = useRouter();
-  const dispatch = useDispatch();
   const [content, setContent] = React.useState();
   const [head, setHead] = React.useState();
 
   React.useEffect(() => {
     router.prefetch('/');
-    if (cart && !cart.length) router.replace('/');
+    if (payment && !payment.token) router.replace('/');
+  }, [payment]);
+
+  React.useEffect(() => {
     if (payment) {
-      dispatch(paymentToken(uuidv1()));
       switch (payment.status) {
         case 'review':
           setHead('Review');
           setContent(<PaymentReview />);
           break;
         case 'form':
+          setContent('');
           setHead('Details');
-          setContent(<PaymentForm />);
           break;
         case 'confirm':
+          setContent('');
           setHead('Confirm');
-          setContent(
-            <PaymentConfirm details={payment.details} intent={payment.intent} />
-          );
           break;
         case 'success':
           setHead('Success');
@@ -61,7 +58,7 @@ export default function Checkout() {
           setHead('Checkout');
       }
     }
-  }, [payment, cart]);
+  }, [payment]);
 
   return (
     <Box px='5%' py='20px'>
@@ -71,6 +68,20 @@ export default function Checkout() {
       </Head>
       <Elements stripe={stripe}>
         <PaymentProgress />
+        <>
+          {/* CardElement must be mounted and to be in scope
+            when handling the confirmation of intent*/}
+          <PaymentForm
+            d={payment.status === 'form' ? 'flex' : 'none'}
+            aria-hidden={payment.status !== 'form'}
+          />
+          <PaymentConfirm
+            d={payment.status === 'confirm' ? 'flex' : 'none'}
+            aria-hidden={payment.status !== 'confirm'}
+            details={payment.details}
+            intent={payment.intent}
+          />
+        </>
         {content}
       </Elements>
     </Box>

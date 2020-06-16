@@ -5,7 +5,7 @@ export const Button = React.forwardRef((props, ref) => {
     <PseudoBox
       as={props.as || 'button'}
       ref={ref}
-      href={props.href || null}
+      href={props.href || '#0'}
       height={props.height || '50px'}
       px={props.px || '15px'}
       fontSize={props.fotSize || '1.5rem'}

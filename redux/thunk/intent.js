@@ -17,14 +17,15 @@ export function paymentIntent(details, items, token) {
           token,
         },
         {
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+          },
         }
       );
 
       // push confirm screen
       dispatch(paymentConfirm(details, intent.data));
     } catch (error) {
-      // pus error screen
       dispatch(paymentError(error));
     }
   };

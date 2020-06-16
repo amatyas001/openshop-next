@@ -25,7 +25,7 @@ describe('Checkout page', () => {
   });
 
   it('should prefetch home page', () => {
-    store = mockStore({ cart: [] });
+    store = mockStore({ payment: { token: false }, cart: [{ id: 'item' }] });
     act(() => {
       tree = create(
         <Provider store={store}>
@@ -37,9 +37,9 @@ describe('Checkout page', () => {
     expect(mock_prefetch).toHaveBeenCalledWith('/');
   });
 
-  describe('when there is no item in cart', () => {
+  describe('when there is no payment token', () => {
     beforeEach(() => {
-      store = mockStore({ cart: [] });
+      store = mockStore({ payment: { token: false }, cart: [{ id: 'item' }] });
       act(() => {
         tree = create(
           <Provider store={store}>
@@ -53,17 +53,13 @@ describe('Checkout page', () => {
       expect(mock_replace).toHaveBeenCalledTimes(1);
       expect(mock_replace).toHaveBeenCalledWith('/');
     });
-
-    it('should not create token', () => {
-      expect(store.getActions()).toEqual([]);
-    });
   });
 
-  describe('when there are items in cart', () => {
+  describe('when there is payment token', () => {
     beforeEach(() => {
       store = mockStore({
-        cart: ['item'],
-        payment: { status: 'status' },
+        cart: [{ id: 'item' }],
+        payment: { status: 'status', token: 'mock_token' },
       });
       act(() => {
         tree = create(
@@ -76,10 +72,6 @@ describe('Checkout page', () => {
 
     it('should not redirect to home page', () => {
       expect(mock_replace).not.toHaveBeenCalled();
-    });
-
-    it('should create token', () => {
-      expect(store.getActions()).toEqual([paymentToken('mock_uuid')]);
     });
 
     const status = [

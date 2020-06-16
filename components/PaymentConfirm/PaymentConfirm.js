@@ -1,5 +1,5 @@
 import { Flex, Heading, SimpleGrid, Text } from '@chakra-ui/core';
-import { useStripe, useElements } from '@stripe/react-stripe-js';
+import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { useDispatch } from 'react-redux';
 import {
   paymentSuccess,
@@ -9,10 +9,11 @@ import {
 import { Button, CartContent } from '../index';
 
 // Review and confirm payment intent
-export const PaymentConfirm = ({ details, intent }) => {
+export const PaymentConfirm = (props) => {
   const stripe = useStripe();
   const elements = useElements();
   const dispatch = useDispatch();
+  const { details = {}, intent = {} } = props;
 
   const handleConfirm = async () => {
     if (stripe) {
@@ -44,9 +45,9 @@ export const PaymentConfirm = ({ details, intent }) => {
   };
 
   return (
-    <Flex flexDirection='column' alignItems='center' width='100%'>
+    <Flex flexDirection='column' alignItems='center' width='100%' {...props}>
       {/* header */}
-      <Heading>hey {details.name}!</Heading>
+      <Heading>hey {details.name || ''}!</Heading>
       <Text fontSize='1.1rem' fontWeight='bold'>
         Please review your payment details:
       </Text>

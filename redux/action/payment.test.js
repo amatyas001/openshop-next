@@ -7,14 +7,18 @@ import {
   paymentCancelled,
   paymentError,
   paymentReset,
-  paymentToken,
 } from './payment';
 
 describe('Payment actions', () => {
   describe('Review', () => {
     const expected = {
       type: PAYMENT_PROGRESS,
-      payment: { status: 'review' },
+      payment: {
+        status: 'review',
+        details: {},
+        intent: {},
+        token: 'mock_uuid',
+      },
     };
     it('should create proper action without payload', () => {
       expect(paymentReview()).toEqual(expected);
@@ -45,7 +49,11 @@ describe('Payment actions', () => {
     it('should create proper action without payload', () => {
       const expected = {
         type: PAYMENT_PROGRESS,
-        payment: { status: 'confirm', intent: undefined, details: undefined },
+        payment: {
+          status: 'confirm',
+          intent: undefined,
+          details: undefined,
+        },
       };
       expect(paymentConfirm()).toEqual(expected);
     });
@@ -65,7 +73,10 @@ describe('Payment actions', () => {
     it('should create proper action without payload', () => {
       const expected = {
         type: PAYMENT_PROGRESS,
-        payment: { status: 'success', intent: undefined },
+        payment: {
+          status: 'success',
+          intent: undefined,
+        },
         cart: [],
       };
       expect(paymentSuccess()).toEqual(expected);
@@ -86,7 +97,10 @@ describe('Payment actions', () => {
     it('should create proper action without payload', () => {
       const expected = {
         type: PAYMENT_PROGRESS,
-        payment: { status: 'cancelled', intent: undefined },
+        payment: {
+          status: 'cancelled',
+          intent: undefined,
+        },
       };
       expect(paymentCancelled()).toEqual(expected);
     });
@@ -95,7 +109,10 @@ describe('Payment actions', () => {
       const payload = 'payload';
       const expected = {
         type: PAYMENT_PROGRESS,
-        payment: { status: 'cancelled', intent: payload },
+        payment: {
+          status: 'cancelled',
+          intent: payload,
+        },
       };
       expect(paymentCancelled(payload)).toEqual(expected);
     });
@@ -105,7 +122,10 @@ describe('Payment actions', () => {
     it('should create proper action without payload', () => {
       const expected = {
         type: PAYMENT_PROGRESS,
-        payment: { status: 'error', error: undefined },
+        payment: {
+          status: 'error',
+          error: undefined,
+        },
       };
       expect(paymentError()).toEqual(expected);
     });
@@ -146,25 +166,6 @@ describe('Payment actions', () => {
         },
       };
       expect(paymentReset(payload)).toEqual(expected);
-    });
-  });
-
-  describe('Token', () => {
-    it('should create proper action without payload', () => {
-      const expected = {
-        type: PAYMENT_PROGRESS,
-        payment: { status: 'token', token: undefined },
-      };
-      expect(paymentToken()).toEqual(expected);
-    });
-
-    it('should create proper action with payload', () => {
-      const payload = 'payload';
-      const expected = {
-        type: PAYMENT_PROGRESS,
-        payment: { status: 'token', token: payload },
-      };
-      expect(paymentToken(payload)).toEqual(expected);
     });
   });
 });

@@ -1,9 +1,11 @@
+import { v1 as uuidv1 } from 'uuid';
+
 export const PAYMENT_PROGRESS = 'PAYMENT_PROGRESS';
 
 export function paymentReview() {
   return {
     type: PAYMENT_PROGRESS,
-    payment: { status: 'review' },
+    payment: { status: 'review', details: {}, intent: {}, token: uuidv1() },
   };
 }
 
@@ -57,12 +59,5 @@ export function paymentReset() {
   return {
     type: PAYMENT_PROGRESS,
     payment: { status: 'review', token: false, intent: false, error: false },
-  };
-}
-
-export function paymentToken(token) {
-  return {
-    type: PAYMENT_PROGRESS,
-    payment: { status: 'token', token },
   };
 }

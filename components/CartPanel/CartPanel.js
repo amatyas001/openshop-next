@@ -1,7 +1,7 @@
 import Link from 'next/link';
+import { Collapse, Flex, Heading, Text, SimpleGrid } from '@chakra-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
 import { paymentReview } from '../../redux/actions';
-import { Collapse, Flex, Heading, Text, SimpleGrid } from '@chakra-ui/core';
 import { Button, CartContent } from '../index';
 import { MdShoppingCart } from 'react-icons/md';
 

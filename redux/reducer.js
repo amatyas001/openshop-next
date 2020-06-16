@@ -33,14 +33,17 @@ export function reducer(state, action) {
           };
       }
     case PAYMENT_PROGRESS: {
-      return action.payment.status === 'token'
+      return action.payment.status === 'review'
         ? state.payment && state.payment.token
-          ? // return token if exists
-            { ...state }
-          : // register new token
-            {
+          ? {
               ...state,
-              payment: { ...state.payment, token: action.payment.token },
+              payment: { ...state.payment, status: action.payment.status },
+            }
+          : {
+              ...state,
+              payment: {
+                ...action.payment,
+              },
             }
         : // update payment and cart according to the action
           {

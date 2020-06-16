@@ -44,6 +44,7 @@ export const PaymentForm = (props) => {
 
   // submit handler
   const handleSubmit = async (e) => {
+    e.preventDefault();
     if (!cardComplete) return;
     dispatch(paymentIntent(details, state.cart, state.payment.token));
   };
@@ -212,6 +213,7 @@ export const PaymentForm = (props) => {
             bg='gray.600'
             color='gray.100'
             width='100%'
+            type='button'
             onClick={() => dispatch(paymentReview())}
           >
             BACK TO REVIEW
@@ -222,6 +224,7 @@ export const PaymentForm = (props) => {
             bg='purple.800'
             color='gray.100'
             width='100%'
+            type='submit'
             disabled={!valid}
             onClick={handleSubmit}
           >

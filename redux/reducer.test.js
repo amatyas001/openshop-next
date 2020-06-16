@@ -3,7 +3,7 @@ import {
   addToCart,
   removeFromCart,
   getAmount,
-  paymentToken,
+  paymentReview,
 } from './actions';
 import { reducer } from './reducer';
 
@@ -73,12 +73,17 @@ describe('Reducer', () => {
 
   describe('PAYMENT_PROGRESS', () => {
     it('should handle token', () => {
-      const mock_action = paymentToken('token');
+      const mock_action = paymentReview();
 
       // add new token
       expect(reducer(mock_state, mock_action)).toEqual({
         ...mock_state,
-        payment: { token: 'token' },
+        payment: {
+          status: 'review',
+          details: {},
+          intent: {},
+          token: 'mock_uuid',
+        },
       });
 
       // return existing token
@@ -86,7 +91,10 @@ describe('Reducer', () => {
         reducer({ ...mock_state, payment: { token: 'existing' } }, mock_action)
       ).toEqual({
         ...mock_state,
-        payment: { token: 'existing' },
+        payment: {
+          status: 'review',
+          token: 'existing',
+        },
       });
     });
 
