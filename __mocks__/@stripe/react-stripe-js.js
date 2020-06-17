@@ -11,6 +11,6 @@ export function useStripe() {
 export function Elements(props) {
   return createElement('Elements', props, [...props.children]);
 }
-export function CardElement() {
-  return 'CardElement';
+export function CardElement(props) {
+  return createElement('CardElement', props, props.children);
 }

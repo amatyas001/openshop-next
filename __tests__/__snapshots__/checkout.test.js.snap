@@ -182,7 +182,37 @@ exports[`Checkout page when there is payment token should render cancelled compo
             className="css-cz9gy2"
           />
         </div>
-        CardElement
+        <CardElement
+          data-testid="cardElement"
+          onChange={[Function]}
+          options={
+            Object {
+              "hidePostalCode": true,
+              "iconStyle": "solid",
+              "style": Object {
+                "base": Object {
+                  ":-webkit-autofill": Object {
+                    "color": "#fce883",
+                  },
+                  "::placeholder": Object {
+                    "color": "#4A5568",
+                  },
+                  "border": "1px solid black",
+                  "color": "#1A202C",
+                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
+                  "fontSize": "16px",
+                  "fontSmoothing": "antialiased",
+                  "fontWeight": 500,
+                  "iconColor": "#1A202C",
+                },
+                "invalid": Object {
+                  "color": "#f#C53030",
+                  "iconColor": "##C53030",
+                },
+              },
+            }
+          }
+        />
       </fieldset>
       <p
         className="css-1ebbm78"
@@ -203,6 +233,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
         <button
           className="css-1h13z07"
           data-cy="button"
+          data-testid="review-button"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -214,6 +245,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
         <button
           className="css-187kagv"
           data-cy="button"
+          data-testid="submit-button"
           disabled={true}
           href="#0"
           onClick={[Function]}
@@ -614,7 +646,37 @@ exports[`Checkout page when there is payment token should render confirm compone
             className="css-cz9gy2"
           />
         </div>
-        CardElement
+        <CardElement
+          data-testid="cardElement"
+          onChange={[Function]}
+          options={
+            Object {
+              "hidePostalCode": true,
+              "iconStyle": "solid",
+              "style": Object {
+                "base": Object {
+                  ":-webkit-autofill": Object {
+                    "color": "#fce883",
+                  },
+                  "::placeholder": Object {
+                    "color": "#4A5568",
+                  },
+                  "border": "1px solid black",
+                  "color": "#1A202C",
+                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
+                  "fontSize": "16px",
+                  "fontSmoothing": "antialiased",
+                  "fontWeight": 500,
+                  "iconColor": "#1A202C",
+                },
+                "invalid": Object {
+                  "color": "#f#C53030",
+                  "iconColor": "##C53030",
+                },
+              },
+            }
+          }
+        />
       </fieldset>
       <p
         className="css-1ebbm78"
@@ -635,6 +697,7 @@ exports[`Checkout page when there is payment token should render confirm compone
         <button
           className="css-1h13z07"
           data-cy="button"
+          data-testid="review-button"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -646,6 +709,7 @@ exports[`Checkout page when there is payment token should render confirm compone
         <button
           className="css-187kagv"
           data-cy="button"
+          data-testid="submit-button"
           disabled={true}
           href="#0"
           onClick={[Function]}
@@ -1033,7 +1097,37 @@ exports[`Checkout page when there is payment token should render error component
             className="css-cz9gy2"
           />
         </div>
-        CardElement
+        <CardElement
+          data-testid="cardElement"
+          onChange={[Function]}
+          options={
+            Object {
+              "hidePostalCode": true,
+              "iconStyle": "solid",
+              "style": Object {
+                "base": Object {
+                  ":-webkit-autofill": Object {
+                    "color": "#fce883",
+                  },
+                  "::placeholder": Object {
+                    "color": "#4A5568",
+                  },
+                  "border": "1px solid black",
+                  "color": "#1A202C",
+                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
+                  "fontSize": "16px",
+                  "fontSmoothing": "antialiased",
+                  "fontWeight": 500,
+                  "iconColor": "#1A202C",
+                },
+                "invalid": Object {
+                  "color": "#f#C53030",
+                  "iconColor": "##C53030",
+                },
+              },
+            }
+          }
+        />
       </fieldset>
       <p
         className="css-1ebbm78"
@@ -1054,6 +1148,7 @@ exports[`Checkout page when there is payment token should render error component
         <button
           className="css-1h13z07"
           data-cy="button"
+          data-testid="review-button"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1065,6 +1160,7 @@ exports[`Checkout page when there is payment token should render error component
         <button
           className="css-187kagv"
           data-cy="button"
+          data-testid="submit-button"
           disabled={true}
           href="#0"
           onClick={[Function]}
@@ -1470,7 +1566,37 @@ exports[`Checkout page when there is payment token should render form component 
             className="css-cz9gy2"
           />
         </div>
-        CardElement
+        <CardElement
+          data-testid="cardElement"
+          onChange={[Function]}
+          options={
+            Object {
+              "hidePostalCode": true,
+              "iconStyle": "solid",
+              "style": Object {
+                "base": Object {
+                  ":-webkit-autofill": Object {
+                    "color": "#fce883",
+                  },
+                  "::placeholder": Object {
+                    "color": "#4A5568",
+                  },
+                  "border": "1px solid black",
+                  "color": "#1A202C",
+                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
+                  "fontSize": "16px",
+                  "fontSmoothing": "antialiased",
+                  "fontWeight": 500,
+                  "iconColor": "#1A202C",
+                },
+                "invalid": Object {
+                  "color": "#f#C53030",
+                  "iconColor": "##C53030",
+                },
+              },
+            }
+          }
+        />
       </fieldset>
       <p
         className="css-1ebbm78"
@@ -1491,6 +1617,7 @@ exports[`Checkout page when there is payment token should render form component 
         <button
           className="css-1h13z07"
           data-cy="button"
+          data-testid="review-button"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1502,6 +1629,7 @@ exports[`Checkout page when there is payment token should render form component 
         <button
           className="css-187kagv"
           data-cy="button"
+          data-testid="submit-button"
           disabled={true}
           href="#0"
           onClick={[Function]}
@@ -1877,7 +2005,37 @@ exports[`Checkout page when there is payment token should render review componen
             className="css-cz9gy2"
           />
         </div>
-        CardElement
+        <CardElement
+          data-testid="cardElement"
+          onChange={[Function]}
+          options={
+            Object {
+              "hidePostalCode": true,
+              "iconStyle": "solid",
+              "style": Object {
+                "base": Object {
+                  ":-webkit-autofill": Object {
+                    "color": "#fce883",
+                  },
+                  "::placeholder": Object {
+                    "color": "#4A5568",
+                  },
+                  "border": "1px solid black",
+                  "color": "#1A202C",
+                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
+                  "fontSize": "16px",
+                  "fontSmoothing": "antialiased",
+                  "fontWeight": 500,
+                  "iconColor": "#1A202C",
+                },
+                "invalid": Object {
+                  "color": "#f#C53030",
+                  "iconColor": "##C53030",
+                },
+              },
+            }
+          }
+        />
       </fieldset>
       <p
         className="css-1ebbm78"
@@ -1898,6 +2056,7 @@ exports[`Checkout page when there is payment token should render review componen
         <button
           className="css-1h13z07"
           data-cy="button"
+          data-testid="review-button"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1909,6 +2068,7 @@ exports[`Checkout page when there is payment token should render review componen
         <button
           className="css-187kagv"
           data-cy="button"
+          data-testid="submit-button"
           disabled={true}
           href="#0"
           onClick={[Function]}
@@ -2421,7 +2581,37 @@ exports[`Checkout page when there is payment token should render success compone
             className="css-cz9gy2"
           />
         </div>
-        CardElement
+        <CardElement
+          data-testid="cardElement"
+          onChange={[Function]}
+          options={
+            Object {
+              "hidePostalCode": true,
+              "iconStyle": "solid",
+              "style": Object {
+                "base": Object {
+                  ":-webkit-autofill": Object {
+                    "color": "#fce883",
+                  },
+                  "::placeholder": Object {
+                    "color": "#4A5568",
+                  },
+                  "border": "1px solid black",
+                  "color": "#1A202C",
+                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
+                  "fontSize": "16px",
+                  "fontSmoothing": "antialiased",
+                  "fontWeight": 500,
+                  "iconColor": "#1A202C",
+                },
+                "invalid": Object {
+                  "color": "#f#C53030",
+                  "iconColor": "##C53030",
+                },
+              },
+            }
+          }
+        />
       </fieldset>
       <p
         className="css-1ebbm78"
@@ -2442,6 +2632,7 @@ exports[`Checkout page when there is payment token should render success compone
         <button
           className="css-1h13z07"
           data-cy="button"
+          data-testid="review-button"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -2453,6 +2644,7 @@ exports[`Checkout page when there is payment token should render success compone
         <button
           className="css-187kagv"
           data-cy="button"
+          data-testid="submit-button"
           disabled={true}
           href="#0"
           onClick={[Function]}

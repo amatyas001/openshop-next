@@ -1,7 +1,6 @@
 import { create, act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import { paymentToken } from '../redux/actions';
 import Checkout from '../pages//checkout';
 
 const mockStore = configureStore([]);

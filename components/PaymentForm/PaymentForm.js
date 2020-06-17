@@ -161,6 +161,7 @@ export const PaymentForm = (props) => {
           {/* card element */}
           {stripe ? (
             <CardElement
+              data-testid='cardElement'
               options={{
                 hidePostalCode: true,
                 iconStyle: 'solid',
@@ -210,6 +211,7 @@ export const PaymentForm = (props) => {
         >
           {/* review button */}
           <Button
+            data-testid='review-button'
             bg='gray.600'
             color='gray.100'
             width='100%'
@@ -221,6 +223,7 @@ export const PaymentForm = (props) => {
 
           {/* confirm button */}
           <Button
+            data-testid='submit-button'
             bg='purple.800'
             color='gray.100'
             width='100%'
