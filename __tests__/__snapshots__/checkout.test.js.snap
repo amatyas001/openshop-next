@@ -2,7 +2,7 @@
 
 exports[`Checkout page when there is payment token should render cancelled component in Elements 1`] = `
 <div
-  className="css-icejhg"
+  className="css-w6sf3q"
 >
   <Elements
     stripe="stripe"
@@ -74,7 +74,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
     </div>
     <form
       aria-hidden={true}
-      className="css-19gz5f9"
+      className="css-1om1j8f"
     >
       <fieldset
         className="css-94sf3x"
@@ -215,7 +215,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
         />
       </fieldset>
       <p
-        className="css-1ebbm78"
+        className="css-1yab5hb"
       >
         By proceeding you accept the
          
@@ -228,7 +228,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
         of the company.
       </p>
       <div
-        className="css-11s8c9r"
+        className="css-1rsrz83"
       >
         <button
           className="css-1h13z07"
@@ -257,6 +257,15 @@ exports[`Checkout page when there is payment token should render cancelled compo
         </button>
       </div>
     </form>
+    <div
+      className="css-zyfixl"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
+      </div>
+    </div>
     <div
       aria-hidden={true}
       className="css-14djarr"
@@ -435,6 +444,15 @@ exports[`Checkout page when there is payment token should render cancelled compo
       </div>
     </div>
     <div
+      className="css-zyfixl"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
+      </div>
+    </div>
+    <div
       className="css-1mi3tt8"
     >
       <h2
@@ -460,7 +478,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
 
 exports[`Checkout page when there is payment token should render confirm component in Elements 1`] = `
 <div
-  className="css-icejhg"
+  className="css-w6sf3q"
 >
   <Elements
     stripe="stripe"
@@ -538,7 +556,7 @@ exports[`Checkout page when there is payment token should render confirm compone
     </div>
     <form
       aria-hidden={true}
-      className="css-19gz5f9"
+      className="css-1om1j8f"
     >
       <fieldset
         className="css-94sf3x"
@@ -679,7 +697,7 @@ exports[`Checkout page when there is payment token should render confirm compone
         />
       </fieldset>
       <p
-        className="css-1ebbm78"
+        className="css-1yab5hb"
       >
         By proceeding you accept the
          
@@ -692,7 +710,7 @@ exports[`Checkout page when there is payment token should render confirm compone
         of the company.
       </p>
       <div
-        className="css-11s8c9r"
+        className="css-1rsrz83"
       >
         <button
           className="css-1h13z07"
@@ -721,6 +739,15 @@ exports[`Checkout page when there is payment token should render confirm compone
         </button>
       </div>
     </form>
+    <div
+      className="css-zyfixl"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
+      </div>
+    </div>
     <div
       aria-hidden={false}
       className="css-1mi3tt8"
@@ -898,6 +925,15 @@ exports[`Checkout page when there is payment token should render confirm compone
         </button>
       </div>
     </div>
+    <div
+      className="css-zyfixl"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
+      </div>
+    </div>
     
   </Elements>
 </div>
@@ -905,7 +941,7 @@ exports[`Checkout page when there is payment token should render confirm compone
 
 exports[`Checkout page when there is payment token should render error component in Elements 1`] = `
 <div
-  className="css-icejhg"
+  className="css-w6sf3q"
 >
   <Elements
     stripe="stripe"
@@ -989,7 +1025,7 @@ exports[`Checkout page when there is payment token should render error component
     </div>
     <form
       aria-hidden={true}
-      className="css-19gz5f9"
+      className="css-1om1j8f"
     >
       <fieldset
         className="css-94sf3x"
@@ -1130,7 +1166,7 @@ exports[`Checkout page when there is payment token should render error component
         />
       </fieldset>
       <p
-        className="css-1ebbm78"
+        className="css-1yab5hb"
       >
         By proceeding you accept the
          
@@ -1143,7 +1179,7 @@ exports[`Checkout page when there is payment token should render error component
         of the company.
       </p>
       <div
-        className="css-11s8c9r"
+        className="css-1rsrz83"
       >
         <button
           className="css-1h13z07"
@@ -1172,6 +1208,15 @@ exports[`Checkout page when there is payment token should render error component
         </button>
       </div>
     </form>
+    <div
+      className="css-zyfixl"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
+      </div>
+    </div>
     <div
       aria-hidden={true}
       className="css-14djarr"
@@ -1347,6 +1392,15 @@ exports[`Checkout page when there is payment token should render error component
         >
           CONFIRM ORDER
         </button>
+      </div>
+    </div>
+    <div
+      className="css-zyfixl"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
       </div>
     </div>
     <div
@@ -1380,7 +1434,7 @@ exports[`Checkout page when there is payment token should render error component
 
 exports[`Checkout page when there is payment token should render form component in Elements 1`] = `
 <div
-  className="css-icejhg"
+  className="css-w6sf3q"
 >
   <Elements
     stripe="stripe"
@@ -1458,7 +1512,7 @@ exports[`Checkout page when there is payment token should render form component 
     </div>
     <form
       aria-hidden={false}
-      className="css-dvxtzn"
+      className="css-8o331q"
     >
       <fieldset
         className="css-94sf3x"
@@ -1599,7 +1653,7 @@ exports[`Checkout page when there is payment token should render form component 
         />
       </fieldset>
       <p
-        className="css-1ebbm78"
+        className="css-1yab5hb"
       >
         By proceeding you accept the
          
@@ -1612,7 +1666,7 @@ exports[`Checkout page when there is payment token should render form component 
         of the company.
       </p>
       <div
-        className="css-11s8c9r"
+        className="css-1rsrz83"
       >
         <button
           className="css-1h13z07"
@@ -1641,6 +1695,15 @@ exports[`Checkout page when there is payment token should render form component 
         </button>
       </div>
     </form>
+    <div
+      className="css-zyfixl"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
+      </div>
+    </div>
     <div
       aria-hidden={true}
       className="css-14djarr"
@@ -1818,6 +1881,15 @@ exports[`Checkout page when there is payment token should render form component 
         </button>
       </div>
     </div>
+    <div
+      className="css-zyfixl"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
+      </div>
+    </div>
     
   </Elements>
 </div>
@@ -1825,7 +1897,7 @@ exports[`Checkout page when there is payment token should render form component 
 
 exports[`Checkout page when there is payment token should render review component in Elements 1`] = `
 <div
-  className="css-icejhg"
+  className="css-w6sf3q"
 >
   <Elements
     stripe="stripe"
@@ -1897,7 +1969,7 @@ exports[`Checkout page when there is payment token should render review componen
     </div>
     <form
       aria-hidden={true}
-      className="css-19gz5f9"
+      className="css-1om1j8f"
     >
       <fieldset
         className="css-94sf3x"
@@ -2038,7 +2110,7 @@ exports[`Checkout page when there is payment token should render review componen
         />
       </fieldset>
       <p
-        className="css-1ebbm78"
+        className="css-1yab5hb"
       >
         By proceeding you accept the
          
@@ -2051,7 +2123,7 @@ exports[`Checkout page when there is payment token should render review componen
         of the company.
       </p>
       <div
-        className="css-11s8c9r"
+        className="css-1rsrz83"
       >
         <button
           className="css-1h13z07"
@@ -2080,6 +2152,15 @@ exports[`Checkout page when there is payment token should render review componen
         </button>
       </div>
     </form>
+    <div
+      className="css-zyfixl"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
+      </div>
+    </div>
     <div
       aria-hidden={true}
       className="css-14djarr"
@@ -2255,6 +2336,15 @@ exports[`Checkout page when there is payment token should render review componen
         >
           CONFIRM ORDER
         </button>
+      </div>
+    </div>
+    <div
+      className="css-zyfixl"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
       </div>
     </div>
     <div
@@ -2389,7 +2479,7 @@ exports[`Checkout page when there is payment token should render review componen
 
 exports[`Checkout page when there is payment token should render success component in Elements 1`] = `
 <div
-  className="css-icejhg"
+  className="css-w6sf3q"
 >
   <Elements
     stripe="stripe"
@@ -2473,7 +2563,7 @@ exports[`Checkout page when there is payment token should render success compone
     </div>
     <form
       aria-hidden={true}
-      className="css-19gz5f9"
+      className="css-1om1j8f"
     >
       <fieldset
         className="css-94sf3x"
@@ -2614,7 +2704,7 @@ exports[`Checkout page when there is payment token should render success compone
         />
       </fieldset>
       <p
-        className="css-1ebbm78"
+        className="css-1yab5hb"
       >
         By proceeding you accept the
          
@@ -2627,7 +2717,7 @@ exports[`Checkout page when there is payment token should render success compone
         of the company.
       </p>
       <div
-        className="css-11s8c9r"
+        className="css-1rsrz83"
       >
         <button
           className="css-1h13z07"
@@ -2656,6 +2746,15 @@ exports[`Checkout page when there is payment token should render success compone
         </button>
       </div>
     </form>
+    <div
+      className="css-zyfixl"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
+      </div>
+    </div>
     <div
       aria-hidden={true}
       className="css-14djarr"
@@ -2831,6 +2930,15 @@ exports[`Checkout page when there is payment token should render success compone
         >
           CONFIRM ORDER
         </button>
+      </div>
+    </div>
+    <div
+      className="css-zyfixl"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
       </div>
     </div>
     <div
