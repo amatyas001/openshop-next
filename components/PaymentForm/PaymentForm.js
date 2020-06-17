@@ -16,8 +16,9 @@ import { Button, Field } from '../index';
 export const PaymentForm = (props) => {
   const stripe = useStripe();
   const dispatch = useDispatch();
-  const state = useSelector((state) => state);
+  const { amount, payment, cart } = useSelector((state) => state);
 
+  const [loading, setLoading] = React.useState(false);
   const [cardError, setCardError] = React.useState(null);
   const [cardComplete, setCardComplete] = React.useState(false);
   const [valid, setValid] = React.useState(false);
@@ -27,6 +28,18 @@ export const PaymentForm = (props) => {
     name: '',
     address: '',
   });
+
+  React.useEffect(() => {
+    if (payment.status !== 'form') {
+      setLoading(false);
+      setDetails({
+        email: '',
+        phone: '',
+        name: '',
+        address: '',
+      });
+    }
+  }, [payment]);
 
   // validate form
   React.useEffect(() => {
@@ -46,13 +59,23 @@ export const PaymentForm = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!cardComplete) return;
-    dispatch(paymentIntent(details, state.cart, state.payment.token));
+    setLoading(true);
+    dispatch(paymentIntent(details, cart, payment.token));
   };
 
   return (
     <>
       {/* payment form */}
-      <Flex as='form' flexDirection='column' alignItems='center' {...props}>
+      <Flex
+        as='form'
+        flexDirection='column'
+        alignItems='center'
+        mx='auto'
+        aria-hidden={payment.status !== 'form'}
+        width={{ sm: '100%', lg: '80%' }}
+        d={payment.status === 'form' && !loading ? 'flex' : 'none'}
+        {...props}
+      >
         <Box
           as='fieldset'
           border='0'
@@ -194,7 +217,12 @@ export const PaymentForm = (props) => {
         </Box>
 
         {/* ToS info */}
-        <Text fontStyle='italic' textTransform='uppercase' fontSize='0.8rem'>
+        <Text
+          fontStyle='italic'
+          textTransform='uppercase'
+          fontSize='0.8rem'
+          textAlign='center'
+        >
           By proceeding you accept the{' '}
           <Link color='purple.800' fontWeight='bold'>
             Terms of Service
@@ -207,6 +235,7 @@ export const PaymentForm = (props) => {
           columns={{ sm: 1, md: 2 }}
           spacing='20px'
           width='80%'
+          mx='auto'
           mb='15px'
         >
           {/* review button */}
@@ -231,10 +260,15 @@ export const PaymentForm = (props) => {
             disabled={!valid}
             onClick={handleSubmit}
           >
-            {!valid ? 'FILL THE FORM' : `PAY ${state.amount} $`}
+            {!valid ? 'FILL THE FORM' : `PAY ${amount} $`}
           </Button>
         </SimpleGrid>
       </Flex>
+      <Spinner
+        size='150px'
+        m='auto'
+        d={payment.status === 'form' && loading ? 'flex' : 'none'}
+      />
     </>
   );
 };

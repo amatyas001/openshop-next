@@ -76,7 +76,7 @@ describe('Payment actions', () => {
         payment: {
           status: 'success',
           intent: undefined,
-	  token: false
+          token: false,
         },
         cart: [],
       };
@@ -101,6 +101,7 @@ describe('Payment actions', () => {
         payment: {
           status: 'cancelled',
           intent: undefined,
+          token: false,
         },
       };
       expect(paymentCancelled()).toEqual(expected);
@@ -113,6 +114,7 @@ describe('Payment actions', () => {
         payment: {
           status: 'cancelled',
           intent: payload,
+          token: false,
         },
       };
       expect(paymentCancelled(payload)).toEqual(expected);
@@ -126,6 +128,7 @@ describe('Payment actions', () => {
         payment: {
           status: 'error',
           error: undefined,
+          token: false,
         },
       };
       expect(paymentError()).toEqual(expected);
@@ -135,7 +138,7 @@ describe('Payment actions', () => {
       const payload = 'payload';
       const expected = {
         type: PAYMENT_PROGRESS,
-        payment: { status: 'error', error: payload },
+        payment: { status: 'error', error: payload, token: false },
       };
       expect(paymentError(payload)).toEqual(expected);
     });

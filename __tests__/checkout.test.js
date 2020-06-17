@@ -36,9 +36,9 @@ describe('Checkout page', () => {
     expect(mock_prefetch).toHaveBeenCalledWith('/');
   });
 
-  describe('when there is no payment token', () => {
+  describe('when there is no items in cart', () => {
     beforeEach(() => {
-      store = mockStore({ payment: { token: false }, cart: [{ id: 'item' }] });
+      store = mockStore({ payment: { token: false }, cart: [] });
       act(() => {
         tree = create(
           <Provider store={store}>

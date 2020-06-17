@@ -45,6 +45,7 @@ export function paymentCancelled(intent) {
     payment: {
       status: 'cancelled',
       intent,
+      token: false,
     },
   };
 }
@@ -52,7 +53,7 @@ export function paymentCancelled(intent) {
 export function paymentError(error) {
   return {
     type: PAYMENT_PROGRESS,
-    payment: { status: 'error', error },
+    payment: { status: 'error', error, token: false },
   };
 }
 

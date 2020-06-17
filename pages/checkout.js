@@ -24,12 +24,9 @@ export default function Checkout() {
 
   React.useEffect(() => {
     router.prefetch('/');
-    if (
-      (payment && payment.status !== 'success' && !payment.token) ||
-      (cart && !cart.length)
-    )
+    if (payment && payment.status !== 'success' && cart && !cart.length)
       router.replace('/');
-  }, [payment]);
+  }, [payment, cart]);
 
   React.useEffect(() => {
     if (payment) {
@@ -65,7 +62,7 @@ export default function Checkout() {
   }, [payment]);
 
   return (
-    <Box px='5%' py='20px'>
+    <Box px='5%' py='20px' minHeight='600px'>
       <Head>
         <title>OpenShop - {head}</title>
         <meta name='description' content='OpenShop - Checkout selected items' />
@@ -75,16 +72,8 @@ export default function Checkout() {
         <>
           {/* CardElement must be mounted and to be in scope
             when handling the confirmation of intent*/}
-          <PaymentForm
-            d={payment.status === 'form' ? 'flex' : 'none'}
-            aria-hidden={payment.status !== 'form'}
-          />
-          <PaymentConfirm
-            d={payment.status === 'confirm' ? 'flex' : 'none'}
-            aria-hidden={payment.status !== 'confirm'}
-            details={payment.details}
-            intent={payment.intent}
-          />
+          <PaymentForm />
+          <PaymentConfirm details={payment.details} intent={payment.intent} />
         </>
         {content}
       </Elements>

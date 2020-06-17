@@ -7,9 +7,9 @@ export function paymentCancel(cancel) {
       const axios = await import('axios');
       /* istanbul ignore next */
       const intent = await axios.post(
-        process.env.NODE_ENV === 'production'
-          ? 'https://openshop.netlify.app/.netlify/functions/intent'
-          : 'http://localhost:9000/.netlify/functions/intent',
+        //process.env.NODE_ENV === 'production'
+        /*?*/ 'https://openshop.netlify.app/.netlify/functions/intent',
+        //: 'http://localhost:9000/.netlify/functions/intent',
         {
           cancel,
         },

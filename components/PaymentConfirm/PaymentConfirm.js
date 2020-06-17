@@ -1,6 +1,6 @@
-import { Flex, Heading, SimpleGrid, Text } from '@chakra-ui/core';
+import { Flex, Heading, SimpleGrid, Text, Spinner } from '@chakra-ui/core';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   paymentSuccess,
   paymentCancel,
@@ -13,10 +13,14 @@ export const PaymentConfirm = (props) => {
   const stripe = useStripe();
   const elements = useElements();
   const dispatch = useDispatch();
+  const { payment } = useSelector((store) => store);
   const { details = {}, intent = {} } = props;
+  const [loading, setLoading] = React.useState(false);
 
   const handleConfirm = async () => {
     if (stripe) {
+      setLoading(true);
+
       const card = elements.getElement(CardElement);
 
       // confirm
@@ -45,62 +49,81 @@ export const PaymentConfirm = (props) => {
   };
 
   return (
-    <Flex flexDirection='column' alignItems='center' width='100%' {...props}>
-      {/* header */}
-      <Heading>hey {details.name || ''}!</Heading>
-      <Text fontSize='1.1rem' fontWeight='bold'>
-        Please review your payment details:
-      </Text>
+    <>
+      <Flex
+        flexDirection='column'
+        alignItems='center'
+        width='100%'
+        d={payment.status === 'confirm' && !loading ? 'flex' : 'none'}
+        aria-hidden={payment.status !== 'confirm'}
+        {...props}
+      >
+        {/* header */}
+        <Heading>hey {details.name || ''}!</Heading>
+        <Text fontSize='1.1rem' fontWeight='bold'>
+          Please review your payment details:
+        </Text>
 
-      {/* body */}
-      <SimpleGrid columns={{ sm: 1, lg: 2 }} borderTop='1px' borderBottom='1px'>
-        {/* intent */}
+        {/* body */}
         <SimpleGrid
-          columns='2'
-          spacing='10px'
-          fontSize='0.9rem'
-          fontWeight='bold'
-          flexDirection='column'
-          p='3%'
+          columns={{ sm: 1, lg: 2 }}
+          borderTop='1px'
+          borderBottom='1px'
         >
-          <Text>INTENT ID</Text>
-          <Text color='purple.800'>{intent.id}</Text>
-          <Text>EMAIL</Text>
-          <Text color='purple.800'>{details.email}</Text>
-          <Text>PHONE</Text>
-          <Text color='purple.800'>{details.phone}</Text>
-          <Text>ADDRESS</Text>
-          <Text color='purple.800'>{details.address}</Text>
+          {/* intent */}
+          <SimpleGrid
+            columns='2'
+            spacing='10px'
+            fontSize='0.9rem'
+            fontWeight='bold'
+            flexDirection='column'
+            p='3%'
+          >
+            <Text>INTENT ID</Text>
+            <Text color='purple.800'>{intent.id}</Text>
+            <Text>EMAIL</Text>
+            <Text color='purple.800'>{details.email}</Text>
+            <Text>PHONE</Text>
+            <Text color='purple.800'>{details.phone}</Text>
+            <Text>ADDRESS</Text>
+            <Text color='purple.800'>{details.address}</Text>
+          </SimpleGrid>
+
+          {/* cart */}
+          <CartContent />
         </SimpleGrid>
 
-        {/* cart */}
-        <CartContent />
-      </SimpleGrid>
+        {/* controls */}
+        <SimpleGrid columns='2' spacing='15px'>
+          {/* cancel */}
+          <Button
+            width='100%'
+            bg='red.500'
+            color='gray.100'
+            onClick={() => {
+              setLoading(true);
+              dispatch(paymentCancel(intent.id));
+            }}
+          >
+            CANCEL ORDER
+          </Button>
 
-      {/* controls */}
-      <SimpleGrid columns='2' spacing='15px'>
-        {/* cancel */}
-        <Button
-          width='100%'
-          bg='red.500'
-          color='gray.100'
-          onClick={() => {
-            dispatch(paymentCancel(intent.id));
-          }}
-        >
-          CANCEL ORDER
-        </Button>
-
-        {/* confirm */}
-        <Button
-          width='100%'
-          bg='purple.800'
-          color='gray.100'
-          onClick={handleConfirm}
-        >
-          CONFIRM ORDER
-        </Button>
-      </SimpleGrid>
-    </Flex>
+          {/* confirm */}
+          <Button
+            width='100%'
+            bg='purple.800'
+            color='gray.100'
+            onClick={handleConfirm}
+          >
+            CONFIRM ORDER
+          </Button>
+        </SimpleGrid>
+      </Flex>
+      <Spinner
+        size='150px'
+        m='auto'
+        d={payment.status === 'confirm' && loading ? 'flex' : 'none'}
+      />
+    </>
   );
 };
