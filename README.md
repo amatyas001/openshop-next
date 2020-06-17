@@ -1,32 +1,33 @@
 # Sample JAM-Stack e-commerce website
 
-Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/77e3442d-d9b6-4734-a493-3326fedf27be/deploy-status)](https://app.netlify.com/sites/openshop/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/77e3442d-d9b6-4734-a493-3326fedf27be/deploy-status)](https://app.netlify.com/sites/openshop/deploys) [![openshop](https://circleci.com/gh/amatyas001/openshop-next.svg?style=shield)](https://app.circleci.com/pipelines/github/amatyas001/openshop-next)
 
 > Created by Mátyás Angyal [amatyas001@gmail.com](mailto://amatyas001@gmail.com)
 
 ## Tech-Stack
 
-- React
 - Next
+- React
 - Redux
-- Redux-Thunk
-- Redux Persist
 - Chakra UI
 - Stripe
-- Netlify Functions
-- CI/CD by Netlify
 
 ## Test Suite
 
 ### Unit - Integration
 
 - Jest
-- React Test Renderer
-- React Testing Library
 
 ### End-To-End
 
 - Cypress
+
+## Deploy
+
+- Netlify
+- CircleCI
+- GitGuardian
+- Snyk
 
 ## Functionality
 
