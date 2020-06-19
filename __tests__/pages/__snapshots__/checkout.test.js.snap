@@ -258,20 +258,12 @@ exports[`Checkout page when there is payment token should render cancelled compo
       </div>
     </form>
     <div
-      className="css-zyfixl"
-    >
-      <div
-        className="css-1gy22ay"
-      >
-        Loading...
-      </div>
-    </div>
-    <div
       aria-hidden={true}
       className="css-14djarr"
     >
       <h2
         className="css-84al3w"
+        data-testid="confirm-intent-name"
       >
         hey 
         name
@@ -295,6 +287,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-id"
           >
             id
           </p>
@@ -305,6 +298,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-email"
           />
           <p
             className="css-18poma1"
@@ -313,6 +307,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-phone"
           />
           <p
             className="css-18poma1"
@@ -321,6 +316,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-address"
           />
         </div>
         <section
@@ -424,6 +420,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
         <button
           className="css-46aqdj"
           data-cy="button"
+          data-testid="confirm-button-cancel"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -434,6 +431,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
         <button
           className="css-187kagv"
           data-cy="button"
+          data-testid="confirm-button-confirm"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -441,15 +439,6 @@ exports[`Checkout page when there is payment token should render cancelled compo
         >
           CONFIRM ORDER
         </button>
-      </div>
-    </div>
-    <div
-      className="css-zyfixl"
-    >
-      <div
-        className="css-1gy22ay"
-      >
-        Loading...
       </div>
     </div>
     <div
@@ -740,20 +729,12 @@ exports[`Checkout page when there is payment token should render confirm compone
       </div>
     </form>
     <div
-      className="css-zyfixl"
-    >
-      <div
-        className="css-1gy22ay"
-      >
-        Loading...
-      </div>
-    </div>
-    <div
       aria-hidden={false}
       className="css-1mi3tt8"
     >
       <h2
         className="css-84al3w"
+        data-testid="confirm-intent-name"
       >
         hey 
         name
@@ -777,6 +758,7 @@ exports[`Checkout page when there is payment token should render confirm compone
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-id"
           >
             id
           </p>
@@ -787,6 +769,7 @@ exports[`Checkout page when there is payment token should render confirm compone
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-email"
           />
           <p
             className="css-18poma1"
@@ -795,6 +778,7 @@ exports[`Checkout page when there is payment token should render confirm compone
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-phone"
           />
           <p
             className="css-18poma1"
@@ -803,6 +787,7 @@ exports[`Checkout page when there is payment token should render confirm compone
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-address"
           />
         </div>
         <section
@@ -906,6 +891,7 @@ exports[`Checkout page when there is payment token should render confirm compone
         <button
           className="css-46aqdj"
           data-cy="button"
+          data-testid="confirm-button-cancel"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -916,6 +902,7 @@ exports[`Checkout page when there is payment token should render confirm compone
         <button
           className="css-187kagv"
           data-cy="button"
+          data-testid="confirm-button-confirm"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -923,15 +910,6 @@ exports[`Checkout page when there is payment token should render confirm compone
         >
           CONFIRM ORDER
         </button>
-      </div>
-    </div>
-    <div
-      className="css-zyfixl"
-    >
-      <div
-        className="css-1gy22ay"
-      >
-        Loading...
       </div>
     </div>
     
@@ -1209,20 +1187,12 @@ exports[`Checkout page when there is payment token should render error component
       </div>
     </form>
     <div
-      className="css-zyfixl"
-    >
-      <div
-        className="css-1gy22ay"
-      >
-        Loading...
-      </div>
-    </div>
-    <div
       aria-hidden={true}
       className="css-14djarr"
     >
       <h2
         className="css-84al3w"
+        data-testid="confirm-intent-name"
       >
         hey 
         name
@@ -1246,6 +1216,7 @@ exports[`Checkout page when there is payment token should render error component
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-id"
           >
             id
           </p>
@@ -1256,6 +1227,7 @@ exports[`Checkout page when there is payment token should render error component
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-email"
           />
           <p
             className="css-18poma1"
@@ -1264,6 +1236,7 @@ exports[`Checkout page when there is payment token should render error component
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-phone"
           />
           <p
             className="css-18poma1"
@@ -1272,6 +1245,7 @@ exports[`Checkout page when there is payment token should render error component
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-address"
           />
         </div>
         <section
@@ -1375,6 +1349,7 @@ exports[`Checkout page when there is payment token should render error component
         <button
           className="css-46aqdj"
           data-cy="button"
+          data-testid="confirm-button-cancel"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1385,6 +1360,7 @@ exports[`Checkout page when there is payment token should render error component
         <button
           className="css-187kagv"
           data-cy="button"
+          data-testid="confirm-button-confirm"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1392,15 +1368,6 @@ exports[`Checkout page when there is payment token should render error component
         >
           CONFIRM ORDER
         </button>
-      </div>
-    </div>
-    <div
-      className="css-zyfixl"
-    >
-      <div
-        className="css-1gy22ay"
-      >
-        Loading...
       </div>
     </div>
     <div
@@ -1696,20 +1663,12 @@ exports[`Checkout page when there is payment token should render form component 
       </div>
     </form>
     <div
-      className="css-zyfixl"
-    >
-      <div
-        className="css-1gy22ay"
-      >
-        Loading...
-      </div>
-    </div>
-    <div
       aria-hidden={true}
       className="css-14djarr"
     >
       <h2
         className="css-84al3w"
+        data-testid="confirm-intent-name"
       >
         hey 
         name
@@ -1733,6 +1692,7 @@ exports[`Checkout page when there is payment token should render form component 
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-id"
           >
             id
           </p>
@@ -1743,6 +1703,7 @@ exports[`Checkout page when there is payment token should render form component 
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-email"
           />
           <p
             className="css-18poma1"
@@ -1751,6 +1712,7 @@ exports[`Checkout page when there is payment token should render form component 
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-phone"
           />
           <p
             className="css-18poma1"
@@ -1759,6 +1721,7 @@ exports[`Checkout page when there is payment token should render form component 
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-address"
           />
         </div>
         <section
@@ -1862,6 +1825,7 @@ exports[`Checkout page when there is payment token should render form component 
         <button
           className="css-46aqdj"
           data-cy="button"
+          data-testid="confirm-button-cancel"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1872,6 +1836,7 @@ exports[`Checkout page when there is payment token should render form component 
         <button
           className="css-187kagv"
           data-cy="button"
+          data-testid="confirm-button-confirm"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1879,15 +1844,6 @@ exports[`Checkout page when there is payment token should render form component 
         >
           CONFIRM ORDER
         </button>
-      </div>
-    </div>
-    <div
-      className="css-zyfixl"
-    >
-      <div
-        className="css-1gy22ay"
-      >
-        Loading...
       </div>
     </div>
     
@@ -2153,20 +2109,12 @@ exports[`Checkout page when there is payment token should render review componen
       </div>
     </form>
     <div
-      className="css-zyfixl"
-    >
-      <div
-        className="css-1gy22ay"
-      >
-        Loading...
-      </div>
-    </div>
-    <div
       aria-hidden={true}
       className="css-14djarr"
     >
       <h2
         className="css-84al3w"
+        data-testid="confirm-intent-name"
       >
         hey 
         name
@@ -2190,6 +2138,7 @@ exports[`Checkout page when there is payment token should render review componen
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-id"
           >
             id
           </p>
@@ -2200,6 +2149,7 @@ exports[`Checkout page when there is payment token should render review componen
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-email"
           />
           <p
             className="css-18poma1"
@@ -2208,6 +2158,7 @@ exports[`Checkout page when there is payment token should render review componen
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-phone"
           />
           <p
             className="css-18poma1"
@@ -2216,6 +2167,7 @@ exports[`Checkout page when there is payment token should render review componen
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-address"
           />
         </div>
         <section
@@ -2319,6 +2271,7 @@ exports[`Checkout page when there is payment token should render review componen
         <button
           className="css-46aqdj"
           data-cy="button"
+          data-testid="confirm-button-cancel"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -2329,6 +2282,7 @@ exports[`Checkout page when there is payment token should render review componen
         <button
           className="css-187kagv"
           data-cy="button"
+          data-testid="confirm-button-confirm"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -2336,15 +2290,6 @@ exports[`Checkout page when there is payment token should render review componen
         >
           CONFIRM ORDER
         </button>
-      </div>
-    </div>
-    <div
-      className="css-zyfixl"
-    >
-      <div
-        className="css-1gy22ay"
-      >
-        Loading...
       </div>
     </div>
     <div
@@ -2747,20 +2692,12 @@ exports[`Checkout page when there is payment token should render success compone
       </div>
     </form>
     <div
-      className="css-zyfixl"
-    >
-      <div
-        className="css-1gy22ay"
-      >
-        Loading...
-      </div>
-    </div>
-    <div
       aria-hidden={true}
       className="css-14djarr"
     >
       <h2
         className="css-84al3w"
+        data-testid="confirm-intent-name"
       >
         hey 
         name
@@ -2784,6 +2721,7 @@ exports[`Checkout page when there is payment token should render success compone
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-id"
           >
             id
           </p>
@@ -2794,6 +2732,7 @@ exports[`Checkout page when there is payment token should render success compone
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-email"
           />
           <p
             className="css-18poma1"
@@ -2802,6 +2741,7 @@ exports[`Checkout page when there is payment token should render success compone
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-phone"
           />
           <p
             className="css-18poma1"
@@ -2810,6 +2750,7 @@ exports[`Checkout page when there is payment token should render success compone
           </p>
           <p
             className="css-1n4bukm"
+            data-testid="confirm-intent-address"
           />
         </div>
         <section
@@ -2913,6 +2854,7 @@ exports[`Checkout page when there is payment token should render success compone
         <button
           className="css-46aqdj"
           data-cy="button"
+          data-testid="confirm-button-cancel"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -2923,6 +2865,7 @@ exports[`Checkout page when there is payment token should render success compone
         <button
           className="css-187kagv"
           data-cy="button"
+          data-testid="confirm-button-confirm"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -2930,15 +2873,6 @@ exports[`Checkout page when there is payment token should render success compone
         >
           CONFIRM ORDER
         </button>
-      </div>
-    </div>
-    <div
-      className="css-zyfixl"
-    >
-      <div
-        className="css-1gy22ay"
-      >
-        Loading...
       </div>
     </div>
     <div

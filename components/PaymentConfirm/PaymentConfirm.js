@@ -59,7 +59,7 @@ export const PaymentConfirm = (props) => {
         {...props}
       >
         {/* header */}
-        <Heading>hey {details.name || ''}!</Heading>
+        <Heading data-testid='confirm-intent-name'>hey {details.name}!</Heading>
         <Text fontSize='1.1rem' fontWeight='bold'>
           Please review your payment details:
         </Text>
@@ -80,13 +80,21 @@ export const PaymentConfirm = (props) => {
             p='3%'
           >
             <Text>INTENT ID</Text>
-            <Text color='purple.800'>{intent.id}</Text>
+            <Text color='purple.800' data-testid='confirm-intent-id'>
+              {intent.id}
+            </Text>
             <Text>EMAIL</Text>
-            <Text color='purple.800'>{details.email}</Text>
+            <Text color='purple.800' data-testid='confirm-intent-email'>
+              {details.email}
+            </Text>
             <Text>PHONE</Text>
-            <Text color='purple.800'>{details.phone}</Text>
+            <Text color='purple.800' data-testid='confirm-intent-phone'>
+              {details.phone}
+            </Text>
             <Text>ADDRESS</Text>
-            <Text color='purple.800'>{details.address}</Text>
+            <Text color='purple.800' data-testid='confirm-intent-address'>
+              {details.address}
+            </Text>
           </SimpleGrid>
 
           {/* cart */}
@@ -97,6 +105,7 @@ export const PaymentConfirm = (props) => {
         <SimpleGrid columns='2' spacing='15px'>
           {/* cancel */}
           <Button
+            data-testid='confirm-button-cancel'
             width='100%'
             bg='red.500'
             color='gray.100'
@@ -110,6 +119,7 @@ export const PaymentConfirm = (props) => {
 
           {/* confirm */}
           <Button
+            data-testid='confirm-button-confirm'
             width='100%'
             bg='purple.800'
             color='gray.100'
@@ -119,11 +129,9 @@ export const PaymentConfirm = (props) => {
           </Button>
         </SimpleGrid>
       </Flex>
-      <Spinner
-        size='150px'
-        m='auto'
-        d={payment.status === 'confirm' && loading ? 'flex' : 'none'}
-      />
+      {payment.status === 'confirm' && loading && (
+        <Spinner data-testid='confirm-spinner' size='150px' m='auto' />
+      )}
     </>
   );
 };

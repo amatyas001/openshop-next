@@ -1,11 +1,29 @@
 import { createElement } from 'react';
 
 export function useElements() {
-  return jest.fn();
+  return {
+    getElement: () => CardElement({ children: '' }),
+  };
 }
 
 export function useStripe() {
-  return true;
+  return {
+    confirmCardPayment: jest.fn((secret) => {
+      if (secret !== 'error') {
+        return {
+          paymentIntent: {
+            status: 'succeeded',
+            id: 'mock_id',
+            secret,
+          },
+        };
+      }
+
+      return {
+        error: 'mock_error',
+      };
+    }),
+  };
 }
 
 export function Elements(props) {

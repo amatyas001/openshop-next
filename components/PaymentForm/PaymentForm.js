@@ -264,11 +264,9 @@ export const PaymentForm = (props) => {
           </Button>
         </SimpleGrid>
       </Flex>
-      <Spinner
-        size='150px'
-        m='auto'
-        d={payment.status === 'form' && loading ? 'flex' : 'none'}
-      />
+      {payment.status === 'form' && loading && (
+        <Spinner data-testid='form-spinner' size='150px' m='auto' />
+      )}
     </>
   );
 };
