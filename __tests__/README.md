@@ -1,3 +1,3 @@
 # Test Files
 
-These suites belong to the `pages` directory! NextJS does not allow (at least without workarounds) to put test files in there.
+This directory containing suites which could not be placed next to the corresponding component. Structure follows application root.
