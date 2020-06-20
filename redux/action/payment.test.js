@@ -7,7 +7,7 @@ import {
   paymentCancelled,
   paymentError,
   paymentReset,
-} from './payment';
+} from '@app/redux/actions';
 
 describe('Payment actions', () => {
   describe('Review', () => {

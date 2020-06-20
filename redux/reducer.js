@@ -1,4 +1,4 @@
-import { MANAGE_CART, PAYMENT_PROGRESS } from './actions';
+import { MANAGE_CART, PAYMENT_PROGRESS } from '@app/redux/actions';
 
 export function reducer(state, action) {
   switch (action.type) {

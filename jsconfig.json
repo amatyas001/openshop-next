@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@app/components/*": ["components/*"],
+      "@app/redux/*": ["redux/*"],
+      "@app/*": ["./*"]
+    }
+  },
+  "exclude": [
+    ".netlify",
+    ".next",
+    "coverage",
+    "lambda",
+    "lambda-build",
+    "node_modules",
+    "out"
+  ]
+}

@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import { Box } from '@chakra-ui/core';
 import { useSelector } from 'react-redux';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import { Box } from '@chakra-ui/core';
 import {
   PaymentProgress,
   PaymentReview,
@@ -12,7 +12,7 @@ import {
   PaymentSuccess,
   PaymentCancelled,
   PaymentError,
-} from '../components';
+} from '@app/components';
 
 const stripe = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 

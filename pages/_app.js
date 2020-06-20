@@ -1,11 +1,11 @@
 import '../styles/global.css';
 import '@brainhubeu/react-carousel/lib/style.css';
 import customTheme from '../styles/theme';
-import { ThemeProvider, Flex } from '@chakra-ui/core';
 import { Provider } from 'react-redux';
-import { useStore } from '../redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
-import { Navbar, Footer, ScrollTop } from '../components';
+import { ThemeProvider, Flex } from '@chakra-ui/core';
+import { useStore } from '@app/redux/store';
+import { Navbar, Footer, ScrollTop } from '@app/components';
 
 const links = [
   {

@@ -1,4 +1,4 @@
-import { paymentCancelled, paymentError } from '../actions';
+import { paymentCancelled, paymentError } from '@app/redux/actions';
 
 // Canceling intent on Stripe by intent ID (cancel param)
 export function paymentCancel(cancel) {

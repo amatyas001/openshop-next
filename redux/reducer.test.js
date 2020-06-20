@@ -1,11 +1,11 @@
+import { reducer } from '@app/redux/reducer';
 import {
   PAYMENT_PROGRESS,
   addToCart,
   removeFromCart,
   getAmount,
   paymentReview,
-} from './actions';
-import { reducer } from './reducer';
+} from '@app/redux/actions';
 
 describe('Reducer', () => {
   const mock_state = { state: 'state' };

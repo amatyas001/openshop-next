@@ -1,4 +1,9 @@
-import { MANAGE_CART, getAmount, addToCart, removeFromCart } from '../actions';
+import {
+  MANAGE_CART,
+  getAmount,
+  addToCart,
+  removeFromCart,
+} from '@app/redux/actions';
 
 // Cart processing
 describe('Cart actions', () => {

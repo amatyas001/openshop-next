@@ -1,7 +1,11 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import axios from 'axios';
-import { paymentCancel, paymentCancelled, paymentError } from '../actions';
+import {
+  paymentCancel,
+  paymentCancelled,
+  paymentError,
+} from '@app/redux/actions';
 
 jest.mock('axios');
 

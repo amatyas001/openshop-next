@@ -1,4 +1,4 @@
-import { paymentConfirm, paymentError } from '../actions';
+import { paymentConfirm, paymentError } from '@app/redux/actions';
 
 // Creating payment intent through lambda function
 export function paymentIntent(details, items, token) {

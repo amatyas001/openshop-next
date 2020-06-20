@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import { Heading, Flex, Text, Divider, SimpleGrid, Box } from '@chakra-ui/core';
-import { Card } from '../components';
 import { MdInvertColors } from 'react-icons/md';
 import { FaFemale, FaMale } from 'react-icons/fa';
+import { Heading, Flex, Text, Divider, SimpleGrid, Box } from '@chakra-ui/core';
+import { Card } from '@app/components';
 
 export async function getStaticProps() {
   const items = await import('../public/storedata.json');

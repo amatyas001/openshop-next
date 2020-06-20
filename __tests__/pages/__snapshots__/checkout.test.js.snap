@@ -89,11 +89,10 @@ exports[`Checkout page when there is payment token should render cancelled compo
             name
           </label>
           <input
-            autoComplete="name"
             className="css-cth1sm"
             id="name"
             onChange={[Function]}
-            placeholder="Jane Doe"
+            placeholder="John Doe"
             required={true}
             type="text"
             value=""
@@ -109,7 +108,6 @@ exports[`Checkout page when there is payment token should render cancelled compo
             address
           </label>
           <input
-            autoComplete="address"
             className="css-cth1sm"
             id="address"
             onChange={[Function]}
@@ -129,11 +127,10 @@ exports[`Checkout page when there is payment token should render cancelled compo
             email
           </label>
           <input
-            autoComplete="email"
             className="css-cth1sm"
             id="email"
             onChange={[Function]}
-            placeholder="janedoe@gmail.com"
+            placeholder="johndoe@example.com"
             required={true}
             type="email"
             value=""
@@ -149,7 +146,6 @@ exports[`Checkout page when there is payment token should render cancelled compo
             phone
           </label>
           <input
-            autoComplete="tel"
             className="css-cth1sm"
             id="phone"
             onChange={[Function]}
@@ -171,15 +167,16 @@ exports[`Checkout page when there is payment token should render cancelled compo
           <p
             className="css-1i3anel"
           >
-            Use any date and CVC with 
+            Use any future date and CVC with
+             
             <strong>
               4242 4242 4242 4242
             </strong>
-             
-            number for testing
+             number for testing
           </p>
           <p
             className="css-cz9gy2"
+            data-testid="form-card-error"
           />
         </div>
         <CardElement
@@ -432,6 +429,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
           className="css-187kagv"
           data-cy="button"
           data-testid="confirm-button-confirm"
+          disabled={false}
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -561,11 +559,10 @@ exports[`Checkout page when there is payment token should render confirm compone
             name
           </label>
           <input
-            autoComplete="name"
             className="css-cth1sm"
             id="name"
             onChange={[Function]}
-            placeholder="Jane Doe"
+            placeholder="John Doe"
             required={true}
             type="text"
             value=""
@@ -581,7 +578,6 @@ exports[`Checkout page when there is payment token should render confirm compone
             address
           </label>
           <input
-            autoComplete="address"
             className="css-cth1sm"
             id="address"
             onChange={[Function]}
@@ -601,11 +597,10 @@ exports[`Checkout page when there is payment token should render confirm compone
             email
           </label>
           <input
-            autoComplete="email"
             className="css-cth1sm"
             id="email"
             onChange={[Function]}
-            placeholder="janedoe@gmail.com"
+            placeholder="johndoe@example.com"
             required={true}
             type="email"
             value=""
@@ -621,7 +616,6 @@ exports[`Checkout page when there is payment token should render confirm compone
             phone
           </label>
           <input
-            autoComplete="tel"
             className="css-cth1sm"
             id="phone"
             onChange={[Function]}
@@ -643,15 +637,16 @@ exports[`Checkout page when there is payment token should render confirm compone
           <p
             className="css-1i3anel"
           >
-            Use any date and CVC with 
+            Use any future date and CVC with
+             
             <strong>
               4242 4242 4242 4242
             </strong>
-             
-            number for testing
+             number for testing
           </p>
           <p
             className="css-cz9gy2"
+            data-testid="form-card-error"
           />
         </div>
         <CardElement
@@ -904,6 +899,7 @@ exports[`Checkout page when there is payment token should render confirm compone
           className="css-187kagv"
           data-cy="button"
           data-testid="confirm-button-confirm"
+          disabled={false}
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1019,11 +1015,10 @@ exports[`Checkout page when there is payment token should render error component
             name
           </label>
           <input
-            autoComplete="name"
             className="css-cth1sm"
             id="name"
             onChange={[Function]}
-            placeholder="Jane Doe"
+            placeholder="John Doe"
             required={true}
             type="text"
             value=""
@@ -1039,7 +1034,6 @@ exports[`Checkout page when there is payment token should render error component
             address
           </label>
           <input
-            autoComplete="address"
             className="css-cth1sm"
             id="address"
             onChange={[Function]}
@@ -1059,11 +1053,10 @@ exports[`Checkout page when there is payment token should render error component
             email
           </label>
           <input
-            autoComplete="email"
             className="css-cth1sm"
             id="email"
             onChange={[Function]}
-            placeholder="janedoe@gmail.com"
+            placeholder="johndoe@example.com"
             required={true}
             type="email"
             value=""
@@ -1079,7 +1072,6 @@ exports[`Checkout page when there is payment token should render error component
             phone
           </label>
           <input
-            autoComplete="tel"
             className="css-cth1sm"
             id="phone"
             onChange={[Function]}
@@ -1101,15 +1093,16 @@ exports[`Checkout page when there is payment token should render error component
           <p
             className="css-1i3anel"
           >
-            Use any date and CVC with 
+            Use any future date and CVC with
+             
             <strong>
               4242 4242 4242 4242
             </strong>
-             
-            number for testing
+             number for testing
           </p>
           <p
             className="css-cz9gy2"
+            data-testid="form-card-error"
           />
         </div>
         <CardElement
@@ -1362,6 +1355,7 @@ exports[`Checkout page when there is payment token should render error component
           className="css-187kagv"
           data-cy="button"
           data-testid="confirm-button-confirm"
+          disabled={false}
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1496,11 +1490,10 @@ exports[`Checkout page when there is payment token should render form component 
             name
           </label>
           <input
-            autoComplete="name"
             className="css-cth1sm"
             id="name"
             onChange={[Function]}
-            placeholder="Jane Doe"
+            placeholder="John Doe"
             required={true}
             type="text"
             value=""
@@ -1516,7 +1509,6 @@ exports[`Checkout page when there is payment token should render form component 
             address
           </label>
           <input
-            autoComplete="address"
             className="css-cth1sm"
             id="address"
             onChange={[Function]}
@@ -1536,11 +1528,10 @@ exports[`Checkout page when there is payment token should render form component 
             email
           </label>
           <input
-            autoComplete="email"
             className="css-cth1sm"
             id="email"
             onChange={[Function]}
-            placeholder="janedoe@gmail.com"
+            placeholder="johndoe@example.com"
             required={true}
             type="email"
             value=""
@@ -1556,7 +1547,6 @@ exports[`Checkout page when there is payment token should render form component 
             phone
           </label>
           <input
-            autoComplete="tel"
             className="css-cth1sm"
             id="phone"
             onChange={[Function]}
@@ -1578,15 +1568,16 @@ exports[`Checkout page when there is payment token should render form component 
           <p
             className="css-1i3anel"
           >
-            Use any date and CVC with 
+            Use any future date and CVC with
+             
             <strong>
               4242 4242 4242 4242
             </strong>
-             
-            number for testing
+             number for testing
           </p>
           <p
             className="css-cz9gy2"
+            data-testid="form-card-error"
           />
         </div>
         <CardElement
@@ -1839,6 +1830,7 @@ exports[`Checkout page when there is payment token should render form component 
           className="css-187kagv"
           data-cy="button"
           data-testid="confirm-button-confirm"
+          disabled={false}
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1942,11 +1934,10 @@ exports[`Checkout page when there is payment token should render review componen
             name
           </label>
           <input
-            autoComplete="name"
             className="css-cth1sm"
             id="name"
             onChange={[Function]}
-            placeholder="Jane Doe"
+            placeholder="John Doe"
             required={true}
             type="text"
             value=""
@@ -1962,7 +1953,6 @@ exports[`Checkout page when there is payment token should render review componen
             address
           </label>
           <input
-            autoComplete="address"
             className="css-cth1sm"
             id="address"
             onChange={[Function]}
@@ -1982,11 +1972,10 @@ exports[`Checkout page when there is payment token should render review componen
             email
           </label>
           <input
-            autoComplete="email"
             className="css-cth1sm"
             id="email"
             onChange={[Function]}
-            placeholder="janedoe@gmail.com"
+            placeholder="johndoe@example.com"
             required={true}
             type="email"
             value=""
@@ -2002,7 +1991,6 @@ exports[`Checkout page when there is payment token should render review componen
             phone
           </label>
           <input
-            autoComplete="tel"
             className="css-cth1sm"
             id="phone"
             onChange={[Function]}
@@ -2024,15 +2012,16 @@ exports[`Checkout page when there is payment token should render review componen
           <p
             className="css-1i3anel"
           >
-            Use any date and CVC with 
+            Use any future date and CVC with
+             
             <strong>
               4242 4242 4242 4242
             </strong>
-             
-            number for testing
+             number for testing
           </p>
           <p
             className="css-cz9gy2"
+            data-testid="form-card-error"
           />
         </div>
         <CardElement
@@ -2285,6 +2274,7 @@ exports[`Checkout page when there is payment token should render review componen
           className="css-187kagv"
           data-cy="button"
           data-testid="confirm-button-confirm"
+          disabled={false}
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -2527,11 +2517,10 @@ exports[`Checkout page when there is payment token should render success compone
             name
           </label>
           <input
-            autoComplete="name"
             className="css-cth1sm"
             id="name"
             onChange={[Function]}
-            placeholder="Jane Doe"
+            placeholder="John Doe"
             required={true}
             type="text"
             value=""
@@ -2547,7 +2536,6 @@ exports[`Checkout page when there is payment token should render success compone
             address
           </label>
           <input
-            autoComplete="address"
             className="css-cth1sm"
             id="address"
             onChange={[Function]}
@@ -2567,11 +2555,10 @@ exports[`Checkout page when there is payment token should render success compone
             email
           </label>
           <input
-            autoComplete="email"
             className="css-cth1sm"
             id="email"
             onChange={[Function]}
-            placeholder="janedoe@gmail.com"
+            placeholder="johndoe@example.com"
             required={true}
             type="email"
             value=""
@@ -2587,7 +2574,6 @@ exports[`Checkout page when there is payment token should render success compone
             phone
           </label>
           <input
-            autoComplete="tel"
             className="css-cth1sm"
             id="phone"
             onChange={[Function]}
@@ -2609,15 +2595,16 @@ exports[`Checkout page when there is payment token should render success compone
           <p
             className="css-1i3anel"
           >
-            Use any date and CVC with 
+            Use any future date and CVC with
+             
             <strong>
               4242 4242 4242 4242
             </strong>
-             
-            number for testing
+             number for testing
           </p>
           <p
             className="css-cz9gy2"
+            data-testid="form-card-error"
           />
         </div>
         <CardElement
@@ -2870,6 +2857,7 @@ exports[`Checkout page when there is payment token should render success compone
           className="css-187kagv"
           data-cy="button"
           data-testid="confirm-button-confirm"
+          disabled={false}
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}

@@ -14,12 +14,7 @@
 
 ## Test Suite
 
-### Unit - Integration
-
 - Jest
-
-### End-To-End
-
 - Cypress
 
 ## Deploy
