@@ -1,6 +1,6 @@
 import { Heading, Text, Flex } from '@chakra-ui/core';
 
-export const PaymentSuccess = ({ intent }) => {
+export const PaymentSuccess = ({ intent = {} }) => {
   return (
     <Flex flexDirection='column' width='100%' alignItems='center'>
       <Heading>Payment Successful</Heading>

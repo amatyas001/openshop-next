@@ -3,17 +3,37 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as thunks from '../../redux/thunk/cancel';
-import * as actions from '../../redux/action/payment';
+import { paymentError, paymentSuccess } from '../../redux/action/payment';
 import { PaymentConfirm } from './PaymentConfirm';
 
 const mockStore = configureStore([thunk]);
+
+jest
+  .spyOn(require('../CartContent/CartContent'), 'CartContent')
+  .mockImplementation(() => 'CartContent');
+
+describe('<PaymentConfirm />', () => {
+  let tree;
+  it('should render without props', () => {
+    const store = mockStore({
+      payment: { status: 'confirm', token: 'token' },
+    });
+    act(() => {
+      tree = create(
+        <Provider store={store}>
+          <PaymentConfirm />
+        </Provider>
+      );
+    });
+
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+});
 
 describe('<PaymentConfirm />', () => {
   let tree,
     store = mockStore({
       payment: { status: 'confirm', token: 'token' },
-      cart: [{ id: 'item' }],
-      amount: 100,
     }),
     intent = {
       id: 'mock_id',
@@ -26,72 +46,18 @@ describe('<PaymentConfirm />', () => {
       address: 'mock_address',
     };
 
-  it('should render without props', () => {
+  beforeAll(() => {
     act(() => {
       tree = create(
         <Provider store={store}>
-          <PaymentConfirm />
+          <PaymentConfirm intent={intent} details={details} />
         </Provider>
       );
     });
+  });
 
+  it('should render with props', () => {
     expect(tree.toJSON()).toMatchSnapshot();
-  });
-
-  afterEach(() => {
-    store = mockStore({
-      payment: { status: 'confirm', token: 'token' },
-      cart: [{ id: 'item' }],
-      amount: 100,
-    });
-  });
-
-  describe('with props', () => {
-    beforeAll(() => {
-      act(() => {
-        tree = create(
-          <Provider store={store}>
-            <PaymentConfirm intent={intent} details={details} />
-          </Provider>
-        );
-      });
-    });
-
-    it('should render intent id', () => {
-      expect(
-        tree.root.findByProps({ 'data-testid': 'confirm-intent-id' }).props
-          .children
-      ).toContain(intent.id);
-    });
-
-    for (let key in details) {
-      it(`should render details ${key}`, () => {
-        expect(
-          tree.root.findByProps({ 'data-testid': `confirm-intent-${key}` })
-            .props.children
-        ).toContain(details[key]);
-      });
-    }
-
-    it('should render cancel button', () => {
-      expect(
-        tree.root.findByProps({ 'data-testid': 'confirm-button-cancel' })
-      ).toBeTruthy();
-    });
-
-    it('should render confirm button', () => {
-      expect(
-        tree.root.findByProps({ 'data-testid': 'confirm-button-confirm' })
-      ).toBeTruthy();
-    });
-
-    it('should not display spinner', () => {
-      try {
-        tree.root.findByProps({ 'data-testid': 'confirm-spinner' });
-      } catch (e) {
-        expect(e).toMatchSnapshot();
-      }
-    });
   });
 
   describe('on cancel', () => {
@@ -121,20 +87,10 @@ describe('<PaymentConfirm />', () => {
     });
   });
 
-  describe('on confirm', () => {
-    let success, error;
-
-    beforeAll(async () => {
-      success = jest
-        .spyOn(actions, 'paymentSuccess')
-        .mockImplementation(() => jest.fn());
-
-      error = jest
-        .spyOn(actions, 'paymentError')
-        .mockImplementation(() => jest.fn());
-
-      await act(async () => {
-        await tree.root
+  describe('on confirm success', () => {
+    beforeAll(() => {
+      act(() => {
+        tree.root
           .findByProps({ 'data-testid': 'confirm-button-confirm' })
           .props.onClick();
       });
@@ -146,11 +102,21 @@ describe('<PaymentConfirm />', () => {
       ).toBeTruthy();
     });
 
-    it('should push success state', async () => {
-      expect(success).toHaveBeenCalledTimes(1);
+    it('should push success state', () => {
+      expect(store.getActions()).toEqual([
+        paymentSuccess({ ...intent, status: 'succeeded' }),
+      ]);
     });
+  });
 
-    it('should push error state', async () => {
+  describe('on confirm error', () => {
+    let store, tree;
+
+    beforeAll(() => {
+      store = mockStore({
+        payment: { status: 'confirm', token: 'token' },
+      });
+
       act(() => {
         tree = create(
           <Provider store={store}>
@@ -162,13 +128,21 @@ describe('<PaymentConfirm />', () => {
         );
       });
 
-      await act(async () => {
-        await tree.root
+      act(() => {
+        tree.root
           .findByProps({ 'data-testid': 'confirm-button-confirm' })
           .props.onClick();
       });
+    });
 
-      expect(error).toHaveBeenCalledTimes(1);
+    it('should display spinner', () => {
+      expect(
+        tree.root.findByProps({ 'data-testid': 'confirm-spinner' })
+      ).toBeTruthy();
+    });
+
+    it('should push error state', async () => {
+      expect(store.getActions()).toEqual([paymentError('mock_error')]);
     });
   });
 });

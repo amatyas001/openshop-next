@@ -24,6 +24,7 @@ export const PaymentReview = (props) => {
           color='gray.100'
           width='100%'
           onClick={() => router.back()}
+          data-testid='review-button-back'
         >
           BACK TO SHOPPING
         </Button>
@@ -34,6 +35,7 @@ export const PaymentReview = (props) => {
           color='gray.100'
           width='100%'
           onClick={() => dispatch(paymentForm())}
+          data-testid='review-button-form'
         >
           PAYMENT DETAILS
         </Button>

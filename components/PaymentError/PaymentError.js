@@ -2,7 +2,7 @@ import { Flex, Text } from '@chakra-ui/core';
 import { Button } from '../index';
 import { useDispatch } from 'react-redux';
 import { paymentReset } from '../../redux/actions';
-export const PaymentError = ({ error }) => {
+export const PaymentError = ({ error = {} }) => {
   const dispatch = useDispatch();
 
   return (
@@ -22,7 +22,11 @@ export const PaymentError = ({ error }) => {
         <br />
         <em>{error.message}</em>
       </Text>
-      <Button width='100%' onClick={() => dispatch(paymentReset())}>
+      <Button
+        data-testid='error-button-retry'
+        width='100%'
+        onClick={() => dispatch(paymentReset())}
+      >
         retry
       </Button>
     </Flex>

@@ -42,7 +42,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
       </svg>
       <p
         className="css-18poma1"
-        style={null}
+        style={Object {}}
       >
         Payment Details
       </p>
@@ -67,7 +67,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
       </svg>
       <p
         className="css-18poma1"
-        style={null}
+        style={Object {}}
       >
         Finished
       </p>
@@ -456,6 +456,7 @@ exports[`Checkout page when there is payment token should render cancelled compo
          
         <span
           className="css-4i139l"
+          data-testid="cancelled-details"
         >
           id
         </span>
@@ -538,7 +539,7 @@ exports[`Checkout page when there is payment token should render confirm compone
       </svg>
       <p
         className="css-18poma1"
-        style={null}
+        style={Object {}}
       >
         Finished
       </p>
@@ -1387,6 +1388,7 @@ exports[`Checkout page when there is payment token should render error component
       <button
         className="css-187kagv"
         data-cy="button"
+        data-testid="error-button-retry"
         href="#0"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -1472,7 +1474,7 @@ exports[`Checkout page when there is payment token should render form component 
       </svg>
       <p
         className="css-18poma1"
-        style={null}
+        style={Object {}}
       >
         Finished
       </p>
@@ -1893,7 +1895,7 @@ exports[`Checkout page when there is payment token should render review componen
       </svg>
       <p
         className="css-18poma1"
-        style={null}
+        style={Object {}}
       >
         Payment Details
       </p>
@@ -1918,7 +1920,7 @@ exports[`Checkout page when there is payment token should render review componen
       </svg>
       <p
         className="css-18poma1"
-        style={null}
+        style={Object {}}
       >
         Finished
       </p>
@@ -2399,6 +2401,7 @@ exports[`Checkout page when there is payment token should render review componen
         <button
           className="css-1h13z07"
           data-cy="button"
+          data-testid="review-button-back"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -2409,6 +2412,7 @@ exports[`Checkout page when there is payment token should render review componen
         <button
           className="css-187kagv"
           data-cy="button"
+          data-testid="review-button-form"
           href="#0"
           onClick={[Function]}
           onKeyDown={[Function]}

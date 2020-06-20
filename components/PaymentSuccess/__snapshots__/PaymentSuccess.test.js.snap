@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaymentSuccess /> should render intent details 1`] = `
+<div
+  className="css-1mi3tt8"
+>
+  <h2
+    className="css-84al3w"
+  >
+    Payment Successful
+  </h2>
+  <p
+    className="css-441ftm"
+  >
+    Received intent number:
+     
+    <span
+      className="css-4i139l"
+    >
+      mock_id
+    </span>
+  </p>
+  <p
+    className="css-18poma1"
+  >
+    This was a sample transaction to demonstrate the payment flow. Thank you!
+  </p>
+</div>
+`;
+
+exports[`<PaymentSuccess /> should render without props 1`] = `
+<div
+  className="css-1mi3tt8"
+>
+  <h2
+    className="css-84al3w"
+  >
+    Payment Successful
+  </h2>
+  <p
+    className="css-441ftm"
+  >
+    Received intent number:
+     
+    <span
+      className="css-4i139l"
+    />
+  </p>
+  <p
+    className="css-18poma1"
+  >
+    This was a sample transaction to demonstrate the payment flow. Thank you!
+  </p>
+</div>
+`;

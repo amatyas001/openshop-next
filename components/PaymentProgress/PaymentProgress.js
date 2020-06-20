@@ -7,27 +7,25 @@ import { FaLongArrowAltRight } from 'react-icons/fa';
 export const PaymentProgress = (props) => {
   const [details, setDetails] = React.useState(false);
   const [finished, setFinished] = React.useState(false);
-  const { payment } = useSelector((state) => state);
+  const { payment = {} } = useSelector((state) => state);
 
   React.useEffect(() => {
-    if (payment) {
-      switch (payment.status) {
-        case 'review':
-          setDetails(false);
-          setFinished(false);
-          break;
-        case 'form':
-        case 'confirm':
-          setDetails(true);
-          setFinished(false);
-          break;
-        case 'success':
-        case 'cacelled':
-        case 'error':
-          setDetails(true);
-          setFinished(true);
-          break;
-      }
+    switch (payment.status) {
+      case 'review':
+        setDetails(false);
+        setFinished(false);
+        break;
+      case 'form':
+      case 'confirm':
+        setDetails(true);
+        setFinished(false);
+        break;
+      case 'success':
+      case 'cacelled':
+      case 'error':
+        setDetails(true);
+        setFinished(true);
+        break;
     }
   }, [payment]);
 
@@ -53,7 +51,7 @@ export const PaymentProgress = (props) => {
         style={
           details
             ? props.activeStyle || { color: '#44337A', fontWeight: 'bold' }
-            : null
+            : {}
         }
         as={FaLongArrowAltRight}
       />
@@ -61,7 +59,7 @@ export const PaymentProgress = (props) => {
         style={
           details
             ? props.activeStyle || { color: '#44337A', fontWeight: 'bold' }
-            : null
+            : {}
         }
       >
         Payment Details
@@ -72,7 +70,7 @@ export const PaymentProgress = (props) => {
         style={
           finished
             ? props.activeStyle || { color: '#44337A', fontWeight: 'bold' }
-            : null
+            : {}
         }
         as={FaLongArrowAltRight}
       />
@@ -80,7 +78,7 @@ export const PaymentProgress = (props) => {
         style={
           finished
             ? props.activeStyle || { color: '#44337A', fontWeight: 'bold' }
-            : null
+            : {}
         }
       >
         Finished

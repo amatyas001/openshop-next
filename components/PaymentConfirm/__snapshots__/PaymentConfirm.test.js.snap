@@ -1,5 +1,105 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<PaymentConfirm /> should render with props 1`] = `
+<div
+  aria-hidden={false}
+  className="css-1mi3tt8"
+>
+  <h2
+    className="css-84al3w"
+    data-testid="confirm-intent-name"
+  >
+    hey 
+    mock_name
+    !
+  </h2>
+  <p
+    className="css-1358t0d"
+  >
+    Please review your payment details:
+  </p>
+  <div
+    className="css-13cm5uv"
+  >
+    <div
+      className="css-d34wob"
+    >
+      <p
+        className="css-18poma1"
+      >
+        INTENT ID
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-id"
+      >
+        mock_id
+      </p>
+      <p
+        className="css-18poma1"
+      >
+        EMAIL
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-email"
+      >
+        mock_email
+      </p>
+      <p
+        className="css-18poma1"
+      >
+        PHONE
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-phone"
+      >
+        mock_phone
+      </p>
+      <p
+        className="css-18poma1"
+      >
+        ADDRESS
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-address"
+      >
+        mock_address
+      </p>
+    </div>
+    CartContent
+  </div>
+  <div
+    className="css-dvxksz"
+  >
+    <button
+      className="css-46aqdj"
+      data-cy="button"
+      data-testid="confirm-button-cancel"
+      href="#0"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={0}
+    >
+      CANCEL ORDER
+    </button>
+    <button
+      className="css-187kagv"
+      data-cy="button"
+      data-testid="confirm-button-confirm"
+      href="#0"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={0}
+    >
+      CONFIRM ORDER
+    </button>
+  </div>
+</div>
+`;
+
 exports[`<PaymentConfirm /> should render without props 1`] = `
 <div
   aria-hidden={false}
@@ -60,97 +160,7 @@ exports[`<PaymentConfirm /> should render without props 1`] = `
         data-testid="confirm-intent-address"
       />
     </div>
-    <section
-      id="cart-holder"
-      role="list"
-    >
-      <article
-        className="css-74stbp"
-        role="listitem"
-      >
-        <img
-          className="css-1wz2hfr"
-        />
-        <strong
-          className="css-17uar4q"
-        >
-           - 
-        </strong>
-        <strong
-          className="css-1nnp1eg"
-        >
-           $
-        </strong>
-        <svg
-          aria-label="Item info"
-          className="css-fwtiw2"
-          data-cy="button"
-          fill="currentColor"
-          height="1em"
-          href="#0"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-          stroke="currentColor"
-          strokeWidth="0"
-          style={
-            Object {
-              "color": undefined,
-            }
-          }
-          tabIndex={0}
-          viewBox="0 0 192 512"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
-          />
-        </svg>
-        <svg
-          aria-label="Delete item"
-          className="css-12o82jn"
-          data-cy="button"
-          fill="currentColor"
-          height="1em"
-          href="#0"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-          stroke="currentColor"
-          strokeWidth="0"
-          style={
-            Object {
-              "color": undefined,
-            }
-          }
-          tabIndex={0}
-          viewBox="0 0 448 512"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
-          />
-        </svg>
-      </article>
-      <footer>
-        <h3
-          className="css-ohvq3n"
-          id="total-summary"
-        >
-          TOTAL PRICE
-        </h3>
-        <strong
-          aria-describedby="total-summary"
-          className="css-lk14dv"
-          id="total-price"
-        >
-          100
-           $
-        </strong>
-      </footer>
-    </section>
+    CartContent
   </div>
   <div
     className="css-dvxksz"
@@ -180,5 +190,3 @@ exports[`<PaymentConfirm /> should render without props 1`] = `
   </div>
 </div>
 `;
-
-exports[`<PaymentConfirm /> with props should not display spinner 1`] = `[Error: No instances found with props: {"data-testid":"confirm-spinner"}]`;

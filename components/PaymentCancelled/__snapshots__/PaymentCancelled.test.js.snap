@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaymentCancelled /> should render without props 1`] = `
+<div
+  className="css-1mi3tt8"
+>
+  <h2
+    className="css-84al3w"
+  >
+    Payment Cancelled
+  </h2>
+  <p
+    className="css-441ftm"
+  >
+    Successfuly cancelled intent:
+     
+    <span
+      className="css-4i139l"
+      data-testid="cancelled-details"
+    />
+  </p>
+</div>
+`;
