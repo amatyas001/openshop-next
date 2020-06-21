@@ -1,7 +1,12 @@
-import { MANAGE_CART, PAYMENT_PROGRESS } from '@app/redux/actions';
+import { MANAGE_CART, PAYMENT_PROGRESS, FILTER_ITEMS } from './actions';
 
 export function reducer(state, action) {
   switch (action.type) {
+    case FILTER_ITEMS:
+      return {
+        ...state,
+        filters: { ...state.filters, ...action.filters },
+      };
     case MANAGE_CART:
       const stateCart = state.cart ?? [];
       switch (action.cart.status) {
