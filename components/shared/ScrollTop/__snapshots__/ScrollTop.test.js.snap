@@ -2,7 +2,7 @@
 
 exports[`<ScrollTop /> should render without props 1`] = `
 <svg
-  className="css-acr7z7"
+  className="css-13i9ii4"
   fill="currentColor"
   height="1em"
   onClick={[Function]}

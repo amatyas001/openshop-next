@@ -6,18 +6,20 @@ export const ScrollTop = () => {
 
   React.useEffect(() => {
     let tick;
+
     const handler = () => {
       if (!tick) {
         setScroll(window.pageYOffset > 300);
+        tick = true;
         setTimeout(() => {
           tick = false;
-        }, 300);
+        }, 200);
       }
-      tick = true;
     };
-    document.addEventListener('scroll', handler, { passive: true });
+
+    window.addEventListener('scroll', handler, { passive: true });
     return () => {
-      document.removeEventListener('scroll', handler);
+      window.removeEventListener('scroll', handler);
     };
   }, []);
 
