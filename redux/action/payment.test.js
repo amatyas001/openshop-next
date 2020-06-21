@@ -150,7 +150,7 @@ describe('Payment actions', () => {
         type: PAYMENT_PROGRESS,
         payment: {
           status: 'review',
-          token: false,
+          token: 'mock_uuid',
           intent: false,
           error: false,
         },
@@ -164,7 +164,7 @@ describe('Payment actions', () => {
         type: PAYMENT_PROGRESS,
         payment: {
           status: 'review',
-          token: false,
+          token: 'mock_uuid',
           intent: false,
           error: false,
         },

@@ -21,7 +21,7 @@ export const PaymentProgress = (props) => {
         setFinished(false);
         break;
       case 'success':
-      case 'cacelled':
+      case 'cancelled':
       case 'error':
         setDetails(true);
         setFinished(true);

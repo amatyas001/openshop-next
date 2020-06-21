@@ -60,6 +60,6 @@ export function paymentError(error) {
 export function paymentReset() {
   return {
     type: PAYMENT_PROGRESS,
-    payment: { status: 'review', token: false, intent: false, error: false },
+    payment: { status: 'review', token: uuidv1(), intent: false, error: false },
   };
 }

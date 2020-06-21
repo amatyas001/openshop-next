@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
-import { Flex, Heading, SimpleGrid, Text, Spinner } from '@chakra-ui/core';
+import { Flex, Heading, SimpleGrid, Text } from '@chakra-ui/core';
 import {
   paymentSuccess,
   paymentCancel,
   paymentError,
 } from '@app/redux/actions';
-import { Button, CartContent } from '@app/components';
+import { Button, CartContent, Spinner } from '@app/components';
 
 // Review and confirm payment intent
 export const PaymentConfirm = (props) => {
@@ -130,7 +130,7 @@ export const PaymentConfirm = (props) => {
         </SimpleGrid>
       </Flex>
       {payment.status === 'confirm' && loading && (
-        <Spinner data-testid='confirm-spinner' size='150px' m='auto' />
+        <Spinner data-testid='confirm-spinner' text='Sending data...' />
       )}
     </>
   );

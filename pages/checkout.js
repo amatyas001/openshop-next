@@ -1,7 +1,7 @@
 import Head from 'next/head';
+import { loadStripe } from '@stripe/stripe-js';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
-import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { Box } from '@chakra-ui/core';
 import {
@@ -17,7 +17,7 @@ import {
 const stripe = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 export default function Checkout() {
-  const { payment, cart } = useSelector((state) => state);
+  const { payment = {}, cart = [] } = useSelector((state) => state);
   const router = useRouter();
   const [content, setContent] = React.useState();
   const [head, setHead] = React.useState();
@@ -71,7 +71,8 @@ export default function Checkout() {
         <PaymentProgress />
         <>
           {/* CardElement must be mounted and to be in scope
-            when handling the confirmation of intent*/}
+            when handling the confirmation of intent. We use
+            css to hide these modules on different states */}
           <PaymentForm />
           <PaymentConfirm details={payment.details} intent={payment.intent} />
         </>

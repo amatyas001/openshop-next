@@ -23,7 +23,8 @@ exports[`<PaymentProgress /> should render properly on cancelled state 1`] = `
     strokeWidth="0"
     style={
       Object {
-        "color": undefined,
+        "color": "#44337A",
+        "fontWeight": "bold",
       }
     }
     viewBox="0 0 448 512"
@@ -36,7 +37,12 @@ exports[`<PaymentProgress /> should render properly on cancelled state 1`] = `
   </svg>
   <p
     className="css-18poma1"
-    style={Object {}}
+    style={
+      Object {
+        "color": "#44337A",
+        "fontWeight": "bold",
+      }
+    }
   >
     Payment Details
   </p>
@@ -48,7 +54,8 @@ exports[`<PaymentProgress /> should render properly on cancelled state 1`] = `
     strokeWidth="0"
     style={
       Object {
-        "color": undefined,
+        "color": "#44337A",
+        "fontWeight": "bold",
       }
     }
     viewBox="0 0 448 512"
@@ -61,7 +68,12 @@ exports[`<PaymentProgress /> should render properly on cancelled state 1`] = `
   </svg>
   <p
     className="css-18poma1"
-    style={Object {}}
+    style={
+      Object {
+        "color": "#44337A",
+        "fontWeight": "bold",
+      }
+    }
   >
     Finished
   </p>

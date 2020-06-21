@@ -1,22 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { CardElement, useStripe } from '@stripe/react-stripe-js';
-import {
-  Box,
-  Flex,
-  Heading,
-  Link,
-  SimpleGrid,
-  Spinner,
-  Text,
-} from '@chakra-ui/core';
+import { Box, Flex, Heading, Link, SimpleGrid, Text } from '@chakra-ui/core';
 import { paymentIntent, paymentReview } from '@app/redux/actions';
-import { Button, Field } from '@app/components';
+import { Button, Field, Spinner } from '@app/components';
 
 // Handle user data and send request to Stripe
 export const PaymentForm = (props) => {
   const stripe = useStripe();
   const dispatch = useDispatch();
-  const { amount, payment, cart } = useSelector((state) => state);
+  const { amount = 0, payment = {}, cart = [] } = useSelector((state) => state);
 
   const [loading, setLoading] = React.useState(false);
   const [cardError, setCardError] = React.useState(null);
@@ -248,7 +240,7 @@ export const PaymentForm = (props) => {
         </SimpleGrid>
       </Flex>
       {payment.status === 'form' && loading && (
-        <Spinner data-testid='form-spinner' size='150px' m='auto' />
+        <Spinner data-testid='form-spinner' text='Sending data...' />
       )}
     </>
   );
