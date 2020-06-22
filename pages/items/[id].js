@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import { Heading, Flex, Text, Divider, SimpleGrid, Box } from '@chakra-ui/core';
-import { Card, Button } from '../../components';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart, removeFromCart } from '../../redux/actions';
 import { MdInvertColors } from 'react-icons/md';
 import { FaFemale, FaMale } from 'react-icons/fa';
+import { Heading, Flex, Text, Divider, SimpleGrid, Box } from '@chakra-ui/core';
+import { addToCart, removeFromCart } from '@app/redux/actions';
+import { Card, Button } from '@app/components';
 
 export async function getStaticPaths() {
   const items = await import('../../public/storedata.json');

@@ -1,7 +1,7 @@
 import { create, act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import Checkout from '../../pages/checkout';
+import Checkout from '@app/pages/checkout';
 
 const mockStore = configureStore([]);
 

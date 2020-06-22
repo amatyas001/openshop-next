@@ -1,4 +1,4 @@
-import { handler } from '../../lambda/intent';
+import { handler } from '@app/lambda/intent';
 import axios from 'axios';
 
 jest.mock('axios');

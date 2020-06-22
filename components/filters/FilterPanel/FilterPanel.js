@@ -1,12 +1,29 @@
-import { useDispatch } from 'react-redux';
-import { FaSearch, FaRev } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 import { Box, Button, Collapse, Flex } from '@chakra-ui/core';
-import { filterReset } from '@app/redux/actions';
-import { FilterName, FilterPrice, FilterColor } from '@app/components';
+import {
+  FilterName,
+  FilterPrice,
+  FilterColor,
+  FilterReset,
+} from '@app/components';
 
+/**
+ * Wrapper component which can be imported to a page representing items.
+ * Displays toggle button and a collapsable container of item filters.
+ * The panel is **closed by default**. It manages its own state to
+ * control the visibility of nested components.
+ *
+ * For more information: [Chakra/Collapse](https://chakra-ui.com/collapse)
+ *
+ * *Note:* `items` prop is passed down to [FilterColor](#filtercolor) component
+ *
+ * @example
+ * ```jsx
+ * <FilterPanel items={items} />
+ * ```
+ */
 export const FilterPanel = ({ items }) => {
-  const dispatch = useDispatch();
-
   const [show, setShow] = React.useState(false);
 
   return (
@@ -49,32 +66,17 @@ export const FilterPanel = ({ items }) => {
           <FilterName />
           <FilterPrice />
           <FilterColor items={items} />
-          <Button
-            name='reset'
-            onClick={() => {
-              dispatch(filterReset(''));
-            }}
-            width='100%'
-            mt='10px'
-            mx='auto'
-            fontSize='1.3rem'
-            bg='purple.800'
-            color='gray.100'
-            border='1px'
-            borderColor='purple.400'
-            borderRadius='0'
-            _hover={{
-              bg: 'purple.400',
-              color: 'gray.100',
-              cursor: 'pointer',
-              textDecoration: 'underline',
-            }}
-          >
-            <Box as={FaRev} mr='5px' fontSize='1rem' />
-            reset
-          </Button>
+          <FilterReset />
         </Flex>
       </Collapse>
     </>
   );
+};
+
+FilterPanel.propTypes = {
+  /**
+   * Array of available items
+   *
+   */
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import { loadStripe } from '@stripe/stripe-js';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
+import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { Box } from '@chakra-ui/core';
 import {
@@ -24,42 +24,40 @@ export default function Checkout() {
 
   React.useEffect(() => {
     router.prefetch('/');
-    if (payment && payment.status !== 'success' && cart && !cart.length)
+    if (payment.status !== 'success' && cart && !cart.length)
       router.replace('/');
   }, [payment, cart]);
 
   React.useEffect(() => {
-    if (payment) {
-      switch (payment.status) {
-        case 'review':
-          setHead('Review');
-          setContent(<PaymentReview />);
-          break;
-        case 'form':
-          setContent('');
-          setHead('Details');
-          break;
-        case 'confirm':
-          setContent('');
-          setHead('Confirm');
-          break;
-        case 'success':
-          setHead('Success');
-          setContent(<PaymentSuccess intent={payment.intent} />);
-          break;
-        case 'cancelled':
-          setHead('Cancelled');
-          setContent(<PaymentCancelled intent={payment.intent} />);
-          break;
-        case 'error':
-          setHead('Error');
-          setContent(<PaymentError error={payment.error} />);
-          break;
-        default:
-          setHead('Checkout');
-      }
+    switch (payment.status) {
+      case 'review':
+        setHead('Review');
+        setContent(<PaymentReview />);
+        break;
+      case 'form':
+        setContent('');
+        setHead('Details');
+        break;
+      case 'confirm':
+        setContent('');
+        setHead('Confirm');
+        break;
+      case 'success':
+        setHead('Success');
+        setContent(<PaymentSuccess intent={payment.intent} />);
+        break;
+      case 'cancelled':
+        setHead('Cancelled');
+        setContent(<PaymentCancelled intent={payment.intent} />);
+        break;
+      case 'error':
+        setHead('Error');
+        setContent(<PaymentError error={payment.error} />);
+        break;
+      default:
+        setHead('Checkout');
     }
-  }, [payment]);
+  }, [payment.status]);
 
   return (
     <Box px='5%' py='20px' minHeight='600px'>
