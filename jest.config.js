@@ -2,6 +2,7 @@ module.exports = {
   rootDir: '.',
   moduleFileExtensions: ['js'],
   testMatch: ['**/*.test.js'],
+  coverageDirectory: 'docs/coverage',
   coveragePathIgnorePatterns: [
     '/node_modules/',
     '/styles/',
@@ -15,7 +16,10 @@ module.exports = {
       '<rootDir>/__mocks__/files.js',
     '\\.(css|less|scss)$': '<rootDir>/__mocks__/styles.js',
     '^@app/components(.*)$': '<rootDir>/components$1',
-    '^@app/redux(.*)$': '<rootDir>/redux$1',
+    '^@app/redux(.*)$': '<rootDir>/lib/redux$1',
+    '^@app/lambda(.*)$': '<rootDir>/lib/lambda$1',
+    '^@app/styles(.*)$': '<rootDir>/styles$1',
+    '^@app/pages(.*)$': '<rootDir>/pages$1',
     '^@app(.*)$': '<rootDir>$1',
   },
   watchPlugins: [
