@@ -1,5 +1,4 @@
 ```js
-import { Heading } from '@chakra-ui/core';
 import { useSelector } from 'react-redux';
 
 const { filters = { color: 'All', name: '', price: 200 } } = useSelector(

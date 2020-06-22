@@ -3,6 +3,10 @@ import { FaRev } from 'react-icons/fa';
 import { Box, Button } from '@chakra-ui/core';
 import { filterReset } from '@app/redux/actions';
 
+/**
+ * Renders a button which resets the **`filter` object**
+ * to its default values by **dispatch filter event**.
+ */
 export const FilterReset = () => {
   const dispatch = useDispatch();
 

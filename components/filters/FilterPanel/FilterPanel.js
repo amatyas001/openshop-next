@@ -16,7 +16,7 @@ import {
  *
  * For more information: [Chakra/Collapse](https://chakra-ui.com/collapse)
  *
- * *Note:* `items` prop is passed down to [FilterColor](#filtercolor) component
+ * *Note:* `items` prop is passed down to child components
  *
  * @example
  * ```jsx
@@ -64,7 +64,7 @@ export const FilterPanel = ({ items }) => {
           bg='purple.100'
         >
           <FilterName />
-          <FilterPrice />
+          <FilterPrice items={items} />
           <FilterColor items={items} />
           <FilterReset />
         </Flex>
