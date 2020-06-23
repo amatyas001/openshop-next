@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>33/33</span>
+                <span class='fraction'>32/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.33% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>14/15</span>
+                <span class='fraction'>12/14</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>32/32</span>
+                <span class='fraction'>31/31</span>
             </div>
         
             
@@ -138,8 +138,7 @@
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -171,7 +170,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -201,8 +199,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -223,10 +221,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import { Box } from '@chakra-ui/core';
 import { useSelector } from 'react-redux';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import { Box } from '@chakra-ui/core';
 import {
   PaymentProgress,
   PaymentReview,
@@ -235,54 +233,52 @@ import {
   PaymentSuccess,
   PaymentCancelled,
   PaymentError,
-} from '../components';
+} from '@app/components';
 &nbsp;
 const stripe = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 &nbsp;
 export default function Checkout() {
-  const { payment, cart } = useSelector((state) =&gt; state);
+  const { payment = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> cart = <span class="branch-0 cbranch-no" title="branch not covered" >[] </span>} = useSelector((state) =&gt; state);
   const router = useRouter();
   const [content, setContent] = React.useState();
   const [head, setHead] = React.useState();
 &nbsp;
   React.useEffect(() =&gt; {
     router.prefetch('/');
-    if (payment &amp;&amp; payment.status !== 'success' &amp;&amp; cart &amp;&amp; !cart.length)
+    if (payment.status !== 'success' &amp;&amp; cart &amp;&amp; !cart.length)
       router.replace('/');
   }, [payment, cart]);
 &nbsp;
   React.useEffect(() =&gt; {
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (payment) {
-      switch (payment.status) {
-        case 'review':
-          setHead('Review');
-          setContent(&lt;PaymentReview /&gt;);
-          break;
-        case 'form':
-          setContent('');
-          setHead('Details');
-          break;
-        case 'confirm':
-          setContent('');
-          setHead('Confirm');
-          break;
-        case 'success':
-          setHead('Success');
-          setContent(&lt;PaymentSuccess intent={payment.intent} /&gt;);
-          break;
-        case 'cancelled':
-          setHead('Cancelled');
-          setContent(&lt;PaymentCancelled intent={payment.intent} /&gt;);
-          break;
-        case 'error':
-          setHead('Error');
-          setContent(&lt;PaymentError error={payment.error} /&gt;);
-          break;
-        default:
-          setHead('Checkout');
-      }
+    switch (payment.status) {
+      case 'review':
+        setHead('Review');
+        setContent(&lt;PaymentReview /&gt;);
+        break;
+      case 'form':
+        setContent('');
+        setHead('Details');
+        break;
+      case 'confirm':
+        setContent('');
+        setHead('Confirm');
+        break;
+      case 'success':
+        setHead('Success');
+        setContent(&lt;PaymentSuccess intent={payment.intent} /&gt;);
+        break;
+      case 'cancelled':
+        setHead('Cancelled');
+        setContent(&lt;PaymentCancelled intent={payment.intent} /&gt;);
+        break;
+      case 'error':
+        setHead('Error');
+        setContent(&lt;PaymentError error={payment.error} /&gt;);
+        break;
+      default:
+        setHead('Checkout');
     }
-  }, [payment]);
+  }, [payment.status]);
 &nbsp;
   return (
     &lt;Box px='5%' py='20px' minHeight='600px'&gt;
@@ -294,7 +290,8 @@ export default function Checkout() {
         &lt;PaymentProgress /&gt;
         &lt;&gt;
           {/* CardElement must be mounted and to be in scope
-            when handling the confirmation of intent*/}
+            when handling the confirmation of intent. We use
+            css to hide these modules on different states */}
           &lt;PaymentForm /&gt;
           &lt;PaymentConfirm details={payment.details} intent={payment.intent} /&gt;
         &lt;/&gt;
@@ -310,7 +307,7 @@ export default function Checkout() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Jun 20 2020 10:51:19 GMT+0200 (közép-európai nyári idő)
+                at Tue Jun 23 2020 10:48:20 GMT+0200 (közép-európai nyári idő)
             </div>
         </div>
         <script src="../prettify.js"></script>

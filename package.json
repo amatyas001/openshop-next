@@ -14,9 +14,8 @@
     "test:e2e": "cypress run",
     "test:watch:unit": "jest --watchAll",
     "test:watch:e2e": "cypress open",
-    "test:coverage": "jest --coverage",
     "docs:server": "styleguidist server",
-    "docs:build": "styleguidist build"
+    "docs:build": "styleguidist build && mv styleguide docs && jest --coverage"
   },
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.18.6",

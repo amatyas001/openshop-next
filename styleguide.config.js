@@ -24,39 +24,32 @@ module.exports = {
           content: 'components/cart/cart.md',
           components: 'components/cart/**/[A-Z]*.js',
           exampleMode: 'expand',
-          usageMode: 'expand',
+          usageMode: 'collapse',
         },
         {
           name: 'Filters',
           content: 'components/filters/filters.md',
           components: 'components/filters/**/[A-Z]*.js',
-          exampleMode: 'expand',
+          exampleMode: 'collapse',
           usageMode: 'expand',
         },
         {
           name: 'Payment',
           content: 'components/payment/payment.md',
           components: 'components/payment/**/[A-Z]*.js',
-          exampleMode: 'expand',
+          exampleMode: 'collapse',
           usageMode: 'expand',
         },
         {
           name: 'Shared',
           content: 'components/shared/shared.md',
           components: 'components/shared/**/[A-Z]*.js',
-          exampleMode: 'expand',
+          exampleMode: 'collapse',
           usageMode: 'expand',
         },
       ],
     },
   ],
-  theme: {
-    baseBackground: '#fdfdfc',
-    link: '#274e75',
-    linkHover: '#90a7bf',
-    border: '#e0d2de',
-    font: ['Helvetica', 'sans-serif'],
-  },
   moduleAliases: {
     '@app/redux': path.resolve(__dirname, 'lib/redux/'),
     '@app/lambda': path.resolve(__dirname, 'lib/lambda/'),
@@ -69,7 +62,6 @@ module.exports = {
     Wrapper: path.join(__dirname, 'lib/styleguidist/styleguide.wrapper.js'),
   },
   webpackConfig: {
-    output: path.join(__dirname, 'docs'),
     module: {
       rules: [
         {
