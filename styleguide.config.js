@@ -13,6 +13,10 @@ module.exports = {
       href: 'https://openshop.netlify.app',
     },
     {
+      name: 'Test Coverage',
+      href: '/coverage/lcov-report/index.html',
+    },
+    {
       name: 'Components',
       sections: [
         {
