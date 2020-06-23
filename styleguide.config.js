@@ -4,12 +4,8 @@ module.exports = {
   title: 'Openshop Docs',
   sections: [
     {
-      name: 'Introduction',
-      content: 'docs/introduction.md',
-    },
-    {
-      name: 'Configuration',
-      content: 'docs/configuration.md',
+      name: '',
+      content: 'README.md',
     },
     {
       name: 'Live Demo',
@@ -21,28 +17,28 @@ module.exports = {
       sections: [
         {
           name: 'Cart',
-          content: 'docs/components/cart.md',
+          content: 'components/cart/cart.md',
           components: 'components/cart/**/[A-Z]*.js',
           exampleMode: 'expand',
           usageMode: 'expand',
         },
         {
           name: 'Filters',
-          content: 'docs/components/filters.md',
+          content: 'components/filters/filters.md',
           components: 'components/filters/**/[A-Z]*.js',
           exampleMode: 'expand',
           usageMode: 'expand',
         },
         {
           name: 'Payment',
-          content: 'docs/components/payment.md',
+          content: 'components/payment/payment.md',
           components: 'components/payment/**/[A-Z]*.js',
           exampleMode: 'expand',
           usageMode: 'expand',
         },
         {
           name: 'Shared',
-          content: 'docs/components/shared.md',
+          content: 'components/shared/shared.md',
           components: 'components/shared/**/[A-Z]*.js',
           exampleMode: 'expand',
           usageMode: 'expand',
@@ -69,6 +65,7 @@ module.exports = {
     Wrapper: path.join(__dirname, 'lib/styleguidist/styleguide.wrapper.js'),
   },
   webpackConfig: {
+    output: path.join(__dirname, 'docs'),
     module: {
       rules: [
         {

@@ -13,7 +13,7 @@ export const PaymentConfirm = (props) => {
   const stripe = useStripe();
   const elements = useElements();
   const dispatch = useDispatch();
-  const { payment } = useSelector((store) => store);
+  const { payment = {} } = useSelector((store) => store);
   const { details = {}, intent = {} } = props;
   const [loading, setLoading] = React.useState(false);
 
