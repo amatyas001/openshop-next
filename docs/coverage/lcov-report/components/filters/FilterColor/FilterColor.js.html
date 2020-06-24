@@ -116,7 +116,28 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -161,6 +182,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -181,14 +203,24 @@ import { Heading, Select } from '@chakra-ui/core';
 import { filterColor } from '@app/redux/actions';
 &nbsp;
 /**
- * Extracts the colors from the given items array and displays
- * them as `options` in a `select` input field. Changing the value
- * **dispatch filter event** and create **`color` subkey** in the
- * **`filter` object**.
+ * Displays available all available color as a single `option` element in a
+ * labelled `select` input field.
  *
- * For more information: [Chakra/Select](https://chakra-ui.com/select)
+ * Extracts the colors from passed items array and converts the list into
+ * a `Set` of item colors in alphabetically ascending order.
+ *
+ * &gt; ***State***
+ * &gt; - `filters.color`
+ *
+ * &gt; ***Elements***
+ * &gt; - [Select](https://chakra-ui.com/select)
+ *
+ * @example
+ * ```jsx
+ * &lt;FilterColor items={itemsArray} /&gt;
+ * ```
  */
-export const FilterColor = <span class="fstat-no" title="function not covered" >({</span> items }) =&gt; {
+export const FilterColor = <span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; {
   const dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
   const { filters = <span class="branch-0 cbranch-no" title="branch not covered" >{ color: 'All' } </span>} = <span class="cstat-no" title="statement not covered" >useSelector(<span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; <span class="cstat-no" title="statement not covered" >state)</span>;</span>
 &nbsp;
@@ -196,7 +228,7 @@ export const FilterColor = <span class="fstat-no" title="function not covered" >
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  React.useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
     let list = <span class="cstat-no" title="statement not covered" >['All'];</span>
-<span class="cstat-no" title="statement not covered" >    items.forEach(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; <span class="cstat-no" title="statement not covered" >list.push(item.color))</span>;</span>
+<span class="cstat-no" title="statement not covered" >    props.items.forEach(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; <span class="cstat-no" title="statement not covered" >list.push(item.color))</span>;</span>
 <span class="cstat-no" title="statement not covered" >    setColors(</span>
       [...new Set(list)].sort().map(<span class="fstat-no" title="function not covered" >(c</span>) =&gt; {
 <span class="cstat-no" title="statement not covered" >        return (</span>
@@ -221,6 +253,7 @@ export const FilterColor = <span class="fstat-no" title="function not covered" >
         onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
 <span class="cstat-no" title="statement not covered" >          dispatch(filterColor(e.target.value));</span>
         }}
+        {...props}
       &gt;
         {colors}
       &lt;/Select&gt;
@@ -230,7 +263,7 @@ export const FilterColor = <span class="fstat-no" title="function not covered" >
 &nbsp;
 FilterColor.propTypes = {
   /**
-   * Array of available items
+   * Array of items to be filtered
    */
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
@@ -241,7 +274,7 @@ FilterColor.propTypes = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jun 23 2020 10:48:20 GMT+0200 (közép-európai nyári idő)
+                at Thu Jun 25 2020 01:35:58 GMT+0200 (közép-európai nyári idő)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

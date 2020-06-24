@@ -22,7 +22,7 @@ const links = [
   },
 ];
 
-export default function ({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   const store = useStore(pageProps.initialReduxState);
 
   return (
@@ -56,4 +56,6 @@ export default function ({ Component, pageProps }) {
       </PersistGate>
     </Provider>
   );
-}
+};
+
+export default App;

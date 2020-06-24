@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Box, Divider, Flex, Heading } from '@chakra-ui/core';
 import { Card, FilterPanel, Spinner } from '@app/components';
 
+/** @ignore */
 export async function getStaticProps() {
   const items = await import('../../public/storedata.json');
 
@@ -13,7 +14,8 @@ export async function getStaticProps() {
   };
 }
 
-export default function ({ items }) {
+/** @component */
+const Items = ({ items }) => {
   const { filters = { color: 'All', name: '', price: 200 } } = useSelector(
     (store) => store
   );
@@ -79,4 +81,6 @@ export default function ({ items }) {
       </Flex>
     </>
   );
-}
+};
+
+export default Items;

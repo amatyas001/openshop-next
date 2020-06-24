@@ -2,9 +2,11 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { PseudoBox, Heading, Image, Spinner } from '@chakra-ui/core';
 
+/** @ignore */
 const Carousel = dynamic(() => import('@brainhubeu/react-carousel'));
 
-export default function () {
+/** @component */
+const Index = () => {
   const [loading, setLoading] = React.useState(true);
   const items = [
     '/images/site/landscape-people-1.webp',
@@ -67,4 +69,6 @@ export default function () {
       )}
     </>
   );
-}
+};
+
+export default Index;

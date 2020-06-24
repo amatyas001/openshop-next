@@ -5,51 +5,39 @@
 
 ---
 
-Configurable template for e-commerce websites. Using static site generation by default providing great SEO experience and extremely fast page loading times. As a JAM project it uses FaaS, WebAPI and CDN without a dedicated backend to deliver business data. Implements realtime secure payment processing by default with Stripe API.
+Configurable template for e-commerce websites. Using static site generation by default providing great SEO experience and extremely fast page loading times. As a JAM project, it uses FaaS, WebAPI, and CDN without a dedicated backend to deliver business data. Implements real-time secure payment processing by default with Stripe API.
 
-## Technology Infrastructure
+Check out the [Documentation](https://amatyas001.github.io/openshop/next/) for detailed information.
+
+## Technology Architecture
 
 ### Frameworks
 
-[React](https://reactjs.org)
+**[React](https://reactjs.org)** _Open-source JavaScript library for building user interfaces._
 
-> Open-source JavaScript library for building user interfaces
+**[Next](https://nextjs.org/)** _React framework offering server-side rendering, automatic code-splitting, static exporting._
 
-[Next](https://nextjs.org/)
+**[Redux](https://redux.js.org)** _Predictable state container._
 
-> React framework offering server-side rendering, automatic code-splitting, static exporting
+**[Chakra UI](https://chakra-ui.com)** _Simple, modular and accessible component library._
 
-[Redux](https://redux.js.org)
-
-> A predictable state container
-
-[Chakra UI](https://chakra-ui.com)
-
-> Simple, modular and accessible component library
-
-[Stripe](https://stripe.com)
-
-> Online payment processing for internet businesses
+**[Stripe](https://stripe.com)** _Online payment processing for internet businesses._
 
 ### Automated Testing
 
-[Jest](https://jestjs.org)
+**[Jest](https://jestjs.org)** _Delightful javascript testing framework with a focus on simplicity._
 
-> Jest is a delightful javascript testing framework with a focus on simplicity.
+**[Cypress](https://cypress.io)** _Fast, easy and reliable testing for anything that runs in a browser._
 
-[Cypress](https://cypress.io)
+### Integration Pipeline
 
-> A javascript end-to-end testing framework. Fast, easy and reliable testing for anything that runs in a browser.
+**[Circle CI](https://circleci.com)** _Continuous integration platform in the cloud._
 
-### Continous Delivery
+**[Netlify](https://netlify.com)** _Builds, deploys and hosts your front-end._
 
-[Circle CI](https://circleci.com)
+### Documentation
 
-> Continuous integration and delivery platform for Linux, macOS, and Android, in the cloud or self-hosted
-
-[Netlify](https://netlify.com)
-
-> Netlify builds, deploys and hosts your front-end
+**[React Styleguidist](https://react-styleguidist.js.org/)** _Isolated React component development environment with a living style guide._
 
 ## Feedback
 
@@ -57,7 +45,7 @@ Any questions or issues can be placed under [Issues](https://github.com/amatyas0
 
 ## License
 
-Application is licensed under **[The MIT License](https://opensource.org/licenses/MIT)** &copy; Copyright 2020 Mátyás Angyal
+_The project is licensed under **[The MIT License](https://opensource.org/licenses/MIT)** &copy; Copyright 2020 Mátyás Angyal_
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 >

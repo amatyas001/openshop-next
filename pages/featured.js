@@ -4,6 +4,7 @@ import { FaFemale, FaMale } from 'react-icons/fa';
 import { Heading, Flex, Text, Divider, SimpleGrid, Box } from '@chakra-ui/core';
 import { Card } from '@app/components';
 
+/** @ignore */
 export async function getStaticProps() {
   const items = await import('../public/storedata.json');
 
@@ -14,7 +15,8 @@ export async function getStaticProps() {
   };
 }
 
-export default function ({ items }) {
+/** @component */
+const Featured = ({ items }) => {
   return (
     <>
       <Head>
@@ -65,4 +67,6 @@ export default function ({ items }) {
       </Flex>
     </>
   );
-}
+};
+
+export default Featured;

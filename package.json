@@ -15,7 +15,7 @@
     "test:watch:unit": "jest --watchAll",
     "test:watch:e2e": "cypress open",
     "docs:server": "styleguidist server",
-    "docs:build": "styleguidist build && mv styleguide docs && jest --coverage"
+    "docs:build": "rm -rf docs && styleguidist build && mkdir docs &&  mv -v styleguide/* docs/ && jest --coverage && rm -rf styleguide"
   },
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.18.6",

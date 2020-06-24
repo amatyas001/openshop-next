@@ -6,6 +6,7 @@ import { Heading, Flex, Text, Divider, SimpleGrid, Box } from '@chakra-ui/core';
 import { addToCart, removeFromCart } from '@app/redux/actions';
 import { Card, Button } from '@app/components';
 
+/** @ignore */
 export async function getStaticPaths() {
   const items = await import('../../public/storedata.json');
 
@@ -14,6 +15,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
+/** @ignore */
 export async function getStaticProps({ params }) {
   const items = await import('../../public/storedata.json');
 
@@ -27,7 +29,8 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function ({ item }) {
+/** @component */
+const Item = ({ item }) => {
   const cart = useSelector((store) => store.cart);
   const dispatch = useDispatch();
 
@@ -96,4 +99,6 @@ export default function ({ item }) {
       </Flex>
     </>
   );
-}
+};
+
+export default Item;

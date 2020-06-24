@@ -16,7 +16,17 @@ import {
 
 const stripe = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
-export default function Checkout() {
+/**
+ * It checks the current cart content and  **redirects to homepage**
+ * if it finds no items. Also checks the *payment status* because
+ * after successful payment the cart content gets deleted. Redirected
+ * path is prefetched and *`events.on.browserHistoryChange`* listener
+ * is attached to `Router` (default export from `next/router`) to handle
+ * prefetching before actual route change. This technique provides page
+ * loading without a full reload on server request which triggered on
+ * normal .
+ */
+const Checkout = () => {
   const { payment = {}, cart = [] } = useSelector((state) => state);
   const router = useRouter();
   const [content, setContent] = React.useState();
@@ -78,4 +88,6 @@ export default function Checkout() {
       </Elements>
     </Box>
   );
-}
+};
+
+export default Checkout;

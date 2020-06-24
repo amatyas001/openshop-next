@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1592902100667" clover="3.2.0">
-  <project timestamp="1592902100668" name="All files">
-    <metrics statements="289" coveredstatements="213" conditionals="228" coveredconditionals="177" methods="108" coveredmethods="61" elements="625" coveredelements="451" complexity="0" loc="289" ncloc="289" packages="33" files="37" classes="37"/>
+<coverage generated="1593041758879" clover="3.2.0">
+  <project timestamp="1593041758880" name="All files">
+    <metrics statements="297" coveredstatements="224" conditionals="235" coveredconditionals="179" methods="106" coveredmethods="61" elements="638" coveredelements="464" complexity="0" loc="297" ncloc="297" packages="33" files="37" classes="37"/>
     <package name="components">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.js" path="/home/amatyas/projects/next/openshop/components/index.js">
@@ -15,50 +15,55 @@
       </file>
     </package>
     <package name="components.cart.CartContent">
-      <metrics statements="14" coveredstatements="11" conditionals="2" coveredconditionals="0" methods="8" coveredmethods="5"/>
+      <metrics statements="15" coveredstatements="13" conditionals="6" coveredconditionals="4" methods="7" coveredmethods="5"/>
       <file name="CartContent.js" path="/home/amatyas/projects/next/openshop/components/cart/CartContent/CartContent.js">
-        <metrics statements="14" coveredstatements="11" conditionals="2" coveredconditionals="0" methods="8" coveredmethods="5"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="14" count="10" type="stmt"/>
-        <line num="15" count="64" type="stmt"/>
-        <line num="16" count="31" type="stmt"/>
-        <line num="19" count="31" type="stmt"/>
-        <line num="20" count="16" type="stmt"/>
-        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="23" count="16" type="stmt"/>
-        <line num="24" count="16" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="30" count="31" type="stmt"/>
-        <line num="31" count="16" type="stmt"/>
-        <line num="34" count="31" type="stmt"/>
-        <line num="38" count="29" type="stmt"/>
+        <metrics statements="15" coveredstatements="13" conditionals="6" coveredconditionals="4" methods="7" coveredmethods="5"/>
+        <line num="29" count="10" type="stmt"/>
+        <line num="30" count="64" type="stmt"/>
+        <line num="31" count="31" type="stmt"/>
+        <line num="33" count="31" type="stmt"/>
+        <line num="34" count="16" type="stmt"/>
+        <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="37" count="16" type="stmt"/>
+        <line num="38" count="16" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="43" count="31" type="stmt"/>
+        <line num="44" count="16" type="stmt"/>
+        <line num="47" count="31" type="stmt"/>
+        <line num="49" count="29" type="cond" truecount="2" falsecount="0"/>
+        <line num="83" count="10" type="stmt"/>
+        <line num="88" count="10" type="stmt"/>
       </file>
     </package>
     <package name="components.cart.CartItem">
-      <metrics statements="6" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="1"/>
+      <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
       <file name="CartItem.js" path="/home/amatyas/projects/next/openshop/components/cart/CartItem/CartItem.js">
-        <metrics statements="6" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="1"/>
-        <line num="10" count="10" type="stmt"/>
-        <line num="11" count="29" type="stmt"/>
-        <line num="12" count="29" type="stmt"/>
-        <line num="14" count="29" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="28" count="10" type="stmt"/>
+        <line num="29" count="29" type="stmt"/>
+        <line num="30" count="29" type="stmt"/>
+        <line num="32" count="29" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="84" count="10" type="stmt"/>
+        <line num="89" count="10" type="stmt"/>
       </file>
     </package>
     <package name="components.cart.CartPanel">
-      <metrics statements="9" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <metrics statements="11" coveredstatements="3" conditionals="7" coveredconditionals="0" methods="5" coveredmethods="0"/>
       <file name="CartPanel.js" path="/home/amatyas/projects/next/openshop/components/cart/CartPanel/CartPanel.js">
-        <metrics statements="9" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="8" count="10" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="91" count="0" type="stmt"/>
-        <line num="104" count="0" type="stmt"/>
-        <line num="105" count="0" type="stmt"/>
+        <metrics statements="11" coveredstatements="3" conditionals="7" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="45" count="10" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="146" count="0" type="stmt"/>
+        <line num="147" count="0" type="stmt"/>
+        <line num="163" count="10" type="stmt"/>
+        <line num="171" count="10" type="stmt"/>
       </file>
     </package>
     <package name="components.filters">
@@ -71,77 +76,79 @@
       <metrics statements="12" coveredstatements="2" conditionals="1" coveredconditionals="0" methods="6" coveredmethods="0"/>
       <file name="FilterColor.js" path="/home/amatyas/projects/next/openshop/components/filters/FilterColor/FilterColor.js">
         <metrics statements="12" coveredstatements="2" conditionals="1" coveredconditionals="0" methods="6" coveredmethods="0"/>
-        <line num="14" count="10" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="10" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="54" count="10" type="stmt"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="65" count="10" type="stmt"/>
       </file>
     </package>
     <package name="components.filters.FilterName">
       <metrics statements="5" coveredstatements="1" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="FilterName.js" path="/home/amatyas/projects/next/openshop/components/filters/FilterName/FilterName.js">
         <metrics statements="5" coveredstatements="1" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="13" count="10" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
       </file>
     </package>
     <package name="components.filters.FilterPanel">
-      <metrics statements="5" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="FilterPanel.js" path="/home/amatyas/projects/next/openshop/components/filters/FilterPanel/FilterPanel.js">
-        <metrics statements="5" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="26" count="10" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="76" count="10" type="stmt"/>
+        <metrics statements="6" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="25" count="10" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="77" count="10" type="stmt"/>
+        <line num="82" count="10" type="stmt"/>
       </file>
     </package>
     <package name="components.filters.FilterPrice">
-      <metrics statements="21" coveredstatements="2" conditionals="7" coveredconditionals="0" methods="9" coveredmethods="0"/>
+      <metrics statements="20" coveredstatements="3" conditionals="7" coveredconditionals="0" methods="8" coveredmethods="0"/>
       <file name="FilterPrice.js" path="/home/amatyas/projects/next/openshop/components/filters/FilterPrice/FilterPrice.js">
-        <metrics statements="21" coveredstatements="2" conditionals="7" coveredconditionals="0" methods="9" coveredmethods="0"/>
-        <line num="23" count="10" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
+        <metrics statements="20" coveredstatements="3" conditionals="7" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <line num="28" count="10" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="31" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="78" count="10" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="82" count="10" type="stmt"/>
+        <line num="89" count="10" type="stmt"/>
       </file>
     </package>
     <package name="components.filters.FilterReset">
-      <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="FilterReset.js" path="/home/amatyas/projects/next/openshop/components/filters/FilterReset/FilterReset.js">
-        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="10" count="10" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
+        <metrics statements="6" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="56" count="10" type="stmt"/>
+        <line num="61" count="10" type="stmt"/>
       </file>
     </package>
     <package name="components.payment">
@@ -465,40 +472,41 @@
       </file>
     </package>
     <package name="pages">
-      <metrics statements="31" coveredstatements="31" conditionals="14" coveredconditionals="12" methods="4" coveredmethods="4"/>
+      <metrics statements="32" coveredstatements="32" conditionals="14" coveredconditionals="12" methods="4" coveredmethods="4"/>
       <file name="checkout.js" path="/home/amatyas/projects/next/openshop/pages/checkout.js">
-        <metrics statements="31" coveredstatements="31" conditionals="14" coveredconditionals="12" methods="4" coveredmethods="4"/>
+        <metrics statements="32" coveredstatements="32" conditionals="14" coveredconditionals="12" methods="4" coveredmethods="4"/>
         <line num="17" count="1" type="stmt"/>
-        <line num="20" count="61" type="cond" truecount="0" falsecount="2"/>
-        <line num="21" count="30" type="stmt"/>
-        <line num="22" count="30" type="stmt"/>
-        <line num="23" count="30" type="stmt"/>
-        <line num="25" count="30" type="stmt"/>
-        <line num="26" count="15" type="stmt"/>
-        <line num="27" count="15" type="cond" truecount="5" falsecount="0"/>
-        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="61" type="cond" truecount="0" falsecount="2"/>
         <line num="31" count="30" type="stmt"/>
-        <line num="32" count="15" type="cond" truecount="7" falsecount="0"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
+        <line num="32" count="30" type="stmt"/>
+        <line num="33" count="30" type="stmt"/>
+        <line num="35" count="30" type="stmt"/>
+        <line num="36" count="15" type="stmt"/>
+        <line num="37" count="15" type="cond" truecount="5" falsecount="0"/>
         <line num="38" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
+        <line num="41" count="30" type="stmt"/>
+        <line num="42" count="15" type="cond" truecount="7" falsecount="0"/>
         <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
-        <line num="47" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
         <line num="52" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
         <line num="54" count="1" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
         <line num="56" count="1" type="stmt"/>
-        <line num="58" count="9" type="stmt"/>
-        <line num="62" count="30" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="68" count="9" type="stmt"/>
+        <line num="72" count="30" type="stmt"/>
       </file>
     </package>
   </project>

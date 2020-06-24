@@ -8,23 +8,15 @@ module.exports = {
       content: 'README.md',
     },
     {
-      name: 'Live Demo',
-      external: true,
-      href: 'https://openshop.netlify.app',
-    },
-    {
-      name: 'Test Coverage',
-      href: '/coverage/lcov-report/index.html',
-    },
-    {
       name: 'Components',
+      content: 'components/components.md',
       sections: [
         {
           name: 'Cart',
           content: 'components/cart/cart.md',
           components: 'components/cart/**/[A-Z]*.js',
-          exampleMode: 'expand',
-          usageMode: 'collapse',
+          exampleMode: 'collapse',
+          usageMode: 'expand',
         },
         {
           name: 'Filters',
@@ -50,6 +42,51 @@ module.exports = {
       ],
     },
   ],
+  template: {
+    favicon: '/favicon.ico',
+  },
+  theme: {
+    font: ['Helvetica', 'sans-serif'],
+    baseBackground: '#171923',
+    color: {
+      baseBackground: '#171923',
+      link: '#E9D8FD',
+      linkHover: '#B794F4',
+      border: '#EDF2F7',
+      base: '#F7FAFC',
+      codeBase: '#eee',
+      codeComment: '#9ab',
+      codeDeleted: '#B2F5EA',
+      codeFunction: '#fe6',
+      codeInserted: '#690',
+      codeKeyword: '#FC8181',
+      codeOperator: '#d7f',
+      codeProperty: '#B2F5EA',
+      codePunctuation: '#ccc',
+      codeString: '#68D391',
+      codeVariable: '#e90',
+      codeBackground: '#171923',
+    },
+  },
+  styles: function styles(theme) {
+    return {
+      Playground: {
+        preview: {
+          paddingLeft: 0,
+          paddingRight: 0,
+          borderWidth: [[0, 0, 1, 0]],
+          borderRadius: 0,
+        },
+      },
+      Code: {
+        code: {
+          color: theme.color.link,
+          fontSize: 14,
+        },
+      },
+    };
+  },
+  assetsDir: 'public/',
   moduleAliases: {
     '@app/redux': path.resolve(__dirname, 'lib/redux/'),
     '@app/lambda': path.resolve(__dirname, 'lib/lambda/'),
@@ -59,7 +96,9 @@ module.exports = {
     '@app': path.resolve(__dirname, './'),
   },
   styleguideComponents: {
-    Wrapper: path.join(__dirname, 'lib/styleguidist/styleguide.wrapper.js'),
+    Wrapper: path.join(__dirname, 'lib/styleguidist/StyleWrapper'),
+    StyleGuideRenderer: path.join(__dirname, 'lib/styleguidist/StyleGuide'),
+    SectionsRenderer: path.join(__dirname, 'lib/styleguidist/SectionsRenderer'),
   },
   webpackConfig: {
     module: {
