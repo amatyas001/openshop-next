@@ -1,21 +1,35 @@
+import PropTypes from 'prop-types';
 import Router from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 import { Heading } from '@chakra-ui/core';
 import { getAmount } from '@app/redux/actions';
 import { CartItem } from '@app/components';
 
-export async function getStaticProps() {
-  return {
-    props: { initialReduxState: { cart: [] } },
-  };
-}
-
-// Displays all items which added to the cart
-export const CartContent = () => {
+/**
+ * Displays all cart items and their total price below the list.
+ *
+ * On mounting the `browserHistoryChange` listener is attached to `Router`
+ * to handle prefetching item routes before actual route changing happens.
+ * This technique provides loading inidividual item details page without
+ * a full refresh which triggered by default.
+ *
+ * Total price is recalculated when the actual cart content is changing.
+ *
+ * > ***State***
+ * > - `amount`
+ *
+ * > ***Elements***
+ * > - [CartItem](#cartitem)
+ *
+ * @example
+ * ```jsx
+ * <CartContent text={textStyles} amount={amountStyles} />
+ * ```
+ */
+export const CartContent = (props) => {
   const { cart, amount } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  // prefetching item info paths
   React.useEffect(() => {
     const prefetchRoutes = (url) => {
       url.match(/^\/item\/[\w]*$/gi) && Router.prefetch('/items/[id]', url);
@@ -26,20 +40,15 @@ export const CartContent = () => {
     };
   }, []);
 
-  // update amount according to changes
   React.useEffect(() => {
     dispatch(getAmount());
   }, [cart]);
 
   return (
     <section id='cart-holder' role='list'>
-      {/* items */}
-      {cart.map((i) => (
-        <CartItem key={i.id} item={i} />
-      ))}
+      {cart && cart.map((i) => <CartItem key={i.id} item={i} />)}
 
       <footer>
-        {/* divider */}
         <Heading
           as='h3'
           id='total-summary'
@@ -50,22 +59,40 @@ export const CartContent = () => {
           pt='10px'
           my='0'
           borderTop='1px'
+          {...props.text}
         >
           TOTAL PRICE
         </Heading>
 
-        {/* price */}
         <Heading
-          as={'strong'}
+          as='strong'
           id='total-price'
           d='block'
           textAlign='right'
           aria-describedby='total-summary'
           my='0'
+          {...props.amount}
         >
-          {amount}&nbsp;$
+          {amount || '0.00'}&nbsp;$
         </Heading>
       </footer>
     </section>
   );
+};
+
+CartContent.defaultProps = {
+  text: null,
+  amount: null,
+};
+
+CartContent.propTypes = {
+  /**
+   * [Style Props](https://chakra-ui.com/style-props) for the total price text
+   */
+  text: PropTypes.object,
+
+  /**
+   * [Style Props](https://chakra-ui.com/style-props) for the amount text
+   */
+  amount: PropTypes.object,
 };
