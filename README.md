@@ -7,7 +7,7 @@
 
 Configurable template for e-commerce websites. Using static site generation by default providing great SEO experience and extremely fast page loading times. As a JAM project, it uses FaaS, WebAPI, and CDN without a dedicated backend to deliver business data. Implements real-time secure payment processing by default with Stripe API.
 
-Check out the [Documentation](https://amatyas001.github.io/openshop/next/) for detailed information.
+Check out the [Documentation](https://amatyas001.github.io/openshop-next/) for detailed information.
 
 ## Technology Architecture
 
