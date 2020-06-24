@@ -1,4 +1,4 @@
-```js
+```jsx
 import { useSelector } from 'react-redux';
 
 const { filters = { price: 10000 } } = useSelector((store) => store);
@@ -6,13 +6,13 @@ const { filters = { price: 10000 } } = useSelector((store) => store);
 const items = [
   {
     name: 'My Fancy Item',
-    price: 250,
+    price: 100,
     desc: 'This is the best product in the world!',
     color: 'Yellow',
   },
   {
     name: 'My Awesome Item',
-    price: 100,
+    price: 80,
     desc: 'This is the best product in the world!',
     color: 'Red',
   },
@@ -41,12 +41,11 @@ const filtered = items.filter((item) => {
 });
 
 <>
-  <h3>Filter items by price</h3>
   <FilterPrice items={items} />
   <ul>
     {filtered.length ? (
       filtered.map((item) => (
-        <li>
+        <li key={item.name}>
           <h4>{item.name}</h4>
         </li>
       ))

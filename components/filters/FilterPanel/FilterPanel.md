@@ -1,9 +1,7 @@
 ```js
 import { useSelector } from 'react-redux';
 
-const { filters = { color: 'All', name: '', price: 200 } } = useSelector(
-  (store) => store
-);
+const { filters } = useSelector((store) => store);
 
 const items = [
   {
@@ -47,12 +45,11 @@ const filtered = items.filter((item) => {
 });
 
 <>
-  <h3>Use the filter box to fine tune your search</h3>
-  <FilterPanel items={items} />
+  <FilterPanel items={items} width='100%' />
   <ul>
     {filtered.length ? (
       filtered.map((item) => (
-        <li>
+        <li key={item.name}>
           <h4>{item.name}</h4>
         </li>
       ))

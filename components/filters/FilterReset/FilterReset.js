@@ -1,13 +1,24 @@
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { FaRev } from 'react-icons/fa';
 import { Box, Button } from '@chakra-ui/core';
 import { filterReset } from '@app/redux/actions';
 
 /**
- * Renders a button which resets the **`filter` object**
- * to its default values by **dispatch filter event**.
+ * Renders a button which resets all filters to the default values.
+ *
+ * > ***State***
+ * > - All [Filter](#section-filters) states
+ *
+ * > ***Elements***
+ * > - [Button](#button)
+ *
+ * @example
+ * ```jsx
+ * <FilterReset icon={<CustomIcon />} text="Custom Text" />
+ * ```
  */
-export const FilterReset = () => {
+export const FilterReset = (props) => {
   const dispatch = useDispatch();
 
   return (
@@ -33,10 +44,28 @@ export const FilterReset = () => {
           cursor: 'pointer',
           textDecoration: 'underline',
         }}
+        {...props}
       >
-        <Box as={FaRev} mr='5px' fontSize='1rem' />
-        reset
+        {props.icon || <Box as={FaRev} mr='5px' fontSize='1rem' />}
+        {props.text || 'reset'}
       </Button>
     </>
   );
+};
+
+FilterReset.defaultProps = {
+  icon: null,
+  text: null,
+};
+
+FilterReset.propTypes = {
+  /**
+   * Custom element for button icon
+   */
+  icon: PropTypes.element,
+
+  /**
+   * Custom text for button
+   */
+  text: PropTypes.string,
 };

@@ -1,4 +1,4 @@
-```js
+```jsx
 import { useSelector } from 'react-redux';
 
 const { filters = { color: 'All' } } = useSelector((store) => store);
@@ -41,12 +41,11 @@ const filtered = items.filter((item) => {
 });
 
 <>
-  <h3>Filter items by color</h3>
   <FilterColor items={items} />
   <ul>
     {filtered.length ? (
       filtered.map((item) => (
-        <li>
+        <li key={item.name}>
           <h4>{item.name}</h4>
         </li>
       ))

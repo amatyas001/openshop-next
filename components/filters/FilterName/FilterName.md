@@ -1,4 +1,4 @@
-```js
+```jsx
 import { useSelector } from 'react-redux';
 
 const { filters = { name: '' } } = useSelector((store) => store);
@@ -41,12 +41,11 @@ const filtered = items.filter((item) => {
 });
 
 <>
-  <h3>Filter items by name</h3>
   <FilterName />
   <ul>
     {filtered.length ? (
       filtered.map((item) => (
-        <li>
+        <li key={item.name}>
           <h4>{item.name}</h4>
         </li>
       ))

@@ -9,29 +9,28 @@ import {
 } from '@app/components';
 
 /**
- * Wrapper component which can be imported to a page representing items.
- * Displays toggle button and a collapsable container of item filters.
- * The panel is **closed by default**. It manages its own state to
- * control the visibility of nested components.
- *
- * For more information: [Chakra/Collapse](https://chakra-ui.com/collapse)
- *
- * *Note:* `items` prop is passed down to child components
- *
+ * Wrapper component displaying toggler button and collapsable container
+ * of nested filters.
+ * 
+ * > ***Elements***
+ * > - [Collapse](https://chakra-ui.com/collapse)
+ * > - [Button](#button)
+ * > - Any [Filter](#section-filters) element
+
  * @example
  * ```jsx
- * <FilterPanel items={items} />
+ * <FilterPanel items={itemsArray} button={buttonStyles} panel={panelStyles} />
  * ```
  */
-export const FilterPanel = ({ items }) => {
+export const FilterPanel = (props) => {
   const [show, setShow] = React.useState(false);
 
   return (
-    <>
+    <Box width={{ sm: '100%', md: '80%', lg: '70%', xl: '60%' }} {...props}>
       <Button
         onClick={() => setShow(!show)}
         name='togglefilters'
-        width={{ sm: '100%', md: '80%', lg: '70%', xl: '60%' }}
+        width='100%'
         mx='auto'
         mt='25px'
         fontSize='1.3rem'
@@ -46,6 +45,7 @@ export const FilterPanel = ({ items }) => {
           cursor: 'pointer',
           textDecoration: 'underline',
         }}
+        {...props.button}
       >
         <Box as={FaSearch} mr='5px' fontSize='1rem' />
         {show ? 'hide filters' : 'show filters'}
@@ -55,28 +55,43 @@ export const FilterPanel = ({ items }) => {
           as='form'
           name='filters'
           flexDirection='column'
-          width={{ sm: '90%', md: '70%', lg: '60%', xl: '50%' }}
+          width='90%'
           mx='auto'
           px='5%'
           py='15px'
           border='1px'
           borderColor='purple.400'
           bg='purple.100'
+          {...props.panel}
         >
           <FilterName />
-          <FilterPrice items={items} />
-          <FilterColor items={items} />
+          <FilterPrice items={props.items} />
+          <FilterColor items={props.items} />
           <FilterReset />
         </Flex>
       </Collapse>
-    </>
+    </Box>
   );
+};
+
+FilterPanel.defaultProps = {
+  button: null,
+  panel: null,
 };
 
 FilterPanel.propTypes = {
   /**
-   * Array of available items
-   *
+   * Array of available items passed to filter elements where needed
    */
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
+
+  /**
+   * [Style Props Object](https://chakra-ui.com/style-props) for button element
+   */
+  button: PropTypes.object,
+
+  /**
+   * [Style Props Object](https://chakra-ui.com/style-props) for collapse panel
+   */
+  panel: PropTypes.object,
 };

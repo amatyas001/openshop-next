@@ -4,14 +4,24 @@ import { Heading, Select } from '@chakra-ui/core';
 import { filterColor } from '@app/redux/actions';
 
 /**
- * Extracts the colors from the given items array and displays
- * them as `options` in a `select` input field. Changing the value
- * **dispatch filter event** and create **`color` subkey** in the
- * **`filter` object**.
+ * Displays available all available color as a single `option` element in a
+ * labelled `select` input field.
  *
- * For more information: [Chakra/Select](https://chakra-ui.com/select)
+ * Extracts the colors from passed items array and converts the list into
+ * a `Set` of item colors in alphabetically ascending order.
+ *
+ * > ***State***
+ * > - `filters.color`
+ *
+ * > ***Elements***
+ * > - [Select](https://chakra-ui.com/select)
+ *
+ * @example
+ * ```jsx
+ * <FilterColor items={itemsArray} />
+ * ```
  */
-export const FilterColor = ({ items }) => {
+export const FilterColor = (props) => {
   const dispatch = useDispatch();
   const { filters = { color: 'All' } } = useSelector((state) => state);
 
@@ -19,7 +29,7 @@ export const FilterColor = ({ items }) => {
 
   React.useEffect(() => {
     let list = ['All'];
-    items.forEach((item) => list.push(item.color));
+    props.items.forEach((item) => list.push(item.color));
     setColors(
       [...new Set(list)].sort().map((c) => {
         return (
@@ -44,6 +54,7 @@ export const FilterColor = ({ items }) => {
         onChange={(e) => {
           dispatch(filterColor(e.target.value));
         }}
+        {...props}
       >
         {colors}
       </Select>
@@ -53,7 +64,7 @@ export const FilterColor = ({ items }) => {
 
 FilterColor.propTypes = {
   /**
-   * Array of available items
+   * Array of items to be filtered
    */
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

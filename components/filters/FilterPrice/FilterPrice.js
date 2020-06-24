@@ -11,16 +11,21 @@ import {
 import { filterPrice } from '@app/redux/actions';
 
 /**
- * Displays a HTML Range Input element and the current value next to it.
- * Changing the value with the slider **dispatches filter event** to the
- * redux store. This action is *debounced* for performance reasons.
- * This component should be wrapped in [FilterPanel](#filterpanel) for
- * proper presentation of the input. Maximum value is calculated from the
- * given items array.
+ * Displays a [Slider](https://chakra-ui.com/slider) element and actual set
+ * price value. Maximum range value is calculated from the items array.
  *
- * For more information: [Chakra/Slider](https://chakra-ui.com/slider)
+ * > ***State***
+ * > - `filters.price`
+ *
+ * > ***Elements***
+ * > - [Slider](https://chakra-ui.com/slider)
+ *
+ * @example
+ * ```jsx
+ * <FilterPrice items={itemsArray} track={trackStyle} filled={filledStyle} thumb={thumbStyle} actual={priceStyle} />
+ * ```
  */
-export const FilterPrice = ({ items }) => {
+export const FilterPrice = (props) => {
   const dispatch = useDispatch();
   const { filters = {} } = useSelector((store) => store);
   const [max, setMax] = React.useState(0);
@@ -28,9 +33,7 @@ export const FilterPrice = ({ items }) => {
   const [tick, setTick] = React.useState(false);
 
   React.useEffect(() => {
-    let ordered = [];
-    items.forEach((item) => ordered.push(item['price']));
-    setMax(ordered.sort((a, b) => a > b)[0]);
+    setMax(Math.max(...props.items.map((item) => item.price)));
   }, []);
 
   React.useEffect(() => {
@@ -63,11 +66,12 @@ export const FilterPrice = ({ items }) => {
         width='89%'
         min={1}
         max={max}
+        {...props}
       >
-        <SliderTrack bg='gray.100' />
-        <SliderFilledTrack bg='gray.800' />
-        <SliderThumb bg='gray.800' />
-        <Text fontSize='1.2rem' fontWeight='bold' ml='-60px'>
+        <SliderTrack bg='gray.100' {...props.track} />
+        <SliderFilledTrack bg='gray.800' {...props.filled} />
+        <SliderThumb bg='gray.800' {...props.thumb} />
+        <Text fontSize='1.2rem' fontWeight='bold' ml='-60px' {...props.actual}>
           {filters.price > max ? max : price} $
         </Text>
       </Slider>
@@ -75,9 +79,36 @@ export const FilterPrice = ({ items }) => {
   );
 };
 
+FilterPrice.defaultProps = {
+  track: null,
+  filled: null,
+  thumb: null,
+  actual: null,
+};
+
 FilterPrice.propTypes = {
   /**
-   * Array of available items
+   * Array of items to be filtered
    */
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
+
+  /**
+   * [Style Props Object](https://chakra-ui.com/style-props) for slider track
+   */
+  track: PropTypes.object,
+
+  /**
+   * [Style Props Object](https://chakra-ui.com/style-props) for slider filled track
+   */
+  filled: PropTypes.object,
+
+  /**
+   * [Style Props Object](https://chakra-ui.com/style-props) for  slider thumb
+   */
+  thumb: PropTypes.object,
+
+  /**
+   * [Style Props Object](https://chakra-ui.com/style-props) for actual price text
+   */
+  actual: PropTypes.object,
 };
