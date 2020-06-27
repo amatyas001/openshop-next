@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -145,16 +145,43 @@
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">41x</span>
 <span class="cline-any cline-yes">41x</span>
-<span class="cline-any cline-yes">78x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">41x</span>
 <span class="cline-any cline-yes">21x</span>
@@ -228,21 +255,37 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useSelector } from 'react-redux';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import { Flex, Box, Text } from '@chakra-ui/core';
 &nbsp;
-// Displays the actual state of the payment process
-// active state can be customised by the activeStyle prop
+/**
+ * Displays the actual stage of the payment process.
+ *
+ * ***State Dependencies***
+ * - `payment.status`
+ *
+ * @example
+ * ```jsx
+ * &lt;PaymentProgress activeStyle={styleObject} /&gt;
+ */
 export const PaymentProgress = (props) =&gt; {
+  const { activeStyle } = props;
+  const { payment = <span class="branch-0 cbranch-no" title="branch not covered" >{} </span>} = useSelector((state) =&gt; state);
+&nbsp;
   const [details, setDetails] = React.useState(false);
   const [finished, setFinished] = React.useState(false);
-  const { payment = <span class="branch-0 cbranch-no" title="branch not covered" >{} </span>} = useSelector((state) =&gt; state);
 &nbsp;
   React.useEffect(() =&gt; {
     switch (payment.status) {
@@ -268,33 +311,27 @@ export const PaymentProgress = (props) =&gt; {
     &lt;Flex
       width={props.width || '100%'}
       fontSize={props.fontSize || '1.3rem'}
-      color={props.color || 'gray.400'}
+      color={props.color || 'gray.600'}
       justifyContent={props.justifyContent || 'space-around'}
       alignItems={props.alignItems || 'center'}
       borderBottom={props.borderBottom || '1px'}
       {...props}
     &gt;
       {/* review */}
-      &lt;Text
-        style={props.activeStyle || { color: '#44337A', fontWeight: 'bold' }}
-      &gt;
+      &lt;Text style={activeStyle || { color: '#44337A', fontWeight: 'bold' }}&gt;
         Review
       &lt;/Text&gt;
 &nbsp;
       {/* details */}
       &lt;Box
         style={
-          details
-            ? props.activeStyle || { color: '#44337A', fontWeight: 'bold' }
-            : {}
+          details ? activeStyle || { color: '#44337A', fontWeight: 'bold' } : {}
         }
         as={FaLongArrowAltRight}
       /&gt;
       &lt;Text
         style={
-          details
-            ? props.activeStyle || { color: '#44337A', fontWeight: 'bold' }
-            : {}
+          details ? activeStyle || { color: '#44337A', fontWeight: 'bold' } : {}
         }
       &gt;
         Payment Details
@@ -304,7 +341,7 @@ export const PaymentProgress = (props) =&gt; {
       &lt;Box
         style={
           finished
-            ? props.activeStyle || { color: '#44337A', fontWeight: 'bold' }
+            ? activeStyle || { color: '#44337A', fontWeight: 'bold' }
             : {}
         }
         as={FaLongArrowAltRight}
@@ -312,7 +349,7 @@ export const PaymentProgress = (props) =&gt; {
       &lt;Text
         style={
           finished
-            ? props.activeStyle || { color: '#44337A', fontWeight: 'bold' }
+            ? activeStyle || { color: '#44337A', fontWeight: 'bold' }
             : {}
         }
       &gt;
@@ -321,6 +358,17 @@ export const PaymentProgress = (props) =&gt; {
     &lt;/Flex&gt;
   );
 };
+&nbsp;
+PaymentProgress.defaultProps = {
+  activeStyle: null,
+};
+&nbsp;
+PaymentProgress.propTypes = {
+  /**
+   * [Style Props](https://chakra-ui.com/style-props) for the active stage style
+   */
+  activeStyle: PropTypes.object,
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -328,7 +376,7 @@ export const PaymentProgress = (props) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 25 2020 01:35:58 GMT+0200 (közép-európai nyári idő)
+                at Sat Jun 27 2020 23:29:31 GMT+0200 (közép-európai nyári idő)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
