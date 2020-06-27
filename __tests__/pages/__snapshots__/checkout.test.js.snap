@@ -1,2916 +1,998 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkout page when there is payment token should render cancelled component in Elements 1`] = `
+exports[`Checkout page when there is payment token should render cancelled component 1`] = `
 <div
   className="css-w6sf3q"
 >
-  <Elements
-    stripe="stripe"
+  <div
+    className="css-1sj67m5"
   >
-    <div
-      className="css-12glmx8"
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
     >
-      <p
-        className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
+      Review
+    </p>
+    <svg
+      className="css-0"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
         }
-      >
-        Review
-      </p>
-      <svg
-        className="css-0"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-        viewBox="0 0 448 512"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
-        />
-      </svg>
-      <p
-        className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-      >
-        Payment Details
-      </p>
-      <svg
-        className="css-0"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-        viewBox="0 0 448 512"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
-        />
-      </svg>
-      <p
-        className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-      >
-        Finished
-      </p>
-    </div>
-    <form
-      aria-hidden={true}
-      className="css-1om1j8f"
+      }
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <fieldset
-        className="css-94sf3x"
-      >
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="name"
-          >
-            name
-          </label>
-          <input
-            className="css-cth1sm"
-            id="name"
-            onChange={[Function]}
-            placeholder="John Doe"
-            required={true}
-            type="text"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="address"
-          >
-            address
-          </label>
-          <input
-            className="css-cth1sm"
-            id="address"
-            onChange={[Function]}
-            placeholder="J191 S. Illinois Street, Everett, MA 02149"
-            required={true}
-            type="text"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="email"
-          >
-            email
-          </label>
-          <input
-            className="css-cth1sm"
-            id="email"
-            onChange={[Function]}
-            placeholder="johndoe@example.com"
-            required={true}
-            type="email"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="phone"
-          >
-            phone
-          </label>
-          <input
-            className="css-cth1sm"
-            id="phone"
-            onChange={[Function]}
-            placeholder="(941) 555-0123"
-            required={true}
-            type="tel"
-            value=""
-          />
-        </fieldset>
-        <div
-          className="css-70qvj9"
-        >
-          <label
-            className="css-1gjn3mk"
-            htmlFor="StripeElement"
-          >
-            card
-          </label>
-          <p
-            className="css-1i3anel"
-          >
-            Use any future date and CVC with
-             
-            <strong>
-              4242 4242 4242 4242
-            </strong>
-             number for testing
-          </p>
-          <p
-            className="css-cz9gy2"
-            data-testid="form-card-error"
-          />
-        </div>
-        <CardElement
-          data-testid="cardElement"
-          onChange={[Function]}
-          options={
-            Object {
-              "hidePostalCode": true,
-              "iconStyle": "solid",
-              "style": Object {
-                "base": Object {
-                  ":-webkit-autofill": Object {
-                    "color": "#fce883",
-                  },
-                  "::placeholder": Object {
-                    "color": "#4A5568",
-                  },
-                  "border": "1px solid black",
-                  "color": "#1A202C",
-                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
-                  "fontSize": "16px",
-                  "fontSmoothing": "antialiased",
-                  "fontWeight": 500,
-                  "iconColor": "#1A202C",
-                },
-                "invalid": Object {
-                  "color": "#f#C53030",
-                  "iconColor": "##C53030",
-                },
-              },
-            }
-          }
-        />
-      </fieldset>
-      <p
-        className="css-1yab5hb"
-      >
-        By proceeding you accept the
-         
-        <a
-          className="css-1c5zfe9"
-        >
-          Terms of Service
-        </a>
-         
-        of the company.
-      </p>
-      <div
-        className="css-1rsrz83"
-      >
-        <button
-          className="css-1h13z07"
-          data-cy="button"
-          data-testid="review-button"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          BACK TO REVIEW
-        </button>
-        <button
-          className="css-187kagv"
-          data-cy="button"
-          data-testid="submit-button"
-          disabled={true}
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="submit"
-        >
-          FILL THE FORM
-        </button>
-      </div>
-    </form>
-    <div
-      aria-hidden={true}
-      className="css-14djarr"
+      <path
+        d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+      />
+    </svg>
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
     >
-      <h2
-        className="css-84al3w"
-        data-testid="confirm-intent-name"
-      >
-        hey 
-        name
-        !
-      </h2>
-      <p
-        className="css-1358t0d"
-      >
-        Please review your payment details:
-      </p>
-      <div
-        className="css-13cm5uv"
-      >
-        <div
-          className="css-d34wob"
-        >
-          <p
-            className="css-18poma1"
-          >
-            INTENT ID
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-id"
-          >
-            id
-          </p>
-          <p
-            className="css-18poma1"
-          >
-            EMAIL
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-email"
-          />
-          <p
-            className="css-18poma1"
-          >
-            PHONE
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-phone"
-          />
-          <p
-            className="css-18poma1"
-          >
-            ADDRESS
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-address"
-          />
-        </div>
-        <section
-          id="cart-holder"
-          role="list"
-        >
-          <article
-            className="css-74stbp"
-            role="listitem"
-          >
-            <img
-              alt="name"
-              className="css-1wz2hfr"
-            />
-            <strong
-              className="css-17uar4q"
-            >
-              name
-               - 
-              color
-            </strong>
-            <strong
-              className="css-1nnp1eg"
-            >
-              price
-               $
-            </strong>
-            <svg
-              aria-label="Item info"
-              className="css-fwtiw2"
-              data-cy="button"
-              fill="currentColor"
-              height="1em"
-              href="#void"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              tabIndex={0}
-              viewBox="0 0 192 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
-              />
-            </svg>
-            <svg
-              aria-label="Delete item"
-              className="css-12o82jn"
-              data-cy="button"
-              fill="currentColor"
-              height="1em"
-              href="#void"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              tabIndex={0}
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
-              />
-            </svg>
-          </article>
-          <footer>
-            <h3
-              className="css-ohvq3n"
-              id="total-summary"
-            >
-              TOTAL PRICE
-            </h3>
-            <strong
-              aria-describedby="total-summary"
-              className="css-lk14dv"
-              id="total-price"
-            >
-              0.00
-               $
-            </strong>
-          </footer>
-        </section>
-      </div>
-      <div
-        className="css-dvxksz"
-      >
-        <button
-          className="css-46aqdj"
-          data-cy="button"
-          data-testid="confirm-button-cancel"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          CANCEL ORDER
-        </button>
-        <button
-          className="css-187kagv"
-          data-cy="button"
-          data-testid="confirm-button-confirm"
-          disabled={false}
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          CONFIRM ORDER
-        </button>
-      </div>
-    </div>
-    <div
-      className="css-1mi3tt8"
+      Payment Details
+    </p>
+    <svg
+      className="css-0"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <h2
-        className="css-84al3w"
+      <path
+        d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+      />
+    </svg>
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Finished
+    </p>
+  </div>
+  <div
+    className="css-1mi3tt8"
+  >
+    <h2
+      className="css-84al3w"
+    >
+      Payment Cancelled
+    </h2>
+    <p
+      className="css-441ftm"
+    >
+      Successfuly cancelled intent:
+       
+      <span
+        className="css-4i139l"
+        data-testid="cancelled-details"
       >
-        Payment Cancelled
-      </h2>
-      <p
-        className="css-441ftm"
-      >
-        Successfuly cancelled intent:
-         
-        <span
-          className="css-4i139l"
-          data-testid="cancelled-details"
-        >
-          id
-        </span>
-      </p>
-    </div>
-  </Elements>
+        id
+      </span>
+    </p>
+  </div>
 </div>
 `;
 
-exports[`Checkout page when there is payment token should render confirm component in Elements 1`] = `
+exports[`Checkout page when there is payment token should render confirm component 1`] = `
 <div
   className="css-w6sf3q"
 >
-  <Elements
-    stripe="stripe"
+  <div
+    className="css-1sj67m5"
   >
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Review
+    </p>
+    <svg
+      className="css-0"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+      />
+    </svg>
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Payment Details
+    </p>
+    <svg
+      className="css-0"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+      />
+    </svg>
+    <p
+      className="css-18poma1"
+      style={Object {}}
+    >
+      Finished
+    </p>
+  </div>
+  <div
+    aria-hidden={false}
+    className="css-1mi3tt8"
+  >
+    <h2
+      className="css-ijdyq2"
+      data-testid="confirm-intent-name"
+    >
+      Hello, 
+      name
+      !
+    </h2>
+    <p
+      className="css-tmw1y6"
+    >
+      Please review your payment details and confirm order
+    </p>
     <div
-      className="css-12glmx8"
+      className="css-r96hqv"
     >
       <p
         className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
       >
-        Review
+        INTENT ID
       </p>
-      <svg
-        className="css-0"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-        viewBox="0 0 448 512"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-id"
       >
-        <path
-          d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
-        />
-      </svg>
+        id
+      </p>
       <p
         className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
       >
-        Payment Details
+        EMAIL
       </p>
-      <svg
-        className="css-0"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
-        viewBox="0 0 448 512"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
-        />
-      </svg>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-email"
+      />
       <p
         className="css-18poma1"
-        style={Object {}}
       >
-        Finished
+        PHONE
       </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-phone"
+      />
+      <p
+        className="css-18poma1"
+      >
+        ADDRESS
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-address"
+      />
     </div>
-    <form
-      aria-hidden={true}
-      className="css-1om1j8f"
+    <section
+      className="css-8atqhb"
     >
-      <fieldset
-        className="css-94sf3x"
+      <ul
+        className="css-0"
+        role="list"
       >
-        <fieldset
-          className="css-9x3bhi"
+        <li
+          className="css-tic8xi"
+          role="listitem"
         >
-          <label
-            className="css-1xnp38i"
-            htmlFor="name"
-          >
-            name
-          </label>
-          <input
-            className="css-cth1sm"
-            id="name"
-            onChange={[Function]}
-            placeholder="John Doe"
-            required={true}
-            type="text"
-            value=""
+          <img
+            alt="name"
+            className="css-1nf2sqg"
           />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="address"
+          <div
+            className="css-ytm61p"
           >
-            address
-          </label>
-          <input
-            className="css-cth1sm"
-            id="address"
-            onChange={[Function]}
-            placeholder="J191 S. Illinois Street, Everett, MA 02149"
-            required={true}
-            type="text"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="email"
-          >
-            email
-          </label>
-          <input
-            className="css-cth1sm"
-            id="email"
-            onChange={[Function]}
-            placeholder="johndoe@example.com"
-            required={true}
-            type="email"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="phone"
-          >
-            phone
-          </label>
-          <input
-            className="css-cth1sm"
-            id="phone"
-            onChange={[Function]}
-            placeholder="(941) 555-0123"
-            required={true}
-            type="tel"
-            value=""
-          />
-        </fieldset>
-        <div
-          className="css-70qvj9"
-        >
-          <label
-            className="css-1gjn3mk"
-            htmlFor="StripeElement"
-          >
-            card
-          </label>
-          <p
-            className="css-1i3anel"
-          >
-            Use any future date and CVC with
-             
-            <strong>
-              4242 4242 4242 4242
-            </strong>
-             number for testing
-          </p>
-          <p
-            className="css-cz9gy2"
-            data-testid="form-card-error"
-          />
-        </div>
-        <CardElement
-          data-testid="cardElement"
-          onChange={[Function]}
-          options={
-            Object {
-              "hidePostalCode": true,
-              "iconStyle": "solid",
-              "style": Object {
-                "base": Object {
-                  ":-webkit-autofill": Object {
-                    "color": "#fce883",
-                  },
-                  "::placeholder": Object {
-                    "color": "#4A5568",
-                  },
-                  "border": "1px solid black",
-                  "color": "#1A202C",
-                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
-                  "fontSize": "16px",
-                  "fontSmoothing": "antialiased",
-                  "fontWeight": 500,
-                  "iconColor": "#1A202C",
-                },
-                "invalid": Object {
-                  "color": "#f#C53030",
-                  "iconColor": "##C53030",
-                },
-              },
-            }
-          }
-        />
-      </fieldset>
-      <p
-        className="css-1yab5hb"
-      >
-        By proceeding you accept the
-         
-        <a
-          className="css-1c5zfe9"
-        >
-          Terms of Service
-        </a>
-         
-        of the company.
-      </p>
-      <div
-        className="css-1rsrz83"
-      >
-        <button
-          className="css-1h13z07"
-          data-cy="button"
-          data-testid="review-button"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          BACK TO REVIEW
-        </button>
-        <button
-          className="css-187kagv"
-          data-cy="button"
-          data-testid="submit-button"
-          disabled={true}
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="submit"
-        >
-          FILL THE FORM
-        </button>
-      </div>
-    </form>
-    <div
-      aria-hidden={false}
-      className="css-1mi3tt8"
-    >
-      <h2
-        className="css-84al3w"
-        data-testid="confirm-intent-name"
-      >
-        hey 
-        name
-        !
-      </h2>
-      <p
-        className="css-1358t0d"
-      >
-        Please review your payment details:
-      </p>
-      <div
-        className="css-13cm5uv"
-      >
-        <div
-          className="css-d34wob"
-        >
-          <p
-            className="css-18poma1"
-          >
-            INTENT ID
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-id"
-          >
-            id
-          </p>
-          <p
-            className="css-18poma1"
-          >
-            EMAIL
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-email"
-          />
-          <p
-            className="css-18poma1"
-          >
-            PHONE
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-phone"
-          />
-          <p
-            className="css-18poma1"
-          >
-            ADDRESS
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-address"
-          />
-        </div>
-        <section
-          id="cart-holder"
-          role="list"
-        >
-          <article
-            className="css-74stbp"
-            role="listitem"
-          >
-            <img
-              alt="name"
-              className="css-1wz2hfr"
-            />
             <strong
-              className="css-17uar4q"
+              className="css-18poma1"
             >
               name
-               - 
+            </strong>
+            <em
+              className="css-183x3ib"
+            >
               color
-            </strong>
-            <strong
-              className="css-1nnp1eg"
-            >
-              price
-               $
-            </strong>
-            <svg
-              aria-label="Item info"
-              className="css-fwtiw2"
-              data-cy="button"
-              fill="currentColor"
-              height="1em"
-              href="#void"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              tabIndex={0}
-              viewBox="0 0 192 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
-              />
-            </svg>
-            <svg
-              aria-label="Delete item"
-              className="css-12o82jn"
-              data-cy="button"
-              fill="currentColor"
-              height="1em"
-              href="#void"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              tabIndex={0}
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
-              />
-            </svg>
-          </article>
-          <footer>
-            <h3
-              className="css-ohvq3n"
-              id="total-summary"
-            >
-              TOTAL PRICE
-            </h3>
-            <strong
-              aria-describedby="total-summary"
-              className="css-lk14dv"
-              id="total-price"
-            >
-              0.00
-               $
-            </strong>
-          </footer>
-        </section>
-      </div>
-      <div
-        className="css-dvxksz"
-      >
-        <button
-          className="css-46aqdj"
-          data-cy="button"
-          data-testid="confirm-button-cancel"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          CANCEL ORDER
-        </button>
-        <button
-          className="css-187kagv"
-          data-cy="button"
-          data-testid="confirm-button-confirm"
-          disabled={false}
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          CONFIRM ORDER
-        </button>
-      </div>
-    </div>
-    
-  </Elements>
-</div>
-`;
-
-exports[`Checkout page when there is payment token should render error component in Elements 1`] = `
-<div
-  className="css-w6sf3q"
->
-  <Elements
-    stripe="stripe"
-  >
-    <div
-      className="css-12glmx8"
-    >
-      <p
-        className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-      >
-        Review
-      </p>
-      <svg
+            </em>
+          </div>
+          <p
+            className="css-xvjtmw"
+          />
+          <strong
+            className="css-10n38j6"
+          >
+            10.00
+             $
+          </strong>
+        </li>
+      </ul>
+      <footer
         className="css-0"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-        viewBox="0 0 448 512"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
-        />
-      </svg>
-      <p
-        className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-      >
-        Payment Details
-      </p>
-      <svg
-        className="css-0"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-        viewBox="0 0 448 512"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
-        />
-      </svg>
-      <p
-        className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-      >
-        Finished
-      </p>
-    </div>
-    <form
-      aria-hidden={true}
-      className="css-1om1j8f"
-    >
-      <fieldset
-        className="css-94sf3x"
-      >
-        <fieldset
-          className="css-9x3bhi"
+        <p
+          className="css-ohvq3n"
         >
-          <label
-            className="css-1xnp38i"
-            htmlFor="name"
-          >
-            name
-          </label>
-          <input
-            className="css-cth1sm"
-            id="name"
-            onChange={[Function]}
-            placeholder="John Doe"
-            required={true}
-            type="text"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
+          TOTAL PRICE
+        </p>
+        <strong
+          className="css-lk14dv"
         >
-          <label
-            className="css-1xnp38i"
-            htmlFor="address"
-          >
-            address
-          </label>
-          <input
-            className="css-cth1sm"
-            id="address"
-            onChange={[Function]}
-            placeholder="J191 S. Illinois Street, Everett, MA 02149"
-            required={true}
-            type="text"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="email"
-          >
-            email
-          </label>
-          <input
-            className="css-cth1sm"
-            id="email"
-            onChange={[Function]}
-            placeholder="johndoe@example.com"
-            required={true}
-            type="email"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="phone"
-          >
-            phone
-          </label>
-          <input
-            className="css-cth1sm"
-            id="phone"
-            onChange={[Function]}
-            placeholder="(941) 555-0123"
-            required={true}
-            type="tel"
-            value=""
-          />
-        </fieldset>
-        <div
-          className="css-70qvj9"
-        >
-          <label
-            className="css-1gjn3mk"
-            htmlFor="StripeElement"
-          >
-            card
-          </label>
-          <p
-            className="css-1i3anel"
-          >
-            Use any future date and CVC with
-             
-            <strong>
-              4242 4242 4242 4242
-            </strong>
-             number for testing
-          </p>
-          <p
-            className="css-cz9gy2"
-            data-testid="form-card-error"
-          />
-        </div>
-        <CardElement
-          data-testid="cardElement"
-          onChange={[Function]}
-          options={
-            Object {
-              "hidePostalCode": true,
-              "iconStyle": "solid",
-              "style": Object {
-                "base": Object {
-                  ":-webkit-autofill": Object {
-                    "color": "#fce883",
-                  },
-                  "::placeholder": Object {
-                    "color": "#4A5568",
-                  },
-                  "border": "1px solid black",
-                  "color": "#1A202C",
-                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
-                  "fontSize": "16px",
-                  "fontSmoothing": "antialiased",
-                  "fontWeight": 500,
-                  "iconColor": "#1A202C",
-                },
-                "invalid": Object {
-                  "color": "#f#C53030",
-                  "iconColor": "##C53030",
-                },
-              },
-            }
-          }
-        />
-      </fieldset>
-      <p
-        className="css-1yab5hb"
-      >
-        By proceeding you accept the
-         
-        <a
-          className="css-1c5zfe9"
-        >
-          Terms of Service
-        </a>
-         
-        of the company.
-      </p>
-      <div
-        className="css-1rsrz83"
-      >
-        <button
-          className="css-1h13z07"
-          data-cy="button"
-          data-testid="review-button"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          BACK TO REVIEW
-        </button>
-        <button
-          className="css-187kagv"
-          data-cy="button"
-          data-testid="submit-button"
-          disabled={true}
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="submit"
-        >
-          FILL THE FORM
-        </button>
-      </div>
-    </form>
-    <div
-      aria-hidden={true}
-      className="css-14djarr"
-    >
-      <h2
-        className="css-84al3w"
-        data-testid="confirm-intent-name"
-      >
-        hey 
-        name
-        !
-      </h2>
-      <p
-        className="css-1358t0d"
-      >
-        Please review your payment details:
-      </p>
-      <div
-        className="css-13cm5uv"
-      >
-        <div
-          className="css-d34wob"
-        >
-          <p
-            className="css-18poma1"
-          >
-            INTENT ID
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-id"
-          >
-            id
-          </p>
-          <p
-            className="css-18poma1"
-          >
-            EMAIL
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-email"
-          />
-          <p
-            className="css-18poma1"
-          >
-            PHONE
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-phone"
-          />
-          <p
-            className="css-18poma1"
-          >
-            ADDRESS
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-address"
-          />
-        </div>
-        <section
-          id="cart-holder"
-          role="list"
-        >
-          <article
-            className="css-74stbp"
-            role="listitem"
-          >
-            <img
-              alt="name"
-              className="css-1wz2hfr"
-            />
-            <strong
-              className="css-17uar4q"
-            >
-              name
-               - 
-              color
-            </strong>
-            <strong
-              className="css-1nnp1eg"
-            >
-              price
-               $
-            </strong>
-            <svg
-              aria-label="Item info"
-              className="css-fwtiw2"
-              data-cy="button"
-              fill="currentColor"
-              height="1em"
-              href="#void"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              tabIndex={0}
-              viewBox="0 0 192 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
-              />
-            </svg>
-            <svg
-              aria-label="Delete item"
-              className="css-12o82jn"
-              data-cy="button"
-              fill="currentColor"
-              height="1em"
-              href="#void"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              tabIndex={0}
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
-              />
-            </svg>
-          </article>
-          <footer>
-            <h3
-              className="css-ohvq3n"
-              id="total-summary"
-            >
-              TOTAL PRICE
-            </h3>
-            <strong
-              aria-describedby="total-summary"
-              className="css-lk14dv"
-              id="total-price"
-            >
-              0.00
-               $
-            </strong>
-          </footer>
-        </section>
-      </div>
-      <div
-        className="css-dvxksz"
-      >
-        <button
-          className="css-46aqdj"
-          data-cy="button"
-          data-testid="confirm-button-cancel"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          CANCEL ORDER
-        </button>
-        <button
-          className="css-187kagv"
-          data-cy="button"
-          data-testid="confirm-button-confirm"
-          disabled={false}
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          CONFIRM ORDER
-        </button>
-      </div>
-    </div>
-    <div
-      className="css-1mi3tt8"
-    >
-      <p
-        className="css-1po2p9s"
-      >
-        <strong>
-          Error:
+           $
         </strong>
-        <br />
-        <em>
-          message
-        </em>
-      </p>
+      </footer>
+    </section>
+    <Elements
+      stripe="stripe"
+    >
+      <div
+        className="css-1mi3tt8"
+      >
+        <label
+          className="css-8qu6k5"
+          htmlFor="StripeElement"
+        >
+          enter your card details to finish payment
+        </label>
+        <div
+          className="css-1dahfv9"
+        >
+          <CardElement
+            data-testid="confirm-card-element"
+            onChange={[Function]}
+            options={
+              Object {
+                "iconStyle": "solid",
+                "style": Object {
+                  "base": Object {
+                    ":-webkit-autofill": Object {
+                      "color": "#D6BCFA",
+                    },
+                    "::placeholder": Object {
+                      "color": "#D6BCFA",
+                    },
+                    "color": "#FAF5FF",
+                    "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
+                    "fontSize": "16px",
+                    "fontSmoothing": "antialiased",
+                    "fontWeight": 500,
+                    "iconColor": "#FAF5FF",
+                  },
+                  "invalid": Object {
+                    "color": "#C53030",
+                    "iconColor": "#C53030",
+                  },
+                },
+              }
+            }
+          />
+        </div>
+        <p
+          className="css-165naot"
+        >
+          Use any future date and CVC with 
+          <strong>
+            4242 4242 4242 4242
+          </strong>
+           
+          number for testing
+        </p>
+      </div>
+    </Elements>
+    <div
+      className="css-qv6zkf"
+    >
       <button
-        className="css-187kagv"
+        className="css-15ecn8p"
         data-cy="button"
-        data-testid="error-button-retry"
+        data-testid="confirm-controls-cancel"
         href="#void"
         onClick={[Function]}
         onKeyDown={[Function]}
         tabIndex={0}
       >
-        retry
+        CANCEL ORDER
+      </button>
+      <button
+        className="css-187kagv"
+        data-cy="button"
+        data-testid="confirm-controls-confirm"
+        disabled={true}
+        href="#void"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+      >
+        CONFIRM ORDER
       </button>
     </div>
-  </Elements>
+  </div>
 </div>
 `;
 
-exports[`Checkout page when there is payment token should render form component in Elements 1`] = `
+exports[`Checkout page when there is payment token should render error component 1`] = `
 <div
   className="css-w6sf3q"
 >
-  <Elements
-    stripe="stripe"
+  <div
+    className="css-1sj67m5"
   >
-    <div
-      className="css-12glmx8"
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
     >
-      <p
-        className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
+      Review
+    </p>
+    <svg
+      className="css-0"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
         }
-      >
-        Review
-      </p>
-      <svg
-        className="css-0"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-        viewBox="0 0 448 512"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
-        />
-      </svg>
-      <p
-        className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-      >
-        Payment Details
-      </p>
-      <svg
-        className="css-0"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
-        viewBox="0 0 448 512"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
-        />
-      </svg>
-      <p
-        className="css-18poma1"
-        style={Object {}}
-      >
-        Finished
-      </p>
-    </div>
-    <form
-      aria-hidden={false}
-      className="css-8o331q"
+      }
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <fieldset
-        className="css-94sf3x"
-      >
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="name"
-          >
-            name
-          </label>
-          <input
-            className="css-cth1sm"
-            id="name"
-            onChange={[Function]}
-            placeholder="John Doe"
-            required={true}
-            type="text"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="address"
-          >
-            address
-          </label>
-          <input
-            className="css-cth1sm"
-            id="address"
-            onChange={[Function]}
-            placeholder="J191 S. Illinois Street, Everett, MA 02149"
-            required={true}
-            type="text"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="email"
-          >
-            email
-          </label>
-          <input
-            className="css-cth1sm"
-            id="email"
-            onChange={[Function]}
-            placeholder="johndoe@example.com"
-            required={true}
-            type="email"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="phone"
-          >
-            phone
-          </label>
-          <input
-            className="css-cth1sm"
-            id="phone"
-            onChange={[Function]}
-            placeholder="(941) 555-0123"
-            required={true}
-            type="tel"
-            value=""
-          />
-        </fieldset>
-        <div
-          className="css-70qvj9"
-        >
-          <label
-            className="css-1gjn3mk"
-            htmlFor="StripeElement"
-          >
-            card
-          </label>
-          <p
-            className="css-1i3anel"
-          >
-            Use any future date and CVC with
-             
-            <strong>
-              4242 4242 4242 4242
-            </strong>
-             number for testing
-          </p>
-          <p
-            className="css-cz9gy2"
-            data-testid="form-card-error"
-          />
-        </div>
-        <CardElement
-          data-testid="cardElement"
-          onChange={[Function]}
-          options={
-            Object {
-              "hidePostalCode": true,
-              "iconStyle": "solid",
-              "style": Object {
-                "base": Object {
-                  ":-webkit-autofill": Object {
-                    "color": "#fce883",
-                  },
-                  "::placeholder": Object {
-                    "color": "#4A5568",
-                  },
-                  "border": "1px solid black",
-                  "color": "#1A202C",
-                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
-                  "fontSize": "16px",
-                  "fontSmoothing": "antialiased",
-                  "fontWeight": 500,
-                  "iconColor": "#1A202C",
-                },
-                "invalid": Object {
-                  "color": "#f#C53030",
-                  "iconColor": "##C53030",
-                },
-              },
-            }
-          }
-        />
-      </fieldset>
-      <p
-        className="css-1yab5hb"
-      >
-        By proceeding you accept the
-         
-        <a
-          className="css-1c5zfe9"
-        >
-          Terms of Service
-        </a>
-         
-        of the company.
-      </p>
-      <div
-        className="css-1rsrz83"
-      >
-        <button
-          className="css-1h13z07"
-          data-cy="button"
-          data-testid="review-button"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          BACK TO REVIEW
-        </button>
-        <button
-          className="css-187kagv"
-          data-cy="button"
-          data-testid="submit-button"
-          disabled={true}
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="submit"
-        >
-          FILL THE FORM
-        </button>
-      </div>
-    </form>
-    <div
-      aria-hidden={true}
-      className="css-14djarr"
+      <path
+        d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+      />
+    </svg>
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
     >
-      <h2
-        className="css-84al3w"
-        data-testid="confirm-intent-name"
+      Payment Details
+    </p>
+    <svg
+      className="css-0"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+      />
+    </svg>
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Finished
+    </p>
+  </div>
+  <div
+    className="css-1mi3tt8"
+  >
+    <p
+      className="css-1po2p9s"
+    >
+      <strong>
+        Error:
+      </strong>
+      <br />
+      <em
+        data-testid="error-message"
       >
-        hey 
-        name
-        !
-      </h2>
-      <p
-        className="css-1358t0d"
-      >
-        Please review your payment details:
-      </p>
-      <div
-        className="css-13cm5uv"
-      >
-        <div
-          className="css-d34wob"
-        >
-          <p
-            className="css-18poma1"
-          >
-            INTENT ID
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-id"
-          >
-            id
-          </p>
-          <p
-            className="css-18poma1"
-          >
-            EMAIL
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-email"
-          />
-          <p
-            className="css-18poma1"
-          >
-            PHONE
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-phone"
-          />
-          <p
-            className="css-18poma1"
-          >
-            ADDRESS
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-address"
-          />
-        </div>
-        <section
-          id="cart-holder"
-          role="list"
-        >
-          <article
-            className="css-74stbp"
-            role="listitem"
-          >
-            <img
-              alt="name"
-              className="css-1wz2hfr"
-            />
-            <strong
-              className="css-17uar4q"
-            >
-              name
-               - 
-              color
-            </strong>
-            <strong
-              className="css-1nnp1eg"
-            >
-              price
-               $
-            </strong>
-            <svg
-              aria-label="Item info"
-              className="css-fwtiw2"
-              data-cy="button"
-              fill="currentColor"
-              height="1em"
-              href="#void"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              tabIndex={0}
-              viewBox="0 0 192 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
-              />
-            </svg>
-            <svg
-              aria-label="Delete item"
-              className="css-12o82jn"
-              data-cy="button"
-              fill="currentColor"
-              height="1em"
-              href="#void"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              tabIndex={0}
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
-              />
-            </svg>
-          </article>
-          <footer>
-            <h3
-              className="css-ohvq3n"
-              id="total-summary"
-            >
-              TOTAL PRICE
-            </h3>
-            <strong
-              aria-describedby="total-summary"
-              className="css-lk14dv"
-              id="total-price"
-            >
-              0.00
-               $
-            </strong>
-          </footer>
-        </section>
-      </div>
-      <div
-        className="css-dvxksz"
-      >
-        <button
-          className="css-46aqdj"
-          data-cy="button"
-          data-testid="confirm-button-cancel"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          CANCEL ORDER
-        </button>
-        <button
-          className="css-187kagv"
-          data-cy="button"
-          data-testid="confirm-button-confirm"
-          disabled={false}
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          CONFIRM ORDER
-        </button>
-      </div>
-    </div>
-    
-  </Elements>
+        message
+      </em>
+    </p>
+    <button
+      className="css-187kagv"
+      data-cy="button"
+      data-testid="error-button-retry"
+      href="#void"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={0}
+    >
+      retry
+    </button>
+  </div>
 </div>
 `;
 
-exports[`Checkout page when there is payment token should render review component in Elements 1`] = `
+exports[`Checkout page when there is payment token should render form component 1`] = `
 <div
   className="css-w6sf3q"
 >
-  <Elements
-    stripe="stripe"
+  <div
+    className="css-1sj67m5"
   >
-    <div
-      className="css-12glmx8"
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
     >
-      <p
-        className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
+      Review
+    </p>
+    <svg
+      className="css-0"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
         }
-      >
-        Review
-      </p>
-      <svg
-        className="css-0"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": undefined,
-          }
+      }
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+      />
+    </svg>
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
         }
-        viewBox="0 0 448 512"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
-        />
-      </svg>
-      <p
-        className="css-18poma1"
-        style={Object {}}
-      >
-        Payment Details
-      </p>
-      <svg
-        className="css-0"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": undefined,
-          }
+      }
+    >
+      Payment Details
+    </p>
+    <svg
+      className="css-0"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
         }
-        viewBox="0 0 448 512"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
-        />
-      </svg>
-      <p
-        className="css-18poma1"
-        style={Object {}}
-      >
-        Finished
-      </p>
-    </div>
-    <form
-      aria-hidden={true}
-      className="css-1om1j8f"
+      }
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+      />
+    </svg>
+    <p
+      className="css-18poma1"
+      style={Object {}}
+    >
+      Finished
+    </p>
+  </div>
+  <form
+    className="css-8o331q"
+  >
+    <fieldset
+      className="css-94sf3x"
     >
       <fieldset
-        className="css-94sf3x"
+        className="css-9x3bhi"
       >
-        <fieldset
-          className="css-9x3bhi"
+        <label
+          className="css-1xnp38i"
+          htmlFor="name"
         >
-          <label
-            className="css-1xnp38i"
-            htmlFor="name"
-          >
-            name
-          </label>
-          <input
-            className="css-cth1sm"
-            id="name"
-            onChange={[Function]}
-            placeholder="John Doe"
-            required={true}
-            type="text"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="address"
-          >
-            address
-          </label>
-          <input
-            className="css-cth1sm"
-            id="address"
-            onChange={[Function]}
-            placeholder="J191 S. Illinois Street, Everett, MA 02149"
-            required={true}
-            type="text"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="email"
-          >
-            email
-          </label>
-          <input
-            className="css-cth1sm"
-            id="email"
-            onChange={[Function]}
-            placeholder="johndoe@example.com"
-            required={true}
-            type="email"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="phone"
-          >
-            phone
-          </label>
-          <input
-            className="css-cth1sm"
-            id="phone"
-            onChange={[Function]}
-            placeholder="(941) 555-0123"
-            required={true}
-            type="tel"
-            value=""
-          />
-        </fieldset>
-        <div
-          className="css-70qvj9"
-        >
-          <label
-            className="css-1gjn3mk"
-            htmlFor="StripeElement"
-          >
-            card
-          </label>
-          <p
-            className="css-1i3anel"
-          >
-            Use any future date and CVC with
-             
-            <strong>
-              4242 4242 4242 4242
-            </strong>
-             number for testing
-          </p>
-          <p
-            className="css-cz9gy2"
-            data-testid="form-card-error"
-          />
-        </div>
-        <CardElement
-          data-testid="cardElement"
+          name
+        </label>
+        <input
+          className="css-cth1sm"
+          id="name"
           onChange={[Function]}
-          options={
-            Object {
-              "hidePostalCode": true,
-              "iconStyle": "solid",
-              "style": Object {
-                "base": Object {
-                  ":-webkit-autofill": Object {
-                    "color": "#fce883",
-                  },
-                  "::placeholder": Object {
-                    "color": "#4A5568",
-                  },
-                  "border": "1px solid black",
-                  "color": "#1A202C",
-                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
-                  "fontSize": "16px",
-                  "fontSmoothing": "antialiased",
-                  "fontWeight": 500,
-                  "iconColor": "#1A202C",
-                },
-                "invalid": Object {
-                  "color": "#f#C53030",
-                  "iconColor": "##C53030",
-                },
-              },
-            }
-          }
+          placeholder="John Doe"
+          required={true}
+          type="text"
+          value=""
         />
       </fieldset>
-      <p
-        className="css-1yab5hb"
+      <fieldset
+        className="css-9x3bhi"
       >
-        By proceeding you accept the
-         
-        <a
-          className="css-1c5zfe9"
+        <label
+          className="css-1xnp38i"
+          htmlFor="address"
         >
-          Terms of Service
-        </a>
-         
-        of the company.
-      </p>
-      <div
-        className="css-1rsrz83"
+          address
+        </label>
+        <input
+          className="css-cth1sm"
+          id="address"
+          onChange={[Function]}
+          placeholder="J191 S. Illinois Street, Everett, MA 02149"
+          required={true}
+          type="text"
+          value=""
+        />
+      </fieldset>
+      <fieldset
+        className="css-9x3bhi"
       >
-        <button
-          className="css-1h13z07"
-          data-cy="button"
-          data-testid="review-button"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="button"
+        <label
+          className="css-1xnp38i"
+          htmlFor="email"
         >
-          BACK TO REVIEW
-        </button>
-        <button
-          className="css-187kagv"
-          data-cy="button"
-          data-testid="submit-button"
-          disabled={true}
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="submit"
+          email
+        </label>
+        <input
+          className="css-cth1sm"
+          id="email"
+          onChange={[Function]}
+          placeholder="johndoe@example.com"
+          required={true}
+          type="email"
+          value=""
+        />
+      </fieldset>
+      <fieldset
+        className="css-9x3bhi"
+      >
+        <label
+          className="css-1xnp38i"
+          htmlFor="phone"
         >
-          FILL THE FORM
-        </button>
-      </div>
-    </form>
-    <div
-      aria-hidden={true}
-      className="css-14djarr"
+          phone
+        </label>
+        <input
+          className="css-cth1sm"
+          id="phone"
+          onChange={[Function]}
+          placeholder="(941) 555-0123"
+          required={true}
+          type="tel"
+          value=""
+        />
+      </fieldset>
+    </fieldset>
+    <p
+      className="css-1yab5hb"
     >
-      <h2
-        className="css-84al3w"
-        data-testid="confirm-intent-name"
+      By proceeding you accept the
+       
+      <a
+        className="css-1c5zfe9"
       >
-        hey 
-        name
-        !
-      </h2>
-      <p
-        className="css-1358t0d"
-      >
-        Please review your payment details:
-      </p>
-      <div
-        className="css-13cm5uv"
-      >
-        <div
-          className="css-d34wob"
-        >
-          <p
-            className="css-18poma1"
-          >
-            INTENT ID
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-id"
-          >
-            id
-          </p>
-          <p
-            className="css-18poma1"
-          >
-            EMAIL
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-email"
-          />
-          <p
-            className="css-18poma1"
-          >
-            PHONE
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-phone"
-          />
-          <p
-            className="css-18poma1"
-          >
-            ADDRESS
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-address"
-          />
-        </div>
-        <section
-          id="cart-holder"
-          role="list"
-        >
-          <article
-            className="css-74stbp"
-            role="listitem"
-          >
-            <img
-              alt="name"
-              className="css-1wz2hfr"
-            />
-            <strong
-              className="css-17uar4q"
-            >
-              name
-               - 
-              color
-            </strong>
-            <strong
-              className="css-1nnp1eg"
-            >
-              price
-               $
-            </strong>
-            <svg
-              aria-label="Item info"
-              className="css-fwtiw2"
-              data-cy="button"
-              fill="currentColor"
-              height="1em"
-              href="#void"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              tabIndex={0}
-              viewBox="0 0 192 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
-              />
-            </svg>
-            <svg
-              aria-label="Delete item"
-              className="css-12o82jn"
-              data-cy="button"
-              fill="currentColor"
-              height="1em"
-              href="#void"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              tabIndex={0}
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
-              />
-            </svg>
-          </article>
-          <footer>
-            <h3
-              className="css-ohvq3n"
-              id="total-summary"
-            >
-              TOTAL PRICE
-            </h3>
-            <strong
-              aria-describedby="total-summary"
-              className="css-lk14dv"
-              id="total-price"
-            >
-              0.00
-               $
-            </strong>
-          </footer>
-        </section>
-      </div>
-      <div
-        className="css-dvxksz"
-      >
-        <button
-          className="css-46aqdj"
-          data-cy="button"
-          data-testid="confirm-button-cancel"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          CANCEL ORDER
-        </button>
-        <button
-          className="css-187kagv"
-          data-cy="button"
-          data-testid="confirm-button-confirm"
-          disabled={false}
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          CONFIRM ORDER
-        </button>
-      </div>
-    </div>
+        Terms of Service
+      </a>
+       
+      of the company.
+    </p>
     <div
-      className="css-dvxtzn"
+      className="css-1rsrz83"
     >
-      <div
-        className="css-1ofqig9"
+      <button
+        className="css-1h13z07"
+        data-cy="button"
+        data-testid="form-review-button"
+        href="#void"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="button"
       >
-        <section
-          id="cart-holder"
-          role="list"
-        >
-          <article
-            className="css-74stbp"
-            role="listitem"
-          >
-            <img
-              alt="name"
-              className="css-1wz2hfr"
-            />
-            <strong
-              className="css-17uar4q"
-            >
-              name
-               - 
-              color
-            </strong>
-            <strong
-              className="css-1nnp1eg"
-            >
-              price
-               $
-            </strong>
-            <svg
-              aria-label="Item info"
-              className="css-fwtiw2"
-              data-cy="button"
-              fill="currentColor"
-              height="1em"
-              href="#void"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              tabIndex={0}
-              viewBox="0 0 192 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
-              />
-            </svg>
-            <svg
-              aria-label="Delete item"
-              className="css-12o82jn"
-              data-cy="button"
-              fill="currentColor"
-              height="1em"
-              href="#void"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              tabIndex={0}
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
-              />
-            </svg>
-          </article>
-          <footer>
-            <h3
-              className="css-ohvq3n"
-              id="total-summary"
-            >
-              TOTAL PRICE
-            </h3>
-            <strong
-              aria-describedby="total-summary"
-              className="css-lk14dv"
-              id="total-price"
-            >
-              0.00
-               $
-            </strong>
-          </footer>
-        </section>
-      </div>
-      <div
-        className="css-1hojse"
+        BACK TO REVIEW
+      </button>
+      <button
+        className="css-187kagv"
+        data-cy="button"
+        data-testid="form-submit-button"
+        disabled={true}
+        href="#void"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
       >
-        <button
-          className="css-1h13z07"
-          data-cy="button"
-          data-testid="review-button-back"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          BACK TO SHOPPING
-        </button>
-        <button
-          className="css-187kagv"
-          data-cy="button"
-          data-testid="review-button-form"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          PAYMENT DETAILS
-        </button>
-      </div>
+        FILL THE FORM
+      </button>
     </div>
-  </Elements>
+  </form>
 </div>
 `;
 
-exports[`Checkout page when there is payment token should render success component in Elements 1`] = `
+exports[`Checkout page when there is payment token should render review component 1`] = `
 <div
   className="css-w6sf3q"
 >
-  <Elements
-    stripe="stripe"
+  <div
+    className="css-1sj67m5"
   >
-    <div
-      className="css-12glmx8"
-    >
-      <p
-        className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
         }
-      >
-        Review
-      </p>
-      <svg
+      }
+    >
+      Review
+    </p>
+    <svg
+      className="css-0"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+      />
+    </svg>
+    <p
+      className="css-18poma1"
+      style={Object {}}
+    >
+      Payment Details
+    </p>
+    <svg
+      className="css-0"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+      />
+    </svg>
+    <p
+      className="css-18poma1"
+      style={Object {}}
+    >
+      Finished
+    </p>
+  </div>
+  <div
+    className="css-dvxtzn"
+  >
+    <section
+      className="css-0"
+    >
+      <ul
         className="css-0"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-        viewBox="0 0 448 512"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
+        role="list"
       >
-        <path
-          d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
-        />
-      </svg>
-      <p
-        className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-      >
-        Payment Details
-      </p>
-      <svg
-        className="css-0"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-        viewBox="0 0 448 512"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
-        />
-      </svg>
-      <p
-        className="css-18poma1"
-        style={
-          Object {
-            "color": "#44337A",
-            "fontWeight": "bold",
-          }
-        }
-      >
-        Finished
-      </p>
-    </div>
-    <form
-      aria-hidden={true}
-      className="css-1om1j8f"
-    >
-      <fieldset
-        className="css-94sf3x"
-      >
-        <fieldset
-          className="css-9x3bhi"
+        <li
+          className="css-tic8xi"
+          role="listitem"
         >
-          <label
-            className="css-1xnp38i"
-            htmlFor="name"
-          >
-            name
-          </label>
-          <input
-            className="css-cth1sm"
-            id="name"
-            onChange={[Function]}
-            placeholder="John Doe"
-            required={true}
-            type="text"
-            value=""
+          <img
+            alt="name"
+            className="css-1nf2sqg"
           />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="address"
+          <div
+            className="css-ytm61p"
           >
-            address
-          </label>
-          <input
-            className="css-cth1sm"
-            id="address"
-            onChange={[Function]}
-            placeholder="J191 S. Illinois Street, Everett, MA 02149"
-            required={true}
-            type="text"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="email"
-          >
-            email
-          </label>
-          <input
-            className="css-cth1sm"
-            id="email"
-            onChange={[Function]}
-            placeholder="johndoe@example.com"
-            required={true}
-            type="email"
-            value=""
-          />
-        </fieldset>
-        <fieldset
-          className="css-9x3bhi"
-        >
-          <label
-            className="css-1xnp38i"
-            htmlFor="phone"
-          >
-            phone
-          </label>
-          <input
-            className="css-cth1sm"
-            id="phone"
-            onChange={[Function]}
-            placeholder="(941) 555-0123"
-            required={true}
-            type="tel"
-            value=""
-          />
-        </fieldset>
-        <div
-          className="css-70qvj9"
-        >
-          <label
-            className="css-1gjn3mk"
-            htmlFor="StripeElement"
-          >
-            card
-          </label>
-          <p
-            className="css-1i3anel"
-          >
-            Use any future date and CVC with
-             
-            <strong>
-              4242 4242 4242 4242
-            </strong>
-             number for testing
-          </p>
-          <p
-            className="css-cz9gy2"
-            data-testid="form-card-error"
-          />
-        </div>
-        <CardElement
-          data-testid="cardElement"
-          onChange={[Function]}
-          options={
-            Object {
-              "hidePostalCode": true,
-              "iconStyle": "solid",
-              "style": Object {
-                "base": Object {
-                  ":-webkit-autofill": Object {
-                    "color": "#fce883",
-                  },
-                  "::placeholder": Object {
-                    "color": "#4A5568",
-                  },
-                  "border": "1px solid black",
-                  "color": "#1A202C",
-                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
-                  "fontSize": "16px",
-                  "fontSmoothing": "antialiased",
-                  "fontWeight": 500,
-                  "iconColor": "#1A202C",
-                },
-                "invalid": Object {
-                  "color": "#f#C53030",
-                  "iconColor": "##C53030",
-                },
-              },
-            }
-          }
-        />
-      </fieldset>
-      <p
-        className="css-1yab5hb"
-      >
-        By proceeding you accept the
-         
-        <a
-          className="css-1c5zfe9"
-        >
-          Terms of Service
-        </a>
-         
-        of the company.
-      </p>
-      <div
-        className="css-1rsrz83"
-      >
-        <button
-          className="css-1h13z07"
-          data-cy="button"
-          data-testid="review-button"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          BACK TO REVIEW
-        </button>
-        <button
-          className="css-187kagv"
-          data-cy="button"
-          data-testid="submit-button"
-          disabled={true}
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-          type="submit"
-        >
-          FILL THE FORM
-        </button>
-      </div>
-    </form>
-    <div
-      aria-hidden={true}
-      className="css-14djarr"
-    >
-      <h2
-        className="css-84al3w"
-        data-testid="confirm-intent-name"
-      >
-        hey 
-        name
-        !
-      </h2>
-      <p
-        className="css-1358t0d"
-      >
-        Please review your payment details:
-      </p>
-      <div
-        className="css-13cm5uv"
-      >
-        <div
-          className="css-d34wob"
-        >
-          <p
-            className="css-18poma1"
-          >
-            INTENT ID
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-id"
-          >
-            id
-          </p>
-          <p
-            className="css-18poma1"
-          >
-            EMAIL
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-email"
-          />
-          <p
-            className="css-18poma1"
-          >
-            PHONE
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-phone"
-          />
-          <p
-            className="css-18poma1"
-          >
-            ADDRESS
-          </p>
-          <p
-            className="css-1n4bukm"
-            data-testid="confirm-intent-address"
-          />
-        </div>
-        <section
-          id="cart-holder"
-          role="list"
-        >
-          <article
-            className="css-74stbp"
-            role="listitem"
-          >
-            <img
-              alt="name"
-              className="css-1wz2hfr"
-            />
             <strong
-              className="css-17uar4q"
+              className="css-18poma1"
             >
               name
-               - 
+            </strong>
+            <em
+              className="css-183x3ib"
+            >
               color
-            </strong>
-            <strong
-              className="css-1nnp1eg"
-            >
-              price
-               $
-            </strong>
-            <svg
-              aria-label="Item info"
-              className="css-fwtiw2"
+            </em>
+          </div>
+          <p
+            className="css-xvjtmw"
+          />
+          <strong
+            className="css-10n38j6"
+          >
+            10.00
+             $
+          </strong>
+          <div
+            className="css-1a7ae0y"
+          >
+            <div
+              aria-label="Delete"
+              className="css-quyg1a"
               data-cy="button"
-              fill="currentColor"
-              height="1em"
               href="#void"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
               tabIndex={0}
-              viewBox="0 0 192 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"
-              />
-            </svg>
-            <svg
-              aria-label="Delete item"
-              className="css-12o82jn"
-              data-cy="button"
-              fill="currentColor"
-              height="1em"
-              href="#void"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
                 }
-              }
-              tabIndex={0}
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
-              />
-            </svg>
-          </article>
-          <footer>
-            <h3
-              className="css-ohvq3n"
-              id="total-summary"
-            >
-              TOTAL PRICE
-            </h3>
-            <strong
-              aria-describedby="total-summary"
-              className="css-lk14dv"
-              id="total-price"
-            >
-              0.00
-               $
-            </strong>
-          </footer>
-        </section>
-      </div>
-      <div
-        className="css-dvxksz"
+                viewBox="0 0 448 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                />
+              </svg>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <footer
+        className="css-0"
       >
-        <button
-          className="css-46aqdj"
-          data-cy="button"
-          data-testid="confirm-button-cancel"
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
+        <p
+          className="css-ohvq3n"
         >
-          CANCEL ORDER
-        </button>
-        <button
-          className="css-187kagv"
-          data-cy="button"
-          data-testid="confirm-button-confirm"
-          disabled={false}
-          href="#void"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
+          TOTAL PRICE
+        </p>
+        <strong
+          className="css-lk14dv"
         >
-          CONFIRM ORDER
-        </button>
-      </div>
-    </div>
+           $
+        </strong>
+      </footer>
+    </section>
     <div
-      className="css-1mi3tt8"
+      className="css-1hojse"
     >
-      <h2
-        className="css-84al3w"
+      <button
+        className="css-1h13z07"
+        data-cy="button"
+        data-testid="review-button-back"
+        href="#void"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
       >
-        Payment Successful
-      </h2>
-      <p
-        className="css-441ftm"
+        BACK TO SHOPPING
+      </button>
+      <button
+        className="css-187kagv"
+        data-cy="button"
+        data-testid="review-button-form"
+        href="#void"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
       >
-        Received intent number:
-         
-        <span
-          className="css-4i139l"
-        >
-          id
-        </span>
-      </p>
-      <p
-        className="css-18poma1"
-      >
-        This was a sample transaction to demonstrate the payment flow. Thank you!
-      </p>
+        PAYMENT DETAILS
+      </button>
     </div>
-  </Elements>
+  </div>
+</div>
+`;
+
+exports[`Checkout page when there is payment token should render success component 1`] = `
+<div
+  className="css-w6sf3q"
+>
+  <div
+    className="css-1sj67m5"
+  >
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Review
+    </p>
+    <svg
+      className="css-0"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+      />
+    </svg>
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Payment Details
+    </p>
+    <svg
+      className="css-0"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+      />
+    </svg>
+    <p
+      className="css-18poma1"
+      style={
+        Object {
+          "color": "#44337A",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Finished
+    </p>
+  </div>
+  <div
+    className="css-1mi3tt8"
+  >
+    <h2
+      className="css-84al3w"
+    >
+      Payment Successful
+    </h2>
+    <p
+      className="css-441ftm"
+    >
+      Received intent number:
+       
+      <span
+        className="css-4i139l"
+        data-testid="success-content"
+      >
+        id
+      </span>
+    </p>
+    <p
+      className="css-18poma1"
+    >
+      This was a sample transaction to demonstrate the payment flow. Thank you!
+    </p>
+  </div>
 </div>
 `;

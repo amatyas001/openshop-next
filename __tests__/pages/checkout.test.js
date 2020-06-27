@@ -83,15 +83,16 @@ describe('Checkout page', () => {
     ];
 
     status.map((item) => {
-      it(`should render ${item} component in Elements`, () => {
+      it(`should render ${item} component`, () => {
         store = mockStore({
           cart: [
             {
               id: 'id',
               name: 'name',
-              price: 'price',
+              price: 10,
               img: 'img',
               color: 'color',
+              rating: 5,
             },
           ],
           payment: {

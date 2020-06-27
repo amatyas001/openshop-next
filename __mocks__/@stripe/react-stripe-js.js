@@ -27,7 +27,7 @@ export function useStripe() {
 }
 
 export function Elements(props) {
-  return createElement('Elements', props, [...props.children]);
+  return createElement('Elements', props, props.children);
 }
 export function CardElement(props) {
   return createElement('CardElement', props, props.children);
