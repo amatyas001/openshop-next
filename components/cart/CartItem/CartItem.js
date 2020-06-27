@@ -22,14 +22,14 @@ export const CartItem = (props) => {
   return (
     <Flex alignItems='center' fontSize='1.2rem' {...props}>
       <Image
-        src={`/images/products/${item.img}`}
-        width='15%'
+        src={`images/products/${item.img}`}
+        width={{ sm: '15%', lg: '10%' }}
         objectFit='contain'
         alt={item.name}
       />
       <Flex
         flexDirection='column'
-        width='20%'
+        width={{ sm: '35%', lg: '20%' }}
         borderRight='1px'
         borderColor='gray.400'
         p='10px'
@@ -39,16 +39,24 @@ export const CartItem = (props) => {
           {item.color}
         </Text>
       </Flex>
-      <Text as='p' ml='15px' flexWrap='wrap' width='50%' fontSize='1rem'>
+      <Text
+        as='p'
+        ml='15px'
+        flexWrap='wrap'
+        width={{ sm: '0%', md: '50%' }}
+        fontSize='1rem'
+      >
         {item.desc}
       </Text>
-      <Heading as='strong' width='10%' ml='auto' mr='15px' fontSize='1.8rem'>
+      <Heading as='strong' ml='auto' fontSize='1.8rem'>
         {item.price.toFixed(2)}&nbsp;$
       </Heading>
       {icons && (
-        <Flex width='5%' justifyContent='space-around' mb='-5px'>
-          <ButtonTrash handler={() => dispatch(removeFromCart(item))} />
-        </Flex>
+        <ButtonTrash
+          mb='-7px'
+          mx='10px'
+          handler={() => dispatch(removeFromCart(item))}
+        />
       )}
     </Flex>
   );

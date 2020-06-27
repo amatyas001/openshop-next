@@ -79,10 +79,10 @@ exports[`<PaymentConfirm /> should render without props 1`] = `
       >
         <img
           alt="mock_name"
-          className="css-1nf2sqg"
+          className="css-rhemcv"
         />
         <div
-          className="css-ytm61p"
+          className="css-1z0sfv6"
         >
           <strong
             className="css-18poma1"
@@ -94,12 +94,12 @@ exports[`<PaymentConfirm /> should render without props 1`] = `
           />
         </div>
         <p
-          className="css-xvjtmw"
+          className="css-15x91gx"
         >
           mock_desc
         </p>
         <strong
-          className="css-10n38j6"
+          className="css-nwzge5"
         >
           10.00
            $

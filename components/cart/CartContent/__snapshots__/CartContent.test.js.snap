@@ -2,7 +2,7 @@
 
 exports[`<CartContent /> should render without props 1`] = `
 <section
-  className="css-0"
+  className="css-8atqhb"
 >
   <ul
     className="css-0"

@@ -76,10 +76,6 @@ module.exports = {
       'lib/styleguide/components/StyleGuideRenderer'
     ),
   },
-  configureServer(app) {
-    app.use('openshop-next', express.static('images'));
-    app.use('openshop-next', express.static('fonts'));
-  },
   webpackConfig: {
     module: {
       rules: [

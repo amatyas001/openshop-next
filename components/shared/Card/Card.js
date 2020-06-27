@@ -17,7 +17,7 @@ export const Card = ({ item, controls = true }) => {
         objectFit='contain'
         rounded='md'
         onLoad={() => setLoading(false)}
-        src={`/images/products/${item.img}`}
+        src={`images/products/${item.img}`}
       />
       <Text
         textAlign='center'

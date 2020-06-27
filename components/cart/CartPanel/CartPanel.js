@@ -82,7 +82,7 @@ export const CartPanel = (props) => {
         w='20px'
         h='20px'
         position='absolute'
-        top='10px'
+        top='5px'
         right='10px'
         bg='purple.600'
         borderRadius='50%'

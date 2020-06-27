@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1593297391278" clover="3.2.0">
-  <project timestamp="1593297391278" name="All files">
+<coverage generated="1593300791604" clover="3.2.0">
+  <project timestamp="1593300791604" name="All files">
     <metrics statements="326" coveredstatements="254" conditionals="232" coveredconditionals="163" methods="118" coveredmethods="71" elements="676" coveredelements="488" complexity="0" loc="326" ncloc="326" packages="39" files="43" classes="43"/>
     <package name="components">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -38,9 +38,9 @@
         <line num="19" count="10" type="stmt"/>
         <line num="20" count="10" type="stmt"/>
         <line num="22" count="10" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="57" count="15" type="stmt"/>
-        <line num="61" count="15" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="65" count="15" type="stmt"/>
+        <line num="69" count="15" type="stmt"/>
       </file>
     </package>
     <package name="components.cart.CartPanel">

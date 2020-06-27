@@ -48,7 +48,7 @@ end_of_record
 TN:
 SF:components/cart/CartItem/CartItem.js
 FN:18,(anonymous_0)
-FN:50,(anonymous_1)
+FN:58,(anonymous_1)
 FNF:2
 FNH:1
 FNDA:10,(anonymous_0)
@@ -57,13 +57,13 @@ DA:18,15
 DA:19,10
 DA:20,10
 DA:22,10
-DA:50,0
-DA:57,15
-DA:61,15
+DA:58,0
+DA:65,15
+DA:69,15
 LF:7
 LH:6
-BRDA:48,0,0,10
-BRDA:48,0,1,2
+BRDA:54,0,0,10
+BRDA:54,0,1,2
 BRF:2
 BRH:2
 end_of_record

@@ -29,7 +29,7 @@ export const CartContent = (props) => {
   }, [cart]);
 
   return (
-    <Box as='section' {...props}>
+    <Box as='section' width='100%' {...props}>
       <Box as='ul' role='list'>
         {cart &&
           cart.map((item) => (

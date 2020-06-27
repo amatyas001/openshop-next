@@ -9,11 +9,11 @@ const Carousel = dynamic(() => import('@brainhubeu/react-carousel'));
 const Index = () => {
   const [loading, setLoading] = React.useState(true);
   const items = [
-    '/images/site/landscape-people-1.webp',
-    '/images/site/landscape-things-1.webp',
-    '/images/site/landscape-girl-5.webp',
-    '/images/site/landscape-shoes-1.webp',
-    '/images/site/landscape-girl-1.webp',
+    'images/site/landscape-people-1.webp',
+    'images/site/landscape-things-1.webp',
+    'images/site/landscape-girl-5.webp',
+    'images/site/landscape-shoes-1.webp',
+    'images/site/landscape-girl-1.webp',
   ];
   return (
     <>

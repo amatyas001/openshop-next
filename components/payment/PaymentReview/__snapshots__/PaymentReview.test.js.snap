@@ -5,7 +5,7 @@ exports[`<PaymentReview /> should render without props 1`] = `
   className="css-dvxtzn"
 >
   <section
-    className="css-0"
+    className="css-8atqhb"
   >
     <ul
       className="css-0"
@@ -17,10 +17,10 @@ exports[`<PaymentReview /> should render without props 1`] = `
       >
         <img
           alt="mock_name"
-          className="css-1nf2sqg"
+          className="css-rhemcv"
         />
         <div
-          className="css-ytm61p"
+          className="css-1z0sfv6"
         >
           <strong
             className="css-18poma1"
@@ -32,48 +32,44 @@ exports[`<PaymentReview /> should render without props 1`] = `
           />
         </div>
         <p
-          className="css-xvjtmw"
+          className="css-15x91gx"
         >
           mock_desc
         </p>
         <strong
-          className="css-10n38j6"
+          className="css-nwzge5"
         >
           10.00
            $
         </strong>
         <div
-          className="css-1a7ae0y"
+          aria-label="Delete"
+          className="css-c4ibz5"
+          data-cy="button"
+          href="#void"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
-          <div
-            aria-label="Delete"
-            className="css-quyg1a"
-            data-cy="button"
-            href="#void"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-            tabIndex={0}
-          >
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
               }
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
-              />
-            </svg>
-          </div>
+            }
+            viewBox="0 0 448 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+            />
+          </svg>
         </div>
       </li>
     </ul>
