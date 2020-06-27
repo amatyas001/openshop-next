@@ -1,175 +1,190 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PaymentConfirm /> should render with props 1`] = `
-<div
-  aria-hidden={false}
-  className="css-1mi3tt8"
->
-  <h2
-    className="css-84al3w"
-    data-testid="confirm-intent-name"
-  >
-    hey 
-    mock_name
-    !
-  </h2>
-  <p
-    className="css-1358t0d"
-  >
-    Please review your payment details:
-  </p>
-  <div
-    className="css-13cm5uv"
-  >
-    <div
-      className="css-d34wob"
-    >
-      <p
-        className="css-18poma1"
-      >
-        INTENT ID
-      </p>
-      <p
-        className="css-1n4bukm"
-        data-testid="confirm-intent-id"
-      >
-        mock_id
-      </p>
-      <p
-        className="css-18poma1"
-      >
-        EMAIL
-      </p>
-      <p
-        className="css-1n4bukm"
-        data-testid="confirm-intent-email"
-      >
-        mock_email
-      </p>
-      <p
-        className="css-18poma1"
-      >
-        PHONE
-      </p>
-      <p
-        className="css-1n4bukm"
-        data-testid="confirm-intent-phone"
-      >
-        mock_phone
-      </p>
-      <p
-        className="css-18poma1"
-      >
-        ADDRESS
-      </p>
-      <p
-        className="css-1n4bukm"
-        data-testid="confirm-intent-address"
-      >
-        mock_address
-      </p>
-    </div>
-    CartContent
-  </div>
-  <div
-    className="css-dvxksz"
-  >
-    <button
-      className="css-46aqdj"
-      data-cy="button"
-      data-testid="confirm-button-cancel"
-      href="#void"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      tabIndex={0}
-    >
-      CANCEL ORDER
-    </button>
-    <button
-      className="css-187kagv"
-      data-cy="button"
-      data-testid="confirm-button-confirm"
-      disabled={false}
-      href="#void"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      tabIndex={0}
-    >
-      CONFIRM ORDER
-    </button>
-  </div>
-</div>
-`;
-
 exports[`<PaymentConfirm /> should render without props 1`] = `
 <div
   aria-hidden={false}
   className="css-1mi3tt8"
 >
   <h2
-    className="css-84al3w"
+    className="css-ijdyq2"
     data-testid="confirm-intent-name"
   >
-    hey 
+    Hello, 
+    mock_name
     !
   </h2>
   <p
-    className="css-1358t0d"
+    className="css-tmw1y6"
   >
-    Please review your payment details:
+    Please review your payment details and confirm order
   </p>
   <div
-    className="css-13cm5uv"
+    className="css-r96hqv"
   >
-    <div
-      className="css-d34wob"
+    <p
+      className="css-18poma1"
+    >
+      INTENT ID
+    </p>
+    <p
+      className="css-1n4bukm"
+      data-testid="confirm-intent-id"
+    >
+      mock_id
+    </p>
+    <p
+      className="css-18poma1"
+    >
+      EMAIL
+    </p>
+    <p
+      className="css-1n4bukm"
+      data-testid="confirm-intent-email"
+    >
+      mock_email
+    </p>
+    <p
+      className="css-18poma1"
+    >
+      PHONE
+    </p>
+    <p
+      className="css-1n4bukm"
+      data-testid="confirm-intent-phone"
+    >
+      mock_phone
+    </p>
+    <p
+      className="css-18poma1"
+    >
+      ADDRESS
+    </p>
+    <p
+      className="css-1n4bukm"
+      data-testid="confirm-intent-address"
+    >
+      mock_address
+    </p>
+  </div>
+  <section
+    className="css-8atqhb"
+  >
+    <ul
+      className="css-0"
+      role="list"
+    >
+      <li
+        className="css-tic8xi"
+        role="listitem"
+      >
+        <img
+          alt="mock_name"
+          className="css-1nf2sqg"
+        />
+        <div
+          className="css-ytm61p"
+        >
+          <strong
+            className="css-18poma1"
+          >
+            mock_name
+          </strong>
+          <em
+            className="css-183x3ib"
+          />
+        </div>
+        <p
+          className="css-xvjtmw"
+        >
+          mock_desc
+        </p>
+        <strong
+          className="css-10n38j6"
+        >
+          10.00
+           $
+        </strong>
+      </li>
+    </ul>
+    <footer
+      className="css-0"
     >
       <p
-        className="css-18poma1"
+        className="css-ohvq3n"
       >
-        INTENT ID
+        TOTAL PRICE
       </p>
-      <p
-        className="css-1n4bukm"
-        data-testid="confirm-intent-id"
-      />
-      <p
-        className="css-18poma1"
+      <strong
+        className="css-lk14dv"
       >
-        EMAIL
-      </p>
-      <p
-        className="css-1n4bukm"
-        data-testid="confirm-intent-email"
-      />
-      <p
-        className="css-18poma1"
+         $
+      </strong>
+    </footer>
+  </section>
+  <Elements
+    stripe="stripe"
+  >
+    <div
+      className="css-1mi3tt8"
+    >
+      <label
+        className="css-8qu6k5"
+        htmlFor="StripeElement"
       >
-        PHONE
-      </p>
-      <p
-        className="css-1n4bukm"
-        data-testid="confirm-intent-phone"
-      />
-      <p
-        className="css-18poma1"
+        enter your card details to finish payment
+      </label>
+      <div
+        className="css-1dahfv9"
       >
-        ADDRESS
-      </p>
+        <CardElement
+          data-testid="confirm-card-element"
+          onChange={[Function]}
+          options={
+            Object {
+              "iconStyle": "solid",
+              "style": Object {
+                "base": Object {
+                  ":-webkit-autofill": Object {
+                    "color": "#D6BCFA",
+                  },
+                  "::placeholder": Object {
+                    "color": "#D6BCFA",
+                  },
+                  "color": "#FAF5FF",
+                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
+                  "fontSize": "16px",
+                  "fontSmoothing": "antialiased",
+                  "fontWeight": 500,
+                  "iconColor": "#FAF5FF",
+                },
+                "invalid": Object {
+                  "color": "#C53030",
+                  "iconColor": "#C53030",
+                },
+              },
+            }
+          }
+        />
+      </div>
       <p
-        className="css-1n4bukm"
-        data-testid="confirm-intent-address"
-      />
+        className="css-165naot"
+      >
+        Use any future date and CVC with 
+        <strong>
+          4242 4242 4242 4242
+        </strong>
+         
+        number for testing
+      </p>
     </div>
-    CartContent
-  </div>
+  </Elements>
   <div
-    className="css-dvxksz"
+    className="css-qv6zkf"
   >
     <button
-      className="css-46aqdj"
+      className="css-15ecn8p"
       data-cy="button"
-      data-testid="confirm-button-cancel"
+      data-testid="confirm-controls-cancel"
       href="#void"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -180,8 +195,8 @@ exports[`<PaymentConfirm /> should render without props 1`] = `
     <button
       className="css-187kagv"
       data-cy="button"
-      data-testid="confirm-button-confirm"
-      disabled={false}
+      data-testid="confirm-controls-confirm"
+      disabled={true}
       href="#void"
       onClick={[Function]}
       onKeyDown={[Function]}

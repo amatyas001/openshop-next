@@ -8,10 +8,11 @@ let mockStore = createStore([]);
 
 describe('<PaymentError />', () => {
   let tree,
-    store = mockStore({}),
-    error = { message: 'mock_message' };
+    store = mockStore({
+      payment: { status: 'error', error: { message: 'mock_error' } },
+    });
 
-  it('should render without props', () => {
+  beforeAll(() => {
     act(() => {
       tree = create(
         <Provider store={store}>
@@ -19,21 +20,18 @@ describe('<PaymentError />', () => {
         </Provider>
       );
     });
+  });
+
+  it('should render without props', () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
-  beforeEach(() => {
-    act(() => {
-      tree = create(
-        <Provider store={store}>
-          <PaymentError error={error} />
-        </Provider>
-      );
-    });
-  });
-
-  it('should render with props', () => {
-    expect(tree.toJSON()).toMatchSnapshot();
+  it('should render error message', () => {
+    expect(
+      tree.root.findByProps({
+        'data-testid': 'error-message',
+      }).props.children
+    ).toContain(store.getState().payment.error.message);
   });
 
   it('should render retry button', () => {

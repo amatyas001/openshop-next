@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaymentConfirm /> should render without props 1`] = `
+<div
+  className="css-r96hqv"
+>
+  <p
+    className="css-18poma1"
+  >
+    INTENT ID
+  </p>
+  <p
+    className="css-1n4bukm"
+    data-testid="confirm-intent-id"
+  >
+    mock_id
+  </p>
+  <p
+    className="css-18poma1"
+  >
+    EMAIL
+  </p>
+  <p
+    className="css-1n4bukm"
+    data-testid="confirm-intent-email"
+  >
+    mock_email
+  </p>
+  <p
+    className="css-18poma1"
+  >
+    PHONE
+  </p>
+  <p
+    className="css-1n4bukm"
+    data-testid="confirm-intent-phone"
+  >
+    mock_phone
+  </p>
+  <p
+    className="css-18poma1"
+  >
+    ADDRESS
+  </p>
+  <p
+    className="css-1n4bukm"
+    data-testid="confirm-intent-address"
+  >
+    mock_address
+  </p>
+</div>
+`;

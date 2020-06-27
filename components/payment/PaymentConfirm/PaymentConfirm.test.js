@@ -1,23 +1,44 @@
 import { create, act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
-import * as thunks from '@app/redux/thunk/cancel';
-import { paymentError, paymentSuccess } from '@app/redux/action/payment';
+import { paymentSuccess, paymentError } from '@app/redux/actions';
 import { PaymentConfirm } from '@app/components';
 
-const mockStore = configureStore([thunk]);
+const mockStore = configureStore([]);
 
-jest
-  .spyOn(require('../../cart/CartContent/CartContent'), 'CartContent')
-  .mockImplementation(() => 'CartContent');
+const _state = {
+  cart: [
+    {
+      id: 'mock_id',
+      name: 'mock_name',
+      desc: 'mock_desc',
+      img: 'mock_img',
+      price: 10,
+      rating: 5,
+    },
+  ],
+  payment: {
+    status: 'confirm',
+    details: {
+      name: 'mock_name',
+      email: 'mock_email',
+      phone: 'mock_phone',
+      address: 'mock_address',
+    },
+    intent: {
+      id: 'mock_id',
+      secret: 'mock_secret',
+    },
+    token: 'token',
+  },
+};
 
 describe('<PaymentConfirm />', () => {
-  let tree;
-  it('should render without props', () => {
-    const store = mockStore({
-      payment: { status: 'confirm', token: 'token' },
-    });
+  let tree, store, submit, card;
+
+  beforeAll(() => {
+    store = mockStore(_state);
+
     act(() => {
       tree = create(
         <Provider store={store}>
@@ -26,123 +47,68 @@ describe('<PaymentConfirm />', () => {
       );
     });
 
+    store.clearActions();
+
+    submit = tree.root.findByProps({
+      'data-testid': 'confirm-controls-confirm',
+    });
+
+    card = tree.root.findByProps({
+      'data-testid': 'confirm-card-element',
+    });
+  });
+
+  it('should render without props', () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
-});
 
-describe('<PaymentConfirm />', () => {
-  let tree,
-    store = mockStore({
-      payment: { status: 'confirm', token: 'token' },
-    }),
-    intent = {
-      id: 'mock_id',
-      secret: 'secret',
-    },
-    details = {
-      name: 'mock_name',
-      email: 'mock_email',
-      phone: 'mock_phone',
-      address: 'mock_address',
-    };
+  it('should dispatch paymentSuccess', async () => {
+    act(() => {
+      card.props.onChange({ complete: true });
+    });
 
-  beforeAll(() => {
+    await act(async () => {
+      await submit.props.onClick();
+    });
+
+    expect(store.getActions()).toEqual([
+      paymentSuccess({
+        status: 'succeeded',
+        ...store.getState().payment.intent,
+      }),
+    ]);
+  });
+
+  it('should dispatch paymentError', async () => {
+    _state.payment.intent.secret = 'error';
+    store = mockStore(_state);
+
     act(() => {
       tree = create(
         <Provider store={store}>
-          <PaymentConfirm intent={intent} details={details} />
+          <PaymentConfirm />
         </Provider>
       );
     });
-  });
 
-  it('should render with props', () => {
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
+    store.clearActions();
 
-  describe('on cancel', () => {
-    let cancel;
-
-    beforeAll(() => {
-      cancel = jest
-        .spyOn(thunks, 'paymentCancel')
-        .mockImplementation(() => jest.fn());
-
-      act(() => {
-        tree.root
-          .findByProps({ 'data-testid': 'confirm-button-cancel' })
-          .props.onClick();
-      });
+    submit = tree.root.findByProps({
+      'data-testid': 'confirm-controls-confirm',
     });
 
-    it('should display spinner', () => {
-      expect(
-        tree.root.findByProps({ 'data-testid': 'confirm-spinner' })
-      ).toBeTruthy();
+    card = tree.root.findByProps({
+      'data-testid': 'confirm-card-element',
     });
 
-    it('should push cancel state', () => {
-      expect(cancel).toHaveBeenCalledTimes(1);
-      expect(cancel).toHaveBeenCalledWith(intent.id);
-    });
-  });
-
-  describe('on confirm success', () => {
-    beforeAll(() => {
-      act(() => {
-        tree.root
-          .findByProps({ 'data-testid': 'confirm-button-confirm' })
-          .props.onClick();
-      });
+    act(() => {
+      card.props.onChange({ complete: true });
     });
 
-    it('should display spinner', () => {
-      expect(
-        tree.root.findByProps({ 'data-testid': 'confirm-spinner' })
-      ).toBeTruthy();
+    await act(async () => {
+      await submit.props.onClick();
     });
 
-    it('should push success state', () => {
-      expect(store.getActions()).toEqual([
-        paymentSuccess({ ...intent, status: 'succeeded' }),
-      ]);
-    });
-  });
-
-  describe('on confirm error', () => {
-    let store, tree;
-
-    beforeAll(() => {
-      store = mockStore({
-        payment: { status: 'confirm', token: 'token' },
-      });
-
-      act(() => {
-        tree = create(
-          <Provider store={store}>
-            <PaymentConfirm
-              intent={{ ...intent, secret: 'error' }}
-              details={details}
-            />
-          </Provider>
-        );
-      });
-
-      act(() => {
-        tree.root
-          .findByProps({ 'data-testid': 'confirm-button-confirm' })
-          .props.onClick();
-      });
-    });
-
-    it('should display spinner', () => {
-      expect(
-        tree.root.findByProps({ 'data-testid': 'confirm-spinner' })
-      ).toBeTruthy();
-    });
-
-    it('should push error state', async () => {
-      expect(store.getActions()).toEqual([paymentError('mock_error')]);
-    });
+    expect(store.getActions()).toEqual([paymentError('mock_error')]);
   });
 });

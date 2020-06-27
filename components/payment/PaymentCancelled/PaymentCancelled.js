@@ -1,8 +1,25 @@
 import { Heading, Flex, Text } from '@chakra-ui/core';
+import { useSelector } from 'react-redux';
 
-export const PaymentCancelled = ({ intent = {} }) => {
+/**
+ * Displays information about a cancelled intent after
+ * [PaymentConfrim](#paymentconfirm) stage of payment process.
+ *
+ * ***State Dependencies***
+ * - `payment.status === 'cancelled'`
+ * - `payment.intent`
+ *
+ * @example
+ * ```jsx
+ * <PaymentCancelled />
+ * ```
+ */
+export const PaymentCancelled = (props) => {
+  const { payment = {} } = useSelector((state) => state);
+  const { intent = {} } = payment;
+
   return (
-    <Flex alignItems='center' flexDirection='column' width='100%'>
+    <Flex alignItems='center' flexDirection='column' width='100%' {...props}>
       <Heading>Payment Cancelled</Heading>
       <Text fontSize='1.5rem'>
         Successfuly cancelled intent:{' '}

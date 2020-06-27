@@ -17,7 +17,9 @@ exports[`<PaymentCancelled /> should render without props 1`] = `
     <span
       className="css-4i139l"
       data-testid="cancelled-details"
-    />
+    >
+      mock_id
+    </span>
   </p>
 </div>
 `;

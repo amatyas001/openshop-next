@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaymentConfirmCard/> should render with required props 1`] = `
+<div
+  className="css-1mi3tt8"
+>
+  <label
+    className="css-8qu6k5"
+    htmlFor="StripeElement"
+  >
+    enter your card details to finish payment
+  </label>
+  <div
+    className="css-1dahfv9"
+  >
+    <CardElement
+      data-testid="confirm-card-element"
+      onChange={[Function]}
+      options={
+        Object {
+          "iconStyle": "solid",
+          "style": Object {
+            "base": Object {
+              ":-webkit-autofill": Object {
+                "color": "#D6BCFA",
+              },
+              "::placeholder": Object {
+                "color": "#D6BCFA",
+              },
+              "color": "#FAF5FF",
+              "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
+              "fontSize": "16px",
+              "fontSmoothing": "antialiased",
+              "fontWeight": 500,
+              "iconColor": "#FAF5FF",
+            },
+            "invalid": Object {
+              "color": "#C53030",
+              "iconColor": "#C53030",
+            },
+          },
+        }
+      }
+    />
+  </div>
+  <p
+    className="css-165naot"
+  >
+    Use any future date and CVC with 
+    <strong>
+      4242 4242 4242 4242
+    </strong>
+     
+    number for testing
+  </p>
+</div>
+`;

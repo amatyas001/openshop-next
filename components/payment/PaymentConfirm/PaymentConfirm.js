@@ -1,137 +1,75 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
-import { Flex, Heading, SimpleGrid, Text } from '@chakra-ui/core';
+import { useSelector } from 'react-redux';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
 import {
-  paymentSuccess,
-  paymentCancel,
-  paymentError,
-} from '@app/redux/actions';
-import { Button, CartContent, Spinner } from '@app/components';
+  CartContent,
+  PaymentConfirmCard,
+  PaymentConfirmControls,
+  PaymentConfirmDetails,
+  Spinner,
+} from '@app/components';
+import { Flex, Heading, Text } from '@chakra-ui/core';
 
-// Review and confirm payment intent
+const stripe = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY || 'test');
+
+/**
+ * Wrapper component for the confirm stage elements. See
+ * [PaymentConfirmControls](#paymentconfirmcontrols) for
+ * details about the next stages after *confirm* step.
+ *
+ * ***State Dependencies***
+ * - `payment.status === 'confirm'`
+ * - `payment.details.name`
+ *
+ * ***Wrapped Components***
+ * - [PaymentConfrimDetails](#paymentconfrimdetails)
+ * - [CartContent](#cartcontent)
+ * - [PaymentConfirmCard](#paymentconfirmcard)
+ * - [PaymentConfirmControls](#paymentconfirmcontrols)
+ *
+ * @expamle
+ * ```jsx
+ * <PaymentConfirm />
+ * ```
+ */
 export const PaymentConfirm = (props) => {
-  const stripe = useStripe();
-  const elements = useElements();
-  const dispatch = useDispatch();
   const { payment = {} } = useSelector((store) => store);
-  const { details = {}, intent = {} } = props;
+  const { details = {} } = payment;
+
   const [loading, setLoading] = React.useState(false);
+  const [handler, setHandler] = React.useState({
+    complete: false,
+    confirmHandler: () => {},
+    loadHandler: () => {},
+  });
 
-  const handleConfirm = async () => {
-    if (!stripe) return;
+  return !loading && stripe ? (
+    <Flex
+      flexDirection='column'
+      alignItems='center'
+      width='100%'
+      aria-hidden={payment.status !== 'confirm'}
+      {...props}
+    >
+      <Heading data-testid='confirm-intent-name' my='1rem'>
+        Hello, {details.name}!
+      </Heading>
 
-    setLoading(true);
-
-    const card = elements.getElement(CardElement);
-
-    // confirm
-    const result = await stripe.confirmCardPayment(intent.secret, {
-      payment_method: {
-        card: card,
-        billing_details: {
-          name: details.name,
-          email: details.email,
-          phone: details.phone,
-        },
-      },
-    });
-
-    // success
-    if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
-      dispatch(paymentSuccess(result.paymentIntent));
-    }
-
-    // error
-    if (result.error) {
-      dispatch(paymentError(result.error));
-    }
-  };
-
-  return (
-    <>
-      <Flex
-        flexDirection='column'
-        alignItems='center'
-        width='100%'
-        d={payment.status === 'confirm' && !loading ? 'flex' : 'none'}
-        aria-hidden={payment.status !== 'confirm'}
-        {...props}
-      >
-        {/* header */}
-        <Heading data-testid='confirm-intent-name'>hey {details.name}!</Heading>
-        <Text fontSize='1.1rem' fontWeight='bold'>
-          Please review your payment details:
-        </Text>
-
-        {/* body */}
-        <SimpleGrid
-          columns={{ sm: 1, lg: 2 }}
-          borderTop='1px'
-          borderBottom='1px'
-        >
-          {/* intent */}
-          <SimpleGrid
-            columns='2'
-            spacing='10px'
-            fontSize='0.9rem'
-            fontWeight='bold'
-            flexDirection='column'
-            p='3%'
-          >
-            <Text>INTENT ID</Text>
-            <Text color='purple.800' data-testid='confirm-intent-id'>
-              {intent.id}
-            </Text>
-            <Text>EMAIL</Text>
-            <Text color='purple.800' data-testid='confirm-intent-email'>
-              {details.email}
-            </Text>
-            <Text>PHONE</Text>
-            <Text color='purple.800' data-testid='confirm-intent-phone'>
-              {details.phone}
-            </Text>
-            <Text>ADDRESS</Text>
-            <Text color='purple.800' data-testid='confirm-intent-address'>
-              {details.address}
-            </Text>
-          </SimpleGrid>
-
-          {/* cart */}
-          <CartContent />
-        </SimpleGrid>
-
-        {/* controls */}
-        <SimpleGrid columns='2' spacing='15px'>
-          {/* cancel */}
-          <Button
-            data-testid='confirm-button-cancel'
-            width='100%'
-            bg='red.500'
-            color='gray.100'
-            onClick={() => {
-              setLoading(true);
-              dispatch(paymentCancel(intent.id));
-            }}
-          >
-            CANCEL ORDER
-          </Button>
-
-          {/* confirm */}
-          <Button
-            data-testid='confirm-button-confirm'
-            width='100%'
-            bg='purple.800'
-            color='gray.100'
-            disabled={!stripe}
-            onClick={handleConfirm}
-          >
-            CONFIRM ORDER
-          </Button>
-        </SimpleGrid>
-      </Flex>
-      {payment.status === 'confirm' && loading && (
-        <Spinner data-testid='confirm-spinner' text='Sending data...' />
-      )}
-    </>
+      <Text fontSize='1.1rem' fontWeight='bold' my='0.7rem'>
+        Please review your payment details and confirm order
+      </Text>
+      <PaymentConfirmDetails />
+      <CartContent icons={false} width='100%' />
+      <Elements stripe={stripe}>
+        <PaymentConfirmCard loadHandler={setLoading} setHandler={setHandler} />
+      </Elements>
+      <PaymentConfirmControls
+        confirmHandler={handler.confirmHandler}
+        complete={handler.complete}
+        loadHandler={handler.loadHandler}
+      />
+    </Flex>
+  ) : (
+    <Spinner data-testid='confirm-spinner' text='Loading data...' />
   );
 };

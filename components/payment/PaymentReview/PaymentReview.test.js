@@ -6,14 +6,21 @@ import { PaymentReview } from '@app/components';
 
 const mockStore = createStore([]);
 
-jest
-  .spyOn(require('../../cart/CartContent/CartContent'), 'CartContent')
-  .mockImplementation(() => 'CartContent');
-
 describe('<PaymentReview />', () => {
   let tree,
     back = jest.fn(),
-    store = mockStore({});
+    store = mockStore({
+      cart: [
+        {
+          id: 'mock_id',
+          name: 'mock_name',
+          desc: 'mock_desc',
+          img: 'mock_img',
+          price: 10,
+          rating: 5,
+        },
+      ],
+    });
 
   beforeAll(() => {
     jest
@@ -29,6 +36,8 @@ describe('<PaymentReview />', () => {
         </Provider>
       );
     });
+
+    store.clearActions();
   });
 
   it('should render without props', () => {

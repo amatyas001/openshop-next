@@ -2,7 +2,7 @@
 
 exports[`<PaymentProgress /> should render properly on cancelled state 1`] = `
 <div
-  className="css-12glmx8"
+  className="css-1sj67m5"
 >
   <p
     className="css-18poma1"
@@ -82,7 +82,7 @@ exports[`<PaymentProgress /> should render properly on cancelled state 1`] = `
 
 exports[`<PaymentProgress /> should render properly on confirm state 1`] = `
 <div
-  className="css-12glmx8"
+  className="css-1sj67m5"
 >
   <p
     className="css-18poma1"
@@ -156,7 +156,7 @@ exports[`<PaymentProgress /> should render properly on confirm state 1`] = `
 
 exports[`<PaymentProgress /> should render properly on error state 1`] = `
 <div
-  className="css-12glmx8"
+  className="css-1sj67m5"
 >
   <p
     className="css-18poma1"
@@ -236,7 +236,7 @@ exports[`<PaymentProgress /> should render properly on error state 1`] = `
 
 exports[`<PaymentProgress /> should render properly on form state 1`] = `
 <div
-  className="css-12glmx8"
+  className="css-1sj67m5"
 >
   <p
     className="css-18poma1"
@@ -310,7 +310,7 @@ exports[`<PaymentProgress /> should render properly on form state 1`] = `
 
 exports[`<PaymentProgress /> should render properly on review state 1`] = `
 <div
-  className="css-12glmx8"
+  className="css-1sj67m5"
 >
   <p
     className="css-18poma1"
@@ -378,7 +378,7 @@ exports[`<PaymentProgress /> should render properly on review state 1`] = `
 
 exports[`<PaymentProgress /> should render properly on success state 1`] = `
 <div
-  className="css-12glmx8"
+  className="css-1sj67m5"
 >
   <p
     className="css-18poma1"

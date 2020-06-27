@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaymentConfirmControls /> should render with required props 1`] = `
+<div
+  className="css-qv6zkf"
+>
+  <button
+    className="css-15ecn8p"
+    data-cy="button"
+    data-testid="confirm-controls-cancel"
+    href="#void"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    tabIndex={0}
+  >
+    CANCEL ORDER
+  </button>
+  <button
+    className="css-187kagv"
+    data-cy="button"
+    data-testid="confirm-controls-confirm"
+    disabled={true}
+    href="#void"
+    onClick={[MockFunction]}
+    onKeyDown={[Function]}
+    tabIndex={0}
+  >
+    CONFIRM ORDER
+  </button>
+</div>
+`;

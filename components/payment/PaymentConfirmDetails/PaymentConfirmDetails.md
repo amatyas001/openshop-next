@@ -13,15 +13,15 @@ const item = {
   price: 100,
 };
 
+const intent = {
+  id: 'paymentid',
+};
+
 const details = {
   name: 'John Doe',
   email: 'johndoe@example.com',
-  phone: '(122) 496 5737',
+  phone: '(941) 555-0123',
   address: 'J191 S. Illinois Street, Everett, MA 02149',
-};
-
-const intent = {
-  id: 'Intentid',
 };
 
 React.useEffect(() => {
@@ -29,7 +29,5 @@ React.useEffect(() => {
   dispatch(paymentConfirm(details, intent));
 }, []);
 
-<>
-  <PaymentConfirm />
-</>;
+<PaymentConfirmDetails />;
 ```

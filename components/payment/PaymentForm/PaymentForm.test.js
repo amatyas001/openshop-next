@@ -8,18 +8,12 @@ import { PaymentForm } from '@app/components';
 
 const mockStore = configureStore([thunk]);
 
-// fill form fields with mock values and mock
-// card element state for further assertions
-const completeForm = async (form) => {
+const completeForm = (form) => {
   let details = {};
 
-  await act(async () => {
-    await form.root
-      .findByType('CardElement')
-      .props.onChange({ complete: true });
-
-    await form.root.findAllByType('input').map((item) => {
-      details[item.props.id] = 'mock_value';
+  form.root.findAllByProps({ 'data-testid': `input` }).map((item) => {
+    details[item.props.id] = 'mock_value';
+    act(() => {
       item.props.onChange({ target: { value: 'mock_value' } });
     });
   });
@@ -28,13 +22,13 @@ const completeForm = async (form) => {
 };
 
 describe('<PaymentForm />', () => {
-  let tree, store;
+  let tree, store, submitButton, backButton;
 
   beforeAll(() => {
     store = mockStore({
       payment: { status: 'form', token: 'token' },
-      cart: [{ id: 'id' }], // token and cart are passed to intent
-      amount: 100, // amount is displayed in the submit button
+      cart: [{ id: 'id' }],
+      amount: 100,
     });
 
     act(() => {
@@ -44,42 +38,40 @@ describe('<PaymentForm />', () => {
         </Provider>
       );
     });
+
+    submitButton = tree.root.findByProps({
+      'data-testid': 'form-submit-button',
+    });
+
+    backButton = tree.root.findByProps({
+      'data-testid': 'form-review-button',
+    });
   });
 
   it('should render without props', () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
+  it('should render disabled button', () => {
+    expect(submitButton.props.disabled).toBeTruthy();
+  });
+
   it('should push to review state', () => {
     act(() => {
-      tree.root.findByProps({ 'data-testid': 'review-button' }).props.onClick();
+      backButton.props.onClick();
     });
-
     expect(store.getActions()).toEqual([paymentReview()]);
   });
 
-  it('should display card error', async () => {
-    const mock_error = 'error';
-    await act(async () => {
-      await tree.root
-        .findByType('CardElement')
-        .props.onChange({ error: { message: mock_error } });
-    });
-
-    expect(
-      tree.root.findByProps({ 'data-testid': 'form-card-error' }).props.children
-    ).toContain(mock_error);
-  });
-
-  describe('when form completed', () => {
+  describe('if form complete', () => {
     let details;
 
-    beforeAll(async () => {
-      details = await completeForm(tree);
+    beforeAll(() => {
+      details = completeForm(tree);
     });
 
-    it('should render form values and enabled button', () => {
-      expect(tree.toJSON()).toMatchSnapshot();
+    it('should render enabled button', () => {
+      expect(submitButton.props.disabled).toBeFalsy();
     });
 
     it('should send intent with details', () => {
@@ -88,9 +80,7 @@ describe('<PaymentForm />', () => {
         .mockImplementation(() => jest.fn());
 
       act(() => {
-        tree.root
-          .findByProps({ 'data-testid': 'submit-button' })
-          .props.onClick({ preventDefault: jest.fn() });
+        submitButton.props.onClick();
       });
 
       expect(intent).toHaveBeenCalledTimes(1);

@@ -1,34 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PaymentError /> should render with props 1`] = `
-<div
-  className="css-1mi3tt8"
->
-  <p
-    className="css-1po2p9s"
-  >
-    <strong>
-      Error:
-    </strong>
-    <br />
-    <em>
-      mock_message
-    </em>
-  </p>
-  <button
-    className="css-187kagv"
-    data-cy="button"
-    data-testid="error-button-retry"
-    href="#void"
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    tabIndex={0}
-  >
-    retry
-  </button>
-</div>
-`;
-
 exports[`<PaymentError /> should render without props 1`] = `
 <div
   className="css-1mi3tt8"
@@ -40,7 +11,11 @@ exports[`<PaymentError /> should render without props 1`] = `
       Error:
     </strong>
     <br />
-    <em />
+    <em
+      data-testid="error-message"
+    >
+      mock_error
+    </em>
   </p>
   <button
     className="css-187kagv"

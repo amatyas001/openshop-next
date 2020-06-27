@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaymentForm /> should render with required props 1`] = `
+Array [
+  <p
+    className="css-1yab5hb"
+  >
+    By proceeding you accept the
+     
+    <a
+      className="css-1c5zfe9"
+    >
+      Terms of Service
+    </a>
+     
+    of the company.
+  </p>,
+  <div
+    className="css-1rsrz83"
+  >
+    <button
+      className="css-1h13z07"
+      data-cy="button"
+      data-testid="form-review-button"
+      href="#void"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      BACK TO REVIEW
+    </button>
+    <button
+      className="css-187kagv"
+      data-cy="button"
+      data-testid="form-submit-button"
+      disabled={false}
+      href="#void"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={0}
+    >
+      PAY 100 $
+    </button>
+  </div>,
+]
+`;
