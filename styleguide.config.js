@@ -77,7 +77,8 @@ module.exports = {
     ),
   },
   configureServer(app) {
-    app.use(express.static('openshop-next'));
+    app.use('openshop-next', express.static('images'));
+    app.use('openshop-next', express.static('fonts'));
   },
   webpackConfig: {
     module: {
