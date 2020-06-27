@@ -5,7 +5,7 @@
 
 ---
 
-Configurable template for e-commerce websites. Using static site generation by default providing great SEO experience and extremely fast page loading times. As a JAM project, it uses FaaS, WebAPI, and CDN without a dedicated backend to deliver business data. Implements real-time secure payment processing by default with Stripe API.
+Customisable React template for e-commerce websites. Comes with great SEO experience and extremely short loading times by the default static site generation. Utilizing FaaS, WebAPI, and CDN without a dedicated backend to easily manage and deliver business data to production. Implements real-time secure payment processing with the Stripe API. Mobile first and accessible interface composed by well tested and documented components.
 
 Check out the [Documentation](https://amatyas001.github.io/openshop-next/) for detailed information.
 
@@ -13,31 +13,31 @@ Check out the [Documentation](https://amatyas001.github.io/openshop-next/) for d
 
 ### Frameworks
 
-**[React](https://reactjs.org)** _Open-source JavaScript library for building user interfaces._
+**[React](https://reactjs.org)** - _Open-source JavaScript library for building user interfaces._
 
-**[Next](https://nextjs.org/)** _React framework offering server-side rendering, automatic code-splitting, static exporting._
+**[Next](https://nextjs.org/)** - _React framework offering server-side rendering, automatic code-splitting, static exporting._
 
-**[Redux](https://redux.js.org)** _Predictable state container._
+**[Redux](https://redux.js.org)** - _Predictable state container._
 
-**[Chakra UI](https://chakra-ui.com)** _Simple, modular and accessible component library._
+**[Chakra UI](https://chakra-ui.com)** - _Simple, modular and accessible component library._
 
-**[Stripe](https://stripe.com)** _Online payment processing for internet businesses._
+**[Stripe](https://stripe.com)** - _Online payment processing for internet businesses._
 
-### Automated Testing
+### Testing
 
-**[Jest](https://jestjs.org)** _Delightful javascript testing framework with a focus on simplicity._
+**[Jest](https://jestjs.org)** - _Delightful javascript testing framework with a focus on simplicity._
 
-**[Cypress](https://cypress.io)** _Fast, easy and reliable testing for anything that runs in a browser._
+**[Cypress](https://cypress.io)** - _Fast, easy and reliable testing for anything that runs in a browser._
 
-### Integration Pipeline
+### Pipeline
 
-**[Circle CI](https://circleci.com)** _Continuous integration platform in the cloud._
+**[Circle CI](https://circleci.com)** - _Continuous integration platform in the cloud._
 
-**[Netlify](https://netlify.com)** _Builds, deploys and hosts your front-end._
+**[Netlify](https://netlify.com)** - _Builds, deploys and hosts your front-end._
 
 ### Documentation
 
-**[React Styleguidist](https://react-styleguidist.js.org/)** _Isolated React component development environment with a living style guide._
+**[React Styleguidist](https://react-styleguidist.js.org/)** - _Isolated React component development environment with a living style guide._
 
 ## Feedback
 
