@@ -45,19 +45,19 @@ export const FilterColor = (props) => {
     <>
       <Heading as='label' htmlFor='color' fontSize='1.3rem'>
         Color
+        <Select
+          name='color'
+          width='100%'
+          size='sm'
+          value={filters.color}
+          onChange={(e) => {
+            dispatch(filterColor(e.target.value));
+          }}
+          {...props}
+        >
+          {colors}
+        </Select>
       </Heading>
-      <Select
-        name='color'
-        width='100%'
-        size='sm'
-        value={filters.color}
-        onChange={(e) => {
-          dispatch(filterColor(e.target.value));
-        }}
-        {...props}
-      >
-        {colors}
-      </Select>
     </>
   );
 };

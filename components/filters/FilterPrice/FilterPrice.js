@@ -68,9 +68,13 @@ export const FilterPrice = (props) => {
         max={max}
         {...props}
       >
-        <SliderTrack bg='gray.100' {...props.track} />
-        <SliderFilledTrack bg='gray.800' {...props.filled} />
-        <SliderThumb bg='gray.800' {...props.thumb} />
+        <SliderTrack aria-label='price-track' bg='gray.100' {...props.track} />
+        <SliderFilledTrack
+          aria-label='price-filled'
+          bg='gray.800'
+          {...props.filled}
+        />
+        <SliderThumb aria-label='price-thumb' bg='gray.800' {...props.thumb} />
         <Text fontSize='1.2rem' fontWeight='bold' ml='-60px' {...props.actual}>
           {filters.price > max ? max : price} $
         </Text>

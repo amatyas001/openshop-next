@@ -24,7 +24,7 @@ useEffect(() => {
   <FilterReset />
   <h3>
     {items.map((item) => (
-      <p>
+      <p key={item.key}>
         "{item.key}" filter is set to "{item.value || 'empty'}"
       </p>
     ))}

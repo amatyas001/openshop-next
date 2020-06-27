@@ -1,4 +1,6 @@
 export * from './Button/Button';
+export * from './ButtonInfo/ButtonInfo';
+export * from './ButtonTrash/ButtonTrash';
 export * from './Card/Card';
 export * from './Field/Field';
 export * from './Rating/Rating';

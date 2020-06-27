@@ -1,57 +1,51 @@
 import PropTypes from 'prop-types';
-import Router from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
-import { Heading } from '@chakra-ui/core';
+import { Box, Heading } from '@chakra-ui/core';
 import { getAmount } from '@app/redux/actions';
 import { CartItem } from '@app/components';
 
 /**
- * Displays all cart items and their total price below the list.
+ * Displays cart items and their total price.
  *
- * On mounting the `browserHistoryChange` listener is attached to `Router`
- * to handle prefetching item routes before actual route changing happens.
- * This technique provides loading inidividual item details page without
- * a full refresh which triggered by default.
+ * ***State Dependencies***
+ * - `cart`
+ * - `amount`
  *
- * Total price is recalculated when the actual cart content is changing.
- *
- * > ***State***
- * > - `amount`
- *
- * > ***Elements***
- * > - [CartItem](#cartitem)
+ * ***Wrapped Components***
+ * - [CartItem](#cartitem)
  *
  * @example
  * ```jsx
- * <CartContent text={textStyles} amount={amountStyles} />
+ * <CartContent text={textStyles} amount={amountStyles} icons={true} />
  * ```
  */
 export const CartContent = (props) => {
+  const { icons, text, price } = props;
   const { cart, amount } = useSelector((state) => state);
   const dispatch = useDispatch();
-
-  React.useEffect(() => {
-    const prefetchRoutes = (url) => {
-      url.match(/^\/item\/[\w]*$/gi) && Router.prefetch('/items/[id]', url);
-    };
-    Router.events.on('beforeHistoryChange', prefetchRoutes);
-    return () => {
-      Router.events.off('beforeHistoryChange', prefetchRoutes);
-    };
-  }, []);
 
   React.useEffect(() => {
     dispatch(getAmount());
   }, [cart]);
 
   return (
-    <section id='cart-holder' role='list'>
-      {cart && cart.map((i) => <CartItem key={i.id} item={i} />)}
+    <Box as='section' {...props}>
+      <Box as='ul' role='list'>
+        {cart &&
+          cart.map((item) => (
+            <CartItem
+              key={item.id}
+              role='listitem'
+              as='li'
+              item={item}
+              icons={icons}
+            />
+          ))}
+      </Box>
 
-      <footer>
+      <Box as='footer'>
         <Heading
-          as='h3'
-          id='total-summary'
+          as='p'
           textAlign='right'
           fontSize='1.5rem'
           fontWeight='bold'
@@ -59,30 +53,23 @@ export const CartContent = (props) => {
           pt='10px'
           my='0'
           borderTop='1px'
-          {...props.text}
+          {...text}
         >
           TOTAL PRICE
         </Heading>
 
-        <Heading
-          as='strong'
-          id='total-price'
-          d='block'
-          textAlign='right'
-          aria-describedby='total-summary'
-          my='0'
-          {...props.amount}
-        >
-          {amount || '0.00'}&nbsp;$
+        <Heading as='strong' d='block' textAlign='right' my='0' {...price}>
+          {amount}&nbsp;$
         </Heading>
-      </footer>
-    </section>
+      </Box>
+    </Box>
   );
 };
 
 CartContent.defaultProps = {
   text: null,
-  amount: null,
+  price: null,
+  icons: true,
 };
 
 CartContent.propTypes = {
@@ -92,7 +79,12 @@ CartContent.propTypes = {
   text: PropTypes.object,
 
   /**
-   * [Style Props](https://chakra-ui.com/style-props) for the amount text
+   * [Style Props](https://chakra-ui.com/style-props) for the price text
    */
-  amount: PropTypes.object,
+  price: PropTypes.object,
+
+  /**
+   * Toggle displaying item icons
+   */
+  icons: PropTypes.bool,
 };

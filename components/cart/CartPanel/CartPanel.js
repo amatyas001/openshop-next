@@ -22,14 +22,11 @@ import { Button, CartContent } from '@app/components';
  * At the bottom, the component displays the cart control buttons
  * used to close the panel and initiate payment process.
  *
- * > ***State***
- * > - `cart`
- * > - `payment`
+ * ***State Dependencies***
+ * - `cart`
  *
- * > ***Elements***
- * > - [Button](#button)
- * > - [Collapse](https://chakra-ui.com/collapse)
- * > - [CartContent](#cartcontent)
+ * ***Wrapped Components***
+ * - [CartContent](#cartcontent)
  *
  * @example
  * ```jsx
@@ -62,12 +59,12 @@ export const CartPanel = (props) => {
         d='inline-block'
         width='30px'
         ml='auto'
-        aria-controls='cart-holder'
+        aria-label='cart-toggler'
         backgroundColor='transparent'
         color='gray.800'
         border='0'
         onClick={() => setShow(!show)}
-        id='card-toggler'
+        id='cart-toggler'
         _hover={{
           bg: '',
           color: 'purple.400',
@@ -85,7 +82,7 @@ export const CartPanel = (props) => {
         w='20px'
         h='20px'
         position='absolute'
-        top='5px'
+        top='10px'
         right='10px'
         bg='purple.600'
         borderRadius='50%'
@@ -187,7 +184,7 @@ CartPanel.propTypes = {
   /**
    * [Style Props](https://chakra-ui.com/style-props) for close button
    */
-  close: PropTypes.object,
+  close: PropTypes.element,
 
   /**
    * [Style Props](https://chakra-ui.com/style-props) for continue button

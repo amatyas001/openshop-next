@@ -1,5 +1,6 @@
 ```jsx
 import { useDispatch, useSelector } from 'react-redux';
+import { Flex } from '@chakra-ui/core';
 import { addToCart } from '@app/redux/actions';
 import { Button } from '@app/components';
 
@@ -35,14 +36,20 @@ const items = [
 
 const index = (cart && cart.length) || 0;
 
-<>
-  <CartPanel panel={{ width: '95.8%', top: '120px' }} mr='-40px' mt='-5px' />
+<Flex>
   <Button
+    width='40%'
     onClick={() => {
       index !== items.length && dispatch(addToCart(items[index]));
     }}
   >
-    Click here to add items to cart ({items.length - index} remaining)
+    Add item ({items.length - index} left)
   </Button>
-</>;
+  <CartPanel
+    d='block'
+    ml='auto'
+    mr='-37px'
+    panel={{ width: '93%', top: '100px' }}
+  />
+</Flex>;
 ```

@@ -1,89 +1,61 @@
 import PropTypes from 'prop-types';
-import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
-import { FaTrashAlt, FaInfo } from 'react-icons/fa';
-import { Text, Flex, Image } from '@chakra-ui/core';
+import { Text, Flex, Image, Heading } from '@chakra-ui/core';
 import { removeFromCart } from '@app/redux/actions';
-import { Button } from '@app/components';
+import { ButtonTrash } from '@app/components';
 
 /**
- * Displays an individual item from the cart representing by
- * its image, name and price.
- *
- * Item has an *Info* and *Delete* control buttons attached to it.
- * *Info* button redirects the user to the item's details page while
- * *Delete* removes the selected item from the `cart` object.
- *
- * > ***State***
- * > - `cart`
- *
- * > ***Elements***
- * > - [Button](#button)
+ * Displays details of an individual item from the cart and trash button.
+
+ * ***Wrapped Components***
+ * - [ButtonTrash](#buttontrash)
  *
  * @example
  * ```jsx
- * <CartItem item={individualItem} info={infoStyle} delete={deleteStyle} />
+ * <CartItem item={cartItem} icons={toggleIcons} />
  * ```
  */
 export const CartItem = (props) => {
   const dispatch = useDispatch();
-  const router = useRouter();
+  const { item, icons } = props;
 
   return (
-    <Flex
-      role='listitem'
-      as={'article'}
-      alignItems='center'
-      fontSize='1.2rem'
-      my='3%'
-      {...props}
-    >
+    <Flex alignItems='center' fontSize='1.2rem' {...props}>
       <Image
-        src={`/images/products/${props.item.img}`}
-        size='60px'
+        src={`/images/products/${item.img}`}
+        width='15%'
         objectFit='contain'
-        alt={props.item.name}
+        alt={item.name}
       />
-      <Text as='strong' ml='10px'>
-        {props.item.name} - {props.item.color}
+      <Flex
+        flexDirection='column'
+        width='20%'
+        borderRight='1px'
+        borderColor='gray.400'
+        p='10px'
+      >
+        <Text as='strong'>{item.name}</Text>
+        <Text as='em' fontSize='1rem'>
+          {item.color}
+        </Text>
+      </Flex>
+      <Text as='p' ml='15px' flexWrap='wrap' width='50%' fontSize='1rem'>
+        {item.desc}
       </Text>
-      <Text as='strong' ml='auto'>
-        {props.item.price}&nbsp;$
-      </Text>
-      <Button
-        as={FaInfo}
-        role='button'
-        aria-label='Item info'
-        ml='20px'
-        fontSize='0.6rem'
-        color='blue.400'
-        backgroundColor='transparent'
-        border='0'
-        onClick={() => router.replace(`/items/${props.item.id}`)}
-        _hover={{ color: 'blue.600' }}
-        {...props.info}
-      />
-      <Button
-        as={FaTrashAlt}
-        role='button'
-        aria-label='Delete item'
-        ml='0px'
-        fontSize='1.5rem'
-        width='20px'
-        color='red.600'
-        backgroundColor='transparent'
-        border='0'
-        onClick={() => dispatch(removeFromCart(props.item))}
-        _hover={{ color: 'red.800' }}
-        {...props.delete}
-      />
+      <Heading as='strong' width='10%' ml='auto' mr='15px' fontSize='1.8rem'>
+        {item.price.toFixed(2)}&nbsp;$
+      </Heading>
+      {icons && (
+        <Flex width='5%' justifyContent='space-around' mb='-5px'>
+          <ButtonTrash handler={() => dispatch(removeFromCart(item))} />
+        </Flex>
+      )}
     </Flex>
   );
 };
 
 CartItem.defaultProps = {
-  info: null,
-  delete: null,
+  icons: true,
 };
 
 CartItem.propTypes = {
@@ -93,12 +65,7 @@ CartItem.propTypes = {
   item: PropTypes.object.isRequired,
 
   /**
-   * [Style Props](https://chakra-ui.com/style-props) for info button
+   * Toggle display of item controls
    */
-  info: PropTypes.object,
-
-  /**
-   * [Style Props](https://chakra-ui.com/style-props) for delete button
-   */
-  delete: PropTypes.object,
+  icons: PropTypes.bool,
 };
