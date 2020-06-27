@@ -48,11 +48,17 @@ module.exports = {
       links: [
         {
           rel: 'stylesheet',
-          href: 'fonts/Montserrat-Regular.ttf',
+          href:
+            process.env.NODE_ENV === 'production'
+              ? 'openshop-next/fonts/Montserrat-Regular.ttf'
+              : 'fonts/Montserrat-Regular.ttf',
         },
         {
           rel: 'stylesheet',
-          href: 'fonts/Khand-Bold.ttf',
+          href:
+            process.env.NODE_ENV === 'production'
+              ? 'openshop-next/fonts/Khand-Bold.ttf'
+              : 'fonts/Khand-Bold.ttf',
         },
       ],
     },
