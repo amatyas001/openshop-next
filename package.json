@@ -59,8 +59,10 @@
     "cypress-iframe": "^1.0.1",
     "cypress-redux": "^1.0.0",
     "dotenv-cli": "^3.1.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
     "jest": "^26.0.1",
     "jest-watch-typeahead": "^0.6.0",
+    "react-axe": "^3.5.3",
     "react-test-renderer": "^16.13.1",
     "redux-mock-store": "^1.5.4"
   }
