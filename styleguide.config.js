@@ -43,12 +43,16 @@ module.exports = {
     },
   ],
   template: {
-    favicon: '/favicon.ico',
+    favicon: 'favicon.ico',
     head: {
       links: [
         {
           rel: 'stylesheet',
-          href: '/fonts/Montserrat-Regular.ttf',
+          href: 'fonts/Montserrat-Regular.ttf',
+        },
+        {
+          rel: 'stylesheet',
+          href: 'fonts/Khand-Bold.ttf',
         },
       ],
     },
@@ -71,6 +75,9 @@ module.exports = {
       __dirname,
       'lib/styleguide/components/StyleGuideRenderer'
     ),
+  },
+  configureServer(app) {
+    app.use(express.static('openshop-next'));
   },
   webpackConfig: {
     module: {
