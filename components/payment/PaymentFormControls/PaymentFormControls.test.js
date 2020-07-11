@@ -2,9 +2,10 @@ import { create, act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import * as actions from '@app/redux/thunk/intent';
-import { paymentReview } from '@app/redux/actions';
+import * as actions from '@app/lib/redux/payment/paymentCreate';
+import { paymentReview } from '@app/lib/redux/actions';
 import { PaymentFormControls } from '@app/components';
+import { INITIAL_STATE } from '@app/config/';
 
 const mockStore = configureStore([thunk]);
 const mock_load = jest.fn();
@@ -15,14 +16,27 @@ const mock_details = {
   address: 'mock_address',
 };
 
-describe('<PaymentForm />', () => {
+describe('<PaymentFormControls />', () => {
   let tree, store;
 
   beforeAll(() => {
     store = mockStore({
       payment: { status: 'form', token: 'token' },
-      cart: [{ id: 'id' }],
-      amount: 100,
+      cart: [
+        {
+          id: 'mock_id',
+          name: 'mock_name',
+          description: 'mock_desc',
+          img: 'mock_img',
+          price: 10,
+          starrating: 5,
+          color: 'mock_color',
+          amount: 10,
+          buy: {
+            amount: 1,
+          },
+        },
+      ],
     });
 
     act(() => {
@@ -50,9 +64,39 @@ describe('<PaymentForm />', () => {
     expect(store.getActions()).toEqual([paymentReview()]);
   });
 
+  it('should not dispatch payment intent', () => {
+    let failedTree;
+
+    const mock_details = {
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+    };
+
+    act(() => {
+      failedTree = create(
+        <Provider store={store}>
+          <PaymentFormControls setLoading={mock_load} details={mock_details} />
+        </Provider>
+      );
+    });
+
+    store.clearActions();
+
+    act(() => {
+      failedTree.root
+        .findByProps({ 'data-testid': 'form-submit-button' })
+        .props.onClick();
+    });
+
+    expect(mock_load).not.toHaveBeenCalled();
+    expect(store.getActions()).toEqual([]);
+  });
+
   it('should dispatch payment intent', () => {
     const intent = jest
-      .spyOn(actions, 'paymentIntent')
+      .spyOn(actions, 'paymentCreate')
       .mockImplementation(() => jest.fn());
 
     mock_load.mockClear();
@@ -86,5 +130,16 @@ describe('<PaymentForm />', () => {
         'data-testid': 'form-submit-button',
       }).props.disabled
     ).toBeTruthy();
+  });
+
+  it('should render with initial state', () => {
+    act(() => {
+      tree = create(
+        <Provider store={mockStore(INITIAL_STATE)}>
+          <PaymentFormControls setLoading={mock_load} details={mock_details} />
+        </Provider>
+      );
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
 });

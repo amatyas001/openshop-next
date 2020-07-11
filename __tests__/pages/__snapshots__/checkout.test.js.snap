@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkout page when there is payment token should render cancelled component 1`] = `
+exports[`<Checkout /> should render cancelled component 1`] = `
 <div
-  className="css-w6sf3q"
+  className="css-1tfhyzp"
 >
   <div
     className="css-1sj67m5"
@@ -105,9 +105,9 @@ exports[`Checkout page when there is payment token should render cancelled compo
 </div>
 `;
 
-exports[`Checkout page when there is payment token should render confirm component 1`] = `
+exports[`<Checkout /> should render confirm component 1`] = `
 <div
-  className="css-w6sf3q"
+  className="css-1tfhyzp"
 >
   <div
     className="css-1sj67m5"
@@ -181,7 +181,6 @@ exports[`Checkout page when there is payment token should render confirm compone
     </p>
   </div>
   <div
-    aria-hidden={false}
     className="css-1mi3tt8"
   >
     <h2
@@ -239,61 +238,40 @@ exports[`Checkout page when there is payment token should render confirm compone
         data-testid="confirm-intent-address"
       />
     </div>
-    <section
+    <ul
       className="css-8atqhb"
+      role="list"
     >
-      <ul
-        className="css-0"
-        role="list"
+      <li
+        className="css-1tp0oa"
+        role="listitem"
       >
-        <li
-          className="css-tic8xi"
-          role="listitem"
+        <img
+          alt="mock_name"
+          className="css-rhemcv"
+        />
+        <div
+          className="css-zbq0po"
         >
-          <img
-            alt="name"
-            className="css-rhemcv"
-          />
-          <div
-            className="css-1z0sfv6"
-          >
-            <strong
-              className="css-18poma1"
-            >
-              name
-            </strong>
-            <em
-              className="css-183x3ib"
-            >
-              color
-            </em>
-          </div>
-          <p
-            className="css-15x91gx"
-          />
           <strong
-            className="css-nwzge5"
+            className="css-airqvi"
           >
-            10.00
-             $
+            mock_name
           </strong>
-        </li>
-      </ul>
-      <footer
-        className="css-0"
-      >
-        <p
-          className="css-ohvq3n"
-        >
-          TOTAL PRICE
-        </p>
+          <em
+            className="css-1fji79j"
+          >
+            mock_color in One Size x1
+          </em>
+        </div>
         <strong
-          className="css-lk14dv"
+          className="css-1som8bm"
         >
+          10.00
            $
         </strong>
-      </footer>
-    </section>
+      </li>
+    </ul>
     <Elements
       stripe="stripe"
     >
@@ -307,7 +285,7 @@ exports[`Checkout page when there is payment token should render confirm compone
           enter your card details to finish payment
         </label>
         <div
-          className="css-1dahfv9"
+          className="css-16soxp"
         >
           <CardElement
             data-testid="confirm-card-element"
@@ -317,22 +295,10 @@ exports[`Checkout page when there is payment token should render confirm compone
                 "iconStyle": "solid",
                 "style": Object {
                   "base": Object {
-                    ":-webkit-autofill": Object {
-                      "color": "#D6BCFA",
-                    },
-                    "::placeholder": Object {
-                      "color": "#D6BCFA",
-                    },
-                    "color": "#FAF5FF",
-                    "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
-                    "fontSize": "16px",
+                    "fontFamily": "Khand, sans-serif",
+                    "fontSize": "18px",
                     "fontSmoothing": "antialiased",
-                    "fontWeight": 500,
-                    "iconColor": "#FAF5FF",
-                  },
-                  "invalid": Object {
-                    "color": "#C53030",
-                    "iconColor": "#C53030",
+                    "fontWeight": "bold",
                   },
                 },
               }
@@ -355,36 +321,55 @@ exports[`Checkout page when there is payment token should render confirm compone
       className="css-qv6zkf"
     >
       <button
-        className="css-15ecn8p"
-        data-cy="button"
+        className="css-1e5j5cf"
         data-testid="confirm-controls-cancel"
         href="#void"
         onClick={[Function]}
         onKeyDown={[Function]}
-        tabIndex={0}
+        tabIndex="0"
+        type="button"
       >
         CANCEL ORDER
       </button>
       <button
-        className="css-187kagv"
-        data-cy="button"
+        className="css-hn65qy"
         data-testid="confirm-controls-confirm"
         disabled={true}
         href="#void"
         onClick={[Function]}
         onKeyDown={[Function]}
-        tabIndex={0}
+        tabIndex="0"
+        type="button"
       >
         CONFIRM ORDER
       </button>
     </div>
   </div>
+  <div
+    className="css-1og0pvu"
+    data-testid="confirm-spinner"
+  >
+    <h2
+      className="css-1gjlikv"
+    >
+      Loading data...
+    </h2>
+    <div
+      className="css-159m1lu"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
-exports[`Checkout page when there is payment token should render error component 1`] = `
+exports[`<Checkout /> should render error component 1`] = `
 <div
-  className="css-w6sf3q"
+  className="css-1tfhyzp"
 >
   <div
     className="css-1sj67m5"
@@ -480,23 +465,23 @@ exports[`Checkout page when there is payment token should render error component
       </em>
     </p>
     <button
-      className="css-187kagv"
-      data-cy="button"
+      className="css-hn65qy"
       data-testid="error-button-retry"
       href="#void"
       onClick={[Function]}
       onKeyDown={[Function]}
-      tabIndex={0}
+      tabIndex="0"
+      type="button"
     >
-      retry
+      retry payment process
     </button>
   </div>
 </div>
 `;
 
-exports[`Checkout page when there is payment token should render form component 1`] = `
+exports[`<Checkout /> should render form component 1`] = `
 <div
-  className="css-w6sf3q"
+  className="css-1tfhyzp"
 >
   <div
     className="css-1sj67m5"
@@ -579,13 +564,13 @@ exports[`Checkout page when there is payment token should render form component 
         className="css-9x3bhi"
       >
         <label
-          className="css-1xnp38i"
+          className="css-1cj26ek"
           htmlFor="name"
         >
           name
         </label>
         <input
-          className="css-cth1sm"
+          className="css-185v6vq"
           id="name"
           onChange={[Function]}
           placeholder="John Doe"
@@ -598,13 +583,13 @@ exports[`Checkout page when there is payment token should render form component 
         className="css-9x3bhi"
       >
         <label
-          className="css-1xnp38i"
+          className="css-1cj26ek"
           htmlFor="address"
         >
           address
         </label>
         <input
-          className="css-cth1sm"
+          className="css-185v6vq"
           id="address"
           onChange={[Function]}
           placeholder="J191 S. Illinois Street, Everett, MA 02149"
@@ -617,13 +602,13 @@ exports[`Checkout page when there is payment token should render form component 
         className="css-9x3bhi"
       >
         <label
-          className="css-1xnp38i"
+          className="css-1cj26ek"
           htmlFor="email"
         >
           email
         </label>
         <input
-          className="css-cth1sm"
+          className="css-185v6vq"
           id="email"
           onChange={[Function]}
           placeholder="johndoe@example.com"
@@ -636,13 +621,13 @@ exports[`Checkout page when there is payment token should render form component 
         className="css-9x3bhi"
       >
         <label
-          className="css-1xnp38i"
+          className="css-1cj26ek"
           htmlFor="phone"
         >
           phone
         </label>
         <input
-          className="css-cth1sm"
+          className="css-185v6vq"
           id="phone"
           onChange={[Function]}
           placeholder="(941) 555-0123"
@@ -669,26 +654,25 @@ exports[`Checkout page when there is payment token should render form component 
       className="css-1rsrz83"
     >
       <button
-        className="css-1h13z07"
-        data-cy="button"
+        className="css-1h0dud8"
         data-testid="form-review-button"
         href="#void"
         onClick={[Function]}
         onKeyDown={[Function]}
-        tabIndex={0}
+        tabIndex="0"
         type="button"
       >
         BACK TO REVIEW
       </button>
       <button
-        className="css-187kagv"
-        data-cy="button"
+        className="css-hn65qy"
         data-testid="form-submit-button"
         disabled={true}
         href="#void"
         onClick={[Function]}
         onKeyDown={[Function]}
-        tabIndex={0}
+        tabIndex="0"
+        type="button"
       >
         FILL THE FORM
       </button>
@@ -697,9 +681,9 @@ exports[`Checkout page when there is payment token should render form component 
 </div>
 `;
 
-exports[`Checkout page when there is payment token should render review component 1`] = `
+exports[`<Checkout /> should render review component 1`] = `
 <div
-  className="css-w6sf3q"
+  className="css-1tfhyzp"
 >
   <div
     className="css-1sj67m5"
@@ -767,125 +751,97 @@ exports[`Checkout page when there is payment token should render review componen
     </p>
   </div>
   <div
-    className="css-dvxtzn"
+    className="css-1djihfe"
   >
-    <section
-      className="css-8atqhb"
+    <ul
+      className="css-7822g1"
+      role="list"
     >
-      <ul
-        className="css-0"
-        role="list"
+      <li
+        className="css-1tp0oa"
+        role="listitem"
       >
-        <li
-          className="css-tic8xi"
-          role="listitem"
+        <img
+          alt="mock_name"
+          className="css-rhemcv"
+        />
+        <div
+          className="css-zbq0po"
         >
-          <img
-            alt="name"
-            className="css-rhemcv"
-          />
-          <div
-            className="css-1z0sfv6"
-          >
-            <strong
-              className="css-18poma1"
-            >
-              name
-            </strong>
-            <em
-              className="css-183x3ib"
-            >
-              color
-            </em>
-          </div>
-          <p
-            className="css-15x91gx"
-          />
           <strong
-            className="css-nwzge5"
+            className="css-airqvi"
           >
-            10.00
-             $
+            mock_name
           </strong>
-          <div
-            aria-label="Delete"
-            className="css-c4ibz5"
-            data-cy="button"
-            href="#void"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-            tabIndex={0}
+          <em
+            className="css-1fji79j"
           >
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 448 512"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
-              />
-            </svg>
-          </div>
-        </li>
-      </ul>
-      <footer
-        className="css-0"
-      >
-        <p
-          className="css-ohvq3n"
-        >
-          TOTAL PRICE
-        </p>
+            mock_color in One Size x1
+          </em>
+          <p
+            className="css-18poma1"
+            data-testid="cart-item-description"
+          >
+            mock_desc
+          </p>
+        </div>
         <strong
-          className="css-lk14dv"
+          className="css-1som8bm"
         >
+          10.00
            $
         </strong>
-      </footer>
-    </section>
+      </li>
+    </ul>
     <div
-      className="css-1hojse"
+      className="css-1jgiy2l"
     >
       <button
-        className="css-1h13z07"
-        data-cy="button"
+        className="css-1wjk1cz"
         data-testid="review-button-back"
         href="#void"
         onClick={[Function]}
         onKeyDown={[Function]}
-        tabIndex={0}
+        tabIndex="0"
+        type="button"
       >
-        BACK TO SHOPPING
+        BACK
       </button>
       <button
-        className="css-187kagv"
-        data-cy="button"
+        className="css-1ow8n45"
         data-testid="review-button-form"
         href="#void"
         onClick={[Function]}
         onKeyDown={[Function]}
-        tabIndex={0}
+        tabIndex="0"
+        type="button"
       >
         PAYMENT DETAILS
       </button>
+      <div
+        className="css-ufscxh"
+      >
+        <p
+          className="css-dptndp"
+        >
+          TOTAL
+        </p>
+        <strong
+          className="css-lk14dv"
+          data-testid="cart-amount-value"
+        >
+          10.00
+           $
+        </strong>
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Checkout page when there is payment token should render success component 1`] = `
+exports[`<Checkout /> should render success component 1`] = `
 <div
-  className="css-w6sf3q"
+  className="css-1tfhyzp"
 >
   <div
     className="css-1sj67m5"
@@ -988,6 +944,28 @@ exports[`Checkout page when there is payment token should render success compone
       className="css-18poma1"
     >
       This was a sample transaction to demonstrate the payment flow. Thank you!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`<Checkout /> should render unauthorized component 1`] = `
+<div
+  className="css-1tfhyzp"
+>
+  
+  <div
+    className="css-dvxtzn"
+  >
+    <h2
+      className="css-84al3w"
+    >
+      You are not authorized to view this page!
+    </h2>
+    <p
+      className="css-18poma1"
+    >
+      Please start the payment process from your cart!
     </p>
   </div>
 </div>

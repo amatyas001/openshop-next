@@ -1,5 +1,6 @@
-import { handler } from '@app/lambda/intent';
+import { handler } from '@app/lib/lambda/intent';
 import axios from 'axios';
+import { mockProduct } from '@app/__mocks__/@app/mocks';
 
 jest.mock('axios');
 
@@ -8,6 +9,14 @@ const mock_intent_id = 'id';
 const mock_intent_secret = 'secret';
 const mock_intent_error = 'intent_error';
 const mock_error = Error('error');
+const mock_products = mockProduct(5).map((c) => {
+  return {
+    ...c,
+    buy: {
+      amount: 1,
+    },
+  };
+});
 
 const mock_create = jest
   .fn()
@@ -135,7 +144,7 @@ describe('Intent Handler', () => {
       event = {
         httpMethod: 'POST',
         body: JSON.stringify({
-          items: [{ id: 1 }, { id: 2 }],
+          items: mock_products,
         }),
       };
 
@@ -148,10 +157,7 @@ describe('Intent Handler', () => {
       axios.get.mockImplementation(() =>
         Promise.resolve({
           data: {
-            items: [
-              { id: 1, price: 1 },
-              { id: 2, price: 2 },
-            ],
+            items: mock_products,
           },
         })
       );
@@ -159,14 +165,17 @@ describe('Intent Handler', () => {
       event = {
         httpMethod: 'POST',
         body: JSON.stringify({
-          items: [{ id: 1 }, { id: 2 }],
+          items: mock_products,
           token: mock_token,
         }),
       };
 
       expected = {
         config: {
-          amount: 300, // item prices in cents: 1 + 2 * 100
+          amount: mock_products.reduce(
+            (a, c) => (a += c.price * 100 * c.buy.amount),
+            0
+          ),
           currency: 'usd',
           description: 'Order from store',
         },

@@ -1,1 +1,0 @@
-Cart components are wrapped in [CartPanel](#cartpanel) and displayed in the navbar as an icon button wich triggers a **collapsable panel**. Actual cart items are available as `cart` array, their total price as the `amount` key from the store.

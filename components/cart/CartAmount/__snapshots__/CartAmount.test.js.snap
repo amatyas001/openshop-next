@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartAmount /> should render without props 1`] = `
+<div
+  className="css-0"
+>
+  <p
+    className="css-dptndp"
+  >
+    TOTAL
+  </p>
+  <strong
+    className="css-lk14dv"
+    data-testid="cart-amount-value"
+  >
+    5.00
+     $
+  </strong>
+</div>
+`;

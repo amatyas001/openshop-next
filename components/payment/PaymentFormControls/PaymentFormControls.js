@@ -1,30 +1,16 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, SimpleGrid, Text } from '@chakra-ui/core';
-import { paymentIntent, paymentReview } from '@app/redux/actions';
+import { paymentCreate, paymentReview } from '@app/lib/redux/actions';
 import { Button } from '@app/components';
 
 /**
- * Displays control buttons for [PaymentForm](#paymentform) giving the user options to go back
- * [PaymentReview](#paymentreview) stage or *submit* form data *(this is disabled by default)*.
- *
- * When passed details are valid, *submit* button becomes active and renders the amount to be charged.
- * On submitting the form it will send request to *Stripe API* for creating an intent and loads
- * [PaymentConfirm](#paymentconfirm) stage to continue process.
- *
- * ***State Dependencies***
- * - `payment.token`
- * - `amount`
- * - `cart`
- *
- * @example
- * ```jsx
- * <PaymentFormControls details={formDetails} setLoading={setLoading}>
- *```
+ * @see https://amatyas001.github.io/openshop-next/#paymentform
+ * @ignore
  */
 export const PaymentFormControls = (props) => {
   const { details, setLoading } = props;
-  const { amount = 0, payment = {}, cart = [] } = useSelector((state) => state);
+  const { payment, cart } = useSelector((state) => state);
   const dispatch = useDispatch();
   const [valid, setValid] = React.useState(false);
 
@@ -41,7 +27,7 @@ export const PaymentFormControls = (props) => {
   const handleSubmit = () => {
     if (!valid) return;
     setLoading(true);
-    dispatch(paymentIntent(details, cart, payment.token));
+    dispatch(paymentCreate(details, cart, payment.token));
   };
 
   return (
@@ -67,23 +53,21 @@ export const PaymentFormControls = (props) => {
       >
         <Button
           data-testid='form-review-button'
-          bg='gray.600'
-          color='gray.100'
-          width='100%'
-          type='button'
+          variant='secondary'
           onClick={() => dispatch(paymentReview())}
         >
           BACK TO REVIEW
         </Button>
         <Button
           data-testid='form-submit-button'
-          bg='purple.800'
-          color='gray.100'
-          width='100%'
           disabled={!valid}
           onClick={handleSubmit}
         >
-          {!valid ? 'FILL THE FORM' : `PAY ${amount} $`}
+          {!valid
+            ? 'FILL THE FORM'
+            : `PAY ${cart
+                .reduce((a, c) => (a += parseFloat(c.price) * c.buy.amount), 0)
+                .toFixed(2)} $`}
         </Button>
       </SimpleGrid>
     </>
@@ -92,12 +76,12 @@ export const PaymentFormControls = (props) => {
 
 PaymentFormControls.propTypes = {
   /**
-   * Details from [PaymentForm](#paymentform)
+   * Form details
    */
   details: PropTypes.object.isRequired,
 
   /**
-   * Loading handler to lift loading state
+   * Loading handler
    */
   setLoading: PropTypes.func.isRequired,
 };

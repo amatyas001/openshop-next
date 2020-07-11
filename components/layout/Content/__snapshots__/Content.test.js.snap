@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Content /> should render with required props 1`] = `
+<div
+  className="css-1tvvmiu"
+>
+  <div
+    className="css-qnx4w7"
+    data-testid="content"
+  >
+    <MockElement />
+  </div>
+</div>
+`;

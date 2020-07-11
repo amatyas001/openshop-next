@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilterName /> should render without props 1`] = `
+<div
+  className="css-0"
+>
+  <label
+    className="css-5a7nn6"
+    htmlFor="name"
+  >
+    Name
+  </label>
+  <input
+    className="css-1mofb0b"
+    name="name"
+    onChange={[Function]}
+    placeholder="Filter by name..."
+  />
+</div>
+`;

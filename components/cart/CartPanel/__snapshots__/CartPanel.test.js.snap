@@ -1,0 +1,291 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartPanel /> on empty cart should render without props 1`] = `
+<section
+  className="css-j7qwjs"
+  id="cart"
+  role="complementary"
+>
+  <button
+    aria-label="cart-toggler"
+    className="css-1vus3us"
+    data-testid="cart-panel-button"
+    href="#void"
+    id="cart-toggler"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+          "marginBottom": "-5px",
+          "marginRight": "5px",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+      />
+    </svg>
+    0 item(s)
+  </button>
+  <div
+    aria-hidden={true}
+    className="rah-static rah-static--height-zero css-vppuuz"
+    style={
+      Object {
+        "height": 0,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "WebkitTransition": "opacity 250ms ease 0ms",
+          "opacity": 0,
+          "transition": "opacity 250ms ease 0ms",
+        }
+      }
+    >
+      <div
+        className="css-1hpslha"
+      >
+        <div
+          className="css-ugjhak"
+        >
+          <button
+            className="css-1ks4ucs"
+            data-testid="cart-panel-button-close"
+            href="#void"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            close
+          </button>
+          <button
+            className="css-48tyil"
+            data-testid="cart-panel-button-continue"
+            disabled={true}
+            href="#void"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            continue
+          </button>
+          <div
+            className="css-ufscxh"
+            data-testid="cart-panel-amount"
+          >
+            <p
+              className="css-dptndp"
+            >
+              TOTAL
+            </p>
+            <strong
+              className="css-lk14dv"
+              data-testid="cart-amount-value"
+            >
+              0.00
+               $
+            </strong>
+          </div>
+        </div>
+        <ul
+          className="css-1q2qbgw"
+          data-testid="cart-panel-content"
+          role="list"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`<CartPanel /> on non empty cart should render without props 1`] = `
+<section
+  className="css-j7qwjs"
+  id="cart"
+  role="complementary"
+>
+  <button
+    aria-label="cart-toggler"
+    className="css-1vus3us"
+    data-testid="cart-panel-button"
+    href="#void"
+    id="cart-toggler"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+          "marginBottom": "-5px",
+          "marginRight": "5px",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+      />
+    </svg>
+    1 item(s)
+  </button>
+  <div
+    aria-hidden={true}
+    className="rah-static rah-static--height-zero css-vppuuz"
+    style={
+      Object {
+        "height": 0,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "WebkitTransition": "opacity 250ms ease 0ms",
+          "opacity": 0,
+          "transition": "opacity 250ms ease 0ms",
+        }
+      }
+    >
+      <div
+        className="css-1hpslha"
+      >
+        <div
+          className="css-ugjhak"
+        >
+          <button
+            className="css-1ks4ucs"
+            data-testid="cart-panel-button-close"
+            href="#void"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            close
+          </button>
+          <button
+            className="css-48tyil"
+            data-testid="cart-panel-button-continue"
+            disabled={false}
+            href="#void"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            tabIndex="0"
+            type="button"
+          >
+            continue
+          </button>
+          <div
+            className="css-ufscxh"
+            data-testid="cart-panel-amount"
+          >
+            <p
+              className="css-dptndp"
+            >
+              TOTAL
+            </p>
+            <strong
+              className="css-lk14dv"
+              data-testid="cart-amount-value"
+            >
+              1.00
+               $
+            </strong>
+          </div>
+        </div>
+        <ul
+          className="css-1q2qbgw"
+          data-testid="cart-panel-content"
+          role="list"
+        >
+          <li
+            className="css-1tp0oa"
+            role="listitem"
+          >
+            <img
+              alt="mock_name_0"
+              className="css-rhemcv"
+            />
+            <div
+              className="css-zbq0po"
+            >
+              <strong
+                className="css-airqvi"
+              >
+                mock_name_0
+              </strong>
+              <em
+                className="css-1fji79j"
+              >
+                mock_color_0 in One Size x1
+              </em>
+            </div>
+            <strong
+              className="css-1som8bm"
+            >
+              1.00
+               $
+            </strong>
+            <button
+              className="css-5sp2m4"
+              data-testid="cart-item-button-delete"
+              href="#void"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              tabIndex="0"
+              type="button"
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+`;

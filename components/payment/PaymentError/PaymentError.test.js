@@ -1,8 +1,9 @@
 import { create, act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import createStore from 'redux-mock-store';
-import { paymentReset } from '@app/redux/action/payment';
+import { paymentReset } from '@app/lib/redux/actions';
 import { PaymentError } from '@app/components';
+import { INITIAL_STATE } from '@app/config/';
 
 let mockStore = createStore([]);
 
@@ -48,5 +49,16 @@ describe('<PaymentError />', () => {
     });
 
     expect(store.getActions()).toEqual([paymentReset()]);
+  });
+
+  it('should render with initial state', () => {
+    act(() => {
+      tree = create(
+        <Provider store={mockStore(INITIAL_STATE)}>
+          <PaymentError />
+        </Provider>
+      );
+    });
+    expect(tree.toJSON()).toMatchSnapshot();
   });
 });

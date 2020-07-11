@@ -2,7 +2,7 @@ import { create, act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
-import * as actions from '@app/redux/thunk/cancel';
+import * as actions from '@app/lib/redux/payment/paymentCancel';
 import { PaymentConfirmControls } from '@app/components';
 
 const mockStore = configureStore([thunk]);
@@ -75,14 +75,14 @@ describe('<PaymentConfirmControls />', () => {
   });
 
   describe('Confrim Button', () => {
-    beforeAll(() => {
+    const createEl = (complete) => {
       act(() => {
         tree = create(
           <Provider store={store}>
             <PaymentConfirmControls
               confirmHandler={mock_confirm}
               loadHandler={mock_load}
-              complete={true}
+              complete={complete}
             />
           </Provider>
         );
@@ -95,10 +95,20 @@ describe('<PaymentConfirmControls />', () => {
           })
           .props.onClick();
       });
-    });
+    };
 
     it('should call passed handler', () => {
+      createEl(true);
       expect(mock_load).toHaveBeenCalledTimes(1);
+    });
+
+    it('should be disabled', () => {
+      createEl(false);
+      expect(
+        tree.root.findByProps({
+          'data-testid': 'confirm-controls-confirm',
+        }).props.disabled
+      ).toBeTruthy();
     });
   });
 });

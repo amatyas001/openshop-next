@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Field should render without props 1`] = `
+exports[`<Field /> should render without props 1`] = `
 <fieldset
   className="css-9x3bhi"
 >
   <label
-    className="css-1xnp38i"
+    className="css-1cj26ek"
   />
   <input
-    className="css-cth1sm"
+    className="css-185v6vq"
   />
 </fieldset>
 `;

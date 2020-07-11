@@ -2,36 +2,19 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { Flex, Heading, Text } from '@chakra-ui/core';
-import { paymentSuccess, paymentError } from '@app/redux/actions';
+import { paymentSuccess, paymentError } from '@app/lib/redux/actions';
+import * as COLORS from '@app/config/colors';
 
 /**
- * Displays [CardElement](https://stripe.com/docs/stripe-js) with custom error handling
- * and populates its state to wrapper component.
- *
- * **Must be wrapped in [Elements](https://stripe.com/docs/stripe-js) provider**
- *
- * ***State Dependencies***
- * - `payment.status === 'confirm'`
- * - `payment.intent`
- * - `payment.details`
- *
- * ***Wrapped Components***
- * - [CardElement](https://stripe.com/docs/stripe-js)
- *
- * @example
- * ```jsx
- * <Elements stripe={stripe}>
- *  <PaymentConfirmCard loadHandler={setLoading} setHandler={handlersObject} />
- * </Elements>
- * ```
+ * @see https://amatyas001.github.io/openshop-next/#paymentconfirm
+ * @ignore
  */
 export const PaymentConfirmCard = (props) => {
   const { loadHandler, setHandler } = props;
   const stripe = useStripe();
   const elements = useElements();
   const dispatch = useDispatch();
-  const { payment = {} } = useSelector((store) => store);
-  const { details = {}, intent = {} } = payment;
+  const { details, intent } = useSelector((store) => store.payment);
   const [cardError, setCardError] = React.useState(null);
   const [complete, setComplete] = React.useState(false);
 
@@ -78,7 +61,7 @@ export const PaymentConfirmCard = (props) => {
           htmlFor='StripeElement'
           fontSize='1.5rem'
           textAlign='center'
-          color='red.600'
+          color={COLORS.TEXT.danger}
           data-testid='confirm-card-error'
         >
           {cardError.message}
@@ -86,8 +69,8 @@ export const PaymentConfirmCard = (props) => {
       )}
       <Flex
         border='1px'
-        borderColor='purple.100'
-        bg='purple.800'
+        borderColor={COLORS.SPACER.light}
+        bg={COLORS.BG.dark}
         width='100%'
         height='50px'
         alignItems='center'
@@ -99,18 +82,10 @@ export const PaymentConfirmCard = (props) => {
             iconStyle: 'solid',
             style: {
               base: {
-                iconColor: '#FAF5FF',
-                color: '#FAF5FF',
-                fontWeight: 500,
-                fontFamily: 'Montserrat, Open Sans, Segoe UI, sans-serif',
-                fontSize: '16px',
+                fontWeight: 'bold',
+                fontFamily: 'Khand, sans-serif',
+                fontSize: '18px',
                 fontSmoothing: 'antialiased',
-                ':-webkit-autofill': { color: '#D6BCFA' },
-                '::placeholder': { color: '#D6BCFA' },
-              },
-              invalid: {
-                iconColor: '#C53030',
-                color: '#C53030',
               },
             },
           }}
@@ -120,7 +95,7 @@ export const PaymentConfirmCard = (props) => {
           }}
         />
       </Flex>
-      <Text my='1rem' p='7px' fontSize='0.8rem' color='gray.600'>
+      <Text my='1rem' p='7px' fontSize='0.8rem' color={COLORS.TEXT.light}>
         Use any future date and CVC with <strong>4242 4242 4242 4242</strong>{' '}
         number for testing
       </Text>
@@ -130,12 +105,12 @@ export const PaymentConfirmCard = (props) => {
 
 PaymentConfirmCard.propTypes = {
   /**
-   * Passed down handler to set loading state in wrapper conponent
+   * Loading state handler
    */
   loadHandler: PropTypes.func.isRequired,
 
   /**
-   * Lifting up handlers and card state to [PaymentConfirm](#paymentconfirm)
+   * Lifted card status and confirm handler
    */
   setHandler: PropTypes.func.isRequired,
 };

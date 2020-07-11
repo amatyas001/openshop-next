@@ -1,0 +1,1 @@
+Complex user interface elements that are reused in the application and built on top of the [Chakra](https://chakra-ui.com) library inheriting [Style Props](https://chakra-ui.com/style-props) and [Themes](https://chakra-ui.com/theme) _(See [Configuration](#section-configuration) for more details about styling components)_.

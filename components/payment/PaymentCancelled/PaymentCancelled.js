@@ -5,19 +5,14 @@ import { useSelector } from 'react-redux';
  * Displays information about a cancelled intent after
  * [PaymentConfrim](#paymentconfirm) stage of payment process.
  *
- * ***State Dependencies***
- * - `payment.status === 'cancelled'`
- * - `payment.intent`
- *
+ * @visibleName Payment Cancelled
  * @example
  * ```jsx
  * <PaymentCancelled />
  * ```
  */
 export const PaymentCancelled = (props) => {
-  const { payment = {} } = useSelector((state) => state);
-  const { intent = {} } = payment;
-
+  const { intent } = useSelector((state) => state.payment);
   return (
     <Flex alignItems='center' flexDirection='column' width='100%' {...props}>
       <Heading>Payment Cancelled</Heading>

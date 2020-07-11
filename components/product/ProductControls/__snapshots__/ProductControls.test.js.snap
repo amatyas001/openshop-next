@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductControls /> should render with required props 1`] = `
+<div
+  className="css-1j174qx"
+>
+  <span />
+  <h2
+    className="css-d94gct"
+  >
+    1
+     $
+  </h2>
+  <p
+    className="css-u84yc3"
+  >
+    mock_color_0
+  </p>
+  <div
+    className="css-1nqhd46"
+  >
+    <svg
+      className="css-1qla8s8"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 576 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+      />
+    </svg>
+  </div>
+  <div
+    className="css-1php3x8"
+  >
+    <select
+      className="css-1fbi3l4"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        value=""
+      >
+        Select size...
+      </option>
+      <option
+        value="mock_size_0_0"
+      >
+        mock_size_0_0
+      </option>
+      <option
+        value="mock_size_1_0"
+      >
+        mock_size_1_0
+      </option>
+    </select>
+    <div
+      className="css-rl6gbg"
+    >
+      <svg
+        aria-hidden="true"
+        className="css-k176ff"
+        data-custom-icon={true}
+        fill="currentColor"
+        focusable="false"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 448 512"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"
+        />
+      </svg>
+    </div>
+  </div>
+  <p
+    className="css-1nsgbpp"
+  >
+    1
+     in stock
+  </p>
+  <div
+    className="css-1dm3qsp"
+    data-testid="product-amount-wrapper"
+  >
+    <div
+      className="css-hboir5"
+    >
+      <div
+        aria-hidden={true}
+        className="css-1yqqx3k"
+      >
+        <button
+          className="css-fdetwv"
+          data-testid="product-amount-increment"
+          href="#void"
+          onClick={null}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="button"
+          tabIndex="0"
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 448 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-32 252c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92H92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+            />
+          </svg>
+        </button>
+        <button
+          className="css-1fd1i4r"
+          data-testid="product-amount-decrement"
+          href="#void"
+          onClick={null}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          role="button"
+          tabIndex="0"
+          type="button"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 448 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"
+            />
+          </svg>
+        </button>
+      </div>
+      <input
+        aria-invalid={false}
+        aria-readonly={true}
+        aria-valuemax={1}
+        aria-valuemin={0}
+        aria-valuenow={0}
+        autoComplete="off"
+        className="css-s3c5ne"
+        data-testid="product-amount-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        readOnly={true}
+        role="spinbutton"
+        type="text"
+        value={0}
+      />
+    </div>
+  </div>
+  <button
+    className="css-1e5lh77"
+    data-testid="product-buy-button"
+    disabled={true}
+    href="#void"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    buy
+  </button>
+</div>
+`;

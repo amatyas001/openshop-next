@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilterPanel /> should render with required props 1`] = `
+<div
+  className="css-a6rva7"
+>
+  <button
+    className="css-14domu9"
+    href="#void"
+    name="toggle-filters"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    <svg
+      className="css-122w7r8"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 512 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+      />
+    </svg>
+    show filters
+  </button>
+  <div
+    aria-hidden={true}
+    className="rah-static rah-static--height-zero css-vppuuz"
+    style={
+      Object {
+        "height": 0,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "WebkitTransition": "opacity 250ms ease 0ms",
+          "opacity": 0,
+          "transition": "opacity 250ms ease 0ms",
+        }
+      }
+    >
+      <div
+        className="css-1rqtam7"
+      >
+        <form
+          className="css-dbwrig"
+          name="filters"
+        >
+          <div
+            className="css-m22q8d"
+          >
+            <div
+              className="css-0"
+            >
+              <label
+                className="css-5a7nn6"
+                htmlFor="name"
+              >
+                Name
+              </label>
+              <input
+                className="css-1mofb0b"
+                name="name"
+                onChange={[Function]}
+                placeholder="Filter by name..."
+              />
+            </div>
+            <div
+              className="css-0"
+            >
+              <label
+                className="css-5a7nn6"
+                htmlFor="color"
+              >
+                Color
+                <div
+                  className="css-1jke4yk"
+                >
+                  <select
+                    className="css-neub1k"
+                    name="color"
+                    onChange={[Function]}
+                    value="All"
+                  >
+                    <option
+                      value="All"
+                    >
+                      All
+                    </option>
+                    <option
+                      value="mock_color_0"
+                    >
+                      mock_color_0
+                    </option>
+                  </select>
+                  <div
+                    className="css-rl6gbg"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="css-k176ff"
+                      data-custom-icon={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      stroke="currentColor"
+                      strokeWidth="0"
+                      style={
+                        Object {
+                          "color": undefined,
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              className="css-gx0lhm"
+            >
+              <label
+                className="css-1m5v70x"
+                htmlFor="price"
+              >
+                Price
+              </label>
+              <span
+                className="css-1pmifls"
+                data-testid="filter-price-current"
+              >
+                1
+                 $
+              </span>
+              <div
+                className="css-ftmy5t"
+                data-testid="filter-price-slider"
+                onBlur={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                role="presentation"
+                tabIndex="-1"
+              >
+                <div
+                  aria-label="price-track"
+                  className="css-jscp3i"
+                  data-slider-track=""
+                />
+                <div
+                  aria-label="price-filled"
+                  className="css-he85bf"
+                  data-slider-filled-track=""
+                />
+                <div
+                  aria-label="price-thumb"
+                  aria-orientation="horizontal"
+                  aria-valuemax={1}
+                  aria-valuemin={1}
+                  aria-valuenow={1}
+                  className="css-ciomge"
+                  data-slider-thumb=""
+                  onKeyDown={[Function]}
+                  role="slider"
+                  tabIndex={0}
+                />
+                <input
+                  name="price"
+                  type="hidden"
+                  value={1}
+                />
+              </div>
+            </div>
+            <button
+              className="css-oadpv0"
+              href="#void"
+              name="reset"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              tabIndex="0"
+              type="button"
+            >
+              <svg
+                className="css-122w7r8"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M289.67 274.89a65.57 65.57 0 1 1-65.56-65.56 65.64 65.64 0 0 1 65.56 65.56zm139.55-5.05h-.13a204.69 204.69 0 0 0-74.32-153l-45.38 26.2a157.07 157.07 0 0 1 71.81 131.84C381.2 361.5 310.73 432 224.11 432S67 361.5 67 274.88c0-81.88 63-149.27 143-156.43v39.12l108.77-62.79L210 32v38.32c-106.7 7.25-191 96-191 204.57 0 111.59 89.12 202.29 200.06 205v.11h210.16V269.84z"
+                />
+              </svg>
+              reset
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;

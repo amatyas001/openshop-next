@@ -2,22 +2,11 @@ import { useSelector } from 'react-redux';
 import { SimpleGrid, Text } from '@chakra-ui/core';
 
 /**
- * Displays recieved intent information and user details.
- *
- * ***State Dependencies***
- * - `payment.status === 'confrim'`
- * - `payment.intent`
- * - `payment.details`
- *
- * @example
- * ```jsx
- * <PaymentConfirmDetails />
- * ```
+ * @see https://amatyas001.github.io/openshop-next/#paymentconfirm
+ * @ignore
  */
 export const PaymentConfirmDetails = (props) => {
-  const { payment = {} } = useSelector((state) => state);
-  const { intent = {}, details = {} } = payment;
-
+  const { intent, details } = useSelector((state) => state.payment);
   return (
     <SimpleGrid
       columns='4'

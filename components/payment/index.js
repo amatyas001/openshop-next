@@ -9,3 +9,4 @@ export * from './PaymentFormControls/PaymentFormControls';
 export * from './PaymentProgress/PaymentProgress';
 export * from './PaymentReview/PaymentReview';
 export * from './PaymentSuccess/PaymentSuccess';
+export * from './PaymentUnauthorized/PaymentUnauthorized';

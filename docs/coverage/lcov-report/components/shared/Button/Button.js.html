@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.91% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>45/53</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -129,10 +129,15 @@
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">50x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,14 +150,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">109x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">109x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -192,87 +199,101 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { PseudoBox } from '@chakra-ui/core';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import PropTypes from 'prop-types';
+import { PseudoBox } from '@chakra-ui/core';
+import * as COLORS from '@app/config/colors';
 &nbsp;
+/**
+ * Basic button element with [predefined style variants](#section-configuration)
+ * and ARIA-compatible accessibility features. See [PseudoBox](https://chakra-ui/pseudobox)
+ * for available styling.
+ *
+ * @example
+ * ```jsx
+ * &lt;Button variant={predefinedStyle} /&gt;
+ * ```
+ */
 export const Button = React.forwardRef((props, ref) =&gt; {
+  const { variant } = props;
+&nbsp;
   return (
     &lt;PseudoBox
-      as={props.as || 'button'}
+      as='button'
+      type='button'
       ref={ref}
-      href={props.href || '#void'}
-      height={props.height || '50px'}
-      px={props.px || '15px'}
-      fontSize={props.fotSize || '1.5rem'}
-      fontWeight={props.fontWeight || 'semibold'}
-      fontFamily={props.fontFamily || 'Khand, sans-serif'}
-      lineHeight={props.lineHeight || '50px'}
-      textAlign={props.textAlign || 'center'}
-      textDecoration={props.textDecoration || 'none'}
-      backgroundColor={props.backgroundColor || 'purple.800'}
-      color={props.color || 'gray.100'}
-      border={props.border || '1px'}
-      borderColor={props.borderColor || 'purple.400'}
-      cursor={props.cursor || 'pointer'}
-      onClick={props.onClick || <span class="branch-1 cbranch-no" title="branch not covered" >null}</span>
-      onKeyDown={<span class="fstat-no" title="function not covered" >(e</span>) =&gt;
-<span class="cstat-no" title="statement not covered" >        e.key === ' ' || e.key === 'Enter' || e.key === 'Spacebar'</span>
-          ? props.onClick || null
-          : null
+      href='#void'
+      height='50px'
+      width='100%'
+      px='5px'
+      fontSize='1.5rem'
+      fontWeight='semibold'
+      fontFamily='Khand, sans-serif'
+      lineHeight='50px'
+      textAlign='center'
+      textDecoration='none'
+      bg={COLORS.BUTTON[variant].base}
+      color={COLORS.BUTTON[variant].text}
+      border='0px'
+      borderColor={COLORS.BUTTON[variant].border}
+      cursor='pointer'
+      onKeyDown={
+        /* istanbul ignore next */ (e) =&gt;
+          e.key === ' ' || e.key === 'Enter' || e.key === 'Spacebar'
+            ? props.onClick
+            : null
       }
-      _focus={
-        props._focus || {
-          outline: 0,
-          color: 'purple.600',
-        }
-      }
-      _selected={
-        props._selected || {
-          outline: 0,
-          color: 'purple.600',
-        }
-      }
-      _hover={
-        props._hover || {
-          bg: 'purple.400',
-          color: 'gray.100',
-          borderColor: 'purple.800',
-          border: '1px',
-          textDecoration: 'underline',
-        }
-      }
-      _active={
-        props._active || {
-          bg: 'gray.600',
-          color: 'gray.100',
-          transform: 'scale(0.98)',
-        }
-      }
-      _disabled={
-        props._disabled || {
-          bg: 'gray.400',
-          color: 'gray.900',
-          cursor: 'not-allowed',
-          textDecoration: 'none',
-        }
-      }
-      transition={props.transition || 'all 300ms cubic-bezier(.08,.52,.52,1)'}
-      tabIndex={props.tabIndex || 0}
-      data-cy='button'
+      transition='all 300ms cubic-bezier(.08,.52,.52,1)'
+      tabIndex='0'
       {...props}
+      _focus={{ ...COLORS.BUTTON[variant].focus, ...props._focus }}
+      _selected={{ ...COLORS.BUTTON[variant].selected, ...props._selected }}
+      _hover={{ ...COLORS.BUTTON[variant].hover, ...props._hover }}
+      _active={{ ...COLORS.BUTTON[variant].active, ...props._active }}
+      _disabled={{
+        bg: 'gray.100',
+        color: 'gray.400',
+        cursor: 'not-allowed',
+        textDecoration: 'none',
+        ...props._disabled,
+      }}
     &gt;
       {props.children}
     &lt;/PseudoBox&gt;
   );
 });
+&nbsp;
+Button.defaultProps = {
+  onClick: null,
+  variant: 'primary',
+};
+&nbsp;
+Button.propTypes = {
+  /**
+   * Handler function
+   */
+  onClick: PropTypes.func,
+&nbsp;
+  /**
+   * Color variant
+   */
+  variant: PropTypes.string,
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -280,7 +301,7 @@ export const Button = React.forwardRef((props, ref) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Jun 28 2020 01:41:44 GMT+0200 (közép-európai nyári idő)
+                at Sat Jul 11 2020 23:57:17 GMT+0200 (közép-európai nyári idő)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

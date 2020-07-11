@@ -6,4 +6,5 @@
 /out
 npm-debug.log*
 .env*
+!.env*.example
 .netlify

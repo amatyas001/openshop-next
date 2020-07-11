@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ButtonIcon /> should render without props 1`] = `
+<button
+  className="css-dlzk3q"
+  href="#void"
+  onClick={[MockFunction]}
+  onKeyDown={[Function]}
+  tabIndex="0"
+  type="button"
+>
+  MockIcon
+</button>
+`;

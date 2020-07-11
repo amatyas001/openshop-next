@@ -2,8 +2,8 @@ import { create, act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import * as actions from '@app/redux/thunk/intent';
-import { paymentReview } from '@app/redux/actions';
+import * as actions from '@app/lib/redux/payment/paymentCreate';
+import { paymentReview } from '@app/lib/redux/actions';
 import { PaymentForm } from '@app/components';
 
 const mockStore = configureStore([thunk]);
@@ -27,8 +27,21 @@ describe('<PaymentForm />', () => {
   beforeAll(() => {
     store = mockStore({
       payment: { status: 'form', token: 'token' },
-      cart: [{ id: 'id' }],
-      amount: 100,
+      cart: [
+        {
+          id: 'mock_id',
+          name: 'mock_name',
+          description: 'mock_desc',
+          img: 'mock_img',
+          price: 10,
+          starrating: 5,
+          color: 'mock_color',
+          amount: 10,
+          buy: {
+            amount: 1,
+          },
+        },
+      ],
     });
 
     act(() => {
@@ -76,7 +89,7 @@ describe('<PaymentForm />', () => {
 
     it('should send intent with details', () => {
       const intent = jest
-        .spyOn(actions, 'paymentIntent')
+        .spyOn(actions, 'paymentCreate')
         .mockImplementation(() => jest.fn());
 
       act(() => {

@@ -2,6 +2,7 @@ import { create, act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { PaymentConfirmCard } from '@app/components';
+import { INITIAL_STATE } from '@app/config';
 
 const mockStore = configureStore([]);
 
@@ -86,5 +87,17 @@ describe('<PaymentConfirmCard/>', () => {
         'data-testid': 'confirm-card-error',
       }).props.children
     ).toContain(mock_error);
+  });
+
+  it('should render with initial state', () => {
+    act(() => {
+      tree = create(
+        <Provider store={mockStore(INITIAL_STATE)}>
+          <PaymentConfirmCard loadHandler={mock_load} setHandler={mock_set} />
+        </Provider>
+      );
+    });
+
+    expect(tree.toJSON()).toMatchSnapshot();
   });
 });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PaymentForm /> should render with required props 1`] = `
+exports[`<PaymentFormControls /> should render with initial state 1`] = `
 Array [
   <p
     className="css-1yab5hb"
@@ -19,28 +19,72 @@ Array [
     className="css-1rsrz83"
   >
     <button
-      className="css-1h13z07"
-      data-cy="button"
+      className="css-1h0dud8"
       data-testid="form-review-button"
       href="#void"
       onClick={[Function]}
       onKeyDown={[Function]}
-      tabIndex={0}
+      tabIndex="0"
       type="button"
     >
       BACK TO REVIEW
     </button>
     <button
-      className="css-187kagv"
-      data-cy="button"
+      className="css-hn65qy"
       data-testid="form-submit-button"
       disabled={false}
       href="#void"
       onClick={[Function]}
       onKeyDown={[Function]}
-      tabIndex={0}
+      tabIndex="0"
+      type="button"
     >
-      PAY 100 $
+      PAY 0.00 $
+    </button>
+  </div>,
+]
+`;
+
+exports[`<PaymentFormControls /> should render with required props 1`] = `
+Array [
+  <p
+    className="css-1yab5hb"
+  >
+    By proceeding you accept the
+     
+    <a
+      className="css-1c5zfe9"
+    >
+      Terms of Service
+    </a>
+     
+    of the company.
+  </p>,
+  <div
+    className="css-1rsrz83"
+  >
+    <button
+      className="css-1h0dud8"
+      data-testid="form-review-button"
+      href="#void"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      BACK TO REVIEW
+    </button>
+    <button
+      className="css-hn65qy"
+      data-testid="form-submit-button"
+      disabled={false}
+      href="#void"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      PAY 10.00 $
     </button>
   </div>,
 ]

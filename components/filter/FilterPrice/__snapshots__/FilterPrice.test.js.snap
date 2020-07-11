@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilterPrice /> should render with required props 1`] = `
+<div
+  className="css-gx0lhm"
+>
+  <label
+    className="css-1m5v70x"
+    htmlFor="price"
+  >
+    Price
+  </label>
+  <span
+    className="css-1pmifls"
+    data-testid="filter-price-current"
+  >
+    60
+     $
+  </span>
+  <div
+    className="css-ftmy5t"
+    data-testid="filter-price-slider"
+    onBlur={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
+    role="presentation"
+    tabIndex="-1"
+  >
+    <div
+      aria-label="price-track"
+      className="css-jscp3i"
+      data-slider-track=""
+    />
+    <div
+      aria-label="price-filled"
+      className="css-g3jgex"
+      data-slider-filled-track=""
+    />
+    <div
+      aria-label="price-thumb"
+      aria-orientation="horizontal"
+      aria-valuemax={60}
+      aria-valuemin={1}
+      aria-valuenow={60}
+      className="css-1974d3q"
+      data-slider-thumb=""
+      onKeyDown={[Function]}
+      role="slider"
+      tabIndex={0}
+    />
+    <input
+      name="price"
+      type="hidden"
+      value={60}
+    />
+  </div>
+</div>
+`;

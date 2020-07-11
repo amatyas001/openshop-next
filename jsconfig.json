@@ -2,11 +2,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@app/components/*": ["components/*"],
-      "@app/redux/*": ["lib/redux/*"],
-      "@app/lambda/*": ["lib/lambda/*"],
-      "@app/styles/*": ["styles/*"],
-      "@app/pages/*": ["pages/*"],
       "@app/*": ["./*"]
     }
   },

@@ -1,80 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PaymentConfirm /> should render without props 1`] = `
-<div
-  aria-hidden={false}
-  className="css-1mi3tt8"
->
-  <h2
-    className="css-ijdyq2"
-    data-testid="confirm-intent-name"
-  >
-    Hello, 
-    mock_name
-    !
-  </h2>
-  <p
-    className="css-tmw1y6"
-  >
-    Please review your payment details and confirm order
-  </p>
+exports[`<PaymentConfirm /> should dispatch paymentSuccess 1`] = `
+Array [
   <div
-    className="css-r96hqv"
+    className="css-14djarr"
   >
-    <p
-      className="css-18poma1"
+    <h2
+      className="css-ijdyq2"
+      data-testid="confirm-intent-name"
     >
-      INTENT ID
-    </p>
+      Hello, 
+      mock_name
+      !
+    </h2>
     <p
-      className="css-1n4bukm"
-      data-testid="confirm-intent-id"
+      className="css-tmw1y6"
     >
-      mock_id
+      Please review your payment details and confirm order
     </p>
-    <p
-      className="css-18poma1"
+    <div
+      className="css-r96hqv"
     >
-      EMAIL
-    </p>
-    <p
-      className="css-1n4bukm"
-      data-testid="confirm-intent-email"
-    >
-      mock_email
-    </p>
-    <p
-      className="css-18poma1"
-    >
-      PHONE
-    </p>
-    <p
-      className="css-1n4bukm"
-      data-testid="confirm-intent-phone"
-    >
-      mock_phone
-    </p>
-    <p
-      className="css-18poma1"
-    >
-      ADDRESS
-    </p>
-    <p
-      className="css-1n4bukm"
-      data-testid="confirm-intent-address"
-    >
-      mock_address
-    </p>
-  </div>
-  <section
-    className="css-8atqhb"
-  >
+      <p
+        className="css-18poma1"
+      >
+        INTENT ID
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-id"
+      >
+        mock_id
+      </p>
+      <p
+        className="css-18poma1"
+      >
+        EMAIL
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-email"
+      >
+        mock_email
+      </p>
+      <p
+        className="css-18poma1"
+      >
+        PHONE
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-phone"
+      >
+        mock_phone
+      </p>
+      <p
+        className="css-18poma1"
+      >
+        ADDRESS
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-address"
+      >
+        mock_address
+      </p>
+    </div>
     <ul
-      className="css-0"
+      className="css-8atqhb"
       role="list"
     >
       <li
-        className="css-tic8xi"
+        className="css-1tp0oa"
         role="listitem"
       >
         <img
@@ -82,128 +79,469 @@ exports[`<PaymentConfirm /> should render without props 1`] = `
           className="css-rhemcv"
         />
         <div
-          className="css-1z0sfv6"
+          className="css-zbq0po"
         >
           <strong
-            className="css-18poma1"
+            className="css-airqvi"
           >
             mock_name
           </strong>
           <em
-            className="css-183x3ib"
-          />
+            className="css-1fji79j"
+          >
+            mock_color in One Size x1
+          </em>
         </div>
-        <p
-          className="css-15x91gx"
-        >
-          mock_desc
-        </p>
         <strong
-          className="css-nwzge5"
+          className="css-1som8bm"
         >
           10.00
            $
         </strong>
       </li>
     </ul>
-    <footer
-      className="css-0"
+    <Elements
+      stripe="stripe"
     >
-      <p
-        className="css-ohvq3n"
-      >
-        TOTAL PRICE
-      </p>
-      <strong
-        className="css-lk14dv"
-      >
-         $
-      </strong>
-    </footer>
-  </section>
-  <Elements
-    stripe="stripe"
-  >
-    <div
-      className="css-1mi3tt8"
-    >
-      <label
-        className="css-8qu6k5"
-        htmlFor="StripeElement"
-      >
-        enter your card details to finish payment
-      </label>
       <div
-        className="css-1dahfv9"
+        className="css-1mi3tt8"
       >
-        <CardElement
-          data-testid="confirm-card-element"
-          onChange={[Function]}
-          options={
-            Object {
-              "iconStyle": "solid",
-              "style": Object {
-                "base": Object {
-                  ":-webkit-autofill": Object {
-                    "color": "#D6BCFA",
+        <label
+          className="css-8qu6k5"
+          htmlFor="StripeElement"
+        >
+          enter your card details to finish payment
+        </label>
+        <div
+          className="css-16soxp"
+        >
+          <CardElement
+            data-testid="confirm-card-element"
+            onChange={[Function]}
+            options={
+              Object {
+                "iconStyle": "solid",
+                "style": Object {
+                  "base": Object {
+                    "fontFamily": "Khand, sans-serif",
+                    "fontSize": "18px",
+                    "fontSmoothing": "antialiased",
+                    "fontWeight": "bold",
                   },
-                  "::placeholder": Object {
-                    "color": "#D6BCFA",
-                  },
-                  "color": "#FAF5FF",
-                  "fontFamily": "Montserrat, Open Sans, Segoe UI, sans-serif",
-                  "fontSize": "16px",
-                  "fontSmoothing": "antialiased",
-                  "fontWeight": 500,
-                  "iconColor": "#FAF5FF",
                 },
-                "invalid": Object {
-                  "color": "#C53030",
-                  "iconColor": "#C53030",
-                },
-              },
+              }
             }
-          }
-        />
+          />
+        </div>
+        <p
+          className="css-165naot"
+        >
+          Use any future date and CVC with 
+          <strong>
+            4242 4242 4242 4242
+          </strong>
+           
+          number for testing
+        </p>
       </div>
-      <p
-        className="css-165naot"
+    </Elements>
+    <div
+      className="css-qv6zkf"
+    >
+      <button
+        className="css-1e5j5cf"
+        data-testid="confirm-controls-cancel"
+        href="#void"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex="0"
+        type="button"
       >
-        Use any future date and CVC with 
-        <strong>
-          4242 4242 4242 4242
-        </strong>
-         
-        number for testing
+        CANCEL ORDER
+      </button>
+      <button
+        className="css-hn65qy"
+        data-testid="confirm-controls-confirm"
+        disabled={false}
+        href="#void"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        CONFIRM ORDER
+      </button>
+    </div>
+  </div>,
+  <div
+    className="css-1lh4e9u"
+    data-testid="confirm-spinner"
+  >
+    <h2
+      className="css-1gjlikv"
+    >
+      Loading data...
+    </h2>
+    <div
+      className="css-159m1lu"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`<PaymentConfirm /> should render with initial state 1`] = `
+Array [
+  <div
+    className="css-1mi3tt8"
+  >
+    <h2
+      className="css-ijdyq2"
+      data-testid="confirm-intent-name"
+    >
+      Hello, 
+      !
+    </h2>
+    <p
+      className="css-tmw1y6"
+    >
+      Please review your payment details and confirm order
+    </p>
+    <div
+      className="css-r96hqv"
+    >
+      <p
+        className="css-18poma1"
+      >
+        INTENT ID
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-id"
+      />
+      <p
+        className="css-18poma1"
+      >
+        EMAIL
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-email"
+      />
+      <p
+        className="css-18poma1"
+      >
+        PHONE
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-phone"
+      />
+      <p
+        className="css-18poma1"
+      >
+        ADDRESS
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-address"
+      />
+    </div>
+    <ul
+      className="css-8atqhb"
+      role="list"
+    />
+    <Elements
+      stripe="stripe"
+    >
+      <div
+        className="css-1mi3tt8"
+      >
+        <label
+          className="css-8qu6k5"
+          htmlFor="StripeElement"
+        >
+          enter your card details to finish payment
+        </label>
+        <div
+          className="css-16soxp"
+        >
+          <CardElement
+            data-testid="confirm-card-element"
+            onChange={[Function]}
+            options={
+              Object {
+                "iconStyle": "solid",
+                "style": Object {
+                  "base": Object {
+                    "fontFamily": "Khand, sans-serif",
+                    "fontSize": "18px",
+                    "fontSmoothing": "antialiased",
+                    "fontWeight": "bold",
+                  },
+                },
+              }
+            }
+          />
+        </div>
+        <p
+          className="css-165naot"
+        >
+          Use any future date and CVC with 
+          <strong>
+            4242 4242 4242 4242
+          </strong>
+           
+          number for testing
+        </p>
+      </div>
+    </Elements>
+    <div
+      className="css-qv6zkf"
+    >
+      <button
+        className="css-1e5j5cf"
+        data-testid="confirm-controls-cancel"
+        href="#void"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        CANCEL ORDER
+      </button>
+      <button
+        className="css-hn65qy"
+        data-testid="confirm-controls-confirm"
+        disabled={true}
+        href="#void"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        CONFIRM ORDER
+      </button>
+    </div>
+  </div>,
+  <div
+    className="css-1og0pvu"
+    data-testid="confirm-spinner"
+  >
+    <h2
+      className="css-1gjlikv"
+    >
+      Loading data...
+    </h2>
+    <div
+      className="css-159m1lu"
+    >
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`<PaymentConfirm /> should render without props 1`] = `
+Array [
+  <div
+    className="css-1mi3tt8"
+  >
+    <h2
+      className="css-ijdyq2"
+      data-testid="confirm-intent-name"
+    >
+      Hello, 
+      mock_name
+      !
+    </h2>
+    <p
+      className="css-tmw1y6"
+    >
+      Please review your payment details and confirm order
+    </p>
+    <div
+      className="css-r96hqv"
+    >
+      <p
+        className="css-18poma1"
+      >
+        INTENT ID
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-id"
+      >
+        mock_id
+      </p>
+      <p
+        className="css-18poma1"
+      >
+        EMAIL
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-email"
+      >
+        mock_email
+      </p>
+      <p
+        className="css-18poma1"
+      >
+        PHONE
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-phone"
+      >
+        mock_phone
+      </p>
+      <p
+        className="css-18poma1"
+      >
+        ADDRESS
+      </p>
+      <p
+        className="css-1n4bukm"
+        data-testid="confirm-intent-address"
+      >
+        mock_address
       </p>
     </div>
-  </Elements>
+    <ul
+      className="css-8atqhb"
+      role="list"
+    >
+      <li
+        className="css-1tp0oa"
+        role="listitem"
+      >
+        <img
+          alt="mock_name"
+          className="css-rhemcv"
+        />
+        <div
+          className="css-zbq0po"
+        >
+          <strong
+            className="css-airqvi"
+          >
+            mock_name
+          </strong>
+          <em
+            className="css-1fji79j"
+          >
+            mock_color in One Size x1
+          </em>
+        </div>
+        <strong
+          className="css-1som8bm"
+        >
+          10.00
+           $
+        </strong>
+      </li>
+    </ul>
+    <Elements
+      stripe="stripe"
+    >
+      <div
+        className="css-1mi3tt8"
+      >
+        <label
+          className="css-8qu6k5"
+          htmlFor="StripeElement"
+        >
+          enter your card details to finish payment
+        </label>
+        <div
+          className="css-16soxp"
+        >
+          <CardElement
+            data-testid="confirm-card-element"
+            onChange={[Function]}
+            options={
+              Object {
+                "iconStyle": "solid",
+                "style": Object {
+                  "base": Object {
+                    "fontFamily": "Khand, sans-serif",
+                    "fontSize": "18px",
+                    "fontSmoothing": "antialiased",
+                    "fontWeight": "bold",
+                  },
+                },
+              }
+            }
+          />
+        </div>
+        <p
+          className="css-165naot"
+        >
+          Use any future date and CVC with 
+          <strong>
+            4242 4242 4242 4242
+          </strong>
+           
+          number for testing
+        </p>
+      </div>
+    </Elements>
+    <div
+      className="css-qv6zkf"
+    >
+      <button
+        className="css-1e5j5cf"
+        data-testid="confirm-controls-cancel"
+        href="#void"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        CANCEL ORDER
+      </button>
+      <button
+        className="css-hn65qy"
+        data-testid="confirm-controls-confirm"
+        disabled={true}
+        href="#void"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        CONFIRM ORDER
+      </button>
+    </div>
+  </div>,
   <div
-    className="css-qv6zkf"
+    className="css-1og0pvu"
+    data-testid="confirm-spinner"
   >
-    <button
-      className="css-15ecn8p"
-      data-cy="button"
-      data-testid="confirm-controls-cancel"
-      href="#void"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      tabIndex={0}
+    <h2
+      className="css-1gjlikv"
     >
-      CANCEL ORDER
-    </button>
-    <button
-      className="css-187kagv"
-      data-cy="button"
-      data-testid="confirm-controls-confirm"
-      disabled={true}
-      href="#void"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      tabIndex={0}
+      Loading data...
+    </h2>
+    <div
+      className="css-159m1lu"
     >
-      CONFIRM ORDER
-    </button>
-  </div>
-</div>
+      <div
+        className="css-1gy22ay"
+      >
+        Loading...
+      </div>
+    </div>
+  </div>,
+]
 `;

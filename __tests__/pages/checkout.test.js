@@ -5,112 +5,58 @@ import Checkout from '@app/pages/checkout';
 
 const mockStore = configureStore([]);
 
-const mock_prefetch = jest.fn();
-const mock_replace = jest.fn();
-
-jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => {
-  return {
-    prefetch: mock_prefetch,
-    replace: mock_replace,
-  };
-});
-
-describe('Checkout page', () => {
+describe('<Checkout />', () => {
   let tree, store;
 
-  afterEach(() => {
-    mock_prefetch.mockClear();
-    mock_replace.mockClear();
-  });
+  const status = ['review', 'form', 'confirm', 'success', 'cancelled', 'error'];
 
-  it('should prefetch home page', () => {
-    store = mockStore({ payment: { token: false }, cart: [{ id: 'item' }] });
-    act(() => {
+  it('should render unauthorized component', async () => {
+    await act(async () => {
       tree = create(
-        <Provider store={store}>
+        <Provider store={mockStore({})}>
           <Checkout />
         </Provider>
       );
     });
-    expect(mock_prefetch).toHaveBeenCalledTimes(1);
-    expect(mock_prefetch).toHaveBeenCalledWith('/');
+
+    expect(tree.toJSON()).toMatchSnapshot();
   });
 
-  describe('when there is no items in cart', () => {
-    beforeEach(() => {
-      store = mockStore({ payment: { token: false }, cart: [] });
-      act(() => {
-        tree = create(
-          <Provider store={store}>
-            <Checkout />
-          </Provider>
-        );
-      });
-    });
-
-    it('should redirect to home page', () => {
-      expect(mock_replace).toHaveBeenCalledTimes(1);
-      expect(mock_replace).toHaveBeenCalledWith('/');
-    });
-  });
-
-  describe('when there is payment token', () => {
-    beforeEach(() => {
+  status.map((item) => {
+    it(`should render ${item} component`, async () => {
       store = mockStore({
-        cart: [{ id: 'item' }],
-        payment: { status: 'status', token: 'mock_token' },
+        cart: [
+          {
+            id: 'mock_id',
+            name: 'mock_name',
+            description: 'mock_desc',
+            img: 'mock_img',
+            price: 10,
+            starrating: 5,
+            color: 'mock_color',
+            amount: 10,
+            buy: {
+              amount: 1,
+            },
+          },
+        ],
+        payment: {
+          status: item,
+          intent: { id: 'id' },
+          error: { message: 'message' },
+          details: { name: 'name' },
+        },
       });
-      act(() => {
+
+      await act(async () => {
         tree = create(
           <Provider store={store}>
             <Checkout />
           </Provider>
         );
       });
-    });
 
-    it('should not redirect to home page', () => {
-      expect(mock_replace).not.toHaveBeenCalled();
-    });
-
-    const status = [
-      'review',
-      'form',
-      'confirm',
-      'success',
-      'cancelled',
-      'error',
-    ];
-
-    status.map((item) => {
-      it(`should render ${item} component`, () => {
-        store = mockStore({
-          cart: [
-            {
-              id: 'id',
-              name: 'name',
-              price: 10,
-              img: 'img',
-              color: 'color',
-              rating: 5,
-            },
-          ],
-          payment: {
-            status: item,
-            intent: { id: 'id' },
-            error: { message: 'message' },
-            details: { name: 'name' },
-          },
-        });
-        act(() => {
-          tree = create(
-            <Provider store={store}>
-              <Checkout />
-            </Provider>
-          );
-        });
-        expect(tree.toJSON()).toMatchSnapshot();
-      });
+      expect(tree.toJSON()).toMatchSnapshot();
     });
   });
 });

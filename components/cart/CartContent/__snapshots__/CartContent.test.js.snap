@@ -1,27 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<CartContent /> should render without props 1`] = `
-<section
-  className="css-8atqhb"
->
-  <ul
-    className="css-0"
-    role="list"
-  />
-  <footer
-    className="css-0"
-  >
-    <p
-      className="css-ohvq3n"
-    >
-      TOTAL PRICE
-    </p>
-    <strong
-      className="css-lk14dv"
-    >
-      0
-       $
-    </strong>
-  </footer>
-</section>
+<ul
+  className="css-7822g1"
+  role="list"
+/>
 `;

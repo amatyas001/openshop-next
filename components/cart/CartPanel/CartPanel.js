@@ -1,47 +1,34 @@
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
-import { MdShoppingCart } from 'react-icons/md';
+import { Flex } from '@chakra-ui/core';
+import { paymentReview, panelToggle } from '@app/lib/redux/actions';
 import {
-  Box,
-  Collapse,
-  Flex,
-  Heading,
-  Text,
-  SimpleGrid,
-} from '@chakra-ui/core';
-import { paymentReview } from '@app/redux/actions';
-import { Button, CartContent } from '@app/components';
+  Button,
+  CartContent,
+  CartButton,
+  CartAmount,
+  Panel,
+} from '@app/components';
+import * as COLORS from '@app/config/colors';
 
 /**
- * Wrapper component for the cart. Displays the cart button
- * and a fixed position collapse menu containing the cart content.
+ * Represents the actual user cart containing list of products which
+ * are selected to checkout. Rendered as a fixed position collapsable
+ * [Panel](https://amatyas001.github.io/openshop-next/#panel)
+ * controlled by a buttom in the main navigation.
  *
- * When the cart is empty it renders *"no items in your cart"* text.
+ * When a new product is added to the cart, it will be added as the first item
+ * in the list. If more amount is added with the same details of a product that
+ * already present, then the amount is updated according to the given values.
  *
- * At the bottom, the component displays the cart control buttons
- * used to close the panel and initiate payment process.
- *
- * ***State Dependencies***
- * - `cart`
- *
- * ***Wrapped Components***
- * - [CartContent](#cartcontent)
- *
+ * @visibleName Shopping Cart
  * @example
  * ```jsx
- * <CartPanel
- *  panel={stylePropsObject}
- *  icon={<CustomIcon />}
- *  indicator={<CustomIndicator />}
- *  close={customStyles}
- *  continue={customStlyes}
- * />
+ * <CartPanel />
  * ```
  */
 export const CartPanel = (props) => {
-  const [show, setShow] = React.useState(false);
-  const { cart = [] } = useSelector((state) => state);
+  const { cart, panel } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   return (
@@ -52,142 +39,73 @@ export const CartPanel = (props) => {
       flexDirection='column'
       {...props}
     >
-      {/* icon button */}
-      <Button
-        as={'a'}
-        role='button'
-        d='inline-block'
-        width='30px'
-        ml='auto'
-        aria-label='cart-toggler'
-        backgroundColor='transparent'
-        color='gray.800'
-        border='0'
-        onClick={() => setShow(!show)}
-        id='cart-toggler'
-        _hover={{
-          bg: '',
-          color: 'purple.400',
-        }}
-        _active={{
-          color: 'purple.200',
-        }}
-      >
-        {props.icon || <Box mb='-4px' fontSize='1.7rem' as={MdShoppingCart} />}
-      </Button>
-      {/* indicator */}
-      <Text
-        as='span'
-        d={cart.length ? 'block' : 'none'}
-        w='20px'
-        h='20px'
-        position='absolute'
-        top='5px'
-        right='10px'
-        bg='purple.600'
-        borderRadius='50%'
-        textAlign='center'
-        fontSize='1rem'
-        color='gray.100'
-        fontWeight='bold'
-        {...props.indicator}
-      >
-        {cart.length}
-      </Text>
-
-      {/* panel */}
-      <Collapse
-        isOpen={show}
+      <CartButton data-testid='cart-panel-button' />
+      <Panel
+        toggle={panel.cart}
         position='fixed'
         top='60px'
         right='0'
-        width={{
-          sm: '100%',
-          md: '70%',
-          lg: '60%',
-          xl: '40%',
-        }}
+        width={
+          props.width || {
+            sm: '96%',
+            md: '70%',
+            lg: '60%',
+            xl: '40%',
+          }
+        }
         bg='white'
-        border='1px'
-        borderTop='0'
-        borderColor='purple.400'
         boxShadow='2px 7px 7px black'
         px='2%'
-        py='5px'
-        {...props.panel}
+        pb='10px'
+        pt='0'
+        overflow='auto'
+        border='0'
       >
-        {/* items */}
-        {cart.length ? (
-          <CartContent />
-        ) : (
-          <Heading textAlign='center'>no items in your cart</Heading>
-        )}
-
-        <SimpleGrid columns='2' spacing='15px'>
-          {/* close button */}
+        <Flex
+          position='fixed'
+          right='2%'
+          width={
+            props.width || {
+              sm: '100%',
+              md: '70%',
+              lg: '60%',
+              xl: '40%',
+            }
+          }
+          alignItems='center'
+          justifyContent='space-between'
+          pb='10px'
+          bg='white'
+          borderBottom='2px'
+          borderColor={COLORS.SPACER.light}
+        >
           <Button
-            onClick={() => setShow(false)}
-            bg='gray.200'
-            color='purple.600'
-            width='100%'
+            data-testid='cart-panel-button-close'
+            width='20%'
+            onClick={() => dispatch(panelToggle('cart', false))}
+            variant='secondary'
             mr='15px'
-            {...props.close}
           >
             close
           </Button>
-
-          {/* checkout button */}
           <Link href='/checkout' passHref>
             <Button
+              data-testid='cart-panel-button-continue'
+              mx='auto'
+              width='50%'
+              disabled={!cart.length}
               onClick={() => {
-                setShow(false);
+                dispatch(panelToggle('cart', false));
                 dispatch(paymentReview());
               }}
-              bg='purple.800'
-              color='gray.200'
-              width='100%'
-              {...props.continue}
             >
               continue
             </Button>
           </Link>
-        </SimpleGrid>
-      </Collapse>
+          <CartAmount data-testid='cart-panel-amount' width='20%' />
+        </Flex>
+        <CartContent data-testid='cart-panel-content' pt='80px' />
+      </Panel>
     </Flex>
   );
-};
-
-CartPanel.defaultProps = {
-  panel: null,
-  indicator: null,
-  icon: null,
-  close: null,
-  continue: null,
-};
-
-CartPanel.propTypes = {
-  /**
-   * [Style Props](https://chakra-ui.com/style-props) for collapsable panel
-   */
-  panel: PropTypes.object,
-
-  /**
-   * [Style Props](https://chakra-ui.com/style-props) for indicator
-   */
-  indicator: PropTypes.object,
-
-  /**
-   * Custom element for cart icon
-   */
-  icon: PropTypes.element,
-
-  /**
-   * [Style Props](https://chakra-ui.com/style-props) for close button
-   */
-  close: PropTypes.element,
-
-  /**
-   * [Style Props](https://chakra-ui.com/style-props) for continue button
-   */
-  continue: PropTypes.object,
 };

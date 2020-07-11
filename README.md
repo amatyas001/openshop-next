@@ -1,47 +1,17 @@
-# Openshop - E-Commerce Template
+# Openshop
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/77e3442d-d9b6-4734-a493-3326fedf27be/deploy-status)](https://app.netlify.com/sites/openshop/deploys) [![openshop](https://circleci.com/gh/amatyas001/openshop-next.svg?style=shield)](https://app.circleci.com/pipelines/github/amatyas001/openshop-next)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-Customisable React template for e-commerce websites. Comes with great SEO experience and extremely short loading times by the default static site generation. Utilizing FaaS, WebAPI, and CDN without a dedicated backend to easily manage and deliver business data to production. Implements real-time secure payment processing with the Stripe API. Mobile first and accessible interface composed by well tested and documented components.
+Serverless React template for e-commerce web applications with integrated payment processing, built on top of [Vercel's Next Framework](https://nextjs.org) to achieve great SEO experience and short loading times by the build time static site generation and server side rendered dynamic pages.
 
-Check out the [Documentation](https://amatyas001.github.io/openshop-next/) for detailed information.
+Detailed **[documentation and style guide](https://amatyas001.github.io/openshop-next/)** is available for more information about the project.
 
-## Technology Architecture
+## Contributing
 
-### Frameworks
-
-**[React](https://reactjs.org)** - _Open-source JavaScript library for building user interfaces._
-
-**[Next](https://nextjs.org/)** - _React framework offering server-side rendering, automatic code-splitting, static exporting._
-
-**[Redux](https://redux.js.org)** - _Predictable state container._
-
-**[Chakra UI](https://chakra-ui.com)** - _Simple, modular and accessible component library._
-
-**[Stripe](https://stripe.com)** - _Online payment processing for internet businesses._
-
-### Testing
-
-**[Jest](https://jestjs.org)** - _Delightful javascript testing framework with a focus on simplicity._
-
-**[Cypress](https://cypress.io)** - _Fast, easy and reliable testing for anything that runs in a browser._
-
-### Pipeline
-
-**[Circle CI](https://circleci.com)** - _Continuous integration platform in the cloud._
-
-**[Netlify](https://netlify.com)** - _Builds, deploys and hosts your front-end._
-
-### Documentation
-
-**[React Styleguidist](https://react-styleguidist.js.org/)** - _Isolated React component development environment with a living style guide._
-
-## Feedback
-
-Any questions or issues can be placed under [Issues](https://github.com/amatyas001/openshop-next/issues) or feel free to contact [amatyas001@gmail.com](mailto://amatyas001@gmail.com)! Please note that this project is in active development and should not be used in production yet.
+Any ideas and issues can be placed under [Issues](https://github.com/amatyas001/openshop-next/issues). Feel free contribute to the project in any form. PRs are welcome and issues are going to be resolved as soon as possible. Please note that this is a personal side project and not meant to be a production grade application, however quality code and maintainability is a main factor and both should be always in scope.
 
 ## License
 

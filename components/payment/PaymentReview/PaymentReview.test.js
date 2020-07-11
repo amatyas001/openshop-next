@@ -1,7 +1,7 @@
 import { create, act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import createStore from 'redux-mock-store';
-import { paymentForm } from '@app/redux/actions';
+import { paymentForm } from '@app/lib/redux/actions';
 import { PaymentReview } from '@app/components';
 
 const mockStore = createStore([]);
@@ -14,10 +14,13 @@ describe('<PaymentReview />', () => {
         {
           id: 'mock_id',
           name: 'mock_name',
-          desc: 'mock_desc',
-          img: 'mock_img',
           price: 10,
-          rating: 5,
+          amount: 10,
+          color: 'mock_color',
+          starrating: 3,
+          buy: {
+            amount: 1,
+          },
         },
       ],
     });

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaymentUnauthorized /> should render without props 1`] = `
+<div
+  className="css-dvxtzn"
+>
+  <h2
+    className="css-84al3w"
+  >
+    You are not authorized to view this page!
+  </h2>
+  <p
+    className="css-18poma1"
+  >
+    Please start the payment process from your cart!
+  </p>
+</div>
+`;

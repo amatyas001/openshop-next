@@ -2,44 +2,44 @@ const path = require('path');
 
 module.exports = {
   title: 'Openshop Docs',
+  skipComponentsWithoutExample: true,
   sections: [
     {
-      name: '',
-      content: 'README.md',
+      name: 'Introduction',
+      content: 'lib/styleguide/docs/introduction.md',
+    },
+    {
+      name: 'Configuration',
+      content: 'lib/styleguide/docs/configuration.md',
+    },
+    {
+      name: 'State Management',
+      content: 'lib/styleguide/docs/state_management.md',
+    },
+    {
+      name: 'Products and Cart',
+      content: 'lib/styleguide/docs/products_and_cart.md',
+      components: [
+        'components/product/ProductCard/ProductCard.js',
+        'components/filter/FilterPanel/FilterPanel.js',
+        'components/cart/CartPanel/CartPanel.js',
+      ],
+      exampleMode: 'collapse',
+      usageMode: 'expand',
     },
     {
       name: 'Payment Process',
-      content: 'components/payment/payment.md',
+      content: 'lib/styleguide/docs/payment_process.md',
       components: 'components/payment/**/[A-Z]*.js',
       exampleMode: 'collapse',
       usageMode: 'expand',
     },
     {
-      name: 'Components',
-      content: 'components/components.md',
-      sections: [
-        {
-          name: 'Cart',
-          content: 'components/cart/cart.md',
-          components: 'components/cart/**/[A-Z]*.js',
-          exampleMode: 'collapse',
-          usageMode: 'expand',
-        },
-        {
-          name: 'Filters',
-          content: 'components/filters/filters.md',
-          components: 'components/filters/**/[A-Z]*.js',
-          exampleMode: 'collapse',
-          usageMode: 'expand',
-        },
-        {
-          name: 'Shared',
-          content: 'components/shared/shared.md',
-          components: 'components/shared/**/[A-Z]*.js',
-          exampleMode: 'collapse',
-          usageMode: 'expand',
-        },
-      ],
+      name: 'Utility Components',
+      content: 'lib/styleguide/docs/utility_components.md',
+      components: 'components/shared/**/[A-Z]*.js',
+      exampleMode: 'collapse',
+      usageMode: 'expand',
     },
   ],
   template: {
@@ -48,17 +48,11 @@ module.exports = {
       links: [
         {
           rel: 'stylesheet',
-          href:
-            process.env.NODE_ENV === 'production'
-              ? 'openshop-next/fonts/Montserrat-Regular.ttf'
-              : 'fonts/Montserrat-Regular.ttf',
+          href: 'fonts/Montserrat-Regular.ttf',
         },
         {
           rel: 'stylesheet',
-          href:
-            process.env.NODE_ENV === 'production'
-              ? 'openshop-next/fonts/Khand-Bold.ttf'
-              : 'fonts/Khand-Bold.ttf',
+          href: 'fonts/Khand-Bold.ttf',
         },
       ],
     },
@@ -66,13 +60,9 @@ module.exports = {
   theme: path.resolve(__dirname, 'lib/styleguide/theme.js'),
   styles: path.resolve(__dirname, 'lib/styleguide/styles.js'),
   assetsDir: path.resolve(__dirname, 'public/'),
-  //require: [path.resolve(__dirname, 'lib/styleguide/setup.js')],
+  require: [path.resolve(__dirname, 'lib/styleguide/setup.js')],
   moduleAliases: {
-    '@app/redux': path.resolve(__dirname, 'lib/redux/'),
-    '@app/lambda': path.resolve(__dirname, 'lib/lambda/'),
-    '@app/components': path.resolve(__dirname, 'components/'),
-    '@app/styles': path.resolve(__dirname, 'styles/'),
-    '@app/pages': path.resolve(__dirname, 'pages/'),
+    '@app/mocks': path.resolve(__dirname, '__mocks__/@app/mocks/'),
     '@app': path.resolve(__dirname, './'),
   },
   styleguideComponents: {

@@ -1,5 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<PaymentError /> should render with initial state 1`] = `
+<div
+  className="css-1mi3tt8"
+>
+  <p
+    className="css-1po2p9s"
+  >
+    <strong>
+      Error:
+    </strong>
+    <br />
+    <em
+      data-testid="error-message"
+    />
+  </p>
+  <button
+    className="css-hn65qy"
+    data-testid="error-button-retry"
+    href="#void"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    retry payment process
+  </button>
+</div>
+`;
+
 exports[`<PaymentError /> should render without props 1`] = `
 <div
   className="css-1mi3tt8"
@@ -18,15 +47,15 @@ exports[`<PaymentError /> should render without props 1`] = `
     </em>
   </p>
   <button
-    className="css-187kagv"
-    data-cy="button"
+    className="css-hn65qy"
     data-testid="error-button-retry"
     href="#void"
     onClick={[Function]}
     onKeyDown={[Function]}
-    tabIndex={0}
+    tabIndex="0"
+    type="button"
   >
-    retry
+    retry payment process
   </button>
 </div>
 `;

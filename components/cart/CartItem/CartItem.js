@@ -1,79 +1,98 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { Text, Flex, Image, Heading } from '@chakra-ui/core';
-import { removeFromCart } from '@app/redux/actions';
-import { ButtonTrash } from '@app/components';
+import { FaTrashAlt } from 'react-icons/fa';
+import { Text, PseudoBox, Flex, Image, Heading } from '@chakra-ui/core';
+import { removeFromCart } from '@app/lib/redux/actions';
+import { ButtonIcon } from '@app/components';
+import { ProductShape } from '@app/lib/types';
+import * as COLORS from '@app/config';
 
 /**
- * Displays details of an individual item from the cart and trash button.
-
- * ***Wrapped Components***
- * - [ButtonTrash](#buttontrash)
+ * Renders a unique cart item with optional details and controls
  *
- * @example
- * ```jsx
- * <CartItem item={cartItem} icons={toggleIcons} />
- * ```
+ * @see https://amatyas001.github.io/openshop-next/#cartpanel
  */
 export const CartItem = (props) => {
   const dispatch = useDispatch();
-  const { item, icons } = props;
+  const { item, icons, details } = props;
 
   return (
-    <Flex alignItems='center' fontSize='1.2rem' {...props}>
+    <PseudoBox
+      alignItems='center'
+      d='flex'
+      fontSize='1.2rem'
+      borderBottom='1px'
+      borderColor={COLORS.SPACER.light}
+      minHeight='100px'
+      {...props}
+    >
       <Image
-        src={`images/products/${item.img}`}
+        src={`/images/products/${item.img}`}
         width={{ sm: '15%', lg: '10%' }}
         objectFit='contain'
         alt={item.name}
       />
-      <Flex
-        flexDirection='column'
-        width={{ sm: '35%', lg: '20%' }}
-        borderRight='1px'
-        borderColor='gray.400'
-        p='10px'
-      >
-        <Text as='strong'>{item.name}</Text>
-        <Text as='em' fontSize='1rem'>
-          {item.color}
-        </Text>
+      <Flex flexDirection='column' p='10px'>
+        <Heading as='strong' fontSize='1.6rem' color={COLORS.HEADING.dark}>
+          {item.name}
+        </Heading>
+        <Heading as='em' fontSize='1.2rem' color={COLORS.HEADING.light}>
+          {`${item.buy.color || item.color} in ${
+            item.buy.size || 'One Size'
+          } x${item.buy.amount}`}
+        </Heading>
+        {details && (
+          <Text data-testid='cart-item-description'>{item.description}</Text>
+        )}
       </Flex>
-      <Text
-        as='p'
-        ml='15px'
-        flexWrap='wrap'
-        width={{ sm: '0%', md: '50%' }}
-        fontSize='1rem'
+      <Heading
+        as='strong'
+        ml='auto'
+        fontSize='1.8rem'
+        color={COLORS.HEADING.dark}
       >
-        {item.desc}
-      </Text>
-      <Heading as='strong' ml='auto' fontSize='1.8rem'>
         {item.price.toFixed(2)}&nbsp;$
       </Heading>
       {icons && (
-        <ButtonTrash
-          mb='-7px'
+        <ButtonIcon
+          data-testid='cart-item-button-delete'
+          width='10%'
           mx='10px'
+          fontSize='1.8rem'
+          variant='danger'
+          icon={FaTrashAlt}
           handler={() => dispatch(removeFromCart(item))}
         />
       )}
-    </Flex>
+    </PseudoBox>
   );
 };
 
 CartItem.defaultProps = {
   icons: true,
+  details: false,
 };
 
 CartItem.propTypes = {
   /**
-   * Individual store item
+   * Unique item in cart
    */
-  item: PropTypes.object.isRequired,
+  item: PropTypes.shape({
+    ...ProductShape,
+    buy: PropTypes.shape({
+      amount: PropTypes.number.isRequired,
+      color: PropTypes.string,
+      size: PropTypes.string,
+    }),
+  }).isRequired,
 
   /**
-   * Toggle display of item controls
+   * Show controls
    */
   icons: PropTypes.bool,
+
+  /**
+   * Show description
+   */
+  detals: PropTypes.bool,
 };

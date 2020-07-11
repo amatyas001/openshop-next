@@ -1,6 +1,6 @@
-```jsx
+```jsx noeditor
 import { useDispatch } from 'react-redux';
-import { paymentReview, addToCart } from '@app/redux/actions';
+import { paymentReview } from '@app/lib/redux/actions';
 
 const dispatch = useDispatch();
 
@@ -18,7 +18,6 @@ const item = {
 };
 
 React.useEffect(() => {
-  dispatch(addToCart(item));
   dispatch(paymentReview());
 }, []);
 

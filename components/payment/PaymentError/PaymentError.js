@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Flex, Text } from '@chakra-ui/core';
-import { paymentReset } from '@app/redux/actions';
+import { paymentReset } from '@app/lib/redux/actions';
 import { Button } from '@app/components';
 
 /**
@@ -12,6 +12,7 @@ import { Button } from '@app/components';
  * - `payment.status === 'error'`
  * - `payment.error`
  *
+ * @visibleName Payment Error
  * @example
  * ```jsx
  * <PaymentError />
@@ -19,9 +20,7 @@ import { Button } from '@app/components';
  */
 export const PaymentError = (props) => {
   const dispatch = useDispatch();
-  const { payment = {} } = useSelector((state) => state);
-  const { error = {} } = payment;
-
+  const { error } = useSelector((state) => state.payment);
   return (
     <Flex flexDirection='column' alignItems='center' width='100%' {...props}>
       <Text
@@ -44,7 +43,7 @@ export const PaymentError = (props) => {
         width='100%'
         onClick={() => dispatch(paymentReset())}
       >
-        retry
+        retry payment process
       </Button>
     </Flex>
   );

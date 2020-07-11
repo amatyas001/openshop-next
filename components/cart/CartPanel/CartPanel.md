@@ -1,55 +1,69 @@
-```jsx
+```jsx noeditor
 import { useDispatch, useSelector } from 'react-redux';
 import { Flex } from '@chakra-ui/core';
-import { addToCart } from '@app/redux/actions';
+import { addToCart } from '@app/lib/redux/actions';
 import { Button } from '@app/components';
 
 const dispatch = useDispatch();
 const { cart } = useSelector((store) => store);
 
-const items = [
+const products = [
   {
-    id: 0,
+    id: 'cartitemid',
     img: '1.jpg',
     name: 'My fancy item',
-    desc: 'The best item in the world',
+    description: 'The best item in the world',
     color: 'Rainbow',
     price: 100,
+    starrating: 5,
+    buy: {
+      size: 'One Size',
+      color: 'Rainbow',
+      amount: 1,
+    },
   },
   {
-    id: 1,
+    id: 'cartitemid2',
     img: '2.jpg',
     name: 'My cool item',
-    desc: 'The best item in the world',
+    description: 'The best item in the world',
     color: 'Pink',
     price: 30,
+    starrating: 3,
+    buy: {
+      amount: 1,
+    },
   },
   {
-    id: 2,
+    id: 'cartitemid3',
     img: '3.jpg',
     name: 'My awesome item',
-    desc: 'The best item in the world',
+    description: 'The best item in the world',
     color: 'Brown',
     price: 150,
+    starrating: 4,
+    buy: {
+      amount: 1,
+    },
   },
 ];
 
-const index = (cart && cart.length) || 0;
-
-<Flex>
-  <Button
-    width='40%'
-    onClick={() => {
-      index !== items.length && dispatch(addToCart(items[index]));
-    }}
-  >
-    Add item ({items.length - index} left)
-  </Button>
-  <CartPanel
-    d='block'
-    ml='auto'
-    mr='-37px'
-    panel={{ width: '93%', top: '100px' }}
-  />
-</Flex>;
+<>
+  <Flex height='60px' pb='150px'>
+    <Button
+      width='100%'
+      variant='secondary'
+      onClick={() =>
+        dispatch(
+          addToCart(products[Math.floor(Math.random() * products.length)])
+        )
+      }
+    >
+      add random product to cart
+    </Button>
+    <CartPanel width='96%' />
+  </Flex>
+</>;
 ```
+
+---

@@ -15,11 +15,7 @@ module.exports = {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/__mocks__/files.js',
     '\\.(css|less|scss)$': '<rootDir>/__mocks__/styles.js',
-    '^@app/components(.*)$': '<rootDir>/components$1',
-    '^@app/redux(.*)$': '<rootDir>/lib/redux$1',
-    '^@app/lambda(.*)$': '<rootDir>/lib/lambda$1',
-    '^@app/styles(.*)$': '<rootDir>/styles$1',
-    '^@app/pages(.*)$': '<rootDir>/pages$1',
+    '^@app/mocks(.*)$': '<rootDir>/__mocks__/@app/mocks$1',
     '^@app(.*)$': '<rootDir>$1',
   },
   watchPlugins: [

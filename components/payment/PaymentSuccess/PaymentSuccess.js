@@ -9,15 +9,14 @@ import { Heading, Text, Flex } from '@chakra-ui/core';
  * - `payment.status === 'success'`
  * - `payment.intent`
  *
+ * @visibleName Payment Success
  * @example
  * ```jsx
  * <PaymentSuccess />
  * ```
  */
 export const PaymentSuccess = (props) => {
-  const { payment = {} } = useSelector((state) => state);
-  const { intent = {} } = payment;
-
+  const { intent } = useSelector((state) => state.payment);
   return (
     <Flex flexDirection='column' width='100%' alignItems='center' {...props}>
       <Heading>Payment Successful</Heading>

@@ -1,54 +1,20 @@
-import PropTypes from 'prop-types';
 import { Box, Flex } from '@chakra-ui/core';
+import { PAYMENT_FIELDS } from '@app/config';
 import { Field, Spinner, PaymentFormControls } from '@app/components';
-
-/**
- * Default input list
- *
- * @ignore
- */
-const _fields = [
-  {
-    name: 'name',
-    type: 'text',
-    placeholder: 'John Doe',
-  },
-  {
-    name: 'address',
-    type: 'text',
-    placeholder: 'J191 S. Illinois Street, Everett, MA 02149',
-  },
-  ,
-  {
-    name: 'email',
-    type: 'email',
-    placeholder: 'johndoe@example.com',
-  },
-  {
-    name: 'phone',
-    type: 'tel',
-    placeholder: '(941) 555-0123',
-  },
-];
+import { FieldShape } from '@app/lib/types';
 
 /**
  * Displays a form which collecting billing details from the user amd
  * [PaymentFormControls](#paymentformcontrols) component to handle submit.
  *
- * ***State Dependencies***
- * - `payment.status === 'form'`
- *
- * ***Wrapped Components***
- * - [Field](#field)
- * - [PaymentFormControls](#paymentformcontrols)
- *
+ * @visibleName Payment Form
  * @example
  * ```jsx
  * <PaymentForm />
  * ```
  */
 export const PaymentForm = (props) => {
-  const { fields = _fields } = props;
+  const { fields } = props;
   const [loading, setLoading] = React.useState(false);
   const [details, setDetails] = React.useState({
     address: '',
@@ -97,15 +63,13 @@ export const PaymentForm = (props) => {
   );
 };
 
+PaymentForm.defaultProps = {
+  fields: PAYMENT_FIELDS,
+};
+
 PaymentForm.propTypes = {
   /**
    * Arryas of input field descriptions to generate [Fileds](#field)
    */
-  fields: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isReguired,
-      type: PropTypes.string.isReguired,
-      placeholder: PropTypes.string.isReguired,
-    })
-  ),
+  fields: FieldShape,
 };

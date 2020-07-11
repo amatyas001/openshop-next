@@ -11,13 +11,13 @@ exports[`<PaymentForm /> should render without props 1`] = `
       className="css-9x3bhi"
     >
       <label
-        className="css-1xnp38i"
+        className="css-1cj26ek"
         htmlFor="name"
       >
         name
       </label>
       <input
-        className="css-cth1sm"
+        className="css-185v6vq"
         id="name"
         onChange={[Function]}
         placeholder="John Doe"
@@ -30,13 +30,13 @@ exports[`<PaymentForm /> should render without props 1`] = `
       className="css-9x3bhi"
     >
       <label
-        className="css-1xnp38i"
+        className="css-1cj26ek"
         htmlFor="address"
       >
         address
       </label>
       <input
-        className="css-cth1sm"
+        className="css-185v6vq"
         id="address"
         onChange={[Function]}
         placeholder="J191 S. Illinois Street, Everett, MA 02149"
@@ -49,13 +49,13 @@ exports[`<PaymentForm /> should render without props 1`] = `
       className="css-9x3bhi"
     >
       <label
-        className="css-1xnp38i"
+        className="css-1cj26ek"
         htmlFor="email"
       >
         email
       </label>
       <input
-        className="css-cth1sm"
+        className="css-185v6vq"
         id="email"
         onChange={[Function]}
         placeholder="johndoe@example.com"
@@ -68,13 +68,13 @@ exports[`<PaymentForm /> should render without props 1`] = `
       className="css-9x3bhi"
     >
       <label
-        className="css-1xnp38i"
+        className="css-1cj26ek"
         htmlFor="phone"
       >
         phone
       </label>
       <input
-        className="css-cth1sm"
+        className="css-185v6vq"
         id="phone"
         onChange={[Function]}
         placeholder="(941) 555-0123"
@@ -101,26 +101,25 @@ exports[`<PaymentForm /> should render without props 1`] = `
     className="css-1rsrz83"
   >
     <button
-      className="css-1h13z07"
-      data-cy="button"
+      className="css-1h0dud8"
       data-testid="form-review-button"
       href="#void"
       onClick={[Function]}
       onKeyDown={[Function]}
-      tabIndex={0}
+      tabIndex="0"
       type="button"
     >
       BACK TO REVIEW
     </button>
     <button
-      className="css-187kagv"
-      data-cy="button"
+      className="css-hn65qy"
       data-testid="form-submit-button"
       disabled={true}
       href="#void"
       onClick={[Function]}
       onKeyDown={[Function]}
-      tabIndex={0}
+      tabIndex="0"
+      type="button"
     >
       FILL THE FORM
     </button>

@@ -5,25 +5,25 @@ exports[`<PaymentConfirmControls /> should render with required props 1`] = `
   className="css-qv6zkf"
 >
   <button
-    className="css-15ecn8p"
-    data-cy="button"
+    className="css-1e5j5cf"
     data-testid="confirm-controls-cancel"
     href="#void"
     onClick={[Function]}
     onKeyDown={[Function]}
-    tabIndex={0}
+    tabIndex="0"
+    type="button"
   >
     CANCEL ORDER
   </button>
   <button
-    className="css-187kagv"
-    data-cy="button"
+    className="css-hn65qy"
     data-testid="confirm-controls-confirm"
     disabled={true}
     href="#void"
     onClick={[MockFunction]}
     onKeyDown={[Function]}
-    tabIndex={0}
+    tabIndex="0"
+    type="button"
   >
     CONFIRM ORDER
   </button>

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Panel /> should render without props 1`] = `
+<div
+  aria-hidden={true}
+  className="rah-static rah-static--height-zero css-vppuuz"
+  style={
+    Object {
+      "height": 0,
+      "overflow": "hidden",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "WebkitTransition": "opacity 250ms ease 0ms",
+        "opacity": 0,
+        "transition": "opacity 250ms ease 0ms",
+      }
+    }
+  >
+    <div
+      className="css-1wfrc3n"
+    />
+  </div>
+</div>
+`;

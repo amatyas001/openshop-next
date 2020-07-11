@@ -1,8 +1,9 @@
 import { create, act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import { paymentSuccess, paymentError } from '@app/redux/actions';
+import { paymentSuccess, paymentError } from '@app/lib/redux/actions';
 import { PaymentConfirm } from '@app/components';
+import { INITIAL_STATE } from '@app/config';
 
 const mockStore = configureStore([]);
 
@@ -11,10 +12,15 @@ const _state = {
     {
       id: 'mock_id',
       name: 'mock_name',
-      desc: 'mock_desc',
+      description: 'mock_desc',
       img: 'mock_img',
       price: 10,
-      rating: 5,
+      starrating: 5,
+      color: 'mock_color',
+      amount: 10,
+      buy: {
+        amount: 1,
+      },
     },
   ],
   payment: {
@@ -62,6 +68,18 @@ describe('<PaymentConfirm />', () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
+  it('should not dispatch paymentSuccess', async () => {
+    act(() => {
+      card.props.onChange({ complete: false });
+    });
+
+    await act(async () => {
+      await submit.props.onClick();
+    });
+
+    expect(store.getActions()).toEqual([]);
+  });
+
   it('should dispatch paymentSuccess', async () => {
     act(() => {
       card.props.onChange({ complete: true });
@@ -77,6 +95,8 @@ describe('<PaymentConfirm />', () => {
         ...store.getState().payment.intent,
       }),
     ]);
+
+    expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('should dispatch paymentError', async () => {
@@ -110,5 +130,17 @@ describe('<PaymentConfirm />', () => {
     });
 
     expect(store.getActions()).toEqual([paymentError('mock_error')]);
+  });
+
+  it('should render with initial state', () => {
+    act(() => {
+      tree = create(
+        <Provider store={mockStore(INITIAL_STATE)}>
+          <PaymentConfirm />
+        </Provider>
+      );
+    });
+
+    expect(tree.toJSON()).toMatchSnapshot();
   });
 });

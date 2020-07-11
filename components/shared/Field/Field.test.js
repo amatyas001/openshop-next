@@ -1,7 +1,7 @@
 import { create } from 'react-test-renderer';
 import { Field } from '@app/components';
 
-describe('Field', () => {
+describe('<Field />', () => {
   it('should render without props', () => {
     const tree = create(<Field />);
     expect(tree.toJSON()).toMatchSnapshot();
