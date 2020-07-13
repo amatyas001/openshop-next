@@ -1,6 +1,6 @@
 {
   "name": "openshop",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "private": true,
   "scripts": {
     "start": "next start",
@@ -18,27 +18,26 @@
     "docs:build": "rm -rf docs && styleguidist build && mkdir docs &&  mv -v styleguide/* docs/ && jest --coverage && rm -rf styleguide",
     "lint": "eslint ./components/** ./pages/** -c .eslintrc.json --ext js,jsx",
     "lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.json --fix --ext js,jsx",
-    "format": ""
+    "format": "prettier --write ."
   },
   "husky": {
-    "pre-commit": "lint-staged",
-    "pre-push": "npm test:unit"
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test:unit"
+    }
   },
   "lint-staged": {
     "components/**/*.{js,jsx}": [
-      "eslint",
-      "pretty-quick - staged",
-      "git add"
+      "npm run lint",
+      "pretty-quick --staged"
     ],
     "pages/**/*.{js,jsx}": [
-      "eslint",
-      "pretty-quick - staged",
-      "git add"
+      "npm run lint",
+      "pretty-quick --staged"
     ],
     "lib/**/*.{js,jsx}": [
       "eslint",
-      "pretty-quick - staged",
-      "git add"
+      "pretty-quick --staged"
     ]
   },
   "dependencies": {

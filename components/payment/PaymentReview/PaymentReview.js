@@ -20,12 +20,7 @@ export const PaymentReview = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <Flex
-      flexDirection='column'
-      alignItems='center'
-      justifyContent='space-between'
-      {...props}
-    >
+    <Flex flexDirection='column' alignItems='center' justifyContent='space-between' {...props}>
       <CartContent details />
       <Flex mt='30px' width='100%'>
         <Button

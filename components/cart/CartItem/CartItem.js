@@ -36,20 +36,11 @@ export const CartItem = (props) => {
           {item.name}
         </Heading>
         <Heading as='em' fontSize='1.2rem' color={COLORS.HEADING.light}>
-          {`${item.buy.color || item.color} in ${
-            item.buy.size || 'One Size'
-          } x${item.buy.amount}`}
+          {`${item.buy.color || item.color} in ${item.buy.size || 'One Size'} x${item.buy.amount}`}
         </Heading>
-        {details && (
-          <Text data-testid='cart-item-description'>{item.description}</Text>
-        )}
+        {details && <Text data-testid='cart-item-description'>{item.description}</Text>}
       </Flex>
-      <Heading
-        as='strong'
-        ml='auto'
-        fontSize='1.8rem'
-        color={COLORS.HEADING.dark}
-      >
+      <Heading as='strong' ml='auto' fontSize='1.8rem' color={COLORS.HEADING.dark}>
         {item.price.toFixed(2)}
         &nbsp;$
       </Heading>
@@ -80,10 +71,7 @@ CartItem.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.string.isRequired,
     amount: PropTypes.number.isRequired,
-    color: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
-    ]),
+    color: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
     description: PropTypes.string,
     gender: PropTypes.string,
     img: PropTypes.string,

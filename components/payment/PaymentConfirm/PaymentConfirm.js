@@ -51,10 +51,7 @@ export const PaymentConfirm = (props) => {
         <PaymentConfirmDetails />
         <CartContent icons={false} width='100%' />
         <Elements stripe={stripe}>
-          <PaymentConfirmCard
-            loadHandler={setLoading}
-            setHandler={setHandler}
-          />
+          <PaymentConfirmCard loadHandler={setLoading} setHandler={setHandler} />
         </Elements>
         <PaymentConfirmControls
           confirmHandler={handler.confirmHandler}
@@ -62,11 +59,7 @@ export const PaymentConfirm = (props) => {
           loadHandler={setLoading}
         />
       </Flex>
-      <Spinner
-        d={loading ? 'flex' : 'none'}
-        data-testid='confirm-spinner'
-        text='Loading data...'
-      />
+      <Spinner d={loading ? 'flex' : 'none'} data-testid='confirm-spinner' text='Loading data...' />
     </>
   );
 };

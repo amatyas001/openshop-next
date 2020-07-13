@@ -41,22 +41,14 @@ export const Footer = (props) => {
             flexDirection='column'
           >
             <Heading data-testid='footer-section-title' fontSize='1.5rem'>
-              <Box
-                data-testid='footer-section-icon'
-                as={section.icon}
-                mb='-5px'
-                mr='5px'
-              />
+              <Box data-testid='footer-section-icon' as={section.icon} mb='-5px' mr='5px' />
               {section.title}
             </Heading>
             <List spacing={3} px={{ sm: '0' }} mb={{ sm: '50px', lg: '20px' }}>
               {section.elements.map((element) => (
                 <ListItem data-testid='footer-element' key={element.text}>
                   <Link href={element.link} passHref>
-                    <ChakraLink
-                      data-testid='footer-element-link'
-                      color={COLORS.TEXT.dark}
-                    >
+                    <ChakraLink data-testid='footer-element-link' color={COLORS.TEXT.dark}>
                       {element.text}
                     </ChakraLink>
                   </Link>

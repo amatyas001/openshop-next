@@ -1,13 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  Box,
-  Heading,
-  Slider,
-  SliderFilledTrack,
-  SliderThumb,
-  SliderTrack,
-} from '@chakra-ui/core';
+import { Box, Heading, Slider, SliderFilledTrack, SliderThumb, SliderTrack } from '@chakra-ui/core';
 import { filterPrice } from '@app/lib/redux/actions';
 import * as COLORS from '@app/config';
 
@@ -30,13 +23,7 @@ export const FilterPrice = (props) => {
 
   return (
     <Box mb={{ sm: '35px', lg: 0 }} {...props}>
-      <Heading
-        as='label'
-        d='flex'
-        htmlFor='price'
-        fontSize='1.3rem'
-        color={COLORS.HEADING.dark}
-      >
+      <Heading as='label' d='flex' htmlFor='price' fontSize='1.3rem' color={COLORS.HEADING.dark}>
         Price
       </Heading>
       <Heading
@@ -80,10 +67,7 @@ FilterPrice.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       amount: PropTypes.number.isRequired,
-      color: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.arrayOf(PropTypes.string),
-      ]),
+      color: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
       description: PropTypes.string,
       gender: PropTypes.string,
       img: PropTypes.string,

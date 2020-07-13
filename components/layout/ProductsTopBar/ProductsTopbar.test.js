@@ -20,13 +20,7 @@ describe('<ProductsTopBar />', () => {
       act(() => {
         tree = create(
           <Provider store={store}>
-            <ProductsTopBar
-              page={1}
-              max={1}
-              products={products}
-              index={0}
-              setIndex={setIndex}
-            />
+            <ProductsTopBar page={1} max={1} products={products} index={0} setIndex={setIndex} />
           </Provider>
         );
       });

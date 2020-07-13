@@ -23,13 +23,7 @@ export const CartAmount = (props) => {
         TOTAL
       </Heading>
 
-      <Heading
-        as='strong'
-        d='block'
-        textAlign='right'
-        my='0'
-        data-testid='cart-amount-value'
-      >
+      <Heading as='strong' d='block' textAlign='right' my='0' data-testid='cart-amount-value'>
         {cart
           .reduce((a, c) => {
             return a + parseFloat(c.price) * c.buy.amount;

@@ -38,9 +38,9 @@ describe('<PaymentSuccess />', () => {
 
   it('should render intent details', () => {
     expect.assertions(1);
-    expect(
-      tree.root.findByProps({ 'data-testid': 'success-content' }).props.children
-    ).toContain(store.getState().payment.intent.id);
+    expect(tree.root.findByProps({ 'data-testid': 'success-content' }).props.children).toContain(
+      store.getState().payment.intent.id
+    );
   });
 
   it('should render with intial state', () => {

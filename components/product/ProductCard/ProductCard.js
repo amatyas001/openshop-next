@@ -25,10 +25,9 @@ import { Image, ProductControls } from '@app/components';
  */
 export const ProductCard = (props) => {
   const { product } = props;
-  const image = React.useMemo(
-    () => <Image src={`/images/products/${product.img}`} />,
-    [product.img]
-  );
+  const image = React.useMemo(() => <Image src={`/images/products/${product.img}`} />, [
+    product.img,
+  ]);
   return (
     <Flex
       borderTop='1px'
@@ -81,10 +80,7 @@ ProductCard.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.string.isRequired,
     amount: PropTypes.number.isRequired,
-    color: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
-    ]),
+    color: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
     description: PropTypes.string,
     gender: PropTypes.string,
     img: PropTypes.string,

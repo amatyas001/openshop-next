@@ -50,9 +50,7 @@ describe('<PaymentFormControls />', () => {
     expect.assertions(1);
     load.mockClear();
     act(() => {
-      tree.root
-        .findByProps({ 'data-testid': 'form-review-button' })
-        .props.onClick();
+      tree.root.findByProps({ 'data-testid': 'form-review-button' }).props.onClick();
     });
     expect(store.getActions()).toEqual([paymentReview()]);
   });
@@ -69,9 +67,7 @@ describe('<PaymentFormControls />', () => {
     });
     store.clearActions();
     act(() => {
-      failed.root
-        .findByProps({ 'data-testid': 'form-submit-button' })
-        .props.onClick();
+      failed.root.findByProps({ 'data-testid': 'form-submit-button' }).props.onClick();
     });
     expect(load).not.toHaveBeenCalled();
     expect(store.getActions()).toEqual([]);
@@ -79,14 +75,10 @@ describe('<PaymentFormControls />', () => {
 
   it('should dispatch payment intent', () => {
     expect.assertions(3);
-    const intent = jest
-      .spyOn(actions, 'paymentCreate')
-      .mockImplementation(() => jest.fn());
+    const intent = jest.spyOn(actions, 'paymentCreate').mockImplementation(() => jest.fn());
     load.mockClear();
     act(() => {
-      tree.root
-        .findByProps({ 'data-testid': 'form-submit-button' })
-        .props.onClick();
+      tree.root.findByProps({ 'data-testid': 'form-submit-button' }).props.onClick();
     });
     expect(load).toHaveBeenCalledTimes(1);
     expect(intent).toHaveBeenCalledTimes(1);

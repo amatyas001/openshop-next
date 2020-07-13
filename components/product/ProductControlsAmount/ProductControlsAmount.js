@@ -118,10 +118,7 @@ MemoProductControlsAmount.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.string.isRequired,
     amount: PropTypes.number.isRequired,
-    color: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
-    ]),
+    color: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
     description: PropTypes.string,
     gender: PropTypes.string,
     img: PropTypes.string,
@@ -138,10 +135,7 @@ MemoProductControlsAmount.propTypes = {
   details: PropTypes.shape({
     id: PropTypes.string.isRequired,
     amount: PropTypes.number.isRequired,
-    color: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
-    ]),
+    color: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
     description: PropTypes.string,
     gender: PropTypes.string,
     img: PropTypes.string,

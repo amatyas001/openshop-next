@@ -5,49 +5,33 @@ import { Box } from '@chakra-ui/core';
 import { Spinner } from '@app/components';
 import * as COLORS from '@app/config/colors';
 
-const PaymentProgress = dynamic(() =>
-  import('@app/components').then((mod) => mod.PaymentProgress)
-);
+const PaymentProgress = dynamic(() => import('@app/components').then((mod) => mod.PaymentProgress));
 
-const PaymentReview = dynamic(() =>
-  import('@app/components').then((mod) => mod.PaymentReview)
-);
+const PaymentReview = dynamic(() => import('@app/components').then((mod) => mod.PaymentReview));
 
-const PaymentForm = dynamic(() =>
-  import('@app/components').then((mod) => mod.PaymentForm)
-);
+const PaymentForm = dynamic(() => import('@app/components').then((mod) => mod.PaymentForm));
 
-const PaymentConfirm = dynamic(() =>
-  import('@app/components').then((mod) => mod.PaymentConfirm)
-);
+const PaymentConfirm = dynamic(() => import('@app/components').then((mod) => mod.PaymentConfirm));
 
-const PaymentSuccess = dynamic(() =>
-  import('@app/components').then((mod) => mod.PaymentSuccess)
-);
+const PaymentSuccess = dynamic(() => import('@app/components').then((mod) => mod.PaymentSuccess));
 
 const PaymentCancelled = dynamic(() =>
   import('@app/components').then((mod) => mod.PaymentCancelled)
 );
 
-const PaymentError = dynamic(() =>
-  import('@app/components').then((mod) => mod.PaymentError)
-);
+const PaymentError = dynamic(() => import('@app/components').then((mod) => mod.PaymentError));
 
 const PaymentUnauthorized = dynamic(() =>
   import('@app/components').then((mod) => mod.PaymentUnauthorized)
 );
 
 const Checkout = () => {
-  const { payment = { status: false }, cart = [] } = useSelector(
-    (state) => state
-  );
+  const { payment = { status: false }, cart = [] } = useSelector((state) => state);
   const [content, setContent] = React.useState();
   const [head, setHead] = React.useState();
 
   React.useEffect(() => {
-    setContent(
-      <Spinner size='150px' mx='auto' my={{ sm: '150px', lg: '300px' }} />
-    );
+    setContent(<Spinner size='150px' mx='auto' my={{ sm: '150px', lg: '300px' }} />);
     if (!cart.length && payment.status !== 'success') {
       setHead('Checkout');
       setContent(<PaymentUnauthorized />);

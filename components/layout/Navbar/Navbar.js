@@ -60,10 +60,7 @@ export const Navbar = (props) => {
                 data-cy='nav-item'
               >
                 <Link href={link.link} passHref>
-                  <Button
-                    width={{ sm: 'auto', md: '100px' }}
-                    variant='transparent'
-                  >
+                  <Button width={{ sm: 'auto', md: '100px' }} variant='transparent'>
                     {link.text}
                   </Button>
                 </Link>

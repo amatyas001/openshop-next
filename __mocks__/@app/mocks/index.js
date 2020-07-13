@@ -71,9 +71,7 @@ export const mockProductWithColor = (count) => {
   const generateColors = function* () {
     let index = 0;
     while (true) {
-      yield index % 2
-        ? `mock_color_${index}`
-        : [`mock_color_${index}`, `mock_color_${index + 1}`];
+      yield index % 2 ? `mock_color_${index}` : [`mock_color_${index}`, `mock_color_${index + 1}`];
       index++;
     }
   };

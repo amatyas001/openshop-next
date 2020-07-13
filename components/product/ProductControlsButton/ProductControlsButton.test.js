@@ -92,10 +92,7 @@ describe('<ProductControlsButton />', () => {
         act(() => {
           tree = create(
             <Provider store={store}>
-              <ProductControlsButton
-                product={{ ...test.details }}
-                setDetails={handler}
-              />
+              <ProductControlsButton product={{ ...test.details }} setDetails={handler} />
             </Provider>
           );
         });

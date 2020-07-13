@@ -17,12 +17,7 @@ export const FilterName = (props) => {
 
   return (
     <Box>
-      <Heading
-        as='label'
-        htmlFor='name'
-        fontSize='1.3rem'
-        color={COLORS.HEADING.dark}
-      >
+      <Heading as='label' htmlFor='name' fontSize='1.3rem' color={COLORS.HEADING.dark}>
         Name
       </Heading>
       <Input

@@ -23,12 +23,7 @@ export const Field = ({
 }) => {
   return (
     <Box as='fieldset' border='0' width='96%' my='10px' ml='-12px'>
-      <Heading
-        as='label'
-        htmlFor={id}
-        fontSize='1.5rem'
-        color={COLORS.HEADING.dark}
-      >
+      <Heading as='label' htmlFor={id} fontSize='1.5rem' color={COLORS.HEADING.dark}>
         {label}
       </Heading>
       <Input
@@ -65,10 +60,6 @@ Field.propTypes = {
   placeholder: PropTypes.string,
   required: PropTypes.bool,
   autoComplete: PropTypes.bool,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.func,
-  ]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.func]),
   onChange: PropTypes.func,
 };

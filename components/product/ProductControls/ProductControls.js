@@ -44,8 +44,7 @@ export const ProductControls = (props) => {
         details={details}
         setDetails={
           /* istanbul ignore next */
-          (e) =>
-            setDetails((prev) => ({ ...prev, buy: { ...prev.buy, color: e } }))
+          (e) => setDetails((prev) => ({ ...prev, buy: { ...prev.buy, color: e } }))
         }
       />
       <Flex fontSize='1.4rem' ml='auto' mb='2px' {...props}>
@@ -59,8 +58,7 @@ export const ProductControls = (props) => {
         details={details}
         setDetails={
           /* istanbul ignore next */
-          (e) =>
-            setDetails((prev) => ({ ...prev, buy: { ...prev.buy, size: e } }))
+          (e) => setDetails((prev) => ({ ...prev, buy: { ...prev.buy, size: e } }))
         }
       />
       <Text
@@ -78,8 +76,7 @@ export const ProductControls = (props) => {
         details={details}
         setDetails={
           /* istanbul ignore next */
-          (e) =>
-            setDetails((prev) => ({ ...prev, buy: { ...prev.buy, amount: e } }))
+          (e) => setDetails((prev) => ({ ...prev, buy: { ...prev.buy, amount: e } }))
         }
       />
       <ProductControlsButton product={details} setDetails={setDetails} />
@@ -94,10 +91,7 @@ ProductControls.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.string.isRequired,
     amount: PropTypes.number.isRequired,
-    color: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
-    ]),
+    color: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
     description: PropTypes.string,
     gender: PropTypes.string,
     img: PropTypes.string,

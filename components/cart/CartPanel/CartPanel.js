@@ -3,13 +3,7 @@ import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import { Flex } from '@chakra-ui/core';
 import { paymentReview, panelToggle } from '@app/lib/redux/actions';
-import {
-  Button,
-  CartContent,
-  CartButton,
-  CartAmount,
-  Panel,
-} from '@app/components';
+import { Button, CartContent, CartButton, CartAmount, Panel } from '@app/components';
 import * as COLORS from '@app/config/colors';
 
 /**
@@ -34,13 +28,7 @@ export const CartPanel = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <Flex
-      as='section'
-      role='complementary'
-      id='cart'
-      flexDirection='column'
-      {...props}
-    >
+    <Flex as='section' role='complementary' id='cart' flexDirection='column' {...props}>
       <CartButton data-testid='cart-panel-button' />
       <Panel
         toggle={panel.cart}

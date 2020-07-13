@@ -40,9 +40,7 @@ describe('<CartContent />', () => {
 
     it('should render cart items', () => {
       expect.assertions(1);
-      expect(tree.root.findByType('ul').props.children).toHaveLength(
-        store.getState().cart.length
-      );
+      expect(tree.root.findByType('ul').props.children).toHaveLength(store.getState().cart.length);
     });
   });
 });

@@ -27,9 +27,7 @@ const ButtonFWR = (props, ref) => {
       cursor='pointer'
       onKeyDown={
         /* istanbul ignore next */ (e) =>
-          e.key === ' ' || e.key === 'Enter' || e.key === 'Spacebar'
-            ? props.onClick
-            : null
+          e.key === ' ' || e.key === 'Enter' || e.key === 'Spacebar' ? props.onClick : null
       }
       transition='all 300ms cubic-bezier(.08,.52,.52,1)'
       tabIndex='0'

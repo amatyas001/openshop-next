@@ -25,11 +25,7 @@ export const PaymentConfirmControls = (props) => {
       >
         CANCEL ORDER
       </Button>
-      <Button
-        data-testid='confirm-controls-confirm'
-        disabled={!complete}
-        onClick={confirmHandler}
-      >
+      <Button data-testid='confirm-controls-confirm' disabled={!complete} onClick={confirmHandler}>
         CONFIRM ORDER
       </Button>
     </SimpleGrid>

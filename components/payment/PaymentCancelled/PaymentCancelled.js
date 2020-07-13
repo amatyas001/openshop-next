@@ -18,12 +18,7 @@ export const PaymentCancelled = (props) => {
       <Heading>Payment Cancelled</Heading>
       <Text fontSize='1.5rem'>
         Successfuly cancelled intent:&nbsp;
-        <Text
-          as='span'
-          fontWeight='bold'
-          color='purple.800'
-          data-testid='cancelled-details'
-        >
+        <Text as='span' fontWeight='bold' color='purple.800' data-testid='cancelled-details'>
           {intent.id}
         </Text>
       </Text>

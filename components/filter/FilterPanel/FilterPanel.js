@@ -42,13 +42,7 @@ export const FilterPanel = (props) => {
         borderBottom='2px'
         borderBottomColor={COLORS.SPACER.light}
       >
-        <Flex
-          as='form'
-          name='filters'
-          flexDirection='column'
-          width='100%'
-          mx='auto'
-        >
+        <Flex as='form' name='filters' flexDirection='column' width='100%' mx='auto'>
           <SimpleGrid columns={{ sm: 1, lg: 4 }} spacing='30px'>
             <FilterName />
             <FilterColor products={products} />
@@ -69,10 +63,7 @@ FilterPanel.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       amount: PropTypes.number.isRequired,
-      color: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.arrayOf(PropTypes.string),
-      ]),
+      color: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
       description: PropTypes.string,
       gender: PropTypes.string,
       img: PropTypes.string,

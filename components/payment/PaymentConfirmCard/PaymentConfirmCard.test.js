@@ -70,10 +70,9 @@ describe('<PaymentConfirmCard/>', () => {
         })
         .props.onChange({ error: { message } });
     });
-    expect(
-      tree.root.findByProps({ 'data-testid': 'confirm-card-error' }).props
-        .children
-    ).toContain(message);
+    expect(tree.root.findByProps({ 'data-testid': 'confirm-card-error' }).props.children).toContain(
+      message
+    );
   });
 
   it('should render with initial state', () => {

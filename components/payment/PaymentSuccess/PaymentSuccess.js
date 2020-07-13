@@ -22,19 +22,11 @@ export const PaymentSuccess = (props) => {
       <Heading>Payment Successful</Heading>
       <Text fontSize='1.5rem'>
         Received intent number:
-        <Text
-          as='span'
-          fontWeight='bold'
-          color='purple.800'
-          data-testid='success-content'
-        >
+        <Text as='span' fontWeight='bold' color='purple.800' data-testid='success-content'>
           {`&nbsp;${intent.id}&nbsp;`}
         </Text>
       </Text>
-      <Text>
-        This was a sample transaction to demonstrate the payment flow. Thank
-        you!
-      </Text>
+      <Text>This was a sample transaction to demonstrate the payment flow. Thank you!</Text>
     </Flex>
   );
 };

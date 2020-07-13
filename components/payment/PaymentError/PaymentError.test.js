@@ -31,24 +31,20 @@ describe('<PaymentError />', () => {
 
   it('should render error message', () => {
     expect.assertions(1);
-    expect(
-      tree.root.findByProps({ 'data-testid': 'error-message' }).props.children
-    ).toContain(store.getState().payment.error.message);
+    expect(tree.root.findByProps({ 'data-testid': 'error-message' }).props.children).toContain(
+      store.getState().payment.error.message
+    );
   });
 
   it('should render retry button', () => {
     expect.assertions(1);
-    expect(
-      tree.root.findByProps({ 'data-testid': 'error-button-retry' })
-    ).toBeTruthy();
+    expect(tree.root.findByProps({ 'data-testid': 'error-button-retry' })).toBeTruthy();
   });
 
   it('should push reset state', async () => {
     expect.assertions(1);
     await act(async () => {
-      await tree.root
-        .findByProps({ 'data-testid': 'error-button-retry' })
-        .props.onClick();
+      await tree.root.findByProps({ 'data-testid': 'error-button-retry' }).props.onClick();
     });
     expect(store.getActions()).toEqual([paymentReset()]);
   });

@@ -32,9 +32,7 @@ describe('<CartPanel />', () => {
 
     it('should close panel with button', () => {
       act(() => {
-        tree.root
-          .findByProps({ 'data-testid': 'cart-panel-button-close' })
-          .props.onClick();
+        tree.root.findByProps({ 'data-testid': 'cart-panel-button-close' }).props.onClick();
       });
       expect.assertions(1);
       expect(store.getActions()).toEqual([panelToggle('cart', false)]);
@@ -43,8 +41,7 @@ describe('<CartPanel />', () => {
     it('should render disabled continue button', () => {
       expect.assertions(1);
       expect(
-        tree.root.findByProps({ 'data-testid': 'cart-panel-button-continue' })
-          .props.disabled
+        tree.root.findByProps({ 'data-testid': 'cart-panel-button-continue' }).props.disabled
       ).toBeTruthy();
     });
   });
@@ -72,27 +69,21 @@ describe('<CartPanel />', () => {
     it('should render enabled continue button', () => {
       expect.assertions(1);
       expect(
-        tree.root.findByProps({ 'data-testid': 'cart-panel-button-continue' })
-          .props.disabled
+        tree.root.findByProps({ 'data-testid': 'cart-panel-button-continue' }).props.disabled
       ).toBeFalsy();
     });
 
     it('should continue to payment review', () => {
       expect.assertions(1);
       act(() => {
-        tree.root
-          .findByProps({ 'data-testid': 'cart-panel-button-continue' })
-          .props.onClick({
-            preventDefault: jest.fn(),
-            currentTarget: {
-              nodeName: 'button',
-            },
-          });
+        tree.root.findByProps({ 'data-testid': 'cart-panel-button-continue' }).props.onClick({
+          preventDefault: jest.fn(),
+          currentTarget: {
+            nodeName: 'button',
+          },
+        });
       });
-      expect(store.getActions()).toEqual([
-        panelToggle('cart', false),
-        paymentReview(),
-      ]);
+      expect(store.getActions()).toEqual([panelToggle('cart', false), paymentReview()]);
     });
   });
 });

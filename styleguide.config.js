@@ -67,10 +67,7 @@ module.exports = {
   },
   styleguideComponents: {
     Wrapper: path.resolve(__dirname, 'lib/styleguide/components/StyleWrapper'),
-    StyleGuideRenderer: path.resolve(
-      __dirname,
-      'lib/styleguide/components/StyleGuideRenderer'
-    ),
+    StyleGuideRenderer: path.resolve(__dirname, 'lib/styleguide/components/StyleGuideRenderer'),
   },
   webpackConfig: {
     module: {

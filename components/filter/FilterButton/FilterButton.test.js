@@ -31,9 +31,7 @@ describe('<FilterButton />', () => {
       tree.root.findByType('button').props.onClick();
     });
     expect.assertions(1);
-    expect(store.getActions()).toEqual([
-      panelToggle('filters', !store.getState().panel.filters),
-    ]);
+    expect(store.getActions()).toEqual([panelToggle('filters', !store.getState().panel.filters)]);
   });
 
   it('should toggle button text', () => {

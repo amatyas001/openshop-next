@@ -20,9 +20,7 @@ const Index = () => {
         <title>OpenShop - Home</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      {loading && (
-        <Spinner size='150px' mx='auto' my={{ sm: '150px', lg: '300px' }} />
-      )}
+      {loading && <Spinner size='150px' mx='auto' my={{ sm: '150px', lg: '300px' }} />}
       <Carousel autoPlay={5000} animationSpeed={1000} infinite>
         {items.map((item) => (
           <PseudoBox

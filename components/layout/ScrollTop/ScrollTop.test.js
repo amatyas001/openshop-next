@@ -4,11 +4,9 @@ import { ScrollTop } from '@app/components';
 let tree;
 
 describe('<ScrollTop />', () => {
-  const scroll = jest
-    .spyOn(window, 'scrollTo')
-    .mockImplementation((options) => {
-      window.pageYOffset = options.top;
-    });
+  const scroll = jest.spyOn(window, 'scrollTo').mockImplementation((options) => {
+    window.pageYOffset = options.top;
+  });
 
   beforeAll(() => {
     window.pageYOffset = 301;

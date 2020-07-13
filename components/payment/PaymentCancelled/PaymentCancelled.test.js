@@ -31,10 +31,9 @@ describe('<PaymentCancelled />', () => {
 
   it('should render intent details', () => {
     expect.assertions(1);
-    expect(
-      tree.root.findByProps({ 'data-testid': 'cancelled-details' }).props
-        .children
-    ).toContain(store.getState().payment.intent.id);
+    expect(tree.root.findByProps({ 'data-testid': 'cancelled-details' }).props.children).toContain(
+      store.getState().payment.intent.id
+    );
   });
 
   it('should render with initial state', () => {
@@ -48,8 +47,7 @@ describe('<PaymentCancelled />', () => {
     });
     expect(tree.toJSON()).toMatchSnapshot();
     expect(
-      tree.root.findByProps({ 'data-testid': 'cancelled-details' }).props
-        .children
+      tree.root.findByProps({ 'data-testid': 'cancelled-details' }).props.children
     ).toBeUndefined();
   });
 });

@@ -23,11 +23,7 @@ export const ProductsTopBar = (props) => {
         data-testid='products-top-previous'
         disabled={page === 1}
         onClick={() => {
-          setIndex(
-            /* istanbul ignore next */ Number(index) - 10 < 0
-              ? 0
-              : Number(index) - 10
-          );
+          setIndex(/* istanbul ignore next */ Number(index) - 10 < 0 ? 0 : Number(index) - 10);
           window.scrollTo({
             top: 0,
           });
@@ -80,10 +76,7 @@ ProductsTopBar.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       amount: PropTypes.number.isRequired,
-      color: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.arrayOf(PropTypes.string),
-      ]),
+      color: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
       description: PropTypes.string,
       gender: PropTypes.string,
       img: PropTypes.string,

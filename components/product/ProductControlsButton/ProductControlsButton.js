@@ -7,9 +7,7 @@ import { Button } from '@app/components';
 
 // Helper function to check the validity of given shopping details
 const valid = (state) =>
-  (!Array.isArray(state.product.color)
-    ? state.product.color
-    : state.product.buy.color) &&
+  (!Array.isArray(state.product.color) ? state.product.color : state.product.buy.color) &&
   (state.product.sizes ? state.product.buy.size : 'onesize') &&
   state.product.buy.amount > 0;
 
@@ -54,10 +52,7 @@ ProductControlsButton.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.string.isRequired,
     amount: PropTypes.number.isRequired,
-    color: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
-    ]),
+    color: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
     description: PropTypes.string,
     gender: PropTypes.string,
     img: PropTypes.string,

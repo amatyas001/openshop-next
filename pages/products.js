@@ -40,13 +40,13 @@ const Products = (props) => {
 
   const grid = React.useMemo(
     () => (
-      <SimpleGrid width="90%" columns="1" mx="5%" zIndex="4" id="products-grid">
+      <SimpleGrid width='90%' columns='1' mx='5%' zIndex='4' id='products-grid'>
         {content.length ? (
           content
             .slice(index, index + limit)
             .map((item) => <ProductCard key={item.id} product={item} />)
         ) : (
-          <Heading as="h3" mx="auto" my="3rem">
+          <Heading as='h3' mx='auto' my='3rem'>
             no results found
           </Heading>
         )}
@@ -94,11 +94,11 @@ const Products = (props) => {
     <>
       <Head>
         <title>{`OpenShop - Browse Items | Page ${page}`}</title>
-        <meta name="description" content={`Openshop browse products page ${page}`} />
+        <meta name='description' content={`Openshop browse products page ${page}`} />
       </Head>
       {!loading && navigation}
       <Divider mt={!panel.filters ? { sm: '30px', lg: '10px' } : { sm: '430px', lg: '140px' }} />
-      {loading ? <Spinner text="Loading products..." /> : grid}
+      {loading ? <Spinner text='Loading products...' /> : grid}
     </>
   );
 };

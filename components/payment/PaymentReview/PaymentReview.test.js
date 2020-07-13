@@ -14,11 +14,9 @@ const mockStore = createStore([]);
 
 describe('<PaymentReview />', () => {
   beforeAll(() => {
-    jest
-      .spyOn(require('next/router'), 'useRouter')
-      .mockImplementationOnce(() => ({
-        back,
-      }));
+    jest.spyOn(require('next/router'), 'useRouter').mockImplementationOnce(() => ({
+      back,
+    }));
     store = mockStore({
       ...INITIAL_STATE,
       cart: mockProductWithBuyAmount(1),
@@ -41,9 +39,7 @@ describe('<PaymentReview />', () => {
   it('should push back router', () => {
     expect.assertions(1);
     act(() => {
-      tree.root
-        .findByProps({ 'data-testid': 'review-button-back' })
-        .props.onClick();
+      tree.root.findByProps({ 'data-testid': 'review-button-back' }).props.onClick();
     });
     expect(back).toHaveBeenCalledTimes(1);
   });
@@ -51,9 +47,7 @@ describe('<PaymentReview />', () => {
   it('should push form state', () => {
     expect.assertions(1);
     act(() => {
-      tree.root
-        .findByProps({ 'data-testid': 'review-button-form' })
-        .props.onClick();
+      tree.root.findByProps({ 'data-testid': 'review-button-form' }).props.onClick();
     });
     expect(store.getActions()).toEqual([paymentForm()]);
   });

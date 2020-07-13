@@ -18,8 +18,5 @@ module.exports = {
     '^@app/mocks(.*)$': '<rootDir>/__mocks__/@app/mocks$1',
     '^@app(.*)$': '<rootDir>$1',
   },
-  watchPlugins: [
-    'jest-watch-typeahead/filename',
-    'jest-watch-typeahead/testname',
-  ],
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
 };

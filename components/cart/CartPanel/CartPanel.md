@@ -53,11 +53,7 @@ const products = [
     <Button
       width='100%'
       variant='secondary'
-      onClick={() =>
-        dispatch(
-          addToCart(products[Math.floor(Math.random() * products.length)])
-        )
-      }
+      onClick={() => dispatch(addToCart(products[Math.floor(Math.random() * products.length)]))}
     >
       add random product to cart
     </Button>

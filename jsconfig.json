@@ -5,12 +5,5 @@
       "@app/*": ["./*"]
     }
   },
-  "exclude": [
-    ".netlify",
-    ".next",
-    "lib/lambda",
-    "lambda-build",
-    "node_modules",
-    "out"
-  ]
+  "exclude": [".netlify", ".next", "lib/lambda", "lambda-build", "node_modules", "out"]
 }

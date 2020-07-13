@@ -76,9 +76,7 @@ describe('<PaymentForm />', () => {
 
     it('should send intent with details', () => {
       expect.assertions(2);
-      const intent = jest
-        .spyOn(actions, 'paymentCreate')
-        .mockImplementation(() => jest.fn());
+      const intent = jest.spyOn(actions, 'paymentCreate').mockImplementation(() => jest.fn());
       act(() => {
         submit.props.onClick();
       });

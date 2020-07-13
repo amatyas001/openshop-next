@@ -24,17 +24,14 @@ export const PaymentConfirmCard = (props) => {
     if (!complete) return;
     loadHandler(true);
     const card = elements.getElement(CardElement);
-    const { paymentIntent, error } = await stripe.confirmCardPayment(
-      intent.secret,
-      {
-        payment_method: {
-          card,
-          billing_details: {
-            ...details,
-          },
+    const { paymentIntent, error } = await stripe.confirmCardPayment(intent.secret, {
+      payment_method: {
+        card,
+        billing_details: {
+          ...details,
         },
-      }
-    );
+      },
+    });
     if (paymentIntent && paymentIntent.status === 'succeeded')
       dispatch(paymentSuccess(paymentIntent));
     if (error) dispatch(paymentError(error));
@@ -51,12 +48,7 @@ export const PaymentConfirmCard = (props) => {
   return (
     <Flex flexDirection='column' width='100%' alignItems='center' {...props}>
       {!cardError ? (
-        <Heading
-          as='label'
-          htmlFor='StripeElement'
-          fontSize='1.5rem'
-          textAlign='center'
-        >
+        <Heading as='label' htmlFor='StripeElement' fontSize='1.5rem' textAlign='center'>
           enter your card details to finish payment
         </Heading>
       ) : (

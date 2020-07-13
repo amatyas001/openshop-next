@@ -172,10 +172,7 @@ describe('Intent Handler', () => {
 
       expected = {
         config: {
-          amount: mock_products.reduce(
-            (a, c) => (a += c.price * 100 * c.buy.amount),
-            0
-          ),
+          amount: mock_products.reduce((a, c) => (a += c.price * 100 * c.buy.amount), 0),
           currency: 'usd',
           description: 'Order from store',
         },

@@ -20,11 +20,7 @@ describe('<PaymentConfirmControls />', () => {
     act(() => {
       tree = create(
         <Provider store={store}>
-          <PaymentConfirmControls
-            confirmHandler={confirm}
-            loadHandler={load}
-            complete={false}
-          />
+          <PaymentConfirmControls confirmHandler={confirm} loadHandler={load} complete={false} />
         </Provider>
       );
     });
@@ -36,24 +32,16 @@ describe('<PaymentConfirmControls />', () => {
     let cancel;
 
     beforeAll(() => {
-      cancel = jest
-        .spyOn(actions, 'paymentCancel')
-        .mockImplementation(() => jest.fn());
+      cancel = jest.spyOn(actions, 'paymentCancel').mockImplementation(() => jest.fn());
       act(() => {
         tree = create(
           <Provider store={store}>
-            <PaymentConfirmControls
-              confirmHandler={confirm}
-              loadHandler={load}
-              complete={false}
-            />
+            <PaymentConfirmControls confirmHandler={confirm} loadHandler={load} complete={false} />
           </Provider>
         );
       });
       act(() => {
-        tree.root
-          .findByProps({ 'data-testid': 'confirm-controls-cancel' })
-          .props.onClick();
+        tree.root.findByProps({ 'data-testid': 'confirm-controls-cancel' }).props.onClick();
       });
     });
 
@@ -84,9 +72,7 @@ describe('<PaymentConfirmControls />', () => {
         );
       });
       act(() => {
-        tree.root
-          .findByProps({ 'data-testid': 'confirm-controls-confirm' })
-          .props.onClick();
+        tree.root.findByProps({ 'data-testid': 'confirm-controls-confirm' }).props.onClick();
       });
     };
 
@@ -100,8 +86,7 @@ describe('<PaymentConfirmControls />', () => {
       expect.assertions(1);
       createWithStatus(false);
       expect(
-        tree.root.findByProps({ 'data-testid': 'confirm-controls-confirm' })
-          .props.disabled
+        tree.root.findByProps({ 'data-testid': 'confirm-controls-confirm' }).props.disabled
       ).toBeTruthy();
     });
   });

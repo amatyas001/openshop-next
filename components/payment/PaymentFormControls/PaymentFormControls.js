@@ -32,25 +32,14 @@ export const PaymentFormControls = (props) => {
 
   return (
     <>
-      <Text
-        fontStyle='italic'
-        textTransform='uppercase'
-        fontSize='0.8rem'
-        textAlign='center'
-      >
+      <Text fontStyle='italic' textTransform='uppercase' fontSize='0.8rem' textAlign='center'>
         By proceeding you accept the
         <Link color='purple.800' fontWeight='bold' href='#void'>
           &nbsp;Terms of Service&nbsp;
         </Link>
         of the company.
       </Text>
-      <SimpleGrid
-        columns={{ sm: 1, md: 2 }}
-        spacing='20px'
-        width='80%'
-        mx='auto'
-        mb='15px'
-      >
+      <SimpleGrid columns={{ sm: 1, md: 2 }} spacing='20px' width='80%' mx='auto' mb='15px'>
         <Button
           data-testid='form-review-button'
           variant='secondary'
@@ -58,11 +47,7 @@ export const PaymentFormControls = (props) => {
         >
           BACK TO REVIEW
         </Button>
-        <Button
-          data-testid='form-submit-button'
-          disabled={!valid}
-          onClick={handleSubmit}
-        >
+        <Button data-testid='form-submit-button' disabled={!valid} onClick={handleSubmit}>
           {!valid
             ? 'FILL THE FORM'
             : `PAY ${cart

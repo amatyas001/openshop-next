@@ -37,9 +37,7 @@ describe('<CartButton />', () => {
       act(() => {
         tree.root.findByType('button').props.onClick();
       });
-      expect(store.getActions()).toEqual([
-        panelToggle('cart', !store.getState().panel.cart),
-      ]);
+      expect(store.getActions()).toEqual([panelToggle('cart', !store.getState().panel.cart)]);
     });
   });
 
@@ -70,16 +68,12 @@ describe('<CartButton />', () => {
       act(() => {
         tree.root.findByType('button').props.onClick();
       });
-      expect(store.getActions()).toEqual([
-        panelToggle('cart', !store.getState().panel.cart),
-      ]);
+      expect(store.getActions()).toEqual([panelToggle('cart', !store.getState().panel.cart)]);
     });
 
     it('should display amount of cart items', () => {
       expect.assertions(1);
-      expect(tree.root.findByType('button').props.children).toContain(
-        `${amount} item(s)`
-      );
+      expect(tree.root.findByType('button').props.children).toContain(`${amount} item(s)`);
     });
   });
 });

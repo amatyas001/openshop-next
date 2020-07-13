@@ -8,13 +8,7 @@ import { SimpleGrid, Text } from '@chakra-ui/core';
 export const PaymentConfirmDetails = (props) => {
   const { intent, details } = useSelector((state) => state.payment);
   return (
-    <SimpleGrid
-      columns='4'
-      spacing='10px'
-      fontSize='0.9rem'
-      fontWeight='bold'
-      {...props}
-    >
+    <SimpleGrid columns='4' spacing='10px' fontSize='0.9rem' fontWeight='bold' {...props}>
       <Text>INTENT ID</Text>
       <Text color='purple.800' data-testid='confirm-intent-id'>
         {intent.id}

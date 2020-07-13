@@ -17,11 +17,7 @@ describe('<ProductControlsAmount />', () => {
   beforeAll(() => {
     act(() => {
       tree = create(
-        <ProductControlsAmount
-          product={product}
-          details={details}
-          setDetails={setter}
-        />
+        <ProductControlsAmount product={product} details={details} setDetails={setter} />
       );
     });
     wrapper = tree.root.findByProps({

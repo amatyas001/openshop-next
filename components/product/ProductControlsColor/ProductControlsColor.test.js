@@ -16,13 +16,7 @@ const details = {
 describe('<ProductControlsColor />', () => {
   beforeAll(() => {
     act(() => {
-      tree = create(
-        <ProductControlsColor
-          product={product}
-          details={details}
-          setDetails={set}
-        />
-      );
+      tree = create(<ProductControlsColor product={product} details={details} setDetails={set} />);
     });
   });
 

@@ -51,18 +51,14 @@ export const PaymentProgress = (props) => {
         style={details ? { color: '#44337A', fontWeight: 'bold' } : {}}
         as={FaLongArrowAltRight}
       />
-      <Text style={details ? { color: '#44337A', fontWeight: 'bold' } : {}}>
-        Payment Details
-      </Text>
+      <Text style={details ? { color: '#44337A', fontWeight: 'bold' } : {}}>Payment Details</Text>
 
       {/* finished */}
       <Box
         style={finished ? { color: '#44337A', fontWeight: 'bold' } : {}}
         as={FaLongArrowAltRight}
       />
-      <Text style={finished ? { color: '#44337A', fontWeight: 'bold' } : {}}>
-        Finished
-      </Text>
+      <Text style={finished ? { color: '#44337A', fontWeight: 'bold' } : {}}>Finished</Text>
     </Flex>
   );
 };
