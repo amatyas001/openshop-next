@@ -1,18 +1,9 @@
+/* eslint react/prop-types: "off" */
 import PropTypes from 'prop-types';
 import { Button } from '@app/components';
 import * as COLORS from '@app/config/colors';
 
-/**
- * Wrapper for rendering imported icon as a [Button](#button) component.
- *
- * @visibleName Button Icon
- * @example
- * ```jsx
- * import { Icon } from './path/to/icon'
- * <ButtonIcon handler={clickHandler} icon={Icon} />
- * ```
- */
-export const ButtonIcon = React.forwardRef((props, ref) => {
+const ButtonIconFWR = (props, ref) => {
   const { handler, icon, variant } = props;
 
   return (
@@ -46,7 +37,19 @@ export const ButtonIcon = React.forwardRef((props, ref) => {
       {React.createElement(icon)}
     </Button>
   );
-});
+};
+
+/**
+ * Wrapper for rendering imported icon as a [Button](#button) component.
+ *
+ * @visibleName Button Icon
+ * @example
+ * ```jsx
+ * import { Icon } from './path/to/icon'
+ * <ButtonIcon handler={clickHandler} icon={Icon} />
+ * ```
+ */
+export const ButtonIcon = React.forwardRef(ButtonIconFWR);
 
 ButtonIcon.defaultProps = {
   variant: 'primary',

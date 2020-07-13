@@ -5,16 +5,14 @@ import { FilterPanel } from '@app/components';
 import { mockProduct } from '@app/mocks';
 import { INITIAL_STATE } from '@app/config';
 
+let tree;
+let store;
 const mockStore = createStore([]);
-
 const products = mockProduct(5);
 
 describe('<FilterPanel />', () => {
-  let tree, store;
-
   beforeAll(() => {
     store = mockStore(INITIAL_STATE);
-
     act(() => {
       tree = create(
         <Provider store={store}>
@@ -25,6 +23,7 @@ describe('<FilterPanel />', () => {
   });
 
   it('should render with required props', () => {
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });

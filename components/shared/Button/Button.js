@@ -1,20 +1,10 @@
+/* eslint no-underscore-dangle: "off", react/prop-types: "off", react/destructuring-assignment: "off" */
 import PropTypes from 'prop-types';
 import { PseudoBox } from '@chakra-ui/core';
 import * as COLORS from '@app/config/colors';
 
-/**
- * Basic button element with [predefined style variants](#section-configuration)
- * and ARIA-compatible accessibility features. See [PseudoBox](https://chakra-ui/pseudobox)
- * for available styling.
- *
- * @example
- * ```jsx
- * <Button variant={predefinedStyle} />
- * ```
- */
-export const Button = React.forwardRef((props, ref) => {
+const ButtonFWR = (props, ref) => {
   const { variant } = props;
-
   return (
     <PseudoBox
       as='button'
@@ -59,19 +49,25 @@ export const Button = React.forwardRef((props, ref) => {
       {props.children}
     </PseudoBox>
   );
-});
+};
+
+/**
+ * Basic button element with [predefined style variants](#section-configuration)
+ * and ARIA-compatible accessibility features. See [PseudoBox](https://chakra-ui/pseudobox)
+ * for available styling.
+ *
+ * @example
+ * ```jsx
+ * <Button variant={predefinedStyle} />
+ * ```
+ */
+export const Button = React.forwardRef(ButtonFWR);
 
 Button.defaultProps = {
-  onClick: null,
   variant: 'primary',
 };
 
 Button.propTypes = {
-  /**
-   * Handler function
-   */
-  onClick: PropTypes.func,
-
   /**
    * Color variant
    */

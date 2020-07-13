@@ -8,8 +8,7 @@ exports[`<ProductControls /> should render with required props 1`] = `
   <h2
     className="css-d94gct"
   >
-    1
-     $
+    1&nbsp;$
   </h2>
   <p
     className="css-u84yc3"
@@ -39,62 +38,15 @@ exports[`<ProductControls /> should render with required props 1`] = `
       />
     </svg>
   </div>
-  <div
-    className="css-1php3x8"
+  <p
+    className="css-u84yc3"
   >
-    <select
-      className="css-1fbi3l4"
-      onChange={[Function]}
-      value=""
-    >
-      <option
-        value=""
-      >
-        Select size...
-      </option>
-      <option
-        value="mock_size_0_0"
-      >
-        mock_size_0_0
-      </option>
-      <option
-        value="mock_size_1_0"
-      >
-        mock_size_1_0
-      </option>
-    </select>
-    <div
-      className="css-rl6gbg"
-    >
-      <svg
-        aria-hidden="true"
-        className="css-k176ff"
-        data-custom-icon={true}
-        fill="currentColor"
-        focusable="false"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
-        viewBox="0 0 448 512"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"
-        />
-      </svg>
-    </div>
-  </div>
+    One Size
+  </p>
   <p
     className="css-1nsgbpp"
   >
-    1
-     in stock
+    1 in stock
   </p>
   <div
     className="css-1dm3qsp"
@@ -111,7 +63,6 @@ exports[`<ProductControls /> should render with required props 1`] = `
           className="css-fdetwv"
           data-testid="product-amount-increment"
           href="#void"
-          onClick={null}
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onMouseLeave={[Function]}
@@ -144,7 +95,6 @@ exports[`<ProductControls /> should render with required props 1`] = `
           className="css-1fd1i4r"
           data-testid="product-amount-decrement"
           href="#void"
-          onClick={null}
           onKeyDown={[Function]}
           onMouseDown={[Function]}
           onMouseLeave={[Function]}

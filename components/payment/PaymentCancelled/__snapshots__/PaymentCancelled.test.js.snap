@@ -12,8 +12,7 @@ exports[`<PaymentCancelled /> should render with initial state 1`] = `
   <p
     className="css-441ftm"
   >
-    Successfuly cancelled intent:
-     
+    Successfuly cancelled intent: 
     <span
       className="css-4i139l"
       data-testid="cancelled-details"
@@ -34,8 +33,7 @@ exports[`<PaymentCancelled /> should render without props 1`] = `
   <p
     className="css-441ftm"
   >
-    Successfuly cancelled intent:
-     
+    Successfuly cancelled intent: 
     <span
       className="css-4i139l"
       data-testid="cancelled-details"

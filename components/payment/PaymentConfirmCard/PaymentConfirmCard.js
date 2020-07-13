@@ -6,8 +6,10 @@ import { paymentSuccess, paymentError } from '@app/lib/redux/actions';
 import * as COLORS from '@app/config/colors';
 
 /**
+ * Renders Stripe Card Element and lifting its handler function to the wrapper component.
+ * component. This component is required to be mounted during the confirmation process.
+ *
  * @see https://amatyas001.github.io/openshop-next/#paymentconfirm
- * @ignore
  */
 export const PaymentConfirmCard = (props) => {
   const { loadHandler, setHandler } = props;
@@ -26,11 +28,9 @@ export const PaymentConfirmCard = (props) => {
       intent.secret,
       {
         payment_method: {
-          card: card,
+          card,
           billing_details: {
-            name: details.name,
-            email: details.email,
-            phone: details.phone,
+            ...details,
           },
         },
       }
@@ -40,8 +40,12 @@ export const PaymentConfirmCard = (props) => {
     if (error) dispatch(paymentError(error));
   };
 
+  /* eslint react-hooks/exhaustive-deps: "off" */
   React.useEffect(() => {
-    setHandler({ confirmHandler, complete, loadHandler });
+    setHandler({
+      complete,
+      confirmHandler,
+    });
   }, [complete]);
 
   return (
@@ -96,7 +100,8 @@ export const PaymentConfirmCard = (props) => {
         />
       </Flex>
       <Text my='1rem' p='7px' fontSize='0.8rem' color={COLORS.TEXT.light}>
-        Use any future date and CVC with <strong>4242 4242 4242 4242</strong>{' '}
+        Use any future date and CVC with
+        <strong>&nbsp;4242 4242 4242 4242&nbsp;</strong>
         number for testing
       </Text>
     </Flex>
@@ -105,12 +110,12 @@ export const PaymentConfirmCard = (props) => {
 
 PaymentConfirmCard.propTypes = {
   /**
-   * Loading state handler
+   * Loading state handler from wrapper
    */
   loadHandler: PropTypes.func.isRequired,
 
   /**
-   * Lifted card status and confirm handler
+   * Lifted card status and confirm handler function
    */
   setHandler: PropTypes.func.isRequired,
 };

@@ -1,56 +1,47 @@
-import { create } from 'react-test-renderer';
+import { create, act } from 'react-test-renderer';
 import { Field } from '@app/components';
 
+let tree;
+const handler = jest.fn();
+const types = ['text', 'email', 'password'];
+const props = {
+  id: 'mock_id',
+  label: 'mock_label',
+  onChange: handler,
+  placeholder: 'mock_placeholder',
+  type: 'text',
+};
+
 describe('<Field />', () => {
-  it('should render without props', () => {
-    const tree = create(<Field />);
+  beforeAll(() => {
+    tree = create(<Field {...props} />);
+  });
+
+  it('should render with required props', () => {
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
-  it('should render fieldset element', () => {
-    const tree = create(<Field />);
-    expect(tree.toJSON().type).toBe('fieldset');
-  });
-
-  it('should render with props', () => {
-    const handler = jest.fn();
-    const props = {
-      label: 'somefancyLabel',
-      id: 'someFancyId',
-      type: 'text',
-      placeholder: 'someFancyPlaceholder',
-      required: false,
-      autoComplete: false,
-      value: null,
-      onChange: handler,
-    };
-    const tree = create(<Field {...props} />);
-    for (let key in props) {
-      expect(tree.root.props[key]).toBe(props[key]);
-    }
-  });
-
-  it('should render proper input', () => {
-    const types = ['text', 'email', 'password'];
-    types.forEach((type) => () => {
-      const tree = create(<Filed type={type} />);
-      expect(tree.root.findByType('input').props).toBe(type);
+  it('should call handler', async () => {
+    expect.assertions(1);
+    await act(async () => {
+      tree.root.findByType('input').props.onChange('');
     });
+    expect(handler).toHaveBeenCalledTimes(1);
   });
 
   it('should render proper label', () => {
-    const mockID = 'someFancyId';
-    const mockLabel = 'someFancyLabel';
-    const tree = create(<Field id={mockID} label={mockLabel} />);
-    expect(tree.root.findByType('label').props.htmlFor).toBe(mockID);
-    expect(tree.root.findByType('input').props.id).toBe(mockID);
-    expect(tree.root.findByType('label').children[0]).toBe(mockLabel);
+    expect.assertions(3);
+    expect(tree.root.findByType('label').props.htmlFor).toEqual(props.id);
+    expect(tree.root.findByType('input').props.id).toEqual(props.id);
+    expect(tree.root.findByType('label').children).toContain(props.label);
   });
 
-  it('should call handler', () => {
-    const handler = jest.fn();
-    const tree = create(<Field value={0} onChange={handler} />);
-    tree.root.findByType('input').props.onChange(1);
-    expect(handler).toHaveBeenCalled();
+  types.forEach((type) => {
+    it(`should render ${type} input`, () => {
+      expect.assertions(1);
+      tree = create(<Field {...props} type={type} />);
+      expect(tree.root.findByType('input').props.type).toEqual(type);
+    });
   });
 });

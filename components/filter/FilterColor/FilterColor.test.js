@@ -1,34 +1,19 @@
 import { create, act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import createStore from 'redux-mock-store';
-import { FilterColor } from '@app/components';
 import { INITIAL_STATE } from '@app/config';
 import { filterColor } from '@app/lib/redux/actions';
-import { mockProduct } from '@app/mocks';
+import { mockProductWithColor } from '@app/mocks';
+import { FilterColor } from '@app/components';
 
+let tree;
+let store;
 const mockStore = createStore([]);
-
-const colors = ['All'];
-
-const products = mockProduct(5).map((c, i) => {
-  colors.push(`mock_color_${i}`);
-  return i % 2 === 0
-    ? {
-        ...c,
-        color: `mock_color_${i}`,
-      }
-    : {
-        ...c,
-        color: [`mock_color_${i}`, `mock_color_${i + 1}`],
-      };
-});
+const { products, colors } = mockProductWithColor(5);
 
 describe('<FilterColor />', () => {
-  let tree, store;
-
   beforeAll(() => {
     store = mockStore(INITIAL_STATE);
-
     act(() => {
       tree = create(
         <Provider store={store}>
@@ -39,24 +24,27 @@ describe('<FilterColor />', () => {
   });
 
   it('should render with required props', () => {
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('should render unique colors as options', () => {
     const options = tree.root.findAllByType('option');
+    expect.assertions(options.length + 1);
     expect(options.length).toEqual(colors.length);
-    options.map((c, i) => {
+    options.forEach((c, i) => {
       expect(c.props.children).toContain(colors[i]);
     });
   });
 
-  it('should handle filter state', async () => {
-    await act(async () => {
-      tree.root
-        .findByType('select')
-        .props.onChange({ target: { value: colors[0] } });
+  colors.forEach((value) => {
+    it(`should handle filtering ${value}`, async () => {
+      expect.assertions(1);
+      await act(async () => {
+        tree.root.findByType('select').props.onChange({ target: { value } });
+      });
+      expect(store.getActions()).toEqual([filterColor(value)]);
+      store.clearActions();
     });
-
-    expect(store.getActions()).toEqual([filterColor(colors[0])]);
   });
 });

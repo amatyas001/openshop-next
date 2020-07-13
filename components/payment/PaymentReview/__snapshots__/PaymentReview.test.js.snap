@@ -13,7 +13,7 @@ exports[`<PaymentReview /> should render without props 1`] = `
       role="listitem"
     >
       <img
-        alt="mock_name"
+        alt="mock_name_0"
         className="css-rhemcv"
       />
       <div
@@ -22,22 +22,24 @@ exports[`<PaymentReview /> should render without props 1`] = `
         <strong
           className="css-airqvi"
         >
-          mock_name
+          mock_name_0
         </strong>
         <em
           className="css-1fji79j"
         >
-          mock_color in One Size x1
+          mock_color_0 in One Size x1
         </em>
         <p
           className="css-18poma1"
           data-testid="cart-item-description"
-        />
+        >
+          mock_description_0
+        </p>
       </div>
       <strong
         className="css-1som8bm"
       >
-        10.00
+        1.00
          $
       </strong>
     </li>
@@ -79,7 +81,7 @@ exports[`<PaymentReview /> should render without props 1`] = `
         className="css-lk14dv"
         data-testid="cart-amount-value"
       >
-        10.00
+        1.00
          $
       </strong>
     </div>

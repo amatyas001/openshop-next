@@ -38,10 +38,10 @@ export const PaymentFormControls = (props) => {
         fontSize='0.8rem'
         textAlign='center'
       >
-        By proceeding you accept the{' '}
-        <Link color='purple.800' fontWeight='bold'>
-          Terms of Service
-        </Link>{' '}
+        By proceeding you accept the
+        <Link color='purple.800' fontWeight='bold' href='#void'>
+          &nbsp;Terms of Service&nbsp;
+        </Link>
         of the company.
       </Text>
       <SimpleGrid
@@ -66,7 +66,7 @@ export const PaymentFormControls = (props) => {
           {!valid
             ? 'FILL THE FORM'
             : `PAY ${cart
-                .reduce((a, c) => (a += parseFloat(c.price) * c.buy.amount), 0)
+                .reduce((a, c) => a + parseFloat(c.price) * c.buy.amount, 0)
                 .toFixed(2)} $`}
         </Button>
       </SimpleGrid>
@@ -78,7 +78,10 @@ PaymentFormControls.propTypes = {
   /**
    * Form details
    */
-  details: PropTypes.object.isRequired,
+  details: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+  }).isRequired,
 
   /**
    * Loading handler

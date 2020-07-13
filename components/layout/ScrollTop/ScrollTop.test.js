@@ -1,12 +1,14 @@
 import { create, act } from 'react-test-renderer';
 import { ScrollTop } from '@app/components';
 
-describe('<ScrollTop />', () => {
-  let tree;
+let tree;
 
-  const mock_scroll = jest
+describe('<ScrollTop />', () => {
+  const scroll = jest
     .spyOn(window, 'scrollTo')
-    .mockImplementation((options) => (window.pageYOffset = options.top));
+    .mockImplementation((options) => {
+      window.pageYOffset = options.top;
+    });
 
   beforeAll(() => {
     window.pageYOffset = 301;
@@ -16,14 +18,16 @@ describe('<ScrollTop />', () => {
   });
 
   it('should render without props', () => {
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('should scroll to offset 0 on click', () => {
+    expect.assertions(2);
     act(() => {
       tree.root.findByType('svg').props.onClick();
     });
-    expect(mock_scroll).toHaveBeenCalledTimes(1);
+    expect(scroll).toHaveBeenCalledTimes(1);
     expect(global.window.pageYOffset).toEqual(0);
   });
 });

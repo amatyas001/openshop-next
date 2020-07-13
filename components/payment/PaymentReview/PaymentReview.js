@@ -26,7 +26,7 @@ export const PaymentReview = (props) => {
       justifyContent='space-between'
       {...props}
     >
-      <CartContent details={true} icons={false} />
+      <CartContent details />
       <Flex mt='30px' width='100%'>
         <Button
           width='20%'

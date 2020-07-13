@@ -4,7 +4,6 @@ import { FaArrowDown } from 'react-icons/fa';
 import { Box, Heading, Select } from '@chakra-ui/core';
 import { filterColor } from '@app/lib/redux/actions';
 import * as COLORS from '@app/config/colors';
-import { ProductShape } from '@app/lib/types';
 
 /**
  * Extracts the unique color values of a given product list and displays
@@ -13,27 +12,11 @@ import { ProductShape } from '@app/lib/types';
  * @see https://amatyas001.github.io/openshop-next/#filterpanel
  */
 export const FilterColor = (props) => {
-  const dispatch = useDispatch();
+  const { products } = props;
   const { filters } = useSelector((state) => state);
-  const [colors, setColors] = React.useState(['All']);
+  const dispatch = useDispatch();
 
-  React.useEffect(() => {
-    let list = ['All'];
-    props.products.forEach((item) => {
-      Array.isArray(item.color)
-        ? item.color.forEach((item) => list.push(item))
-        : list.push(item.color);
-    });
-    setColors(
-      [...new Set(list)].sort().map((color) => {
-        return (
-          <option key={color} value={color}>
-            {color}
-          </option>
-        );
-      })
-    );
-  }, []);
+  const colors = products.reduce((a, c) => a.concat(c.color), ['All']);
 
   return (
     <Box>
@@ -85,7 +68,13 @@ export const FilterColor = (props) => {
           }}
           {...props}
         >
-          {colors}
+          {[...new Set(colors)].sort().map((color) => {
+            return (
+              <option key={color} value={color}>
+                {color}
+              </option>
+            );
+          })}
         </Select>
       </Heading>
     </Box>
@@ -94,7 +83,24 @@ export const FilterColor = (props) => {
 
 FilterColor.propTypes = {
   /**
-   * Product list where the color values are extracted from
+   * List of available products
    */
-  products: PropTypes.arrayOf(PropTypes.shape({ ...ProductShape })).isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+      color: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string),
+      ]),
+      description: PropTypes.string,
+      gender: PropTypes.string,
+      img: PropTypes.string,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      review: PropTypes.string,
+      sizes: PropTypes.arrayOf(PropTypes.string),
+      starrating: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };

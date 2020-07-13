@@ -1,25 +1,17 @@
 import { create, act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import { PaymentConfirmCard } from '@app/components';
+import { mockProductWithBuyAmount } from '@app/mocks';
 import { INITIAL_STATE } from '@app/config';
+import { PaymentConfirmCard } from '@app/components';
 
+let tree;
+let store;
+const load = jest.fn();
+const set = jest.fn();
 const mockStore = configureStore([]);
-
-const mock_load = jest.fn();
-const mock_set = jest.fn();
-
-const _state = {
-  cart: [
-    {
-      id: 'mock_id',
-      name: 'mock_name',
-      desc: 'mock_desc',
-      img: 'mock_img',
-      price: 10,
-      rating: 5,
-    },
-  ],
+const state = {
+  cart: mockProductWithBuyAmount(1),
   payment: {
     status: 'confirm',
     details: {
@@ -37,67 +29,62 @@ const _state = {
 };
 
 describe('<PaymentConfirmCard/>', () => {
-  let tree, store;
-
   beforeAll(() => {
-    store = mockStore(_state);
-
+    store = mockStore(state);
     act(() => {
       tree = create(
         <Provider store={store}>
-          <PaymentConfirmCard loadHandler={mock_load} setHandler={mock_set} />
+          <PaymentConfirmCard loadHandler={load} setHandler={set} />
         </Provider>
       );
     });
   });
 
   it('should render with required props', () => {
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('should lift handlers to parent', () => {
-    expect(mock_set).toHaveBeenCalledTimes(1);
+    expect.assertions(1);
+    expect(set).toHaveBeenCalledTimes(1);
   });
 
   it('should set complete state', () => {
+    expect.assertions(1);
     act(() => {
       tree.root
-        .findByProps({
-          'data-testid': 'confirm-card-element',
-        })
+        .findByProps({ 'data-testid': 'confirm-card-element' })
         .props.onChange({ complete: true });
     });
-
-    expect(mock_set).toHaveBeenCalledTimes(2);
+    expect(set).toHaveBeenCalledTimes(2);
   });
 
   it('should display card error', () => {
-    const mock_error = 'mock_error';
-
+    expect.assertions(1);
+    const message = 'mock_error';
     act(() => {
       tree.root
         .findByProps({
           'data-testid': 'confirm-card-element',
         })
-        .props.onChange({ error: { message: mock_error } });
+        .props.onChange({ error: { message } });
     });
-
     expect(
-      tree.root.findByProps({
-        'data-testid': 'confirm-card-error',
-      }).props.children
-    ).toContain(mock_error);
+      tree.root.findByProps({ 'data-testid': 'confirm-card-error' }).props
+        .children
+    ).toContain(message);
   });
 
   it('should render with initial state', () => {
+    expect.assertions(1);
     act(() => {
       tree = create(
         <Provider store={mockStore(INITIAL_STATE)}>
-          <PaymentConfirmCard loadHandler={mock_load} setHandler={mock_set} />
+          <PaymentConfirmCard loadHandler={load} setHandler={set} />
         </Provider>
       );
     });
-
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });

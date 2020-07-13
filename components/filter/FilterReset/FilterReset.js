@@ -5,13 +5,12 @@ import { Button } from '@app/components';
 import { filterReset } from '@app/lib/redux/actions';
 
 /**
- * A button to reset all filter values to their defaults.
+ * Renders a button to reset all filter values to their defaults.
  *
  * @see https://amatyas001.github.io/openshop-next/#filterpanel
  */
 export const FilterReset = (props) => {
   const dispatch = useDispatch();
-
   return (
     <Button
       name='reset'
@@ -22,7 +21,7 @@ export const FilterReset = (props) => {
       {...props}
     >
       <Box as={FaRev} mr='5px' fontSize='1rem' />
-      {props.children || /* istanbul ignore next */ 'reset'}
+      reset
     </Button>
   );
 };

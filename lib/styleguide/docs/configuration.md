@@ -1,6 +1,6 @@
 ## Absolute imports
 
-The application uses its own namespace `@app` referencing to the resolved absolute path of the root directory. Every module can be imported using the format `@app/path/to/component`.
+The application uses its own namespace `@app` referencing to the resolved absolute path of the root directory.
 
 ## Component styling and colors
 

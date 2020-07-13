@@ -122,6 +122,26 @@ exports[`<ProductsTopBar /> on multiple page result should render with required 
                       >
                         mock_color_0
                       </option>
+                      <option
+                        value="mock_color_1"
+                      >
+                        mock_color_1
+                      </option>
+                      <option
+                        value="mock_color_2"
+                      >
+                        mock_color_2
+                      </option>
+                      <option
+                        value="mock_color_3"
+                      >
+                        mock_color_3
+                      </option>
+                      <option
+                        value="mock_color_4"
+                      >
+                        mock_color_4
+                      </option>
                     </select>
                     <div
                       className="css-rl6gbg"
@@ -165,8 +185,7 @@ exports[`<ProductsTopBar /> on multiple page result should render with required 
                   className="css-1pmifls"
                   data-testid="filter-price-current"
                 >
-                  1
-                   $
+                  1&nbsp;$
                 </span>
                 <div
                   className="css-ftmy5t"
@@ -255,8 +274,7 @@ exports[`<ProductsTopBar /> on multiple page result should render with required 
     tabIndex="0"
     type="button"
   >
-    Next Page 
-    2 of 4
+    Next Page 2 of 4
   </button>
 </div>
 `;
@@ -383,6 +401,26 @@ exports[`<ProductsTopBar /> on single page result should render with required pr
                       >
                         mock_color_0
                       </option>
+                      <option
+                        value="mock_color_1"
+                      >
+                        mock_color_1
+                      </option>
+                      <option
+                        value="mock_color_2"
+                      >
+                        mock_color_2
+                      </option>
+                      <option
+                        value="mock_color_3"
+                      >
+                        mock_color_3
+                      </option>
+                      <option
+                        value="mock_color_4"
+                      >
+                        mock_color_4
+                      </option>
                     </select>
                     <div
                       className="css-rl6gbg"
@@ -426,8 +464,7 @@ exports[`<ProductsTopBar /> on single page result should render with required pr
                   className="css-1pmifls"
                   data-testid="filter-price-current"
                 >
-                  1
-                   $
+                  1&nbsp;$
                 </span>
                 <div
                   className="css-ftmy5t"
@@ -516,8 +553,7 @@ exports[`<ProductsTopBar /> on single page result should render with required pr
     tabIndex="0"
     type="button"
   >
-    Next Page 
-    1 of 1
+    Next Page 1 of 1
   </button>
 </div>
 `;

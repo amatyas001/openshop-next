@@ -2,8 +2,13 @@
 
 exports[`<Spinner /> should render without props 1`] = `
 <div
-  className="css-1lh4e9u"
+  className="css-s31xxr"
 >
+  <h2
+    className="css-1gjlikv"
+  >
+    Loading...
+  </h2>
   <div
     className="css-159m1lu"
   >

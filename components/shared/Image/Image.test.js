@@ -1,18 +1,18 @@
 import { create, act } from 'react-test-renderer';
 import { Image } from '@app/components';
 
-const mock_src = 'mock_src';
+let tree;
+const src = 'mock_src';
 
 describe('<Image />', () => {
-  let tree;
-
   beforeAll(() => {
     act(() => {
-      tree = create(<Image src={mock_src} />);
+      tree = create(<Image src={src} />);
     });
   });
 
   it('should render without props', () => {
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });

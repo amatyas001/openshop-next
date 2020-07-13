@@ -45,6 +45,9 @@ const Checkout = () => {
   const [head, setHead] = React.useState();
 
   React.useEffect(() => {
+    setContent(
+      <Spinner size='150px' mx='auto' my={{ sm: '150px', lg: '300px' }} />
+    );
     if (!cart.length && payment.status !== 'success') {
       setHead('Checkout');
       setContent(<PaymentUnauthorized />);
@@ -74,6 +77,8 @@ const Checkout = () => {
           setHead('Error');
           setContent(<PaymentError />);
           break;
+        default:
+          break;
       }
     }
   }, [payment.status, cart.length]);
@@ -81,17 +86,11 @@ const Checkout = () => {
   return (
     <Box px='5%' py='20px' minHeight='600px' bg={COLORS.BG.light}>
       <Head>
-        <title>OpenShop - {head}</title>
+        <title>{`OpenShop - ${head}`}</title>
         <meta name='description' content='OpenShop - Checkout selected items' />
       </Head>
       {cart.length && payment.status ? <PaymentProgress /> : ''}
-      <React.Suspense
-        fallback={
-          <Spinner size='150px' mx='auto' my={{ sm: '150px', lg: '300px' }} />
-        }
-      >
-        {content}
-      </React.Suspense>
+      {content}
     </Box>
   );
 };

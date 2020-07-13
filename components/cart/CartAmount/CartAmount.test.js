@@ -1,28 +1,18 @@
 import { create, act } from 'react-test-renderer';
 import createStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import { mockProduct } from '@app/mocks';
-import { CartAmount } from '@app/components/';
+import { mockProductWithBuyAmount } from '@app/mocks';
+import { CartAmount } from '@app/components';
 
+let tree;
+let store;
+const amount = 1;
+const cart = mockProductWithBuyAmount(5, amount);
 const mockStore = createStore([]);
 
-const mock_amount = 1;
-
 describe('<CartAmount />', () => {
-  let tree, store, products;
-
   beforeAll(() => {
-    products = mockProduct(5);
-
-    store = mockStore({
-      cart: [
-        ...products.map((product) => ({
-          ...product,
-          buy: { amount: mock_amount },
-        })),
-      ],
-    });
-
+    store = mockStore({ cart });
     act(() => {
       tree = create(
         <Provider store={store}>
@@ -33,10 +23,12 @@ describe('<CartAmount />', () => {
   });
 
   it('should render without props', () => {
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('should display total amount as two decimal value', () => {
+    expect.assertions(1);
     expect(
       tree.root.findByProps({
         'data-testid': 'cart-amount-value',
@@ -44,7 +36,7 @@ describe('<CartAmount />', () => {
     ).toEqual(
       store
         .getState()
-        .cart.reduce((a, c) => (a += c.price * mock_amount), 0)
+        .cart.reduce((a, c) => a + c.price * amount, 0)
         .toFixed(2)
     );
   });

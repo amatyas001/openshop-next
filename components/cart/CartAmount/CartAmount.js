@@ -31,7 +31,9 @@ export const CartAmount = (props) => {
         data-testid='cart-amount-value'
       >
         {cart
-          .reduce((a, c) => (a += parseFloat(c.price) * c.buy.amount), 0)
+          .reduce((a, c) => {
+            return a + parseFloat(c.price) * c.buy.amount;
+          }, 0)
           .toFixed(2)}
         &nbsp;$
       </Heading>

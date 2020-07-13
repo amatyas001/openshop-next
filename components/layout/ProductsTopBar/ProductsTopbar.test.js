@@ -5,23 +5,18 @@ import { ProductsTopBar } from '@app/components';
 import { mockProduct } from '@app/__mocks__/@app/mocks';
 import { INITIAL_STATE } from '@app/config';
 
+let tree;
+let store;
 const mockStore = createStore([]);
-
 const products = mockProduct(5);
-
 const setIndex = jest.fn();
-
-const mock_scroll = jest.fn();
-
-window.scrollTo = mock_scroll;
+const scroll = jest.fn();
+window.scrollTo = scroll;
 
 describe('<ProductsTopBar />', () => {
   describe('on single page result', () => {
-    let tree, store;
-
     beforeAll(() => {
       store = mockStore(INITIAL_STATE);
-
       act(() => {
         tree = create(
           <Provider store={store}>
@@ -38,10 +33,12 @@ describe('<ProductsTopBar />', () => {
     });
 
     it('should render with required props', () => {
+      expect.assertions(1);
       expect(tree.toJSON()).toMatchSnapshot();
     });
 
     it('should render disabled buttons', () => {
+      expect.assertions(2);
       expect(
         tree.root.findByProps({
           'data-testid': 'products-top-previous',
@@ -56,13 +53,13 @@ describe('<ProductsTopBar />', () => {
   });
 
   describe('on multiple page result', () => {
-    let tree, store, page, max, previous, next;
+    let previous;
+    let next;
+    const page = 2;
+    const max = 4;
 
     beforeAll(() => {
-      page = 2;
-      max = 4;
       store = mockStore(INITIAL_STATE);
-
       act(() => {
         tree = create(
           <Provider store={store}>
@@ -76,11 +73,9 @@ describe('<ProductsTopBar />', () => {
           </Provider>
         );
       });
-
       previous = tree.root.findByProps({
         'data-testid': 'products-top-previous',
       });
-
       next = tree.root.findByProps({
         'data-testid': 'products-top-next',
       });
@@ -88,36 +83,38 @@ describe('<ProductsTopBar />', () => {
 
     afterEach(() => {
       setIndex.mockClear();
-      mock_scroll.mockClear();
+      scroll.mockClear();
     });
 
     it('should render with required props', () => {
+      expect.assertions(1);
       expect(tree.toJSON()).toMatchSnapshot();
     });
 
     it('should render enabled buttons', () => {
+      expect.assertions(2);
       expect(previous.props.disabled).toBeFalsy();
       expect(next.props.disabled).toBeFalsy();
     });
 
     it('should go to next section', () => {
+      expect.assertions(3);
       act(() => {
         next.props.onClick();
       });
-
       expect(setIndex).toHaveBeenCalledTimes(1);
       expect(setIndex).toHaveBeenCalledWith(page * 10);
-      expect(mock_scroll).toHaveBeenCalledTimes(1);
+      expect(scroll).toHaveBeenCalledTimes(1);
     });
 
     it('should go to previous section', () => {
+      expect.assertions(3);
       act(() => {
         previous.props.onClick();
       });
-
       expect(setIndex).toHaveBeenCalledTimes(1);
       expect(setIndex).toHaveBeenCalledWith((page - 2) * 10);
-      expect(mock_scroll).toHaveBeenCalledTimes(1);
+      expect(scroll).toHaveBeenCalledTimes(1);
     });
   });
 });

@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { FaStar } from 'react-icons/fa';
 import { Heading, Text, Flex, Box, SimpleGrid } from '@chakra-ui/core';
 import * as COLORS from '@app/config/colors';
-import { ProductShape } from '@app/lib/types';
 import {
   ProductControlsAmount,
   ProductControlsButton,
@@ -38,7 +37,7 @@ export const ProductControls = (props) => {
         textAlign='center'
         color={COLORS.HEADING.dark}
       >
-        {product.price} $
+        {`${product.price}&nbsp;$`}
       </Heading>
       <ProductControlsColor
         product={product}
@@ -51,6 +50,7 @@ export const ProductControls = (props) => {
       />
       <Flex fontSize='1.4rem' ml='auto' mb='2px' {...props}>
         {[...Array(Math.floor(product.starrating))].map((e, i) => (
+          /* eslint react/no-array-index-key: "off" */
           <Box key={i} as={FaStar} color={COLORS.HEADING.light} />
         ))}
       </Flex>
@@ -71,7 +71,7 @@ export const ProductControls = (props) => {
         ml='auto'
         textTransform='uppercase'
       >
-        {product.amount} in stock
+        {`${product.amount} in stock`}
       </Text>
       <ProductControlsAmount
         product={product}
@@ -91,5 +91,20 @@ ProductControls.propTypes = {
   /**
    * Unique product which controls are rendered
    */
-  product: PropTypes.shape({ ...ProductShape }).isRequired,
+  product: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    amount: PropTypes.number.isRequired,
+    color: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+    ]),
+    description: PropTypes.string,
+    gender: PropTypes.string,
+    img: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    review: PropTypes.string,
+    sizes: PropTypes.arrayOf(PropTypes.string),
+    starrating: PropTypes.number.isRequired,
+  }).isRequired,
 };

@@ -10,7 +10,6 @@ import {
 } from '@app/components';
 import * as COLORS from '@app/config/colors';
 import { useSelector } from 'react-redux';
-import { ProductShape } from '@app/lib/types';
 
 /**
  * Renders a [Panel](#panel) wrapping product filter components. Read the
@@ -66,5 +65,22 @@ FilterPanel.propTypes = {
   /**
    * Product list to be filtered
    */
-  products: PropTypes.arrayOf(PropTypes.shape({ ...ProductShape })).isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+      color: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string),
+      ]),
+      description: PropTypes.string,
+      gender: PropTypes.string,
+      img: PropTypes.string,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      review: PropTypes.string,
+      sizes: PropTypes.arrayOf(PropTypes.string),
+      starrating: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };

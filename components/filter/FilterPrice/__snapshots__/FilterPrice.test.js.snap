@@ -14,8 +14,7 @@ exports[`<FilterPrice /> should render with required props 1`] = `
     className="css-1pmifls"
     data-testid="filter-price-current"
   >
-    60
-     $
+    75&nbsp;$
   </span>
   <div
     className="css-ftmy5t"
@@ -42,9 +41,9 @@ exports[`<FilterPrice /> should render with required props 1`] = `
     <div
       aria-label="price-thumb"
       aria-orientation="horizontal"
-      aria-valuemax={60}
+      aria-valuemax={75}
       aria-valuemin={1}
-      aria-valuenow={60}
+      aria-valuenow={75}
       className="css-1974d3q"
       data-slider-thumb=""
       onKeyDown={[Function]}
@@ -54,7 +53,7 @@ exports[`<FilterPrice /> should render with required props 1`] = `
     <input
       name="price"
       type="hidden"
-      value={60}
+      value={75}
     />
   </div>
 </div>

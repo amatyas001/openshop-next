@@ -47,7 +47,9 @@ export const CartButton = (props) => {
       {...props}
     >
       <MdShoppingCart style={{ marginBottom: '-5px', marginRight: '5px' }} />
-      {cart.reduce((a, c) => (a += c.buy.amount), 0) + ' item(s)'}
+      {`${cart.reduce((a, c) => {
+        return a + c.buy.amount;
+      }, 0)} item(s)`}
     </Button>
   );
 };

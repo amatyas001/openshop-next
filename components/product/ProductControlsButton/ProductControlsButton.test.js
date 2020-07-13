@@ -1,43 +1,81 @@
 import { create, act } from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import { ProductControlsButton } from './ProductControlsButton';
+import { mockProductWithBuyAmount } from '@app/mocks';
+import { INITIAL_STATE } from '@app/config';
 import { addToCart } from '@app/lib/redux/actions';
+import { ProductControlsButton } from '@app/components';
 
+let tree;
+let store;
 const mockStore = configureStore([]);
-
-const mock_handler = jest.fn();
+const details = mockProductWithBuyAmount(1, 0)[0];
+const handler = jest.fn();
+const tests = [
+  {
+    name: 'when color and size is static',
+    details: {
+      ...details,
+      buy: {
+        amount: 1,
+      },
+    },
+  },
+  {
+    name: 'when color is array',
+    details: {
+      ...details,
+      color: ['mock_color_0', 'mock_color_1'],
+      buy: {
+        amount: 1,
+        color: 'mock_color_0',
+      },
+    },
+  },
+  {
+    name: 'when size is array',
+    details: {
+      ...details,
+      sizes: ['mock_size_0', 'mock_size_1'],
+      buy: {
+        amount: 1,
+        size: 'mock_size_0',
+      },
+    },
+  },
+  {
+    name: 'when color and size are arrays',
+    details: {
+      ...details,
+      color: ['mock_color_0', 'mock_color_1'],
+      sizes: ['mock_size_0', 'mock_size_1'],
+      buy: {
+        amount: 1,
+        size: 'mock_size',
+        color: 'mock_color',
+      },
+    },
+  },
+];
 
 describe('<ProductControlsButton />', () => {
-  let tree, store, details;
-
   beforeAll(() => {
-    details = {
-      id: 'mock_id',
-      name: 'mock_name',
-      price: 10,
-      amount: 10,
-      color: 'mock_color',
-      starrating: 3,
-      buy: {
-        amount: 0,
-      },
-    };
-
     act(() => {
       tree = create(
-        <Provider store={mockStore({})}>
-          <ProductControlsButton product={details} setDetails={mock_handler} />
+        <Provider store={mockStore(INITIAL_STATE)}>
+          <ProductControlsButton product={details} setDetails={handler} />
         </Provider>
       );
     });
   });
 
   it('should render with required props', () => {
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('should be disabled if details are invalid', () => {
+    expect.assertions(1);
     expect(
       tree.root.findByProps({
         'data-testid': 'product-buy-button',
@@ -45,114 +83,49 @@ describe('<ProductControlsButton />', () => {
     ).toBeTruthy();
   });
 
-  let button,
-    config = [
-      {
-        name: 'when color and size is static',
-        details: {
-          id: 'mock_id',
-          name: 'mock_name',
-          price: 10,
-          color: 'mock_color',
-          amount: 10,
-          starrating: 3,
-          buy: {
-            amount: 1,
-          },
-        },
-      },
-      {
-        name: 'when color is array',
-        details: {
-          id: 'mock_id',
-          name: 'mock_name',
-          price: 10,
-          color: ['mock_color'],
-          size: 'mock_size',
-          amount: 10,
-          starrating: 3,
-          buy: {
-            color: 'mock_color',
-            amount: 1,
-          },
-        },
-      },
-      {
-        name: 'when size is array',
-        details: {
-          id: 'mock_id',
-          name: 'mock_name',
-          price: 10,
-          color: 'mock_color',
-          size: ['mock_size'],
-          amount: 10,
-          starrating: 3,
-          buy: {
-            amount: 1,
-            size: 'mock_size',
-          },
-        },
-      },
-      {
-        name: 'when color and size are arrays',
-        details: {
-          id: 'mock_id',
-          name: 'mock_name',
-          price: 10,
-          color: ['mock_color'],
-          size: ['mock_size'],
-          amount: 10,
-          starrating: 3,
-          buy: {
-            amount: 1,
-            size: 'mock_size',
-            color: 'mock_color',
-          },
-        },
-      },
-    ];
+  tests.forEach((test) => {
+    describe(test.name, () => {
+      let button;
 
-  config.forEach((item) => {
-    describe('with valid details', () => {
       beforeAll(() => {
-        store = mockStore({});
-
+        store = mockStore(INITIAL_STATE);
         act(() => {
           tree = create(
             <Provider store={store}>
               <ProductControlsButton
-                product={item.details}
-                setDetails={mock_handler}
+                product={{ ...test.details }}
+                setDetails={handler}
               />
             </Provider>
           );
         });
-
         button = tree.root.findByProps({
           'data-testid': 'product-buy-button',
         });
       });
 
       afterAll(() => {
-        mock_handler.mockClear();
+        handler.mockClear();
       });
 
-      it(`should be enabled ${item.name}`, () => {
+      it('should be enabled', () => {
+        expect.assertions(1);
         expect(button.props.disabled).toBeFalsy();
       });
 
-      it(`should dispatch addToCart action ${item.name}`, () => {
-        act(() => {
+      it('should dispatch cart action', async () => {
+        expect.assertions(1);
+        await act(async () => {
           button.props.onClick();
         });
-
-        expect(store.getActions()).toEqual([addToCart(item.details)]);
+        expect(store.getActions()).toEqual([addToCart(test.details)]);
       });
 
-      it(`should reset details ${item.name}`, () => {
-        expect(mock_handler).toHaveBeenCalledTimes(1);
-        expect(mock_handler).toHaveBeenCalledWith({
-          ...item.details,
+      it(`should reset details ${test.name}`, () => {
+        expect.assertions(2);
+        expect(handler).toHaveBeenCalledTimes(1);
+        expect(handler).toHaveBeenCalledWith({
+          ...test.details,
           buy: {
             amount: 0,
           },

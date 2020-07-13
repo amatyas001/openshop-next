@@ -4,11 +4,10 @@ import configureStore from 'redux-mock-store';
 import { PaymentUnauthorized } from '@app/components/';
 import { INITIAL_STATE } from '@app/config/';
 
+let tree;
 const mockStore = configureStore([]);
 
 describe('<PaymentUnauthorized />', () => {
-  let tree;
-
   beforeAll(() => {
     act(() => {
       tree = create(
@@ -20,6 +19,7 @@ describe('<PaymentUnauthorized />', () => {
   });
 
   it('should render without props', () => {
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });

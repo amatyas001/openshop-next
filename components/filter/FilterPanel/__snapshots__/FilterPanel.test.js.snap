@@ -106,6 +106,26 @@ exports[`<FilterPanel /> should render with required props 1`] = `
                     >
                       mock_color_0
                     </option>
+                    <option
+                      value="mock_color_1"
+                    >
+                      mock_color_1
+                    </option>
+                    <option
+                      value="mock_color_2"
+                    >
+                      mock_color_2
+                    </option>
+                    <option
+                      value="mock_color_3"
+                    >
+                      mock_color_3
+                    </option>
+                    <option
+                      value="mock_color_4"
+                    >
+                      mock_color_4
+                    </option>
                   </select>
                   <div
                     className="css-rl6gbg"
@@ -149,8 +169,7 @@ exports[`<FilterPanel /> should render with required props 1`] = `
                 className="css-1pmifls"
                 data-testid="filter-price-current"
               >
-                1
-                 $
+                1&nbsp;$
               </span>
               <div
                 className="css-ftmy5t"

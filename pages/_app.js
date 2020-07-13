@@ -1,5 +1,7 @@
+/* eslint no-underscore-dangle: "off" */
 import '@app/styles/global.css';
 import '@brainhubeu/react-carousel/lib/style.css';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ThemeProvider as ChakraProvider } from '@chakra-ui/core';
@@ -24,6 +26,22 @@ const App = ({ Component, pageProps }) => {
       </PersistGate>
     </Provider>
   );
+};
+
+App.defaultProps = {
+  pageProps: {},
+};
+
+App.propTypes = {
+  /**
+   * Actualy loaded page component
+   */
+  Component: PropTypes.element.isRequired,
+
+  /**
+   * Props passed to the loaded page component
+   */
+  pageProps: PropTypes.objectOf(PropTypes.any),
 };
 
 export default App;

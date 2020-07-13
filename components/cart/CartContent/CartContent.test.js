@@ -1,15 +1,16 @@
 import { create, act } from 'react-test-renderer';
-import { CartContent } from './CartContent';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { INITIAL_STATE } from '@app/config/';
-import { mockProduct } from '@app/__mocks__/@app/mocks';
+import { mockProductWithBuyAmount } from '@app/mocks';
+import { CartContent } from '@app/components';
 
 const mockStore = configureStore([]);
 
-describe('<CartContent />', () => {
-  let tree, store;
+let tree;
+let store;
 
+describe('<CartContent />', () => {
   it('should render without props', () => {
     act(() => {
       tree = create(
@@ -18,6 +19,7 @@ describe('<CartContent />', () => {
         </Provider>
       );
     });
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
@@ -25,9 +27,8 @@ describe('<CartContent />', () => {
     beforeAll(() => {
       store = mockStore({
         ...INITIAL_STATE,
-        cart: [{ ...mockProduct(1)[0], buy: { amount: 1 } }],
+        cart: mockProductWithBuyAmount(3),
       });
-
       act(() => {
         tree = create(
           <Provider store={store}>
@@ -38,7 +39,10 @@ describe('<CartContent />', () => {
     });
 
     it('should render cart items', () => {
-      expect(tree.root.findByType('ul').props.children).toHaveLength(1);
+      expect.assertions(1);
+      expect(tree.root.findByType('ul').props.children).toHaveLength(
+        store.getState().cart.length
+      );
     });
   });
 });

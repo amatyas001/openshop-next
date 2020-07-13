@@ -21,14 +21,14 @@ export const PaymentSuccess = (props) => {
     <Flex flexDirection='column' width='100%' alignItems='center' {...props}>
       <Heading>Payment Successful</Heading>
       <Text fontSize='1.5rem'>
-        Received intent number:{' '}
+        Received intent number:
         <Text
           as='span'
           fontWeight='bold'
           color='purple.800'
           data-testid='success-content'
         >
-          {intent.id}
+          {`&nbsp;${intent.id}&nbsp;`}
         </Text>
       </Text>
       <Text>

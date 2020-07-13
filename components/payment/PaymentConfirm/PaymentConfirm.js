@@ -43,7 +43,7 @@ export const PaymentConfirm = (props) => {
         {...props}
       >
         <Heading data-testid='confirm-intent-name' my='1rem'>
-          Hello, {details.name}!
+          {`Hello, ${details.name}!`}
         </Heading>
         <Text fontSize='1.1rem' fontWeight='bold' my='0.7rem'>
           Please review your payment details and confirm order

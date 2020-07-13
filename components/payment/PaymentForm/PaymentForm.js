@@ -1,7 +1,6 @@
 import { Box, Flex } from '@chakra-ui/core';
 import { PAYMENT_FIELDS } from '@app/config';
 import { Field, Spinner, PaymentFormControls } from '@app/components';
-import { FieldShape } from '@app/lib/types';
 
 /**
  * Displays a form which collecting billing details from the user amd
@@ -14,7 +13,6 @@ import { FieldShape } from '@app/lib/types';
  * ```
  */
 export const PaymentForm = (props) => {
-  const { fields } = props;
   const [loading, setLoading] = React.useState(false);
   const [details, setDetails] = React.useState({
     address: '',
@@ -40,7 +38,7 @@ export const PaymentForm = (props) => {
         borderBottom='1px'
         borderColor='gray.400'
       >
-        {fields.map((item) => (
+        {PAYMENT_FIELDS.map((item) => (
           <Field
             data-testid='input'
             key={item.name}
@@ -61,15 +59,4 @@ export const PaymentForm = (props) => {
   ) : (
     <Spinner data-testid='form-spinner' text='Sending data...' />
   );
-};
-
-PaymentForm.defaultProps = {
-  fields: PAYMENT_FIELDS,
-};
-
-PaymentForm.propTypes = {
-  /**
-   * Arryas of input field descriptions to generate [Fileds](#field)
-   */
-  fields: FieldShape,
 };

@@ -12,13 +12,12 @@ import * as COLORS from '@app/config/colors';
 export const Navbar = (props) => {
   return (
     <Flex
-      as={'header'}
+      as='header'
       data-cy='nav-container'
       position='fixed'
       top='0'
       right='0'
       left='0'
-      zIndex='2'
       py='5px'
       px='10px'
       bg='white'
@@ -42,7 +41,7 @@ export const Navbar = (props) => {
         </Heading>
       </Link>
       <Flex
-        as={'nav'}
+        as='nav'
         id='header-nav'
         aria-label='Main'
         mr={{ sm: 'auto', md: '0' }}

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import { Flex } from '@chakra-ui/core';
@@ -25,15 +26,16 @@ import * as COLORS from '@app/config/colors';
  * @example
  * ```jsx
  * <CartPanel />
- * ```
+ * ```npm
  */
 export const CartPanel = (props) => {
+  const { width } = props;
   const { cart, panel } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   return (
     <Flex
-      as={'section'}
+      as='section'
       role='complementary'
       id='cart'
       flexDirection='column'
@@ -46,7 +48,7 @@ export const CartPanel = (props) => {
         top='60px'
         right='0'
         width={
-          props.width || {
+          width || {
             sm: '96%',
             md: '70%',
             lg: '60%',
@@ -65,7 +67,7 @@ export const CartPanel = (props) => {
           position='fixed'
           right='2%'
           width={
-            props.width || {
+            width || {
               sm: '100%',
               md: '70%',
               lg: '60%',
@@ -104,8 +106,16 @@ export const CartPanel = (props) => {
           </Link>
           <CartAmount data-testid='cart-panel-amount' width='20%' />
         </Flex>
-        <CartContent data-testid='cart-panel-content' pt='80px' />
+        <CartContent icons data-testid='cart-panel-content' pt='80px' />
       </Panel>
     </Flex>
   );
+};
+
+CartPanel.defaultProps = {
+  width: '100%',
+};
+
+CartPanel.propTypes = {
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };

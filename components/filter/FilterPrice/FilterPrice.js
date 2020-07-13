@@ -21,14 +21,12 @@ export const FilterPrice = (props) => {
   const dispatch = useDispatch();
   const { filters } = useSelector((store) => store);
   const { products } = props;
-  const [max, setMax] = React.useState(0);
-  const [price, setPrice] = React.useState(false);
+  const max = Math.max(...products.map((c) => c.price));
+  const [price, setPrice] = React.useState(max);
 
   React.useEffect(() => {
-    setMax(Math.max(...products.map((item) => item.price)));
-    /* istanbul ignore next */
     setPrice(filters.price === Number.POSITIVE_INFINITY ? max : filters.price);
-  }, [filters.price, products]);
+  }, [filters.price, max]);
 
   return (
     <Box mb={{ sm: '35px', lg: 0 }} {...props}>
@@ -49,12 +47,12 @@ export const FilterPrice = (props) => {
         fontWeight='bold'
         color={COLORS.HEADING.light}
       >
-        {price || max} $
+        {`${price}&nbsp;$`}
       </Heading>
 
       <Slider
         data-testid='filter-price-slider'
-        value={price || max}
+        value={price}
         onChange={(e) => setPrice(e)}
         defaultValue={max}
         name='price'
@@ -76,7 +74,24 @@ export const FilterPrice = (props) => {
 
 FilterPrice.propTypes = {
   /**
-   * Product list where the maximum price is extracted from
+   * List of available products
    */
-  products: PropTypes.arrayOf(PropTypes.object).isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+      color: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string),
+      ]),
+      description: PropTypes.string,
+      gender: PropTypes.string,
+      img: PropTypes.string,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      review: PropTypes.string,
+      sizes: PropTypes.arrayOf(PropTypes.string),
+      starrating: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };

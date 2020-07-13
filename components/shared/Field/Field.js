@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Box, Heading, Input } from '@chakra-ui/core';
 import * as COLORS from '@app/config/colors';
 
@@ -7,7 +8,7 @@ import * as COLORS from '@app/config/colors';
  *
  * @example
  * ```jsx
- * <Filed type={inputType} label={inputLabelText}>
+ * <Field type={inputType} label={inputLabelText}>
  * ```
  */
 export const Field = ({
@@ -47,4 +48,27 @@ export const Field = ({
       />
     </Box>
   );
+};
+
+Field.defaultProps = {
+  placeholder: '',
+  required: false,
+  autoComplete: false,
+  value: null,
+  onChange: () => null,
+};
+
+Field.propTypes = {
+  label: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['text', 'email', 'password', 'tel']).isRequired,
+  placeholder: PropTypes.string,
+  required: PropTypes.bool,
+  autoComplete: PropTypes.bool,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.func,
+  ]),
+  onChange: PropTypes.func,
 };

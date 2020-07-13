@@ -2,7 +2,7 @@
 
 exports[`<CartPanel /> on empty cart should render without props 1`] = `
 <section
-  className="css-j7qwjs"
+  className="css-1ofqig9"
   id="cart"
   role="complementary"
 >
@@ -59,10 +59,10 @@ exports[`<CartPanel /> on empty cart should render without props 1`] = `
       }
     >
       <div
-        className="css-1hpslha"
+        className="css-rl10s"
       >
         <div
-          className="css-ugjhak"
+          className="css-1fm8xe3"
         >
           <button
             className="css-1ks4ucs"
@@ -118,7 +118,7 @@ exports[`<CartPanel /> on empty cart should render without props 1`] = `
 
 exports[`<CartPanel /> on non empty cart should render without props 1`] = `
 <section
-  className="css-j7qwjs"
+  className="css-1ofqig9"
   id="cart"
   role="complementary"
 >
@@ -175,10 +175,10 @@ exports[`<CartPanel /> on non empty cart should render without props 1`] = `
       }
     >
       <div
-        className="css-1hpslha"
+        className="css-rl10s"
       >
         <div
-          className="css-ugjhak"
+          className="css-1fm8xe3"
         >
           <button
             className="css-1ks4ucs"

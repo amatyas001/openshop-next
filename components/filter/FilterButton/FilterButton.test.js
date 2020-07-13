@@ -5,14 +5,13 @@ import { FilterButton } from '@app/components';
 import { INITIAL_STATE } from '@app/config';
 import { panelToggle } from '@app/lib/redux/actions';
 
+let tree;
+let store;
 const mockStore = createStore([]);
 
 describe('<FilterButton />', () => {
-  let tree, store;
-
   beforeAll(() => {
     store = mockStore(INITIAL_STATE);
-
     act(() => {
       tree = create(
         <Provider store={store}>
@@ -23,6 +22,7 @@ describe('<FilterButton />', () => {
   });
 
   it('should render without props', () => {
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
@@ -30,7 +30,7 @@ describe('<FilterButton />', () => {
     await act(async () => {
       tree.root.findByType('button').props.onClick();
     });
-
+    expect.assertions(1);
     expect(store.getActions()).toEqual([
       panelToggle('filters', !store.getState().panel.filters),
     ]);
@@ -38,7 +38,6 @@ describe('<FilterButton />', () => {
 
   it('should toggle button text', () => {
     store = mockStore({ ...INITIAL_STATE, panel: { filters: true } });
-
     act(() => {
       tree = create(
         <Provider store={store}>
@@ -46,7 +45,7 @@ describe('<FilterButton />', () => {
         </Provider>
       );
     });
-
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });

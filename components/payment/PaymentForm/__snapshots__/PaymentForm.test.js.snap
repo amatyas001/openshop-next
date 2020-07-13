@@ -17,6 +17,7 @@ exports[`<PaymentForm /> should render without props 1`] = `
         name
       </label>
       <input
+        autoComplete={false}
         className="css-185v6vq"
         id="name"
         onChange={[Function]}
@@ -36,6 +37,7 @@ exports[`<PaymentForm /> should render without props 1`] = `
         address
       </label>
       <input
+        autoComplete={false}
         className="css-185v6vq"
         id="address"
         onChange={[Function]}
@@ -55,6 +57,7 @@ exports[`<PaymentForm /> should render without props 1`] = `
         email
       </label>
       <input
+        autoComplete={false}
         className="css-185v6vq"
         id="email"
         onChange={[Function]}
@@ -74,6 +77,7 @@ exports[`<PaymentForm /> should render without props 1`] = `
         phone
       </label>
       <input
+        autoComplete={false}
         className="css-185v6vq"
         id="phone"
         onChange={[Function]}
@@ -88,13 +92,12 @@ exports[`<PaymentForm /> should render without props 1`] = `
     className="css-1yab5hb"
   >
     By proceeding you accept the
-     
     <a
       className="css-1c5zfe9"
+      href="#void"
     >
-      Terms of Service
+       Terms of Service 
     </a>
-     
     of the company.
   </p>
   <div

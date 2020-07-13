@@ -6,13 +6,12 @@ Array [
     className="css-1yab5hb"
   >
     By proceeding you accept the
-     
     <a
       className="css-1c5zfe9"
+      href="#void"
     >
-      Terms of Service
+       Terms of Service 
     </a>
-     
     of the company.
   </p>,
   <div
@@ -51,13 +50,12 @@ Array [
     className="css-1yab5hb"
   >
     By proceeding you accept the
-     
     <a
       className="css-1c5zfe9"
+      href="#void"
     >
-      Terms of Service
+       Terms of Service 
     </a>
-     
     of the company.
   </p>,
   <div
@@ -84,7 +82,7 @@ Array [
       tabIndex="0"
       type="button"
     >
-      PAY 10.00 $
+      PAY 1.00 $
     </button>
   </div>,
 ]

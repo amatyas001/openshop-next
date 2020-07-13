@@ -1,200 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PaymentConfirm /> should dispatch paymentSuccess 1`] = `
-Array [
-  <div
-    className="css-14djarr"
-  >
-    <h2
-      className="css-ijdyq2"
-      data-testid="confirm-intent-name"
-    >
-      Hello, 
-      mock_name
-      !
-    </h2>
-    <p
-      className="css-tmw1y6"
-    >
-      Please review your payment details and confirm order
-    </p>
-    <div
-      className="css-r96hqv"
-    >
-      <p
-        className="css-18poma1"
-      >
-        INTENT ID
-      </p>
-      <p
-        className="css-1n4bukm"
-        data-testid="confirm-intent-id"
-      >
-        mock_id
-      </p>
-      <p
-        className="css-18poma1"
-      >
-        EMAIL
-      </p>
-      <p
-        className="css-1n4bukm"
-        data-testid="confirm-intent-email"
-      >
-        mock_email
-      </p>
-      <p
-        className="css-18poma1"
-      >
-        PHONE
-      </p>
-      <p
-        className="css-1n4bukm"
-        data-testid="confirm-intent-phone"
-      >
-        mock_phone
-      </p>
-      <p
-        className="css-18poma1"
-      >
-        ADDRESS
-      </p>
-      <p
-        className="css-1n4bukm"
-        data-testid="confirm-intent-address"
-      >
-        mock_address
-      </p>
-    </div>
-    <ul
-      className="css-8atqhb"
-      role="list"
-    >
-      <li
-        className="css-1tp0oa"
-        role="listitem"
-      >
-        <img
-          alt="mock_name"
-          className="css-rhemcv"
-        />
-        <div
-          className="css-zbq0po"
-        >
-          <strong
-            className="css-airqvi"
-          >
-            mock_name
-          </strong>
-          <em
-            className="css-1fji79j"
-          >
-            mock_color in One Size x1
-          </em>
-        </div>
-        <strong
-          className="css-1som8bm"
-        >
-          10.00
-           $
-        </strong>
-      </li>
-    </ul>
-    <Elements
-      stripe="stripe"
-    >
-      <div
-        className="css-1mi3tt8"
-      >
-        <label
-          className="css-8qu6k5"
-          htmlFor="StripeElement"
-        >
-          enter your card details to finish payment
-        </label>
-        <div
-          className="css-16soxp"
-        >
-          <CardElement
-            data-testid="confirm-card-element"
-            onChange={[Function]}
-            options={
-              Object {
-                "iconStyle": "solid",
-                "style": Object {
-                  "base": Object {
-                    "fontFamily": "Khand, sans-serif",
-                    "fontSize": "18px",
-                    "fontSmoothing": "antialiased",
-                    "fontWeight": "bold",
-                  },
-                },
-              }
-            }
-          />
-        </div>
-        <p
-          className="css-165naot"
-        >
-          Use any future date and CVC with 
-          <strong>
-            4242 4242 4242 4242
-          </strong>
-           
-          number for testing
-        </p>
-      </div>
-    </Elements>
-    <div
-      className="css-qv6zkf"
-    >
-      <button
-        className="css-1e5j5cf"
-        data-testid="confirm-controls-cancel"
-        href="#void"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex="0"
-        type="button"
-      >
-        CANCEL ORDER
-      </button>
-      <button
-        className="css-hn65qy"
-        data-testid="confirm-controls-confirm"
-        disabled={false}
-        href="#void"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex="0"
-        type="button"
-      >
-        CONFIRM ORDER
-      </button>
-    </div>
-  </div>,
-  <div
-    className="css-1lh4e9u"
-    data-testid="confirm-spinner"
-  >
-    <h2
-      className="css-1gjlikv"
-    >
-      Loading data...
-    </h2>
-    <div
-      className="css-159m1lu"
-    >
-      <div
-        className="css-1gy22ay"
-      >
-        Loading...
-      </div>
-    </div>
-  </div>,
-]
-`;
-
 exports[`<PaymentConfirm /> should render with initial state 1`] = `
 Array [
   <div
@@ -204,8 +9,7 @@ Array [
       className="css-ijdyq2"
       data-testid="confirm-intent-name"
     >
-      Hello, 
-      !
+      Hello, undefined!
     </h2>
     <p
       className="css-tmw1y6"
@@ -292,11 +96,10 @@ Array [
         <p
           className="css-165naot"
         >
-          Use any future date and CVC with 
+          Use any future date and CVC with
           <strong>
-            4242 4242 4242 4242
+             4242 4242 4242 4242 
           </strong>
-           
           number for testing
         </p>
       </div>
@@ -330,7 +133,7 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1og0pvu"
+    className="css-qqpb0e"
     data-testid="confirm-spinner"
   >
     <h2
@@ -360,9 +163,7 @@ Array [
       className="css-ijdyq2"
       data-testid="confirm-intent-name"
     >
-      Hello, 
-      mock_name
-      !
+      Hello, mock_name!
     </h2>
     <p
       className="css-tmw1y6"
@@ -426,7 +227,7 @@ Array [
         role="listitem"
       >
         <img
-          alt="mock_name"
+          alt="mock_name_0"
           className="css-rhemcv"
         />
         <div
@@ -435,18 +236,18 @@ Array [
           <strong
             className="css-airqvi"
           >
-            mock_name
+            mock_name_0
           </strong>
           <em
             className="css-1fji79j"
           >
-            mock_color in One Size x1
+            mock_color_0 in One Size x1
           </em>
         </div>
         <strong
           className="css-1som8bm"
         >
-          10.00
+          1.00
            $
         </strong>
       </li>
@@ -487,11 +288,10 @@ Array [
         <p
           className="css-165naot"
         >
-          Use any future date and CVC with 
+          Use any future date and CVC with
           <strong>
-            4242 4242 4242 4242
+             4242 4242 4242 4242 
           </strong>
-           
           number for testing
         </p>
       </div>
@@ -525,7 +325,7 @@ Array [
     </div>
   </div>,
   <div
-    className="css-1og0pvu"
+    className="css-qqpb0e"
     data-testid="confirm-spinner"
   >
     <h2

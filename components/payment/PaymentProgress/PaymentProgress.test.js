@@ -4,12 +4,13 @@ import { create, act } from 'react-test-renderer';
 import { PaymentProgress } from '@app/components';
 import { INITIAL_STATE } from '@app/config';
 
+let tree;
 const mockStore = createStore([]);
+const statuses = ['review', 'form', 'confirm', 'success', 'cancelled', 'error'];
 
 describe('<PaymentProgress />', () => {
   it('should render with initial state', () => {
-    let tree;
-
+    expect.assertions(1);
     act(() => {
       tree = create(
         <Provider store={mockStore(INITIAL_STATE)}>
@@ -17,22 +18,13 @@ describe('<PaymentProgress />', () => {
         </Provider>
       );
     });
-
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
-  const status = ['review', 'form', 'confirm', 'success', 'cancelled', 'error'];
-
-  status.map((item) => {
-    it(`should render properly on ${item} state`, () => {
-      let tree;
-
-      const store = mockStore({
-        payment: {
-          status: item,
-        },
-      });
-
+  statuses.forEach((status) => {
+    it(`should render properly on ${status} state`, () => {
+      expect.assertions(1);
+      const store = mockStore({ ...INITIAL_STATE, payment: { status } });
       act(() => {
         tree = create(
           <Provider store={store}>
@@ -40,7 +32,6 @@ describe('<PaymentProgress />', () => {
           </Provider>
         );
       });
-
       expect(tree.toJSON()).toMatchSnapshot();
     });
   });

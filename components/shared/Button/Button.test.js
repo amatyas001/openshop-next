@@ -1,9 +1,9 @@
 import { create, act } from 'react-test-renderer';
 import { Button } from '@app/components';
 
-describe('<Button />', () => {
-  let tree;
+let tree;
 
+describe('<Button />', () => {
   beforeAll(() => {
     act(() => {
       tree = create(<Button />);

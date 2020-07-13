@@ -1,21 +1,19 @@
 import { create, act } from 'react-test-renderer';
 import { mockProduct } from '@app/mocks';
-import { ProductControlsAmount } from './ProductControlsAmount';
+import { ProductControlsAmount } from '@app/components';
+
+let tree;
+let wrapper;
+const setter = jest.fn();
+const product = mockProduct(1)[0];
+const details = {
+  ...product,
+  buy: {
+    amount: 0,
+  },
+};
 
 describe('<ProductControlsAmount />', () => {
-  let tree, wrapper;
-
-  const product = mockProduct(1)[0];
-
-  const details = {
-    ...product,
-    buy: {
-      amount: 0,
-    },
-  };
-
-  const setter = jest.fn();
-
   beforeAll(() => {
     act(() => {
       tree = create(
@@ -36,22 +34,27 @@ describe('<ProductControlsAmount />', () => {
   });
 
   it('should render with required props', () => {
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it("should have default value of '0'", () => {
+    expect.assertions(1);
     expect(wrapper.props.value).toEqual(0);
   });
 
   it("should have min value of '0'", () => {
+    expect.assertions(1);
     expect(wrapper.props.min).toEqual(0);
   });
 
   it('should have max value of product amount', () => {
+    expect.assertions(1);
     expect(wrapper.props.max).toEqual(product.amount);
   });
 
   it('should call setter function', () => {
+    expect.assertions(2);
     act(() => {
       wrapper.props.onChange(1);
     });

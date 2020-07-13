@@ -28,6 +28,8 @@ export const PaymentProgress = (props) => {
         setDetails(true);
         setFinished(true);
         break;
+      default:
+        break;
     }
   }, [payment]);
 

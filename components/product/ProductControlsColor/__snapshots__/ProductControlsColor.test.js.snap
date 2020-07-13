@@ -7,7 +7,7 @@ exports[`<ProductControlsColor /> should render with required props 1`] = `
   <select
     className="css-1fbi3l4"
     onChange={[Function]}
-    value=""
+    value="mock_color"
   >
     <option
       value=""
@@ -15,14 +15,9 @@ exports[`<ProductControlsColor /> should render with required props 1`] = `
       Select color...
     </option>
     <option
-      value="mock_color_0"
+      value="mock_color"
     >
-      mock_color_0
-    </option>
-    <option
-      value="mock_color_1"
-    >
-      mock_color_1
+      mock_color
     </option>
   </select>
   <div

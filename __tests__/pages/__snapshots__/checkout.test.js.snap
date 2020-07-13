@@ -92,8 +92,7 @@ exports[`<Checkout /> should render cancelled component 1`] = `
     <p
       className="css-441ftm"
     >
-      Successfuly cancelled intent:
-       
+      Successfuly cancelled intent: 
       <span
         className="css-4i139l"
         data-testid="cancelled-details"
@@ -187,9 +186,7 @@ exports[`<Checkout /> should render confirm component 1`] = `
       className="css-ijdyq2"
       data-testid="confirm-intent-name"
     >
-      Hello, 
-      name
-      !
+      Hello, name!
     </h2>
     <p
       className="css-tmw1y6"
@@ -308,11 +305,10 @@ exports[`<Checkout /> should render confirm component 1`] = `
         <p
           className="css-165naot"
         >
-          Use any future date and CVC with 
+          Use any future date and CVC with
           <strong>
-            4242 4242 4242 4242
+             4242 4242 4242 4242 
           </strong>
-           
           number for testing
         </p>
       </div>
@@ -346,7 +342,7 @@ exports[`<Checkout /> should render confirm component 1`] = `
     </div>
   </div>
   <div
-    className="css-1og0pvu"
+    className="css-qqpb0e"
     data-testid="confirm-spinner"
   >
     <h2
@@ -570,6 +566,7 @@ exports[`<Checkout /> should render form component 1`] = `
           name
         </label>
         <input
+          autoComplete={false}
           className="css-185v6vq"
           id="name"
           onChange={[Function]}
@@ -589,6 +586,7 @@ exports[`<Checkout /> should render form component 1`] = `
           address
         </label>
         <input
+          autoComplete={false}
           className="css-185v6vq"
           id="address"
           onChange={[Function]}
@@ -608,6 +606,7 @@ exports[`<Checkout /> should render form component 1`] = `
           email
         </label>
         <input
+          autoComplete={false}
           className="css-185v6vq"
           id="email"
           onChange={[Function]}
@@ -627,6 +626,7 @@ exports[`<Checkout /> should render form component 1`] = `
           phone
         </label>
         <input
+          autoComplete={false}
           className="css-185v6vq"
           id="phone"
           onChange={[Function]}
@@ -641,13 +641,12 @@ exports[`<Checkout /> should render form component 1`] = `
       className="css-1yab5hb"
     >
       By proceeding you accept the
-       
       <a
         className="css-1c5zfe9"
+        href="#void"
       >
-        Terms of Service
+         Terms of Service 
       </a>
-       
       of the company.
     </p>
     <div
@@ -932,12 +931,11 @@ exports[`<Checkout /> should render success component 1`] = `
       className="css-441ftm"
     >
       Received intent number:
-       
       <span
         className="css-4i139l"
         data-testid="success-content"
       >
-        id
+        &nbsp;id&nbsp;
       </span>
     </p>
     <p

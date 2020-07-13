@@ -48,6 +48,11 @@ exports[`<FilterColor /> should render with required props 1`] = `
         >
           mock_color_4
         </option>
+        <option
+          value="mock_color_5"
+        >
+          mock_color_5
+        </option>
       </select>
       <div
         className="css-rl6gbg"

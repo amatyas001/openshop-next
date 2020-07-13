@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { Heading, Text, Flex } from '@chakra-ui/core';
 import * as COLORS from '@app/config/colors';
-import { ProductShape } from '@app/lib/types';
 import { Image, ProductControls } from '@app/components';
 
 /**
@@ -13,7 +12,7 @@ import { Image, ProductControls } from '@app/components';
  *  - color or size not choosen from list
  *
  * Appropriate select fields are rendered only when product has multiple choices of color or size.
- 
+
  * Amount is zero by default and maximum value is depending on the related product stock value.
  *
  * After submitting the product to the cart, shopping details are reset to the defaults.
@@ -79,5 +78,20 @@ ProductCard.propTypes = {
   /**
    * A single product object which details and controls are rendered in the component
    */
-  product: PropTypes.shape({ ...ProductShape }).isRequired,
+  product: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    amount: PropTypes.number.isRequired,
+    color: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+    ]),
+    description: PropTypes.string,
+    gender: PropTypes.string,
+    img: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    review: PropTypes.string,
+    sizes: PropTypes.arrayOf(PropTypes.string),
+    starrating: PropTypes.number.isRequired,
+  }).isRequired,
 };

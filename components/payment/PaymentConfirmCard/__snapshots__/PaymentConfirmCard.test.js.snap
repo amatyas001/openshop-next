@@ -34,11 +34,10 @@ exports[`<PaymentConfirmCard/> should render with initial state 1`] = `
   <p
     className="css-165naot"
   >
-    Use any future date and CVC with 
+    Use any future date and CVC with
     <strong>
-      4242 4242 4242 4242
+       4242 4242 4242 4242 
     </strong>
-     
     number for testing
   </p>
 </div>
@@ -78,11 +77,10 @@ exports[`<PaymentConfirmCard/> should render with required props 1`] = `
   <p
     className="css-165naot"
   >
-    Use any future date and CVC with 
+    Use any future date and CVC with
     <strong>
-      4242 4242 4242 4242
+       4242 4242 4242 4242 
     </strong>
-     
     number for testing
   </p>
 </div>

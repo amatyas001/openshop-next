@@ -4,11 +4,10 @@ import { FaTrashAlt } from 'react-icons/fa';
 import { Text, PseudoBox, Flex, Image, Heading } from '@chakra-ui/core';
 import { removeFromCart } from '@app/lib/redux/actions';
 import { ButtonIcon } from '@app/components';
-import { ProductShape } from '@app/lib/types';
 import * as COLORS from '@app/config';
 
 /**
- * Renders a unique cart item with optional details and controls
+ * Renders a cart item with optional details and controls
  *
  * @see https://amatyas001.github.io/openshop-next/#cartpanel
  */
@@ -51,7 +50,8 @@ export const CartItem = (props) => {
         fontSize='1.8rem'
         color={COLORS.HEADING.dark}
       >
-        {item.price.toFixed(2)}&nbsp;$
+        {item.price.toFixed(2)}
+        &nbsp;$
       </Heading>
       {icons && (
         <ButtonIcon
@@ -69,7 +69,7 @@ export const CartItem = (props) => {
 };
 
 CartItem.defaultProps = {
-  icons: true,
+  icons: false,
   details: false,
 };
 
@@ -78,7 +78,20 @@ CartItem.propTypes = {
    * Unique item in cart
    */
   item: PropTypes.shape({
-    ...ProductShape,
+    id: PropTypes.string.isRequired,
+    amount: PropTypes.number.isRequired,
+    color: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+    ]),
+    description: PropTypes.string,
+    gender: PropTypes.string,
+    img: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    review: PropTypes.string,
+    sizes: PropTypes.arrayOf(PropTypes.string),
+    starrating: PropTypes.number.isRequired,
     buy: PropTypes.shape({
       amount: PropTypes.number.isRequired,
       color: PropTypes.string,
@@ -94,5 +107,5 @@ CartItem.propTypes = {
   /**
    * Show description
    */
-  detals: PropTypes.bool,
+  details: PropTypes.bool,
 };

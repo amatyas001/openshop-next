@@ -1,14 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Field /> should render without props 1`] = `
+exports[`<Field /> should render with required props 1`] = `
 <fieldset
   className="css-9x3bhi"
 >
   <label
     className="css-1cj26ek"
-  />
+    htmlFor="mock_id"
+  >
+    mock_label
+  </label>
   <input
+    autoComplete={false}
     className="css-185v6vq"
+    id="mock_id"
+    onChange={[MockFunction]}
+    placeholder="mock_placeholder"
+    required={false}
+    type="text"
+    value={null}
   />
 </fieldset>
 `;

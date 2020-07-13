@@ -1,8 +1,0 @@
-{
-  "baseUrl": "http://localhost:3000",
-  "integrationFolder": "./",
-  "ignoreTestFiles": "**/node_modules/**/*",
-  "testFiles": "**/*.spec.js",
-  "fixturesFolder": "./__mocks__",
-  "chromeWebSecurity": false
-}

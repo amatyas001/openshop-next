@@ -1,15 +1,15 @@
 import { create, act } from 'react-test-renderer';
-import { CartButton } from './CartButton';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { panelToggle } from '@app/lib/redux/actions';
-import { mockProduct } from '@app/mocks';
+import { mockProductWithBuyAmount } from '@app/mocks';
+import { CartButton } from '@app/components';
 
+let tree;
+let store;
 const mockStore = configureStore([]);
 
 describe('<CartButton />', () => {
-  let tree, store;
-
   describe('on empty cart', () => {
     beforeAll(() => {
       store = mockStore({
@@ -18,7 +18,6 @@ describe('<CartButton />', () => {
           cart: false,
         },
       });
-
       act(() => {
         tree = create(
           <Provider store={store}>
@@ -29,10 +28,12 @@ describe('<CartButton />', () => {
     });
 
     it('should render without props', () => {
+      expect.assertions(1);
       expect(tree.toJSON()).toMatchSnapshot();
     });
 
     it('should toggle panel collapse', () => {
+      expect.assertions(1);
       act(() => {
         tree.root.findByType('button').props.onClick();
       });
@@ -43,23 +44,13 @@ describe('<CartButton />', () => {
   });
 
   describe('on not empty cart', () => {
-    let mock_amount = 2;
+    const amount = 1;
 
     beforeAll(() => {
       store = mockStore({
-        cart: [
-          {
-            ...mockProduct(1)[0],
-            buy: {
-              amount: mock_amount,
-            },
-          },
-        ],
-        panel: {
-          cart: false,
-        },
+        cart: mockProductWithBuyAmount(1, amount),
+        panel: { cart: false },
       });
-
       act(() => {
         tree = create(
           <Provider store={store}>
@@ -70,10 +61,12 @@ describe('<CartButton />', () => {
     });
 
     it('should render without props', () => {
+      expect.assertions(1);
       expect(tree.toJSON()).toMatchSnapshot();
     });
 
     it('should toggle panel collapse', () => {
+      expect.assertions(1);
       act(() => {
         tree.root.findByType('button').props.onClick();
       });
@@ -83,8 +76,9 @@ describe('<CartButton />', () => {
     });
 
     it('should display amount of cart items', () => {
+      expect.assertions(1);
       expect(tree.root.findByType('button').props.children).toContain(
-        mock_amount + ' item(s)'
+        `${amount} item(s)`
       );
     });
   });

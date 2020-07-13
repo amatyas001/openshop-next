@@ -1,33 +1,28 @@
 import { create, act } from 'react-test-renderer';
-import { ProductControlsSize } from './ProductControlsSize';
-import { mockProduct } from '@app/__mocks__/@app/mocks';
+import { mockProduct } from '@app/mocks';
+import { ProductControlsSize } from '@app/components';
+
+let tree;
+const set = jest.fn();
+const product = {
+  ...mockProduct(1)[0],
+  sizes: ['mock_size_0', 'mock_size_1'],
+};
+const details = {
+  ...product,
+  buy: {
+    amount: 0,
+  },
+};
 
 describe('<ProductControlsSize />', () => {
-  let tree;
-
-  const mock_product = {
-    ...mockProduct(1)[0],
-    sizes: ['mock_size_0', 'mock_size_1'],
-  };
-
-  const mock_details = {
-    ...mock_product,
-    buy: {
-      amount: 0,
-    },
-  };
-
-  const mock_setDetails = jest.fn();
-
-  const mock_value = 'mock_value';
-
   beforeAll(() => {
     act(() => {
       tree = create(
         <ProductControlsSize
-          product={mock_product}
-          details={mock_details}
-          setDetails={mock_setDetails}
+          product={product}
+          details={details}
+          setDetails={set}
         />
       );
     });
@@ -38,26 +33,24 @@ describe('<ProductControlsSize />', () => {
   });
 
   it('should call handler', () => {
+    const value = 'mock_value';
     act(() => {
-      tree.root
-        .findByType('select')
-        .props.onChange({ target: { value: mock_value } });
+      tree.root.findByType('select').props.onChange({ target: { value } });
     });
-    expect(mock_setDetails).toHaveBeenCalledTimes(1);
-    expect(mock_setDetails).toHaveBeenCalledWith(mock_value);
+    expect(set).toHaveBeenCalledTimes(1);
+    expect(set).toHaveBeenCalledWith(value);
   });
 
   it('should render static value if no sizes available for the product', () => {
     act(() => {
       tree = create(
         <ProductControlsSize
-          product={{ ...mock_product, sizes: undefined }}
-          details={mock_details}
-          setDetails={mock_setDetails}
+          product={{ ...product, sizes: undefined }}
+          details={details}
+          setDetails={set}
         />
       );
     });
-
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });

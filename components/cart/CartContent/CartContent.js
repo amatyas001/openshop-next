@@ -28,7 +28,7 @@ export const CartContent = (props) => {
 };
 
 CartContent.defaultProps = {
-  icons: true,
+  icons: false,
   details: false,
 };
 
@@ -41,5 +41,5 @@ CartContent.propTypes = {
   /**
    * Show description
    */
-  detals: PropTypes.bool,
+  details: PropTypes.bool,
 };

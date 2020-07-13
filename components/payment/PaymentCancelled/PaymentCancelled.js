@@ -17,7 +17,7 @@ export const PaymentCancelled = (props) => {
     <Flex alignItems='center' flexDirection='column' width='100%' {...props}>
       <Heading>Payment Cancelled</Heading>
       <Text fontSize='1.5rem'>
-        Successfuly cancelled intent:{' '}
+        Successfuly cancelled intent:&nbsp;
         <Text
           as='span'
           fontWeight='bold'

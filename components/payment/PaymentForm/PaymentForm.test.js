@@ -4,46 +4,35 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from '@app/lib/redux/payment/paymentCreate';
 import { paymentReview } from '@app/lib/redux/actions';
+import { INITIAL_STATE } from '@app/config';
 import { PaymentForm } from '@app/components';
+import { mockProductWithBuyAmount } from '@app/mocks';
 
-const mockStore = configureStore([thunk]);
-
-const completeForm = (form) => {
-  let details = {};
-
-  form.root.findAllByProps({ 'data-testid': `input` }).map((item) => {
-    details[item.props.id] = 'mock_value';
+// Utility to prepare form fields for assertions
+const complete = (form) => {
+  const details = {};
+  form.root.findAllByProps({ 'data-testid': `input` }).forEach((c) => {
+    details[c.props.id] = 'mock_value';
     act(() => {
-      item.props.onChange({ target: { value: 'mock_value' } });
+      c.props.onChange({ target: { value: 'mock_value' } });
     });
   });
-
   return details;
 };
 
-describe('<PaymentForm />', () => {
-  let tree, store, submitButton, backButton;
+let tree;
+let store;
+let submit;
+let back;
+const mockStore = configureStore([thunk]);
 
+describe('<PaymentForm />', () => {
   beforeAll(() => {
     store = mockStore({
+      ...INITIAL_STATE,
       payment: { status: 'form', token: 'token' },
-      cart: [
-        {
-          id: 'mock_id',
-          name: 'mock_name',
-          description: 'mock_desc',
-          img: 'mock_img',
-          price: 10,
-          starrating: 5,
-          color: 'mock_color',
-          amount: 10,
-          buy: {
-            amount: 1,
-          },
-        },
-      ],
+      cart: mockProductWithBuyAmount(1),
     });
-
     act(() => {
       tree = create(
         <Provider store={store}>
@@ -51,27 +40,24 @@ describe('<PaymentForm />', () => {
         </Provider>
       );
     });
-
-    submitButton = tree.root.findByProps({
-      'data-testid': 'form-submit-button',
-    });
-
-    backButton = tree.root.findByProps({
-      'data-testid': 'form-review-button',
-    });
+    submit = tree.root.findByProps({ 'data-testid': 'form-submit-button' });
+    back = tree.root.findByProps({ 'data-testid': 'form-review-button' });
   });
 
   it('should render without props', () => {
+    expect.assertions(1);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
   it('should render disabled button', () => {
-    expect(submitButton.props.disabled).toBeTruthy();
+    expect.assertions(1);
+    expect(submit.props.disabled).toBeTruthy();
   });
 
   it('should push to review state', () => {
+    expect.assertions(1);
     act(() => {
-      backButton.props.onClick();
+      back.props.onClick();
     });
     expect(store.getActions()).toEqual([paymentReview()]);
   });
@@ -80,22 +66,22 @@ describe('<PaymentForm />', () => {
     let details;
 
     beforeAll(() => {
-      details = completeForm(tree);
+      details = complete(tree);
     });
 
     it('should render enabled button', () => {
-      expect(submitButton.props.disabled).toBeFalsy();
+      expect.assertions(1);
+      expect(submit.props.disabled).toBeFalsy();
     });
 
     it('should send intent with details', () => {
+      expect.assertions(2);
       const intent = jest
         .spyOn(actions, 'paymentCreate')
         .mockImplementation(() => jest.fn());
-
       act(() => {
-        submitButton.props.onClick();
+        submit.props.onClick();
       });
-
       expect(intent).toHaveBeenCalledTimes(1);
       expect(intent).toHaveBeenCalledWith(
         details,

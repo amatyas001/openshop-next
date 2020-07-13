@@ -11,12 +11,35 @@
     "deploy": "npm run build && npm run build:lambda && npm run export",
     "start:lambda": "dotenv -e .env.local netlify-lambda serve lib/lambda",
     "build:lambda": "netlify-lambda build lib/lambda",
-    "test": "jest && cypress run",
+    "test": "npm run lint && jest",
     "test:unit": "jest",
-    "test:e2e": "cypress open",
     "test:watch": "jest --watchAll",
     "docs:server": "styleguidist server",
-    "docs:build": "rm -rf docs && styleguidist build && mkdir docs &&  mv -v styleguide/* docs/ && jest --coverage && rm -rf styleguide"
+    "docs:build": "rm -rf docs && styleguidist build && mkdir docs &&  mv -v styleguide/* docs/ && jest --coverage && rm -rf styleguide",
+    "lint": "eslint ./components/** ./pages/** -c .eslintrc.json --ext js,jsx",
+    "lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.json --fix --ext js,jsx",
+    "format": ""
+  },
+  "husky": {
+    "pre-commit": "lint-staged",
+    "pre-push": "npm test:unit"
+  },
+  "lint-staged": {
+    "components/**/*.{js,jsx}": [
+      "eslint",
+      "pretty-quick - staged",
+      "git add"
+    ],
+    "pages/**/*.{js,jsx}": [
+      "eslint",
+      "pretty-quick - staged",
+      "git add"
+    ],
+    "lib/**/*.{js,jsx}": [
+      "eslint",
+      "pretty-quick - staged",
+      "git add"
+    ]
   },
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.18.6",
@@ -29,12 +52,14 @@
     "emotion-theming": "^10.0.27",
     "netlify-lambda": "^1.6.3",
     "next": "9.4.4",
+    "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-icons": "^3.10.0",
     "react-redux": "^7.2.0",
     "react-styleguidist": "^11.0.8",
     "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
     "stripe": "^8.60.0",
@@ -53,16 +78,25 @@
     "@types/react-redux": "^7.1.9",
     "@types/react-test-renderer": "^16.9.2",
     "@types/stripe-v3": "^3.1.19",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^26.0.1",
-    "cypress": "^4.7.0",
-    "cypress-axe": "^0.8.1",
-    "cypress-dotenv": "^1.2.1",
-    "cypress-iframe": "^1.0.1",
-    "cypress-redux": "^1.0.0",
     "dotenv-cli": "^3.1.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.18.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "husky": "^4.2.5",
     "jest": "^26.0.1",
     "jest-watch-typeahead": "^0.6.0",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
     "react-axe": "^3.5.3",
     "react-test-renderer": "^16.13.1",
     "redux-mock-store": "^1.5.4"

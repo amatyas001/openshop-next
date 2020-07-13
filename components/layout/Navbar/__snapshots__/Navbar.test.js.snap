@@ -2,7 +2,7 @@
 
 exports[`<Navbar /> should render without props 1`] = `
 <header
-  className="css-2d7au8"
+  className="css-1u8yhp7"
   data-cy="nav-container"
 >
   <a
@@ -73,7 +73,7 @@ exports[`<Navbar /> should render without props 1`] = `
     </ul>
   </nav>
   <section
-    className="css-j7qwjs"
+    className="css-1ofqig9"
     id="cart"
     role="complementary"
   >
@@ -130,10 +130,10 @@ exports[`<Navbar /> should render without props 1`] = `
         }
       >
         <div
-          className="css-1hpslha"
+          className="css-rl10s"
         >
           <div
-            className="css-ugjhak"
+            className="css-1fm8xe3"
           >
             <button
               className="css-1ks4ucs"
