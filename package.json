@@ -23,19 +23,15 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm test:unit"
+      "pre-push": "npm run test:unit"
     }
   },
   "lint-staged": {
     "components/**/*.{js,jsx}": [
-      "npm run lint",
+      "eslint",
       "pretty-quick --staged"
     ],
     "pages/**/*.{js,jsx}": [
-      "npm run lint",
-      "pretty-quick --staged"
-    ],
-    "lib/**/*.{js,jsx}": [
       "eslint",
       "pretty-quick --staged"
     ]
